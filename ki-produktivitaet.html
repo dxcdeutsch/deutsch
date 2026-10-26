@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DW Top-Thema: KI und Job-Alltag (Vollständiger Artikel in 10 Absätzen)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight-b2 {
+      font-weight: 600;
+      color: #0284c7;
+      border-bottom: 2px dotted #0284c7;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .highlight-b2:hover {
+      background-color: rgba(2, 132, 199, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background,#f8fafc)] text-[var(--foreground,#0f172a)] antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-[var(--card,#ffffff)] border border-[var(--border,#e2e8f0)] rounded-2xl shadow-xl overflow-hidden">
+    
+    <!-- Header with Lesson Switcher -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-[#009ee3]">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#009ee3] text-white text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">Lektion 2</span>
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B2 (10 Absätze) • Wortschatz: B1-Brücke</span>
+          <span class="text-xs text-blue-200">Arbeitswelt & New Work</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-blue-300">Zu Lektion 1:</span>
+          <a href="/" class="inline-flex items-center gap-1.5 text-xs bg-white/10 hover:bg-white/20 text-white font-medium px-3 py-1.5 rounded transition-colors border border-white/20">
+            <span>📚</span> Lektion 1: Meetings & Vielredner
+          </a>
+        </div>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        KI und Job-Alltag: Welche Tätigkeiten wir streichen sollten
+      </h1>
+      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Der vollständige Leitartikel: Warum weder mehr Überstunden noch blind eingesetzte KI unsere Produktivität retten, solange wir den Unterschied zwischen Verantwortungsarbeit, Kollaboration und Reaktionsarbeit verkennen.
+      </p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex border-b border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-900/50 px-4 pt-3 overflow-x-auto gap-2 text-sm font-semibold">
+      <button onclick="switchTab('text-tab')" id="btn-text-tab" class="tab-btn px-4 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] flex items-center gap-2">
+        <span>📖</span> Der vollständige Artikel (10 Absätze)
+      </button>
+      <button onclick="switchTab('uebung1-tab')" id="btn-uebung1-tab" class="tab-btn px-4 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+        <span>❓</span> Übung 1: Verständnis
+      </button>
+      <button onclick="switchTab('uebung2-tab')" id="btn-uebung2-tab" class="tab-btn px-4 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+        <span>⚖️</span> Übung 2: Richtig / Falsch
+      </button>
+      <button onclick="switchTab('uebung3-tab')" id="btn-uebung3-tab" class="tab-btn px-4 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+        <span>✏️</span> Übung 3: Wortschatz
+      </button>
+      <button onclick="switchTab('uebung4-tab')" id="btn-uebung4-tab" class="tab-btn px-4 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-2">
+        <span>🔗</span> Übung 4: Kollokationen
+      </button>
+    </nav>
+
+    <!-- Tab 1: Full Text in 10 Paragraphs (Side by Side) -->
+    <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
+
+      <!-- Paragraph 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Das Gedankenexperiment: Zwei Stunden Arbeitszeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Haben Sie Lust auf ein radikales <span class="highlight-b2">Gedankenexperiment</span>? Hier ist eines: Wenn Sie in dieser gesamten Woche nur zwei Stunden Arbeitszeit <span class="highlight-b2">zur Verfügung hätten</span> – was würden Sie dann tun? Ein Meeting <span class="highlight-b2">einberufen</span>? <span class="highlight-b2">Wohl kaum!</span> Sie würden sich gewiss nicht in langatmige Abstimmungen vertiefen oder Präsentationen formatieren. Sie würden augenblicklich alle <span class="highlight-b2">Scheinarbeiten</span> abwerfen und sich auf den absolut wichtigsten Hebel <span class="highlight-b2">besinnen</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>das Gedankenexperiment, -e</strong> – мисловен експеримент</div>
+          <div>• <strong>zur Verfügung haben / stehen</strong>, stand, hat gestanden – намирам се на разположение</div>
+          <div>• <strong>einberufen</strong>, berief ein, hat einberufen – свиквам <em>(среща, съвещание)</em></div>
+          <div>• <strong>wohl kaum (Adv.)</strong> – едва ли, надали</div>
+          <div>• <strong>die Scheinarbeit, -en</strong> – привидна / измислена работа</div>
+          <div>• <strong>sich besinnen auf (+ Akk.)</strong>, besann sich, hat sich besonnen – фокусирам се върху същественото</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die politische Debatte über Mehrarbeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Doch die Realität in der aktuellen wirtschaftspolitischen Debatte sieht völlig anders aus. Konservative Spitzenpolitiker wie Bundeskanzler Friedrich Merz und Arbeitgebervertreter schlagen genau die entgegengesetzte Richtung ein: Deutschland müsse wieder mehr schuften, um die drohende <span class="highlight-b2">Stagnation zu überwinden</span>. Gefordert werden <span class="highlight-b2">Mehrarbeit</span>, der Verzicht auf Brückentage und das Zurückdrängen von Teilzeitmodellen. Der Glaube, dass schiere Stundenanzahl automatisch <span class="highlight-b2">Wohlstand sichert</span>, ist jedoch ein gefährlicher <span class="highlight-b2">Irrglaube</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>die Stagnation, -en</strong> – застой, стагнация</div>
+          <div>• <strong>überwinden</strong>, überwand, hat überwunden – преодолявам, превъзмогвам</div>
+          <div>• <strong>die Mehrarbeit (nur Sg.)</strong> – извънреден / допълнителен труд</div>
+          <div>• <strong>der Wohlstand (nur Sg.)</strong> – благосъстояние, просперитет</div>
+          <div>• <strong>der Irrglaube, -n</strong> – заблуда, дълбоко погрешно убеждение</div>
+          <div>• <strong>schuften</strong>, schuftete, hat geschuftet – бачкам здраво, пребивам се от работа</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Grenzen der Wissensarbeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Dieser Trugschluss beruht auf einem veralteten industriellen Denken. In der modernen <span class="highlight-b2">Wissensarbeit</span> lässt sich Leistung nicht linear <span class="highlight-b2">hochrechnen</span>. Wer zehn Stunden vor dem Bildschirm sitzt, produziert nicht automatisch bessere Konzepte als jemand nach sechs Stunden konzentrierter Arbeit. Die Beschäftigten in IT, Beratung und Verwaltung <span class="highlight-b2">stoßen längst an ihre Belastungsgrenzen</span>. Mehr Zeit im Büro führt nicht zu mehr Innovation, sondern nur zu chronischer <span class="highlight-b2">Erschöpfung</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>die Wissensarbeit (nur Sg.)</strong> – интелектуален труд, работа със знания</div>
+          <div>• <strong>hochrechnen</strong>, rechnete hoch, hat hochgerechnet – екстраполирам, пресмятам механично</div>
+          <div>• <strong>an seine Belastungsgrenze stoßen</strong>, stieß, ist gestoßen – достигам лимита на силите си</div>
+          <div>• <strong>die Erschöpfung, -en</strong> – изтощение, изнемога</div>
+          <div>• <strong>der Trugschluss, -:e</strong> – заблуда, погрешно заключение</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Der Milliarden-Hype um Künstliche Intelligenz</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Als vermeintlicher Ausweg wird nun Künstliche Intelligenz gefeiert. Konzerne investieren astronomische Summen in Lizenzen, Chatbots und Automatisierungstools. Vorstände <span class="highlight-b2">versprechen sich</span> von generativer KI gewaltige <span class="highlight-b2">Produktivitätssprünge</span>. Doch die Praxis ernüchtert: Die erhofften Effekte <span class="highlight-b2">bleiben vielerorts aus</span>. Die Technologie ist zwar hochentwickelt, aber sie löst nicht das grundlegende Strukturproblem, wie Arbeit in Unternehmen tatsächlich organisiert ist.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>sich versprechen von (+ Dat.)</strong>, versprach sich, hat sich versprochen – очаквам / надявам се на нещо от</div>
+          <div>• <strong>der Produktivitätssprung, -:e</strong> – рязък скок в производителността</div>
+          <div>• <strong>ausbleiben</strong>, blieb aus, ist ausgeblieben – не се осъществявам, липсвам</div>
+          <div>• <strong>ernüchtern</strong>, ernüchterte, hat ernüchtert – отрезвявам, свалям розовите очила</div>
+          <div>• <strong>vielerorts (Adv.)</strong> – на много места</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die drei Kategorien unserer täglichen Arbeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Um das Dilemma zu verstehen, schlägt Höltmann eine grundlegende Einteilung unserer Tätigkeiten in drei Bereiche vor: Erstens die eigentliche <span class="highlight-b2">Verantwortungsarbeit</span> – also die wertschöpfenden Kernaufgaben wie das Lösen von Kundenproblemen, Strategieentwicklung oder Systemarchitektur. Zweitens die <span class="highlight-b2">Kollaborationsarbeit</span>, die Meetings, Abstimmungen und Jour Fixes umfasst. Und drittens die <span class="highlight-b2">Reaktionsarbeit</span>, die aus spontanen Chat-Nachrichten, E-Mails und plötzlichen Störungen besteht.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>die Verantwortungsarbeit (nur Sg.)</strong> – същинска отговорна работа, създаваща директна стойност</div>
+          <div>• <strong>die Kollaborationsarbeit (nur Sg.)</strong> – дейност по съгласуване и срещи</div>
+          <div>• <strong>die Reaktionsarbeit (nur Sg.)</strong> – работа по реагиране на внезапни съобщения и пингове</div>
+          <div>• <strong>wertschöpfend (Adj.)</strong> – носещ реална стойност / полза</div>
+          <div>• <strong>die Einteilung, -en</strong> – разделение, класификация</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 6 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Kollaboration und Reaktion als Zeitfresser</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Das Kernproblem im heutigen Büroalltag ist die völlige Fehlgewichtung dieser drei Säulen. Die meiste Energie fließt längst nicht mehr in die fachliche Arbeit, sondern <span class="highlight-b2">versickert</span> in ständiger Kollaboration und hektischer Reaktion. Tage werden von unzähligen kurzen Status-Calls zerstückelt, während im Minutentakt Benachrichtigungen aufpoppen. Diese Dauerunterbrechung <span class="highlight-b2">lähmt</span> den Denkprozess und verhindert jegliche tiefe Konzentration.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>versickern</strong>, versickerte, ist versickert – попивам, изтичам безследно</div>
+          <div>• <strong>zerstückeln</strong>, zerstückelte, hat zerstückelt – разпокъсвам, нарязвам на парчета</div>
+          <div>• <strong>die Fehlgewichtung, -en</strong> – неправилно разпределение на тежестта</div>
+          <div>• <strong>lähmen</strong>, lähmte, hat gelähmt – парализирам, сковавам</div>
+          <div>• <strong>die Dauerunterbrechung, -en</strong> – постоянно прекъсване на работния процес</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 7 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Verdrängung der Verantwortungsarbeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Die verheerende Folge: Für die eigentliche <span class="highlight-b2">Verantwortungsarbeit</span> bleibt während der regulären Dienstzeit kaum noch Raum. Ingenieure, Projektleiter und Entwickler müssen ihre strategischen Aufgaben entweder an den Rand des Arbeitstages drängen oder in den Feierabend verschieben. So entsteht die paradoxe Situation, dass Menschen den ganzen Tag über pausenlos beschäftigt sind, am Abend jedoch feststellen müssen, dass das Wesentliche liegen geblieben ist.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>die Verdrängung, -en</strong> – изместване, изтласкване на заден план</div>
+          <div>• <strong>verheerend (Adj.)</strong> – опустошителен, пагубен</div>
+          <div>• <strong>an den Rand drängen</strong> – изтиквам в периферията</div>
+          <div>• <strong>liegen bleiben</strong>, blieb liegen, ist liegen geblieben – оставам несвършен / изоставен</div>
+          <div>• <strong>pausenlos (Adv./Adj.)</strong> – без прекъсване, непрекъснато</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 8 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Warum KI das Problem sogar verschärft („Busy Work“)</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Wenn nun künstliche Intelligenz auf dieses System trifft, löst sie das Problem nicht, sondern potenziert es. Weil KI auch die falsche Arbeit beschleunigt, entsteht im Gegenteil noch mehr sogenannte „Busy Work“. Wenn Mitarbeiter mit KI in Sekundenschnelle zehnseitige Berichte, überflüssige Präsentationen und Protokolle generieren, haben sie keinen <span class="highlight-b2">Nutzen gestiftet</span>. Denn all dieses Material will ja auch gelesen, geprüft und besprochen werden – von Menschen. Statt Entlastung entsteht ein automatisierter <span class="highlight-b2">Leerlauf</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>potenzieren</strong>, potenzierte, hat potenziert – увеличавам многократно, мултиплицирам</div>
+          <div>• <strong>der Leerlauf (nur Sg.)</strong> – работа на празен ход</div>
+          <div>• <strong>Nutzen stiften</strong>, stiftete, hat gestiftet – създавам / нося полза</div>
+          <div>• <strong>die Entlastung, -en</strong> – облекчение, отбременяване</div>
+          <div>• <strong>Busy Work (Anglizismus)</strong> – псевдозаетост, привидна работа без резултат</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 9 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Der blinde Fleck der Führungskräfte</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Dass Unternehmen diese Falle nicht erkennen, liegt am blinden Fleck des Managements. Viele Chefs fordern zwar Produktivität, haben aber keine Ahnung, wie zersplittert die Arbeitstage ihrer Teams sind. Aus Angst vor Kontrollverlust etablieren Führungskräfte immer neue Berichtsformate und Abstimmungsschleifen. Sie verwechseln Anwesenheit in Meetings mit Arbeitsleistung und merken nicht, dass ihre eigenen Kontrollmechanismen genau die Produktivität ersticken, die sie eigentlich steigern wollen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>der blinde Fleck, -e/-en</strong> – сляпо петно (нещо напълно пренебрегвано)</div>
+          <div>• <strong>zersplittert (Adj.)</strong> – разпокъсан, раздробен</div>
+          <div>• <strong>ersticken</strong>, erstickte, hat erstickt – задушавам, убивам в зародиш</div>
+          <div>• <strong>die Abstimmungsschleife, -n</strong> – безкраен цикъл от съгласувания</div>
+          <div>• <strong>der Kontrollverlust, -e</strong> – загуба на контрол</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 10 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Lösung: Radikales Streichen und Weglassen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Der wirkliche Hebel für mehr Produktivität liegt daher nicht in zusätzlicher Technologie, sondern in einem radikalen <span class="highlight-b2">Kulturwandel</span>. Wir müssen aufhören, Arbeitstage mit Ballast zu überfrachten. Führungskräfte und Teams müssen den Mut aufbringen, überflüssige Jour Fixes, ausufernde E-Mail-Ketten und Formalitäten konsequent zu <span class="highlight-b2">streichen</span>. Erst wenn wir lernen, das Unwichtige mutig <span class="highlight-b2">wegzulassen</span>, entsteht der notwendige Freiraum, in dem Mensch und Technologie ihren echten <span class="highlight-b2">Mehrwert entfalten</span> können.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник (Помощ от B1 към B2)</div>
+          <div>• <strong>der Kulturwandel, -</strong> – промяна в работната култура</div>
+          <div>• <strong>streichen</strong>, strich, hat gestrichen – зачерквам, отменям, съкращавам</div>
+          <div>• <strong>das Weglassen (nur Sg.)</strong> – съзнателно спестяване / пропускане</div>
+          <div>• <strong>den Mehrwert entfalten</strong> – разгръщам добавената стойност</div>
+          <div>• <strong>überfrachten</strong>, überfrachtete, hat überfrachtet – претоварвам, претрупвам</div>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <button onclick="switchTab('uebung1-tab')" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-7 py-2.5 rounded-xl font-bold text-sm shadow transition">
+          Към интерактивните упражнения ➔
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Tab 2: Übung 1 - Textverständnis -->
+    <div id="uebung1-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-4">
+        <span class="text-xs font-bold text-[#009ee3] uppercase tracking-wider">Übung 1</span>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Textverständnis: Was steht im Artikel?</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Wählen Sie für jede Frage die richtige Antwort aus.</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] transition" id="q1-card">
+          <p class="font-semibold text-sm sm:text-base mb-3 text-slate-800 dark:text-slate-100">
+            1. Welche drei Arbeitskategorien unterscheidet Inga Höltmann?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q1" value="a" class="w-4 h-4 text-[#009ee3]">
+              <span>a) Büroarbeit, Homeoffice und Dienstreisen.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q1" value="b" class="w-4 h-4 text-[#009ee3]">
+              <span>b) Verantwortungsarbeit, Kollaborationsarbeit und Reaktionsarbeit.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q1" value="c" class="w-4 h-4 text-[#009ee3]">
+              <span>c) Programmieren, Verkaufen und Buchhaltung.</span>
+            </label>
+          </div>
+          <div id="q1-feedback" class="mt-3 text-xs sm:text-sm font-medium hidden"></div>
+        </div>
+
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] transition" id="q2-card">
+          <p class="font-semibold text-sm sm:text-base mb-3 text-slate-800 dark:text-slate-100">
+            2. Warum kann KI laut Autorin zu noch mehr „Busy Work“ führen?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q2" value="a" class="w-4 h-4 text-[#009ee3]">
+              <span>a) Weil KI auch unnötige Berichte und Präsentationen beschleunigt, die Menschen dann lesen müssen.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q2" value="b" class="w-4 h-4 text-[#009ee3]">
+              <span>b) Weil KI-Tools zu teuer sind und das Budget für Personal kürzen.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q2" value="c" class="w-4 h-4 text-[#009ee3]">
+              <span>c) Weil KI nicht auf Laptops funktioniert.</span>
+            </label>
+          </div>
+          <div id="q2-feedback" class="mt-3 text-xs sm:text-sm font-medium hidden"></div>
+        </div>
+
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] transition" id="q3-card">
+          <p class="font-semibold text-sm sm:text-base mb-3 text-slate-800 dark:text-slate-100">
+            3. Was ist die wahre Lösung für das Produktivitätsproblem in Unternehmen?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q3" value="a" class="w-4 h-4 text-[#009ee3]">
+              <span>a) Mehr Überstunden leisten und Feiertage streichen.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q3" value="b" class="w-4 h-4 text-[#009ee3]">
+              <span>b) Überflüssige Aufgaben und Meetings radikal streichen und den Mut zum Weglassen haben.</span>
+            </label>
+            <label class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-white dark:hover:bg-slate-700/50 cursor-pointer border border-transparent">
+              <input type="radio" name="q3" value="c" class="w-4 h-4 text-[#009ee3]">
+              <span>c) Alle Mitarbeiter ausschließlich im Homeoffice arbeiten lassen.</span>
+            </label>
+          </div>
+          <div id="q3-feedback" class="mt-3 text-xs sm:text-sm font-medium hidden"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-3">
+        <button onclick="checkUebung1()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showSolution1()" class="border border-slate-300 dark:border-slate-600 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetUebung1()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab 3: Übung 2 - Richtig / Falsch -->
+    <div id="uebung2-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-4">
+        <span class="text-xs font-bold text-[#009ee3] uppercase tracking-wider">Übung 2</span>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Richtig oder Falsch?</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Entscheiden Sie anhand des Textes, ob die Aussagen zutreffen.</p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="rf1-row">
+          <p class="text-sm font-medium text-slate-800 dark:text-slate-100 flex-1">
+            1. In der modernen Wissensarbeit lässt sich die Leistung genauso mechanisch hochrechnen wie an einem Fabrikband.
+          </p>
+          <div class="flex items-center gap-4 text-sm font-semibold">
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf1" value="richtig" class="w-4 h-4 text-[#009ee3]"> Richtig
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf1" value="falsch" class="w-4 h-4 text-[#009ee3]"> Falsch
+            </label>
+          </div>
+        </div>
+        <div id="rf1-feedback" class="text-xs px-2 hidden"></div>
+
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="rf2-row">
+          <p class="text-sm font-medium text-slate-800 dark:text-slate-100 flex-1">
+            2. Weil Kollaborations- und Reaktionsarbeit den Tag füllen, wird die eigentliche Verantwortungsarbeit oft in den Feierabend verschoben.
+          </p>
+          <div class="flex items-center gap-4 text-sm font-semibold">
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf2" value="richtig" class="w-4 h-4 text-[#009ee3]"> Richtig
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf2" value="falsch" class="w-4 h-4 text-[#009ee3]"> Falsch
+            </label>
+          </div>
+        </div>
+        <div id="rf2-feedback" class="text-xs px-2 hidden"></div>
+
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="rf3-row">
+          <p class="text-sm font-medium text-slate-800 dark:text-slate-100 flex-1">
+            3. Der blinde Fleck vieler Führungskräfte besteht darin, dass sie Anwesenheit in Meetings mit echter Arbeitsleistung verwechseln.
+          </p>
+          <div class="flex items-center gap-4 text-sm font-semibold">
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf3" value="richtig" class="w-4 h-4 text-[#009ee3]"> Richtig
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf3" value="falsch" class="w-4 h-4 text-[#009ee3]"> Falsch
+            </label>
+          </div>
+        </div>
+        <div id="rf3-feedback" class="text-xs px-2 hidden"></div>
+
+        <div class="p-4 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex flex-col sm:flex-row sm:items-center justify-between gap-3" id="rf4-row">
+          <p class="text-sm font-medium text-slate-800 dark:text-slate-100 flex-1">
+            4. Wenn man nur zwei Stunden Zeit in der Woche hätte, würde man laut Höltmann sofort ein großes Meeting einberufen.
+          </p>
+          <div class="flex items-center gap-4 text-sm font-semibold">
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf4" value="richtig" class="w-4 h-4 text-[#009ee3]"> Richtig
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer">
+              <input type="radio" name="rf4" value="falsch" class="w-4 h-4 text-[#009ee3]"> Falsch
+            </label>
+          </div>
+        </div>
+        <div id="rf4-feedback" class="text-xs px-2 hidden"></div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-3">
+        <button onclick="checkUebung2()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showSolution2()" class="border border-slate-300 dark:border-slate-600 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetUebung2()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab 4: Übung 3 - Lückentext -->
+    <div id="uebung3-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-4">
+        <span class="text-xs font-bold text-[#009ee3] uppercase tracking-wider">Übung 3</span>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Wortschatz: B2-Vokabeln einsetzen</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Wählen Sie das passende Wort aus den Dropdown-Menüs aus.</p>
+      </div>
+
+      <div class="p-5 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] space-y-4 text-sm sm:text-base leading-relaxed">
+        <p>
+          1. Die Hoffnung, dass Deutschland die wirtschaftliche Krise nur durch Mehrarbeit 
+          <select id="gap1" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white">
+            <option value="">-- wählen --</option>
+            <option value="überwinden">überwinden</option>
+            <option value="einberufen">einberufen</option>
+            <option value="versickern">versickern</option>
+          </select> 
+          kann, ist laut der Autorin ein fataler Irrglaube.
+        </p>
+
+        <p>
+          2. Wertvolle Arbeitszeit darf nicht in endlosen Abstimmungsrunden 
+          <select id="gap2" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white">
+            <option value="">-- wählen --</option>
+            <option value="versickern">versickern</option>
+            <option value="überfrachten">überfrachten</option>
+            <option value="stiften">stiften</option>
+          </select>, 
+          sondern muss für die eigentliche Verantwortungsarbeit genutzt werden.
+        </p>
+
+        <p>
+          3. Wenn man nur zwei Stunden Zeit hätte, würde man gewiss kein Meeting 
+          <select id="gap3" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white">
+            <option value="">-- wählen --</option>
+            <option value="einberufen">einberufen</option>
+            <option value="überwinden">überwinden</option>
+            <option value="abwerfen">abwerfen</option>
+          </select>.
+        </p>
+
+        <p>
+          4. Um die Produktivität nachhaltig zu steigern, müssen Unternehmen den Mut aufbringen, bürokratischen 
+          <select id="gap4" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white">
+            <option value="">-- wählen --</option>
+            <option value="Ballast">Ballast</option>
+            <option value="Leerlauf">Leerlauf</option>
+            <option value="Wohlstand">Wohlstand</option>
+          </select> 
+          abzuwerfen.
+        </p>
+
+        <p>
+          5. Wahre Produktivität entsteht durch den Mut zum konsequenten 
+          <select id="gap5" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white">
+            <option value="">-- wählen --</option>
+            <option value="Weglassen">Weglassen</option>
+            <option value="Überstunden">Überstunden</option>
+            <option value="Generieren">Generieren</option>
+          </select> 
+          unnötiger Aufgaben.
+        </p>
+      </div>
+
+      <div id="gap-feedback" class="text-sm font-semibold hidden p-3 rounded-lg"></div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-3">
+        <button onclick="checkUebung3()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showSolution3()" class="border border-slate-300 dark:border-slate-600 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetUebung3()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab 5: Übung 4 - Kollokationen -->
+    <div id="uebung4-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-4">
+        <span class="text-xs font-bold text-[#009ee3] uppercase tracking-wider">Übung 4</span>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Feste Wortverbindungen (Kollokationen)</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400">Welches Verb passt in die Kombination? Ordnen Sie zu.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">1. zur Verfügung ...</span>
+          <select id="nv1" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="stehen">stehen</option>
+            <option value="abwerfen">abwerfen</option>
+            <option value="einberufen">einberufen</option>
+            <option value="stiften">stiften</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">2. ein Meeting ...</span>
+          <select id="nv2" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="einberufen">einberufen</option>
+            <option value="stehen">stehen</option>
+            <option value="stiften">stiften</option>
+            <option value="abwerfen">abwerfen</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">3. Ballast ...</span>
+          <select id="nv3" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="abwerfen">abwerfen</option>
+            <option value="stiften">stiften</option>
+            <option value="stehen">stehen</option>
+            <option value="leisten">leisten</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">4. Nutzen ...</span>
+          <select id="nv4" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="stiften">stiften</option>
+            <option value="stehen">stehen</option>
+            <option value="einberufen">einberufen</option>
+            <option value="stoßen">stoßen</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">5. an seine Grenzen ...</span>
+          <select id="nv5" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="stoßen">stoßen</option>
+            <option value="stiften">stiften</option>
+            <option value="stehen">stehen</option>
+            <option value="abwerfen">abwerfen</option>
+          </select>
+        </div>
+
+        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl border border-[var(--border,#e2e8f0)] flex items-center justify-between">
+          <span class="font-medium text-sm">6. Überstunden ...</span>
+          <select id="nv6" class="border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700">
+            <option value="">-- Verb --</option>
+            <option value="leisten">leisten</option>
+            <option value="stiften">stiften</option>
+            <option value="stehen">stehen</option>
+            <option value="einberufen">einberufen</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="nv-feedback" class="text-sm font-semibold hidden p-3 rounded-lg"></div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-3">
+        <button onclick="checkUebung4()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showSolution4()" class="border border-slate-300 dark:border-slate-600 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetUebung4()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+    </div>
+
+    <!-- Overall Footer -->
+    <footer class="bg-slate-100 dark:bg-slate-900 p-5 text-center text-xs text-slate-500 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex flex-wrap justify-center gap-4 mb-2 font-semibold">
+        <a href="/" class="text-[#009ee3] hover:underline">Lektion 1: Meetings & Vielredner</a>
+        <span>•</span>
+        <a href="/ki-produktivitaet.html" class="text-[#009ee3] hover:underline">Lektion 2: KI & Produktivität</a>
+      </div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B2) • Gehostet auf <strong>deutsch.bbozhanov.com</strong></p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+        btn.classList.add('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+      });
+
+      const activeContent = document.getElementById(tabId);
+      const activeBtn = document.getElementById('btn-' + tabId);
+
+      if (activeContent) activeContent.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+        activeBtn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+      }
+    }
+
+    // Übung 1
+    function checkUebung1() {
+      const answers = { q1: 'b', q2: 'a', q3: 'b' };
+      const explanations = {
+        q1: 'Правилно! b) Инга Хьолтман въвежда именно трите стълба: Verantwortungsarbeit, Kollaborationsarbeit и Reaktionsarbeit.',
+        q2: 'Правилно! a) KI ускорява и генерира безброй доклади и презентации, които след това хората трябва да четат и обсъждат, създавайки още повече псевдозаетост (Busy Work).',
+        q3: 'Правилно! b) Истинското решение е радикалното отпадане (Weglassen) на излишните срещи и процедури, за да се освободи време за отговорната същинска работа.'
+      };
+
+      for (let q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        const feedbackEl = document.getElementById(`${q}-feedback`);
+        const card = document.getElementById(`${q}-card`);
+
+        feedbackEl.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+        if (!selected) {
+          feedbackEl.textContent = 'Моля, посочете отговор.';
+          feedbackEl.classList.add('text-amber-600');
+          continue;
+        }
+
+        if (selected.value === answers[q]) {
+          feedbackEl.innerHTML = `✅ ${explanations[q]}`;
+          feedbackEl.classList.add('text-emerald-600');
+          card.classList.add('border-emerald-400');
+          card.classList.remove('border-rose-400');
+        } else {
+          feedbackEl.innerHTML = `❌ Грешен отговор. Опитайте отново!`;
+          feedbackEl.classList.add('text-rose-600');
+          card.classList.add('border-rose-400');
+          card.classList.remove('border-emerald-400');
+        }
+      }
+    }
+
+    function showSolution1() {
+      document.querySelector('input[name="q1"][value="b"]').checked = true;
+      document.querySelector('input[name="q2"][value="a"]').checked = true;
+      document.querySelector('input[name="q3"][value="b"]').checked = true;
+      checkUebung1();
+    }
+
+    function resetUebung1() {
+      ['q1', 'q2', 'q3'].forEach(q => {
+        document.querySelectorAll(`input[name="${q}"]`).forEach(i => i.checked = false);
+        const fb = document.getElementById(`${q}-feedback`);
+        fb.classList.add('hidden');
+        document.getElementById(`${q}-card`).classList.remove('border-emerald-400', 'border-rose-400');
+      });
+    }
+
+    // Übung 2
+    function checkUebung2() {
+      const answers = {
+        rf1: { val: 'falsch', expl: 'В интелектуалния труд идеите и иновациите не могат да се пресмятат линейно като на конвейер.' },
+        rf2: { val: 'richtig', expl: 'Точно това е парадоксът: служителите са заети цял ден с обаждания и мейли, а същинската им работа остава за вечерта.' },
+        rf3: { val: 'richtig', expl: 'Мениджърите често погрешно смятат, че присъствието в срещи е равно на реална продуктивност.' },
+        rf4: { val: 'falsch', expl: 'Авторката казва точно обратното: при дефицит на време никой не би насрочил среща (Wohl kaum!).' }
+      };
+
+      for (let k in answers) {
+        const selected = document.querySelector(`input[name="${k}"]:checked`);
+        const fb = document.getElementById(`${k}-feedback`);
+        const row = document.getElementById(`${k}-row`);
+
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+        if (!selected) {
+          fb.textContent = 'Моля, изберете отговор.';
+          fb.classList.add('text-amber-600');
+          continue;
+        }
+
+        if (selected.value === answers[k].val) {
+          fb.innerHTML = `✅ Вярно! ${answers[k].expl}`;
+          fb.classList.add('text-emerald-600');
+          row.classList.add('border-emerald-400');
+          row.classList.remove('border-rose-400');
+        } else {
+          fb.innerHTML = `❌ Грешно. ${answers[k].expl}`;
+          fb.classList.add('text-rose-600');
+          row.classList.add('border-rose-400');
+          row.classList.remove('border-emerald-400');
+        }
+      }
+    }
+
+    function showSolution2() {
+      document.querySelector('input[name="rf1"][value="falsch"]').checked = true;
+      document.querySelector('input[name="rf2"][value="richtig"]').checked = true;
+      document.querySelector('input[name="rf3"][value="richtig"]').checked = true;
+      document.querySelector('input[name="rf4"][value="falsch"]').checked = true;
+      checkUebung2();
+    }
+
+    function resetUebung2() {
+      ['rf1', 'rf2', 'rf3', 'rf4'].forEach(k => {
+        document.querySelectorAll(`input[name="${k}"]`).forEach(i => i.checked = false);
+        const fb = document.getElementById(`${k}-feedback`);
+        fb.classList.add('hidden');
+        document.getElementById(`${k}-row`).classList.remove('border-emerald-400', 'border-rose-400');
+      });
+    }
+
+    // Übung 3
+    function checkUebung3() {
+      const answers = {
+        gap1: 'überwinden',
+        gap2: 'versickern',
+        gap3: 'einberufen',
+        gap4: 'Ballast',
+        gap5: 'Weglassen'
+      };
+
+      let correct = 0;
+      let total = 5;
+
+      for (let g in answers) {
+        const select = document.getElementById(g);
+        if (select.value === answers[g]) {
+          correct++;
+          select.classList.remove('border-rose-500', 'bg-rose-50');
+          select.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/40');
+        } else {
+          select.classList.remove('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/40');
+          select.classList.add('border-rose-500', 'bg-rose-50', 'dark:bg-rose-950/40');
+        }
+      }
+
+      const fb = document.getElementById('gap-feedback');
+      fb.classList.remove('hidden');
+      if (correct === total) {
+        fb.textContent = `🎉 Отлично! 5 от 5 верни отговора!`;
+        fb.className = 'text-sm font-semibold p-3 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300';
+      } else {
+        fb.textContent = `Резултат: ${correct} от ${total} верни. Проверете червените полета.`;
+        fb.className = 'text-sm font-semibold p-3 rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300';
+      }
+    }
+
+    function showSolution3() {
+      document.getElementById('gap1').value = 'überwinden';
+      document.getElementById('gap2').value = 'versickern';
+      document.getElementById('gap3').value = 'einberufen';
+      document.getElementById('gap4').value = 'Ballast';
+      document.getElementById('gap5').value = 'Weglassen';
+      checkUebung3();
+    }
+
+    function resetUebung3() {
+      ['gap1', 'gap2', 'gap3', 'gap4', 'gap5'].forEach(g => {
+        const el = document.getElementById(g);
+        el.value = '';
+        el.className = 'border border-slate-300 dark:border-slate-600 rounded px-2 py-1 bg-white dark:bg-slate-700 font-semibold text-slate-800 dark:text-white';
+      });
+      document.getElementById('gap-feedback').classList.add('hidden');
+    }
+
+    // Übung 4
+    function checkUebung4() {
+      const answers = {
+        nv1: 'stehen',
+        nv2: 'einberufen',
+        nv3: 'abwerfen',
+        nv4: 'stiften',
+        nv5: 'stoßen',
+        nv6: 'leisten'
+      };
+
+      let correct = 0;
+      let total = 6;
+
+      for (let k in answers) {
+        const sel = document.getElementById(k);
+        if (sel.value === answers[k]) {
+          correct++;
+          sel.classList.remove('border-rose-500');
+          sel.classList.add('border-emerald-500', 'bg-emerald-50', 'dark:bg-emerald-950/40');
+        } else {
+          sel.classList.remove('border-emerald-500');
+          sel.classList.add('border-rose-500', 'bg-rose-50', 'dark:bg-rose-950/40');
+        }
+      }
+
+      const fb = document.getElementById('nv-feedback');
+      fb.classList.remove('hidden');
+      if (correct === total) {
+        fb.textContent = `👏 Браво! Всичките 6 устойчиви словосъчетания са правилни!`;
+        fb.className = 'text-sm font-semibold p-3 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300';
+      } else {
+        fb.textContent = `Резултат: ${correct} от ${total} верни. Прегледайте грешните съчетания.`;
+        fb.className = 'text-sm font-semibold p-3 rounded-lg bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300';
+      }
+    }
+
+    function showSolution4() {
+      document.getElementById('nv1').value = 'stehen';
+      document.getElementById('nv2').value = 'einberufen';
+      document.getElementById('nv3').value = 'abwerfen';
+      document.getElementById('nv4').value = 'stiften';
+      document.getElementById('nv5').value = 'stoßen';
+      document.getElementById('nv6').value = 'leisten';
+      checkUebung4();
+    }
+
+    function resetUebung4() {
+      ['nv1', 'nv2', 'nv3', 'nv4', 'nv5', 'nv6'].forEach(k => {
+        const sel = document.getElementById(k);
+        sel.value = '';
+        sel.className = 'border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-sm bg-white dark:bg-slate-700';
+      });
+      document.getElementById('nv-feedback').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
