@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 1: Kommunikation im Meeting – Endlose Wortbeiträge stoppen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight-b1 {
+      font-weight: 600;
+      color: #0284c7;
+      border-bottom: 2px dotted #0284c7;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .highlight-b1:hover {
+      background-color: rgba(2, 132, 199, 0.12);
+    }
+    .word-chip {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .word-chip:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background,#f8fafc)] text-[var(--foreground,#0f172a)] antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-[var(--card,#ffffff)] border border-[var(--border,#e2e8f0)] rounded-2xl shadow-xl overflow-hidden">
+    
+    <!-- Header with Lesson Switcher -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-[#009ee3]">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#009ee3] text-white text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">Lektion 1</span>
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B1+ (Klar & Einfach) • Wortschatz: B1 ➔ B1+ Brücke</span>
+          <span class="text-xs text-blue-200">Karriere & Berufsalltag</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-blue-300">Zu Lektion 2:</span>
+          <a href="/ki-produktivitaet.html" class="inline-flex items-center gap-1.5 text-xs bg-white/10 hover:bg-white/20 text-white font-medium px-3 py-1.5 rounded transition-colors border border-white/20">
+            <span>📚</span> Lektion 2: KI & Produktivität
+          </a>
+        </div>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        Hilfe, mein Kollege zerredet mit endlosen Wortbeiträgen jedes Meeting
+      </h1>
+      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Freiwillige KI-Initiativen, endlose Monologe und schweigende Kollegen: Wie steuert man Meetings professionell, ohne kritische Stimmen abzuwürgen? (Vereinfacht auf Niveau B1+).
+      </p>
+      <div class="mt-2 text-xs text-blue-200">
+        Textgrundlage: <strong>DER SPIEGEL</strong> (Tipps vom Karrierecoach Dr. Bernd Slaghuis)
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="flex border-b border-[var(--border,#e2e8f0)] bg-slate-50 dark:bg-slate-900/50 px-3 pt-3 overflow-x-auto gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+      <button onclick="switchTab('text-tab')" id="btn-text-tab" class="tab-btn px-3 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] flex items-center gap-1.5 shrink-0">
+        <span>📖</span> Text & B1+ Glossar (10 Absätze)
+      </button>
+      <button onclick="switchTab('redemittel-tab')" id="btn-redemittel-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 shrink-0">
+        <span>🗣️</span> Redemittel-Training (Business)
+      </button>
+      <button onclick="switchTab('satzbau-tab')" id="btn-satzbau-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 shrink-0">
+        <span>🧩</span> Satzbau-Puzzle (Wortfolge)
+      </button>
+      <button onclick="switchTab('praep-tab')" id="btn-praep-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 shrink-0">
+        <span>🎯</span> Präpositionen & Kasus
+      </button>
+      <button onclick="switchTab('upgrader-tab')" id="btn-upgrader-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 shrink-0">
+        <span>🔄</span> B1 ➔ B1+ Upgrader
+      </button>
+      <button onclick="switchTab('quiz-tab')" id="btn-quiz-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white flex items-center gap-1.5 shrink-0">
+        <span>📝</span> Verständnis-Quiz
+      </button>
+    </nav>
+
+    <!-- TAB 1: Full Text with Side-by-Side B1+ Glossary -->
+    <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
+
+      <!-- Paragraph 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Situation: Ein Kollege bremst das Meeting aus</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Martina arbeitet in einem großen Unternehmen. Sie hat ein neues, regelmäßiges Treffen <span class="highlight-b1">ins Leben gerufen</span>. Alle drei Wochen treffen sich Kolleginnen und Kollegen aus verschiedenen Teams, um über künstliche Intelligenz (KI) zu sprechen. Die Teilnahme ist <span class="highlight-b1">freiwillig</span> und am Anfang war das Interesse riesig. Doch seit kurzer Zeit ist ein neuer Kollege dabei. Er <span class="highlight-b1">steht</span> dem Thema KI sehr <span class="highlight-b1">skeptisch gegenüber</span>. Bei jedem Treffen äußert er lange <span class="highlight-b1">Bedenken</span>, vor allem zum Datenschutz. Er redet so viel, dass für die eigentliche <span class="highlight-b1">Tagesordnung</span> kaum noch Zeit bleibt. Martina möchte ihn nicht <span class="highlight-b1">ausschließen</span>, aber die Gruppe kommt einfach nicht mehr <span class="highlight-b1">voran</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>ins Leben rufen</strong>, rief, hat gerufen – създавам, стартирам <em>(инициатива)</em></div>
+          <div>• <strong>freiwillig (Adj.)</strong> – доброволен, по желание</div>
+          <div>• <strong>etw./jmdm. skeptisch gegenüberstehen</strong> – отнасям се скептично към нещо</div>
+          <div>• <strong>das Bedenken, -</strong> – опасение, резерва, притеснение</div>
+          <div>• <strong>die Tagesordnung, -en</strong> – дневен ред <em>(Agenda)</em></div>
+          <div>• <strong>ausschließen</strong>, schloss aus, hat ausgeschlossen – изключвам, изолирам</div>
+          <div>• <strong>vorankommen</strong>, kam voran, ist vorangekommen – напредвам, имам прогрес</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Grundfrage: Wie wichtig ist das Thema wirklich?</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Karriereberater Bernd Slaghuis findet Martinas Initiative gut. Aber er stellt eine wichtige Frage: Warum ist dieses Meeting eigentlich freiwillig? In der heutigen Zeit sollte das Thema KI für die <span class="highlight-b1">Geschäftsführung</span> eine hohe <span class="highlight-b1">Priorität</span> haben. Es müsste ganz oben auf der Liste stehen. Slaghuis <span class="highlight-b1">vermutet</span>: Vielleicht ist gar nicht der schwierige Kollege das Hauptproblem, sondern die <span class="highlight-b1">fehlende Klarheit</span> im Unternehmen. Wenn niemand genau weiß, welche <span class="highlight-b1">Bedeutung</span> KI für die Firma hat, entstehen schnell Unsicherheiten und endlose Diskussionen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>die Geschäftsführung, -en</strong> – ръководство, мениджмънт</div>
+          <div>• <strong>die Priorität, -en</strong> – приоритет, първостепенно значение</div>
+          <div>• <strong>die Klarheit (nur Sg.)</strong> – яснота, категоричност</div>
+          <div>• <strong>die Bedeutung, -en</strong> – значение, важност</div>
+          <div>• <strong>vermuten</strong>, vermutete, hat vermutet – предполагам, допускам</div>
+          <div>• <strong>die Unsicherheit, -en</strong> – несигурност, колебание</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Skepsis ist nützlich und zwingt zur Klärung</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Natürlich ist es nervig, wenn ein Teilnehmer die gute Stimmung bremst. Doch Slaghuis betont: Wo alle Menschen im Raum nur <span class="highlight-b1">nicken</span> und zustimmen, denkt selten jemand wirklich klug nach. Kritische Fragen und Skepsis sind zwar oft <span class="highlight-b1">unbequem</span>, aber sie haben eine wichtige Funktion: Sie <span class="highlight-b1">zwingen zur Klärung</span>. Die Einwände des Kollegen sind kein reines <span class="highlight-b1">Störgeräusch</span>, sondern sie zeigen, wo es dem Team noch an guten Argumenten und klaren Plänen fehlt.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>nicken</strong>, nickte, hat genickt – кимам с глава <em>(в знак на съгласие)</em></div>
+          <div>• <strong>unbequem (Adj.)</strong> – неудобен, дискомфортен</div>
+          <div>• <strong>zwingen zu (+ Dat.)</strong>, zwang, hat gezwungen – принуждавам към</div>
+          <div>• <strong>die Klärung, -en</strong> – изясняване, уточнение</div>
+          <div>• <strong>das Störgeräusch, -e</strong> – смущаващ шум, страничен дразнител</div>
+          <div>• <strong>der Einwand, ¨-e</strong> – възражение, забележка</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Die Endlosschleife: Praktische Nutzung oder Erlaubnis?</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Vor allem beim Thema KI zeigt sich schnell ein typisches Problem: Spricht das Team schon über <span class="highlight-b1">konkrete Lösungen</span> für die tägliche Arbeit? Oder diskutiert man immer noch über die <span class="highlight-b1">grundsätzliche Erlaubnis</span>? Die Frage lautet oft: »Wie nutzen wir KI am besten?« gegen »Dürfen wir das überhaupt benutzen?«. Wenn sich eine Diskussion ständig im Kreis dreht, <span class="highlight-b1">hängt das Meeting in einer Schleife fest</span>. Dem Team fehlt dann ein gemeinsamer <span class="highlight-b1">Ausgangspunkt</span>. Die Kritik zeigt deutlich: Die Spielregeln für die Arbeit mit KI sind im Unternehmen noch nicht geklärt.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>die Lösung, -en</strong> – практическо решение</div>
+          <div>• <strong>die Erlaubnis, -se</strong> – разрешение, позволение</div>
+          <div>• <strong>in einer Schleife festhängen</strong>, hing fest, hat festgehangen – зациклям, въртя се в кръг</div>
+          <div>• <strong>der Ausgangspunkt, -e</strong> – изходна точка, начална позиция</div>
+          <div>• <strong>sich im Kreis drehen</strong>, drehte, hat gedreht – въртя се в омагьосан кръг</div>
+          <div>• <strong>deutlich (Adj./Adv.)</strong> – ясен, открит, категоричен</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Das zweischneidige Signal der Freiwilligkeit</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Wenn ein Projekt für eine Firma wirklich wichtig ist, überlässt man es selten der reinen Freiwilligkeit. Denn das Wort »freiwillig« sendet immer auch ein Signal: »Man kann mitmachen, aber man muss nicht.« Die Teilnehmer kommen deshalb aus ganz unterschiedlichen Gründen: Die einen sind neugierig, andere kommen aus <span class="highlight-b1">Pflichtgefühl</span>, manche aus Langeweile – und der Kollege eben aus Skepsis. Wenn das Ziel nicht klar ist, weiß niemand: Ist dieses Treffen nur ein nettes <span class="highlight-b1">Kaffeekränzchen</span> zum Plaudern oder eine echte <span class="highlight-b1">Arbeitsgruppe</span> mit Ergebnissen?
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>das Pflichtgefühl, -e</strong> – чувство за дълг/отговорност</div>
+          <div>• <strong>das Kaffeekränzchen, -</strong> – спявка на кафе, разговори без ясна цел</div>
+          <div>• <strong>die Arbeitsgruppe, -n</strong> – работна група, екип по задача</div>
+          <div>• <strong>plaudern</strong>, plauderte, hat geplaudert – бъбря, разговарям свободно</div>
+          <div>• <strong>das Ergebnis, -se</strong> – резултат, постижение</div>
+          <div>• <strong>das Signal, -e</strong> – сигнал, послание</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 6 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Freiwillig heißt nicht ohne Führung</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Manche Menschen glauben: Weil die Teilnahme freiwillig ist, darf niemand <span class="highlight-b1">die Führung übernehmen</span>. Das ist ein großer Irrtum! Auch wenn jeder freiwillig kommt, braucht das Meeting einen klaren <span class="highlight-b1">Ablauf</span>. Martina hat den Raum organisiert. Deshalb ist sie nicht nur die freundliche Gastgeberin, sondern sie hat auch die <span class="highlight-b1">Verantwortung für den Rahmen</span>. Wenn ein Teilnehmer zu lange redet und diesen Rahmen <span class="highlight-b1">sprengt</span>, darf und muss Martina freundlich, aber <span class="highlight-b1">entschlossen eingreifen</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>die Führung übernehmen</strong>, übernahm, hat übernommen – поемам ръководство</div>
+          <div>• <strong>der Ablauf, ¨-e</strong> – протичане, график, ред</div>
+          <div>• <strong>die Verantwortung, -en</strong> – отговорност</div>
+          <div>• <strong>den Rahmen sprengen</strong>, sprengte, hat gesprengt – излизам извън рамките / лимита</div>
+          <div>• <strong>entschlossen (Adj./Adv.)</strong> – решителен, твърд</div>
+          <div>• <strong>eingreifen</strong>, griff ein, hat eingegriffen – намесвам се, вземам мерки</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 7 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Das Paradoxon: Alle schweigen, obwohl alle genervt sind</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Martina muss diese Aufgabe aber nicht ganz allein lösen. In Meetings gibt es oft ein seltsames Verhalten: Fast alle im Raum sind innerlich <span class="highlight-b1">genervt</span> und verdrehen die Augen. Aber niemand traut sich, den Dauerredner zu stoppen. Slaghuis rät Martina: <span class="highlight-b1">Hol die Gruppe ins Boot!</span> Sie kann offen in die Runde fragen: »Wie seht ihr das bisher? Kommen wir gut voran?«. Oder sie bittet gezielt Kolleginnen und Kollegen, die bisher still waren, ihre eigene Meinung <span class="highlight-b1">einzubringen</span>. So wird die Dominanz des Vielredners gebrochen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>genervt sein (von + Dat.)</strong> – изнервен/ядосан съм (от нещо)</div>
+          <div>• <strong>sich trauen</strong>, traute sich, hat sich getraut – осмелявам се, престрашавам се</div>
+          <div>• <strong>jmdn. ins Boot holen</strong>, holte, hat geholt – привличам за съюзник / активирам групата</div>
+          <div>• <strong>die Meinung, -en</strong> – мнение, становище</div>
+          <div>• <strong>einbringen (Meinung/Idee)</strong>, brachte ein, hat eingebracht – изказвам, внасям (мнение)</div>
+          <div>• <strong>die Dominanz (nur Sg.)</strong> – доминация, господство в разговора</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 8 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Klare Spielregeln und feste Rollen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Konflikte lassen sich am besten vermeiden, wenn das Team vorher <span class="highlight-b1">gemeinsame Spielregeln vereinbart</span>. Wie lange darf ein einzelner Beitrag dauern? Wann beenden wir eine Diskussion? Wer leitet das Treffen und achtet auf den <span class="highlight-b1">roten Faden</span> und auf die Zeit? Wenn diese Regeln für alle transparent sind, fühlt sich niemand persönlich angegriffen. Es gibt keinen Streit, sondern eine professionelle Zusammenarbeit. Und für Martina ist das eine große <span class="highlight-b1">Entlastung</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>Spielregeln vereinbaren</strong>, vereinbarte, hat vereinbart – договарям общи правила</div>
+          <div>• <strong>der Beitrag, ¨-e</strong> – изказване, принос в дискусия</div>
+          <div>• <strong>der rote Faden (nur Sg.)</strong> – червената нишка, водещата идея / фокус</div>
+          <div>• <strong>transparent (Adj.)</strong> – ясен, открит за всички</div>
+          <div>• <strong>der Streit, -e</strong> – спор, караница</div>
+          <div>• <strong>die Entlastung, -en</strong> – облекчение, отмяна от товар</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 9 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Ein Gespräch unter vier Augen suchen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Statt sich nur zu ärgern, sollte man versuchen, das Verhalten des Kollegen zu verstehen. Warum redet er so viel? Hat er echte Sorgen und möchte die Technik besser verstehen? Oder sucht er nur Aufmerksamkeit? Slaghuis empfiehlt ein ruhiges <span class="highlight-b1">Gespräch unter vier Augen</span>. Oft merken Vielredner gar nicht, wie anstrengend sie für die anderen sind. Wenn Martina ihm in einem privaten Gespräch freundlich <span class="highlight-b1">Feedback gibt</span> und ihre eigene Sichtweise <span class="highlight-b1">spiegelt</span>, versteht er das Problem meistens viel besser als vor der gesamten Gruppe.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>das Gespräch unter vier Augen, -</strong> – разговор на четири очи (насаме)</div>
+          <div>• <strong>die Sorge, -n</strong> – грижа, безпокойство</div>
+          <div>• <strong>die Aufmerksamkeit (nur Sg.)</strong> – внимание</div>
+          <div>• <strong>Feedback geben</strong>, gab, hat gegeben – давам обратна връзка</div>
+          <div>• <strong>das Verhalten spiegeln</strong>, spiegelte, hat gespiegelt – отразявам поведението (показвам как изглежда отстрани)</div>
+          <div>• <strong>die Sichtweise, -n</strong> – гледна точка, поглед върху нещата</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 10 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-[var(--border,#e2e8f0)] bg-white dark:bg-slate-800/40 shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-[var(--border,#e2e8f0)] pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span>
+            <h3 class="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Themen parken und ein klarer Auftrag</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-200">
+            Gute Strukturen helfen viel mehr als Vorwürfe. Martina sollte freie Ideen und strenge Diskussionen trennen. Wenn ein Thema zu speziell wird oder zu lange dauert, kann man es <span class="highlight-b1">auf einer Liste parken</span> und später besprechen. Die Gruppe kann auch ein einfaches Handzeichen vereinbaren, wenn jemand zu lange spricht. Und ganz wichtig: Wenn die Moderatorin nicht unterbricht, ist das auch eine Entscheidung! Erst wenn die Gruppe von ihren Chefs einen <span class="highlight-b1">klaren Auftrag</span> bekommt, wird aus einer gemütlichen Plauderrunde ein echtes Projekt mit <span class="highlight-b1">messbarem Erfolg</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70 dark:border-slate-700">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div>• <strong>der Vorwurf, ¨-e</strong> – укор, обвинение</div>
+          <div>• <strong>ein Thema parken</strong>, parkte, hat geparkt – оставям тема за по-късно (паркирам тема)</div>
+          <div>• <strong>unterbrechen</strong>, unterbrach, hat unterbrochen – прекъсвам <em>(някого, докато говори)</em></div>
+          <div>• <strong>der Auftrag, ¨-e</strong> – възлагане, официална задача</div>
+          <div>• <strong>die Plauderrunde, -n</strong> – сладка раздумка, среща без конкретна цел</div>
+          <div>• <strong>der messbare Erfolg, -e</strong> – измерим успех</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: Redemittel-Training (Business Scenarios) -->
+    <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>🗣️</span> Redemittel für den Berufsalltag: Souverän moderieren
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede reale Situation im Berufsalltag die professionellste und diplomatischste deutsche Formulierung.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold rounded">Szenario 1: Die Parkplatz-Methode</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            Ein Kollege schweift bei einer agilen Planungsrunde komplett ab und diskutiert über rechtliche Spezialfälle, die heute nicht entschieden werden können. Wie greifen Sie ein?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Hören Sie bitte sofort auf, das interessiert hier niemanden und stiehlt unsere Zeit.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Das ist ein wichtiger Detailpunkt. Um den heutigen Fokus nicht zu verlieren, setze ich das Thema auf unseren ‚Parkplatz‘ für einen separaten Termin.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Reden Sie einfach weiter, wir machen inzwischen eine kurze Kaffeepause.“</span>
+            </label>
+          </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold rounded">Szenario 2: Die Brücken-Methode (Wertschätzend unterbrechen)</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            Ein Kollege holt sehr weit aus und wiederholt sich zum dritten Mal. Sie möchten ihn höflich stoppen und zur Kernfrage zurückführen:
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Danke für den Aspekt, Herr Schmidt. Wenn wir das auf den Kern herunterbrechen: Welchen konkreten nächsten Schritt schlagen Sie für unsere heutige Entscheidung vor?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Herr Schmidt, Sie wiederholen sich schon wieder. Bitte schalten Sie Ihr Mikrofon stumm.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Können wir die Sitzung abbrechen? Herr Schmidt hat ja ohnehin schon alles gesagt.“</span>
+            </label>
+          </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold rounded">Szenario 3: Die Gruppe ins Boot holen</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            Sie merken, dass zwei dominante Personen den gesamten Raum einnehmen und alle anderen nur noch passiv zuhören:
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Ich würde gerne kurz in die Runde fragen: Wie nehmt ihr anderen die Diskussion bisher wahr? Stefan, wie sieht das aus Sicht deines Teams aus?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Warum schlaft ihr alle ein? Sagt doch auch mal etwas Kluges!“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Da niemand widerspricht, gilt ab jetzt automatisch die Meinung der beiden lautesten Redner.“</span>
+            </label>
+          </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-xs font-bold rounded">Szenario 4: Das Vier-Augen-Feedback nach dem Meeting</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+            Sie treffen den Kollegen am nächsten Tag unter vier Augen. Wie leiten Sie das Gespräch konstruktiv mit einer Ich-Botschaft ein?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Du bist unmöglich! Niemand im Büro hält deine ewigen Monologe mehr aus.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Mir ist gestern aufgefallen, dass deine Redebeiträge sehr viel Raum eingenommen haben und wir deshalb die Agenda nicht geschafft haben. Was treibt dich bei diesem Thema besonders um?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Ich wollte dir nur mitteilen, dass du von der Einladungsliste für alle künftigen Meetings gestrichen wurdest.“</span>
+            </label>
+          </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors">
+          Auswertung & Feedback anzeigen
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 3: Satzbau-Puzzle (Wortfolge) -->
+    <div id="satzbau-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>🧩</span> Satzbau-Puzzle: Die richtige B1+ Wortstellung
+        </h2>
+        <p class="text-sm text-slate-500">Klicken Sie auf die Wörter in der richtigen Reihenfolge, um grammatikalisch korrekte deutsche Sätze zu bauen.</p>
+      </div>
+
+      <!-- Puzzle 1 -->
+      <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 1: Nebensatz mit "weil" & Modalverb</span>
+          <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Тя се намесва, защото водещият трябва да пази рамката на срещата.</p>
+        
+        <!-- Target slot -->
+        <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/40 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <!-- Available chips -->
+        <div id="pool-1" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Sie</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">greift</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">ein,</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">weil</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">die</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Leitung</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">den</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Rahmen</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">schützen</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">muss.</button>
+        </div>
+        <div id="check-1" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 2 -->
+      <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 2: Passiversatz mit "lassen sich"</span>
+          <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Конфликтите могат да се тушират чрез ясни правила на срещата.</p>
+        
+        <!-- Target slot -->
+        <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/40 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <!-- Available chips -->
+        <div id="pool-2" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Konflikte</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">lassen</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">durch</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">klare</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Spielregeln</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">im</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Vorfeld</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">entschärfen.</button>
+        </div>
+        <div id="check-2" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 3 -->
+      <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 3: Infinitivkonstruktion mit "um... zu"</span>
+          <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Те се срещат, за да обменят идеи за изкуствен интелект.</p>
+        
+        <!-- Target slot -->
+        <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900/40 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <!-- Available chips -->
+        <div id="pool-3" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Sie</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">treffen</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich,</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">um</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zu</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">KI</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">auszutauschen.</button>
+        </div>
+        <div id="check-3" class="text-xs font-bold hidden"></div>
+      </div>
+
+    </div>
+
+    <!-- TAB 4: Präpositionen & Kasus Trainer -->
+    <div id="praep-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>🎯</span> Präpositionen & Kasus: B1 ➔ B1+ Verben
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede typische Wendung die richtige Präposition und den passenden Fall (Akkusativ oder Dativ).</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <!-- Item 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-2">
+          <p class="font-semibold text-slate-800 dark:text-slate-200">1. Der Kollege steht der Neuerung extrem skeptisch ...</p>
+          <p class="text-xs text-slate-400 italic">отнасям се скептично към...</p>
+          <select id="pr1" class="w-full border rounded p-2 bg-slate-50 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="gegenueber_dat">gegenüber (+ Dativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="zu_dat">zu (+ Dativ)</option>
+            <option value="an_dat">an (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-2">
+          <p class="font-semibold text-slate-800 dark:text-slate-200">2. Kritische Bedenken zwingen die Gruppe ... inhaltlichen Klärung.</p>
+          <p class="text-xs text-slate-400 italic">принуждавам към нещо...</p>
+          <select id="pr2" class="w-full border rounded p-2 bg-slate-50 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="zur_dat">zur / zu (+ Dativ)</option>
+            <option value="auf_akk">auf (+ Akkusativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="nach_dat">nach (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-2">
+          <p class="font-semibold text-slate-800 dark:text-slate-200">3. Die Moderatorin achtet konsequent ... die Einhaltung der Agenda.</p>
+          <p class="text-xs text-slate-400 italic">внимавам за / следя за...</p>
+          <select id="pr3" class="w-full border rounded p-2 bg-slate-50 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="auf_akk">auf (+ Akkusativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="ueber_akk">über (+ Akkusativ)</option>
+            <option value="bei_dat">bei (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 space-y-2">
+          <p class="font-semibold text-slate-800 dark:text-slate-200">4. Fast alle Teilnehmer sind innerlich genervt ... den langen Monologen.</p>
+          <p class="text-xs text-slate-400 italic">изнервен съм от...</p>
+          <select id="pr4" class="w-full border rounded p-2 bg-slate-50 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="von_dat">von (+ Dativ)</option>
+            <option value="aus_dat">aus (+ Dativ)</option>
+            <option value="ueber_akk">über (+ Akkusativ)</option>
+            <option value="durch_akk">durch (+ Akkusativ)</option>
+          </select>
+        </div>
+      </div>
+
+      <button onclick="checkPraep()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors">
+        Präpositionen prüfen
+      </button>
+      <div id="praep-score" class="text-sm font-bold"></div>
+    </div>
+
+    <!-- TAB 5: B1 -> B1+ Vokabel-Upgrader -->
+    <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>🔄</span> Der B1 ➔ B1+ Upgrader: Eloquenter im Job
+        </h2>
+        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagswörter durch präzisen B1+ Business-Wortschatz.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1">„Wir wollen ein neues Projekt <span class="text-amber-600 underline">gründen / anfangen</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border rounded p-1.5 bg-slate-50 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">ins Leben rufen</option>
+              <option value="b">parken</option>
+              <option value="c">sprengen</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1">„Wir dürfen das Zeitlimit <span class="text-amber-600 underline">nicht überschreiten / kaputtmachen</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border rounded p-1.5 bg-slate-50 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">den Rahmen nicht sprengen</option>
+              <option value="b">nicht ins Boot holen</option>
+              <option value="c">nicht hinterfragen</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 просто:</span>
+            <p class="text-sm font-semibold mt-1">„Ich möchte die anderen Kollegen <span class="text-amber-600 underline">als Partner mitnehmen / motivieren</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border rounded p-1.5 bg-slate-50 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">ins Boot holen</option>
+              <option value="b">unter vier Augen sprechen</option>
+              <option value="c">festhängen</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 просто:</span>
+            <p class="text-sm font-semibold mt-1">„Lass uns diese Nebenfrage jetzt <span class="text-amber-600 underline">für später zurücklegen</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border rounded p-1.5 bg-slate-50 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">auf der Liste parken</option>
+              <option value="b">im Alleingang lösen</option>
+              <option value="c">voranbringen</option>
+            </select>
+          </div>
+        </div>
+
+        <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors mt-2">
+          Upgrades überprüfen
+        </button>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
+      </div>
+    </div>
+
+    <!-- TAB 6: Verständnis-Quiz -->
+    <div id="quiz-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>📝</span> Textverständnis: Multiple Choice & Fakten-Check
+        </h2>
+        <p class="text-sm text-slate-500">Testen Sie Ihr inhaltliches Verständnis des Artikels von Bernd Slaghuis.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40">
+          <p class="font-semibold text-slate-900 dark:text-white mb-3">1. Welches Problem schildert Martina in ihrer KI-Runde?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q1" value="b" class="text-[#009ee3]">
+              <span>Ein skeptischer Kollege blockiert mit endlosen Bedenken zum Datenschutz fast die gesamte Redezeit.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q1" value="a" class="text-[#009ee3]">
+              <span>Die Firmenleitung hat der Gruppe verboten, Computer zu benutzen.</span>
+            </label>
+          </div>
+          <div id="q1-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40">
+          <p class="font-semibold text-slate-900 dark:text-white mb-3">2. Warum ist Skepsis laut Slaghuis kein bloßes Störgeräusch?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q2" value="a" class="text-[#009ee3]">
+              <span>Weil Skepsis zur inhaltlichen Klärung zwingt und zeigt, wo es dem Team noch an Klarheit und Regeln fehlt.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q2" value="b" class="text-[#009ee3]">
+              <span>Weil Skeptiker immer recht haben und neue Technologien in Betrieben verboten werden müssen.</span>
+            </label>
+          </div>
+          <div id="q2-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/40">
+          <p class="font-semibold text-slate-900 dark:text-white mb-3">3. Was versteht man unter dem Paradoxon in Meetings?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q3" value="a" class="text-[#009ee3]">
+              <span>Fast alle sind von ausschweifenden Monologen genervt, doch niemand traut sich einzuschreiten.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 cursor-pointer">
+              <input type="radio" name="q3" value="b" class="text-[#009ee3]">
+              <span>Alle wollen gleichzeitig reden, sodass niemand zu Wort kommt.</span>
+            </label>
+          </div>
+          <div id="q3-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <button onclick="checkQuiz()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors">
+          Quiz auswerten
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-slate-900 p-5 text-center text-xs text-slate-500 border-t border-slate-200 dark:border-slate-800">
+      <div class="flex flex-wrap justify-center gap-4 mb-2 font-semibold">
+        <a href="/" class="text-[#009ee3] hover:underline">Lektion 1: Meetings & Vielredner (B1+)</a>
+        <span>•</span>
+        <a href="/ki-produktivitaet.html" class="text-[#009ee3] hover:underline">Lektion 2: KI & Produktivität</a>
+      </div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong></p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+        btn.classList.add('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-600', 'dark:text-slate-400');
+        activeBtn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+      }
+    }
+
+    // Redemittel evaluation
+    function checkRedemittel() {
+      const answers = { scene1: 'b', scene2: 'a', scene3: 'a', scene4: 'b' };
+      const hints = {
+        scene1: 'Ausgezeichnet! Das ist die professionelle "Parkplatz-Methode": Wertschätzend, aber fokussiert.',
+        scene2: 'Perfekt! Die "Brücken-Methode": Den Kern würdigen und sofort zur Handlungsentscheidung zwingen.',
+        scene3: 'Sehr gut! Stille Teilnehmer gezielt anzusprechen bricht das Monopol der Dauerredner.',
+        scene4: 'Exzellent! Das Vier-Augen-Gespräch mit Ich-Botschaft und ehrlicher Neugierde ist am wirksamsten.'
+      };
+
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === answers['scene' + i]) {
+          fb.textContent = '✓ ' + hints['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Zu unhöflich oder unproduktiv für den modernen Berufsalltag. Versuchen Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    // Satzbau puzzle
+    const puzzleSolutions = {
+      1: "Sie greift ein, weil die Leitung den Rahmen schützen muss.",
+      2: "Konflikte lassen sich durch klare Spielregeln im Vorfeld entschärfen.",
+      3: "Sie treffen sich, um sich zu KI auszutauschen."
+    };
+
+    function pickWord(puzzleNum, btn) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (placeholder) placeholder.style.display = 'none';
+
+      // Move chip to target
+      btn.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.classList.add('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.onclick = function() { returnWord(puzzleNum, btn); };
+      target.appendChild(btn);
+
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function returnWord(puzzleNum, btn) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.onclick = function() { pickWord(puzzleNum, btn); };
+      pool.appendChild(btn);
+
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (chips.length === 0 && placeholder) {
+        placeholder.style.display = 'inline';
+      }
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function evaluatePuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const currentSentence = Array.from(chips).map(c => c.textContent.trim()).join(' ');
+      const check = document.getElementById('check-' + puzzleNum);
+      check.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (currentSentence === puzzleSolutions[puzzleNum]) {
+        check.textContent = '✓ Perfekt! Der Satz ist grammatikalisch absolut korrekt.';
+        check.classList.add('text-emerald-600');
+      } else if (chips.length >= puzzleSolutions[puzzleNum].split(' ').length) {
+        check.textContent = '✗ Die Reihenfolge stimmt noch nicht ganz. Tippe auf Wörter, um sie zu korrigieren.';
+        check.classList.add('text-rose-600');
+      } else {
+        check.classList.add('hidden');
+      }
+    }
+
+    function resetPuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const pool = document.getElementById('pool-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      chips.forEach(btn => returnWord(puzzleNum, btn));
+      const check = document.getElementById('check-' + puzzleNum);
+      check.classList.add('hidden');
+    }
+
+    // Präpositionen evaluation
+    function checkPraep() {
+      const answers = {
+        pr1: 'gegenueber_dat',
+        pr2: 'zur_dat',
+        pr3: 'auf_akk',
+        pr4: 'von_dat'
+      };
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        if (sel.value === answers['pr' + i]) {
+          sel.className = 'w-full border-2 border-emerald-500 rounded p-2 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'w-full border-2 border-rose-500 rounded p-2 bg-rose-50 text-rose-900 font-bold text-xs';
+        }
+      }
+      const div = document.getElementById('praep-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Präpositionen korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    // Upgrader evaluation
+    function checkUpgrader() {
+      const answers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === answers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    // Quiz evaluation
+    function checkQuiz() {
+      const answers = { q1: 'b', q2: 'a', q3: 'a' };
+      const hints = {
+        q1: 'Richtig! Ein skeptischer Kollege dominiert die Redezeit mit Datenschutzbedenken.',
+        q2: 'Richtig! Skepsis zwingt zur inhaltlichen Klärung und deckt fehlende Strukturen auf.',
+        q3: 'Richtig! Das Paradoxon beschreibt, dass viele genervt sind, aber niemand eingreift.'
+      };
+      for (let i = 1; i <= 3; i++) {
+        const sel = document.querySelector('input[name="q' + i + '"]:checked');
+        const fb = document.getElementById('q' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Antwort.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === answers['q' + i]) {
+          fb.textContent = '✓ ' + hints['q' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Leider nicht korrekt.';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
