@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 4: Mit schwierigen Kollegen arbeiten (Stretch Collaboration) – B1+</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight-b1 {
+      font-weight: 600;
+      color: #0284c7;
+      border-bottom: 2px dotted #0284c7;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .highlight-b1:hover {
+      background-color: rgba(2, 132, 199, 0.15);
+      border-radius: 3px;
+    }
+    .word-chip {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .word-chip:hover {
+      transform: translateY(-2px);
+    }
+    .gloss-highlight {
+      background-color: #fef3c7;
+      border-left: 3px solid #f59e0b;
+      padding-left: 6px;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    
+    <!-- Top Course Switcher Bar (4 Lessons) -->
+    <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5">
+          <span>🎓</span> <span>Kurs-Module • Business Deutsch (Niveau B1 ➔ B1+)</span>
+        </div>
+        <div class="text-[11px] text-blue-300 hidden sm:block">Кликнете върху подчертана дума в текста за превод</div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">1</span>
+          <span class="truncate">Meetings &amp; Vielredner</span>
+        </a>
+        <a href="ki-produktivitaet.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">2</span>
+          <span class="truncate">KI &amp; Produktivität</span>
+        </a>
+        <a href="nein-sagen.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">3</span>
+          <span class="truncate">»Nein« sagen im Job</span>
+        </a>
+        <a href="stretch-collaboration.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-[#009ee3] text-white border-[#009ee3] font-bold shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[11px] shrink-0">4</span>
+          <span class="truncate">Schwierige Kollegen</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-[#009ee3]">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#009ee3] text-white text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">Lektion 4</span>
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B1+ (Klar &amp; Einfach) • Wortschatz: B1 ➔ B1+ Brücke</span>
+          <span class="text-xs text-blue-200">Konfliktlösung &amp; Verhandeln</span>
+        </div>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        Herr Kahane, wie arbeite ich mit jemandem zusammen, den ich nicht ausstehen kann?
+      </h1>
+      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Normalerweise einigen sich alle auf ein Ziel und gehen Kompromisse ein. Doch wenn die Fronten verhärtet sind, funktioniert das nicht. Konfliktexperte Adam Kahane erklärt, wie »Stretch Collaboration« auch ohne Sympathie und Gemeinsamkeiten gelingt.
+      </p>
+      <div class="mt-2 text-xs text-blue-200">
+        Textgrundlage: <strong>DER SPIEGEL WORK</strong> (Interview von Maren Hoffmann mit Konfliktspezialist Adam Kahane)
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav id="lesson-tabs" class="flex border-b border-slate-200 bg-slate-50 px-3 pt-3 overflow-x-auto gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+      <button onclick="switchTab('text-tab')" id="btn-text-tab" class="tab-btn px-3 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] flex items-center gap-1.5 shrink-0">
+        <span>📖</span> Text &amp; B1+ Glossar (10 Absätze)
+      </button>
+      <button onclick="switchTab('redemittel-tab')" id="btn-redemittel-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🗣️</span> Redemittel-Training (Business)
+      </button>
+      <button onclick="switchTab('satzbau-tab')" id="btn-satzbau-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🧩</span> Satzbau-Puzzle (Wortfolge)
+      </button>
+      <button onclick="switchTab('praep-tab')" id="btn-praep-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🎯</span> Präpositionen &amp; Kasus
+      </button>
+      <button onclick="switchTab('upgrader-tab')" id="btn-upgrader-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🔄</span> B1 ➔ B1+ Upgrader
+      </button>
+      <button onclick="switchTab('quiz-tab')" id="btn-quiz-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>📝</span> Verständnis-Quiz
+      </button>
+    </nav>
+
+    <!-- TAB 1: Full Text with Side-by-Side B1+ Glossary -->
+    <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
+
+      <!-- Paragraph 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Wenn die Fronten im Büro verhärtet sind</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Adam Kahane hat als <span class="highlight-b1" onclick="highlightGlossary(this, 'Vermittler')">Vermittler</span> in extremen politischen Krisen gearbeitet – unter anderem in Südafrika und Kolumbien. Doch seine Erkenntnisse helfen auch im ganz normalen Büroalltag mit schwierigen Kollegen oder Kunden, die man <span class="highlight-b1" onclick="highlightGlossary(this, 'ausstehen')">nicht ausstehen kann</span>. Meistens versucht man im Job, <span class="highlight-b1" onclick="highlightGlossary(this, 'einigen')">sich auf ein Ziel zu einigen</span> und dafür <span class="highlight-b1" onclick="highlightGlossary(this, 'Kompromiss')">Kompromisse einzugehen</span>. Wenn die <span class="highlight-b1" onclick="highlightGlossary(this, 'verhärtet')">Fronten aber verhärtet</span> sind und ein <span class="highlight-b1" onclick="highlightGlossary(this, 'festgefahren')">festgefahrener Konflikt</span> herrscht, funktioniert diese klassische Harmonie-Methode nicht mehr.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Vermittler, -</strong> – посредник, медиатор</div>
+          <div class="gloss-item">• <strong>jmdn. nicht ausstehen können</strong>, konnte, hat gekonnt – не мога да понасям / търпя някого</div>
+          <div class="gloss-item">• <strong>sich einigen auf (+ Akk.)</strong>, einigte sich, hat sich geeinigt – споразумявам се, стигам до съгласие за</div>
+          <div class="gloss-item">• <strong>einen Kompromiss eingehen</strong>, ging ein, ist eingegangen – правя компромис</div>
+          <div class="gloss-item">• <strong>verhärtete Fronten (Pl.)</strong> – ожесточени / непримирими позиции</div>
+          <div class="gloss-item">• <strong>festgefahren (Adj.)</strong> – зациклил, попаднал в задънена улица</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Stretch Collaboration: Zusammenarbeit ohne Harmonie</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Viele glauben, dass gute Teamarbeit immer <span class="highlight-b1" onclick="highlightGlossary(this, 'Einigkeit')">Einigkeit</span> über Ziele und einen klaren Masterplan erfordert. Kahane erklärt: Das klappt in einer Sportmannschaft oder in einem Orchester, wo jeder bereit ist, <span class="highlight-b1" onclick="highlightGlossary(this, 'unterordnen')">sich</span> dem gemeinsamen Ziel <span class="highlight-b1" onclick="highlightGlossary(this, 'unterordnen')">unterzuordnen</span>. Wenn aber die Komplexität hoch ist und man den Kollegen oder Kunden nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'vertrauen')">vertraut</span>, ist das nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'zielführend')">zielführend</span>. Dann braucht man »Stretch Collaboration«: Einen Ansatz, der <span class="highlight-b1" onclick="highlightGlossary(this, 'Unstimmigkeit')">Unstimmigkeiten</span>, Konflikte und Unsicherheit bewusst zulässt.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>die Einigkeit (nur Sg.)</strong> – единодушие, съгласие</div>
+          <div class="gloss-item">• <strong>sich (Dat.) etw. unterordnen</strong>, ordnete unter, hat untergeordnet – подчинявам се на <em>(обща цел)</em></div>
+          <div class="gloss-item">• <strong>vertrauen (+ Dat.)</strong>, vertraute, hat vertraut – имам доверие на</div>
+          <div class="gloss-item">• <strong>zielführend (Adj.)</strong> – водещ към целта, резултатен, полезен</div>
+          <div class="gloss-item">• <strong>die Unstimmigkeit, -en</strong> – разногласие, несъответствие</div>
+          <div class="gloss-item">• <strong>übereinstimmen (mit + Dat.)</strong>, stimmte überein, hat übereingestimmt – съвпадам по мнение, съгласен съм с</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der eigene Anteil und kleine Schritte statt Masterplan</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Es ist sehr menschlich <span class="highlight-b1" onclick="highlightGlossary(this, 'anzunehmen')">anzunehmen</span>, dass das Problem immer nur die anderen sind – und dass alles perfekt wäre, wenn die Kollegen einfach täten, was wir wollen. Doch andere Menschen zu ändern, klappt fast nie. Wir müssen erkennen, wie wir selbst <span class="highlight-b1" onclick="highlightGlossary(this, 'beitragen')">zum Problem beitragen</span>. Außerdem sucht Kahane nicht sofort die eine <span class="highlight-b1" onclick="highlightGlossary(this, 'endgültig')">endgültige Lösung</span>, sondern fragt: Wie können wir <span class="highlight-b1" onclick="highlightGlossary(this, 'Weg bahnen')">uns</span> Stück für Stück <span class="highlight-b1" onclick="highlightGlossary(this, 'Weg bahnen')">einen Weg bahnen</span>? Oft muss das Team dabei experimentieren und <span class="highlight-b1" onclick="highlightGlossary(this, 'Richtung einschlagen')">eine Richtung einschlagen</span>, an die am Anfang niemand gedacht hat.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>annehmen</strong>, nahm an, hat angenommen – предполагам, допускам</div>
+          <div class="gloss-item">• <strong>beitragen zu (+ Dat.)</strong>, trug bei, hat beigetragen – допринасям за</div>
+          <div class="gloss-item">• <strong>endgültig (Adj.)</strong> – окончателен</div>
+          <div class="gloss-item">• <strong>sich (Dat.) einen Weg bahnen</strong>, bahnte, hat gebahnt – проправям си път</div>
+          <div class="gloss-item">• <strong>eine Richtung einschlagen</strong>, schlug ein, hat eingeschlagen – поемам в дадена посока</div>
+          <div class="gloss-item">• <strong>im Sinn haben</strong>, hatte, hat gehabt – имам предвид / на ум</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Warum »rote Linien« viele Möglichkeiten verbauen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            In seinem Buch spricht Kahane provokant davon, »mit Feinden zu verhandeln«. Das Wort »Feind« meint im Alltag oft einfach Menschen, mit denen wir <span class="highlight-b1" onclick="highlightGlossary(this, 'einig sein')">nicht einig sind</span> oder die uns im Projekt nerven. Viele ziehen dann sofort <span class="highlight-b1" onclick="highlightGlossary(this, 'rote Linie')">eine rote Linie</span>: »Mit dieser Person rede ich nicht!« Doch Kahane warnt: Wer <span class="highlight-b1" onclick="highlightGlossary(this, 'von vornherein')">von vornherein</span> solche roten Linien zieht, <span class="highlight-b1" onclick="highlightGlossary(this, 'verbauen')">verbaut</span> sich viele Möglichkeiten. Denn wie in einer großen Stadt müssen wir auch in Firmen mit Menschen zusammenarbeiten, die ganz anders ticken als wir. Leider ist diese Fähigkeit durch soziale Medien und <span class="highlight-b1" onclick="highlightGlossary(this, 'Polarisierung')">Polarisierung</span> oft <span class="highlight-b1" onclick="highlightGlossary(this, 'verkümmern')">verkümmert</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>einig sein (mit + Dat.)</strong> – на едно мнение съм, съгласен съм</div>
+          <div class="gloss-item">• <strong>eine rote Linie ziehen</strong>, zog, hat gezogen – чертая червена линия / крайна граница</div>
+          <div class="gloss-item">• <strong>von vornherein (Adv.)</strong> – от самото начало, предварително</div>
+          <div class="gloss-item">• <strong>verbauen (Möglichkeiten)</strong>, verbaute, hat verbaut – блокирам, закривам <em>(възможности, шансове)</em></div>
+          <div class="gloss-item">• <strong>die Polarisierung, -en</strong> – поляризация, разделение на лагери</div>
+          <div class="gloss-item">• <strong>verkümmern</strong>, verkümmerte, ist verkümmert – закърнявам, отслабвам от неупотреба</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Seminar-Übung: Seite an Seite spazieren gehen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            In seinen Workshops nutzt Kahane eine überraschende Übung: Jeder Teilnehmer soll eine halbe Stunde lang mit genau der Person im Raum spazieren gehen, mit der er sich ein Gespräch am wenigsten vorstellen kann. Beim gemeinsamen Gehen <span class="highlight-b1" onclick="highlightGlossary(this, 'abbiegen')">biegt man</span> zusammen rechts oder links <span class="highlight-b1" onclick="highlightGlossary(this, 'abbiegen')">ab</span> und schaut <span class="highlight-b1" onclick="highlightGlossary(this, 'buchstäblich')">buchstäblich</span> in dieselbe Richtung. Auch wenn man <span class="highlight-b1" onclick="highlightGlossary(this, 'inhaltlich')">inhaltlich</span> nicht einer Meinung ist, entsteht eine <span class="highlight-b1" onclick="highlightGlossary(this, 'informell')">informelle Verbindung</span>. Man erkennt den anderen wieder als <span class="highlight-b1" onclick="highlightGlossary(this, 'Mitmensch')">Mitmenschen</span> – und das verändert oft die ganze Arbeitsatmosphäre.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>abbiegen</strong>, bog ab, ist abgebogen – завивам <em>(наляво / надясно)</em></div>
+          <div class="gloss-item">• <strong>buchstäblich (Adv.)</strong> – буквално, в прекия смисъл</div>
+          <div class="gloss-item">• <strong>inhaltlich (Adj./Adv.)</strong> – по същество, съдържателно</div>
+          <div class="gloss-item">• <strong>die informelle Verbindung, -en</strong> – неформална човешка връзка</div>
+          <div class="gloss-item">• <strong>der Mitmensch, -en</strong> – ближен, друг човек като нас</div>
+          <div class="gloss-item">• <strong>der Blickkontakt, -e</strong> – зрителен контакт</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 6 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Abfällige Bemerkungen kontern: Wirkung statt Befehl</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Was tut man aber, wenn ein Kollege immer wieder <span class="highlight-b1" onclick="highlightGlossary(this, 'abfällig')">abfällige Bemerkungen</span> oder schlechte Witze macht? Kahane rät davon ab, Befehle zu erteilen (»Mach diesen Witz nicht!«). Viel wirksamer ist es, dem anderen die <span class="highlight-b1" onclick="highlightGlossary(this, 'Wirkung')">Wirkung</span> seines Verhaltens als Information zu geben: »Wenn Sie das sagen, fühle ich mich <span class="highlight-b1" onclick="highlightGlossary(this, 'verletzt')">verletzt</span>.« Als Kanadier erlebte Kahane selbst, wie jemand ständig Witze über Kanada als 51. US-Bundesstaat machte. Kahane sagte ruhig: »Ich finde das nicht lustig. Wenn du mit mir zusammenarbeiten möchtest, hilft das nicht.« Der Kollege war <span class="highlight-b1" onclick="highlightGlossary(this, 'überrascht')">überrascht</span> und hat den Spruch nie <span class="highlight-b1" onclick="highlightGlossary(this, 'wiederholen')">wiederholt</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>die abfällige Bemerkung, -en</strong> – пренебрежителна / язвителна забележка</div>
+          <div class="gloss-item">• <strong>die Wirkung, -en</strong> – въздействие, ефект</div>
+          <div class="gloss-item">• <strong>verletzt (Adj.) / verletzen</strong>, verletzte, hat verletzt – наранен / обиждам, наранявам</div>
+          <div class="gloss-item">• <strong>überrascht (Adj.)</strong> – изненадан</div>
+          <div class="gloss-item">• <strong>wiederholen</strong>, wiederholte, hat wiederholt – повтарям</div>
+          <div class="gloss-item">• <strong>angeblich (Adj.)</strong> – уж, мним, предполагаем</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 7 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Wenn Kollegen absichtlich verletzen: Drei klare Optionen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Manchmal wollen Menschen im Umfeld jedoch <span class="highlight-b1" onclick="highlightGlossary(this, 'absichtlich')">absichtlich</span> schaden oder mobben. Dann nennt Kahane drei klare <span class="highlight-b1" onclick="highlightGlossary(this, 'Option')">Optionen</span>: Erstens kann man die direkte Zusammenarbeit mit dieser Person im Projekt oder in der Schicht <span class="highlight-b1" onclick="highlightGlossary(this, 'beenden')">beenden</span>. Zweitens kann man das System verlassen, wenn die gesamte Unternehmenskultur toxisch ist: »Ich mag den Job, aber nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'auf Kosten')">auf Kosten meiner Würde</span>.« Oder drittens: Man bleibt, sucht sich Verbündete, die dieselbe Sorge teilen, und <span class="highlight-b1" onclick="highlightGlossary(this, 'Koalition')">bildet eine Koalition</span>, um die Regeln im Team gemeinsam zu ändern.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>absichtlich (Adv./Adj.)</strong> – умишлено, нарочно</div>
+          <div class="gloss-item">• <strong>die Option, -en</strong> – опция, алтернатива, възможен избор</div>
+          <div class="gloss-item">• <strong>beenden</strong>, beendete, hat beendet – прекратявам, слагам край на</div>
+          <div class="gloss-item">• <strong>auf Kosten (+ Gen.) / die Würde</strong> – за сметка на / достойнството</div>
+          <div class="gloss-item">• <strong>eine Koalition bilden / nutzen</strong>, bildete, hat gebildet – създавам коалиция / съюз с колеги</div>
+          <div class="gloss-item">• <strong>der Verbündete, -n</strong> – съюзник, съмишленик</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 8 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Vom Beobachter zum Mitgestalter: Der Blick von außen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Um eine <span class="highlight-b1" onclick="highlightGlossary(this, 'heikel')">heikle Zusammenarbeit</span> zu lösen, hilft Kahanes Übung »Vom <span class="highlight-b1" onclick="highlightGlossary(this, 'Beobachter')">Beobachter</span> zum <span class="highlight-b1" onclick="highlightGlossary(this, 'Mitgestalter')">Mitgestalter</span>«. Zuerst betrachtet man die Situation wie ein <span class="highlight-b1" onclick="highlightGlossary(this, 'außenstehend')">außenstehender Regisseur</span> von außen: Welche Faktoren <span class="highlight-b1" onclick="highlightGlossary(this, 'herbeiführen')">führen</span> das Problem <span class="highlight-b1" onclick="highlightGlossary(this, 'herbeiführen')">herbei</span>? Wie verhalten sich die anderen? Aus dieser sicheren Distanz ist es leicht zu sehen, was die Kollegen falsch machen. Doch solange man nur Beobachter bleibt, übernimmt man noch keine Verantwortung für eine Lösung.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>heikel (Adj.)</strong> – деликатен, сложен, рисков</div>
+          <div class="gloss-item">• <strong>der Beobachter, -</strong> – наблюдател</div>
+          <div class="gloss-item">• <strong>der Mitgestalter, -</strong> – активен участник / сътворец на ситуацията</div>
+          <div class="gloss-item">• <strong>außenstehend (Adj.)</strong> – външен, страничен</div>
+          <div class="gloss-item">• <strong>herbeiführen (eine Situation/Veränderung)</strong>, führte herbei, hat herbeigeführt – предизвиквам, довеждам до</div>
+          <div class="gloss-item">• <strong>der Blickwinkel, -</strong> – гледна точка, ракурс</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 9 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der Perspektivwechsel: Sich als Teil des Bildes sehen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Im zweiten Schritt vollzieht man einen <span class="highlight-b1" onclick="highlightGlossary(this, 'Perspektivwechsel')">Perspektivwechsel</span> nach innen: Man stellt sich vor, dass man selbst als <span class="highlight-b1" onclick="highlightGlossary(this, 'Akteur')">Akteur</span> mitten auf dem Bild steht. Jetzt fragt man sich ehrlich: Inwiefern <span class="highlight-b1" onclick="highlightGlossary(this, 'prägen')">prägen</span> meine eigenen Annahmen, Worte und Entscheidungen die aktuelle Realität? Oft <span class="highlight-b1" onclick="highlightGlossary(this, 'übersehen')">übersehen</span> wir unsere eigene Rolle komplett. Erst wenn wir beide Perspektiven <span class="highlight-b1" onclick="highlightGlossary(this, 'gegenüberstellen')">einander gegenüberstellen</span>, erkennen wir, welchen konkreten Schritt wir selbst ändern können, damit es <span class="highlight-b1" onclick="highlightGlossary(this, 'vorwärtsgehen')">vorwärtsgeht</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Perspektivwechsel, -</strong> – смяна на гледната точка / перспективата</div>
+          <div class="gloss-item">• <strong>der Akteur, -e</strong> – действащо лице, участник</div>
+          <div class="gloss-item">• <strong>prägen (die Realität)</strong>, prägte, hat geprägt – формирам, давам отпечатък върху</div>
+          <div class="gloss-item">• <strong>übersehen</strong>, übersah, hat übersehen – пропускам да забележа, пренебрегвам</div>
+          <div class="gloss-item">• <strong>gegenüberstellen</strong>, stellte gegenüber, hat gegenübergestellt – съпоставям</div>
+          <div class="gloss-item">• <strong>vorwärtsgehen</strong>, ging vorwärts, ist vorwärtsgegangen – вървя напред, имам напредък</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 10 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Vor dem schwierigen Meeting: Vorgespräch und Blick nach innen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Was empfiehlt Kahane konkret vor einem wichtigen Meeting mit einem »unmöglichen« Kollegen? Erstens: Man sollte die Person vorab privat treffen und das Problem ruhig erklären. Manche sind überrascht und bereit, zur Lösung beizutragen. Sagt der andere jedoch »<span class="highlight-b1" onclick="highlightGlossary(this, 'Pech gehabt')">Pech gehabt</span>, so bin ich eben«, muss man andere Optionen <span class="highlight-b1" onclick="highlightGlossary(this, 'in Betracht ziehen')">in Betracht ziehen</span> und Koalitionen nutzen. Und zweitens <span class="highlight-b1" onclick="highlightGlossary(this, 'lohnen')">lohnt sich</span> immer auch der <span class="highlight-b1" onclick="highlightGlossary(this, 'Blick nach innen')">Blick nach innen</span>: Manchmal nervt uns ein Kollege nur deshalb so stark, weil er uns unbewusst an eine <span class="highlight-b1" onclick="highlightGlossary(this, 'schmerzhaft')">schmerzhafte Erfahrung</span> aus der Vergangenheit erinnert.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>»Pech gehabt!« (Redewendung)</strong> – „Лош късмет! / Твой проблем!“</div>
+          <div class="gloss-item">• <strong>in Betracht ziehen</strong>, zog, hat gezogen – вземам предвид, обмислям като вариант</div>
+          <div class="gloss-item">• <strong>sich lohnen</strong>, lohnte sich, hat sich gelohnt – струва си, заслужава си</div>
+          <div class="gloss-item">• <strong>der Blick nach innen (nur Sg.)</strong> – поглед навътре към себе си (саморефлексия)</div>
+          <div class="gloss-item">• <strong>die schmerzhafte Erfahrung, -en</strong> – болезнен опит / преживяване</div>
+          <div class="gloss-item">• <strong>erinnern an (+ Akk.)</strong>, erinnerte, hat erinnert – напомням за някого / нещо</div>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <button onclick="switchTab('redemittel-tab')" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-7 py-2.5 rounded-xl font-bold text-sm shadow transition">
+          Weiter zu den Übungen (Към упражненията) ➔
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: Redemittel-Training (Business Scenarios) -->
+    <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🗣️</span> Redemittel für den Berufsalltag: Mit schwierigen Kollegen verhandeln
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jedes Konflikt-Szenario die professionellste B1+ Formulierung nach dem Ansatz von Adam Kahane.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Auf abfällige Bemerkungen reagieren (Wirkung spiegeln)</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Projektpartner macht im Call wiederholt ironische Witze über die Arbeitsweise Ihres Teams. Wie geben Sie ihm nach Kahanes Prinzip Rückmeldung, ohne einen Befehl zu erteilen?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Ich verbiete Ihnen ab sofort das Wort! Machen Sie nie wieder solche Witze!“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Wenn Sie solche ironischen Bemerkungen über unser Team machen, wirkt das auf mich abwertend. Wenn wir in diesem Projekt gut zusammenarbeiten wollen, hilft das nicht.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Ich lache einfach künstlich mit, obwohl ich mich innerlich extrem ärgere.“</span>
+            </label>
+          </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Schrittweise experimentieren (Stretch Collaboration)</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Zwei Abteilungen streiten seit Wochen über eine neue IT-Architektur und können sich auf keinen großen 2-Jahres-Masterplan einigen. Die Fronten sind verhärtet. Was schlagen Sie vor?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Da wir uns beim Gesamtplan noch nicht einig sind, schlage ich vor, dass wir für die nächsten zwei Wochen einen kleinen Testlauf starten und danach gemeinsam prüfen, was funktioniert.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Wir brechen den Kontakt komplett ab und reden erst wieder miteinander, wenn die andere Abteilung zu 100 Prozent zustimmt.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Wir warten einfach ab, bis das Problem von alleine verschwindet.“</span>
+            </label>
+          </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Vom Beobachter zum Mitgestalter</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ihr Team beschwert sich über die schlechte Kommunikation mit einer Nachbarabteilung. Wie lenken Sie den Blick auf den eigenen Beitrag zur Lösung?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Die anderen sind eben unfähig, daran können wir absolut nichts ändern.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Wir sollten eine Beschwerde-Mail an den Vorstand schicken.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Statt nur darauf zu schauen, was die andere Abteilung falsch macht, lasst uns prüfen: Was tragen wir selbst zu dieser Situation bei – und welchen ersten Schritt können wir anders machen?“</span>
+            </label>
+          </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Das klärende Vorgespräch vor einem schwierigen Meeting</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Morgen steht ein heikles Projekt-Meeting an, in dem ein Kollege sonst oft Ihre Vorschläge blockiert. Sie rufen ihn heute kurz unter vier Augen an:
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Ich wollte vor unserem morgigen Termin kurz mit dir sprechen, weil unsere Diskussionen zuletzt oft festgefahren waren. Lass uns offen schauen, wo deine wichtigsten Bedenken liegen.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Komm morgen bitte gar nicht erst ins Meeting, du störst ohnehin nur.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Wenn du mir morgen widersprichst, werde ich dich vor allen anschreien.“</span>
+            </label>
+          </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Satzbau-Puzzle (Wortfolge) -->
+    <div id="satzbau-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🧩</span> Satzbau-Puzzle: Die richtige B1+ Wortstellung
+        </h2>
+        <p class="text-sm text-slate-500">Klicken Sie auf die gemischten Wörter in der richtigen Reihenfolge, um grammatikalisch korrekte Sätze zu bauen.</p>
+      </div>
+
+      <!-- Puzzle 1 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 1: Konditionalsatz mit "wenn"</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(1)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Когато позициите са ожесточени, класическото сътрудничество не функционира.</p>
+        
+        <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-1" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">funktioniert</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Fronten</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Wenn</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">nicht.</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sind,</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">die</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Zusammenarbeit</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">verhärtet</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">klassische</button>
+        </div>
+        <div id="check-1" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 2 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 2: Relativsatz mit "wer"</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(2)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Който тегли червена линия, си блокира много възможности.</p>
+        
+        <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-2" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zieht,</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Möglichkeiten.</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Wer</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">verbaut</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">rote</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">eine</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">viele</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Linie</button>
+        </div>
+        <div id="check-2" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 3 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 3: Indirekter Fragesatz mit "wie"</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(3)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Трябва да осъзнаем как самите ние допринасяме за проблема.</p>
+        
+        <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-3" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">selbst</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">erkennen,</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Wir</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">beitragen.</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">wie</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">müssen</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Problem</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">wir</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zum</button>
+        </div>
+        <div id="check-3" class="text-xs font-bold hidden"></div>
+      </div>
+
+    </div>
+
+    <!-- TAB 4: Präpositionen & Kasus Trainer -->
+    <div id="praep-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🎯</span> Präpositionen &amp; Kasus: B1 ➔ B1+ Verben
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede feste Wendung aus dem Interview die richtige Präposition und den passenden Kasus.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <!-- Item 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">1. In normalen Teams können sich alle schnell ... ein gemeinsames Ziel einigen.</p>
+          <p class="text-xs text-slate-400 italic">споразумявам се за обща цел (sich einigen auf)...</p>
+          <select id="pr1" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="auf_akk">auf (+ Akkusativ)</option>
+            <option value="mit_dat">mit (+ Dativ)</option>
+            <option value="bei_dat">bei (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">2. Durch unser eigenes Verhalten tragen wir oft unbewusst ... dem Konflikt bei.</p>
+          <p class="text-xs text-slate-400 italic">допринасям за нещо (beitragen zu)...</p>
+          <select id="pr2" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="an_dat">an (+ Dativ)</option>
+            <option value="ueber_akk">über (+ Akkusativ)</option>
+            <option value="zu_dat">zu (+ Dativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">3. Wir leben in einer Zeit, in der wir uns zu stark ... höheren Autoritäten abhängig machen.</p>
+          <p class="text-xs text-slate-400 italic">правя се зависим от (abhängig machen von)...</p>
+          <select id="pr3" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="von_dat">von (+ Dativ)</option>
+            <option value="durch_akk">durch (+ Akkusativ)</option>
+            <option value="auf_akk">auf (+ Akkusativ)</option>
+            <option value="aus_dat">aus (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">4. Manchmal nervt uns ein Kollege nur, weil er uns ... eine unangenehme Person aus der Vergangenheit erinnert.</p>
+          <p class="text-xs text-slate-400 italic">напомня ми за някого (erinnern an)...</p>
+          <select id="pr4" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="ueber_akk">über (+ Akkusativ)</option>
+            <option value="nach_dat">nach (+ Dativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="an_akk">an (+ Akkusativ)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button onclick="checkPraep()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showPraepSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetPraep()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+      <div id="praep-score" class="text-sm font-bold"></div>
+    </div>
+
+    <!-- TAB 5: B1 -> B1+ Vokabel-Upgrader -->
+    <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🔄</span> Der B1 ➔ B1+ Upgrader: Souverän über Konflikte sprechen
+        </h2>
+        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Ausdrücke durch den präzisen B1+ Wortschatz aus dem Interview mit Adam Kahane.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Ich kann diesen Kollegen <span class="text-amber-600 underline">wirklich überhaupt nicht leiden</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">inhaltlich gegenüberstellen</option>
+              <option value="a">wirklich nicht ausstehen</option>
+              <option value="c">von vornherein einbeziehen</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Beide Seiten sind stur und <span class="text-amber-600 underline">keiner will nachgeben</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">die Fähigkeiten sind verkümmert</option>
+              <option value="c">die Richtungen sind abgebogen</option>
+              <option value="a">die Fronten sind verhärtet</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Vielleicht müssen wir <span class="text-amber-600 underline">einen ganz neuen Weg wählen</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">eine völlig andere Richtung einschlagen</option>
+              <option value="b">eine abfällige Bemerkung machen</option>
+              <option value="c">unsere eigene Rolle übersehen</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Wir müssen auch andere Lösungen <span class="text-amber-600 underline">als Möglichkeit überlegen</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">auf Kosten unserer Würde gehen</option>
+              <option value="a">in Betracht ziehen</option>
+              <option value="c">in der Mitte treffen</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showUpgraderSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetUpgrader()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
+      </div>
+    </div>
+
+    <!-- TAB 6: Verständnis-Quiz -->
+    <div id="quiz-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>📝</span> Textverständnis: Multiple Choice &amp; Fakten-Check
+        </h2>
+        <p class="text-sm text-slate-500">Testen Sie Ihr Verständnis des Interviews mit Konfliktspezialist Adam Kahane.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">1. Wann stößt konventionelle Zusammenarbeit (Harmonie, Einigkeit über das Ziel, fester Plan) an ihre Grenzen?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q1" value="a" class="text-[#009ee3]">
+              <span>Wenn man in einem Orchester oder einer Sportmannschaft mit klaren Regeln spielt.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q1" value="b" class="text-[#009ee3]">
+              <span>Wenn die Komplexität hoch ist, der Konflikt extrem ist und die Beteiligten einander weder mögen noch vertrauen.</span>
+            </label>
+          </div>
+          <div id="q1-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">2. Warum lässt Adam Kahane verfeindete Teilnehmer in Seminaren oft 30 Minuten zusammen spazieren gehen?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q2" value="a" class="text-[#009ee3]">
+              <span>Weil man beim gemeinsamen Gehen in dieselbe Richtung schaut und eine informelle Verbindung von Mensch zu Mensch entsteht.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q2" value="b" class="text-[#009ee3]">
+              <span>Weil die Teilnehmer im Seminarraum keinen Handyempfang haben.</span>
+            </label>
+          </div>
+          <div id="q2-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">3. Was ist das Ziel der Übung »Vom Beobachter zum Mitgestalter«?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q3" value="b" class="text-[#009ee3]">
+              <span>Man soll beweisen, dass ausschließlich die anderen Kollegen an der schwierigen Situation schuld sind.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q3" value="a" class="text-[#009ee3]">
+              <span>Man wechselt die Perspektive von außen nach innen, erkennt den eigenen Beitrag zum Problem und übernimmt Verantwortung für den nächsten Schritt.</span>
+            </label>
+          </div>
+          <div id="q3-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkQuiz()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showQuizSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetQuiz()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev / Next Lesson Bar + Footer -->
+    <div class="bg-slate-50 px-5 py-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-semibold">
+      <a href="nein-sagen.html" class="inline-flex items-center gap-1.5 text-[#009ee3] hover:underline">
+        <span>←</span> <span>Vorherige Lektion: 3. »Nein« sagen im Job</span>
+      </a>
+      <a href="index.html" class="inline-flex items-center gap-1.5 bg-[#002f6c] hover:bg-[#001f47] text-white px-4 py-2 rounded-lg transition shadow-sm">
+        <span>Zurück zu Lektion 1: Meetings &amp; Vielredner</span> <span>↺</span>
+      </a>
+    </div>
+
+    <footer class="bg-slate-100 p-5 text-center text-xs text-slate-500 border-t border-slate-200">
+      <div class="flex flex-wrap justify-center gap-4 mb-2 font-semibold">
+        <a href="index.html" class="text-[#009ee3] hover:underline">Lektion 1: Meetings &amp; Vielredner</a>
+        <span>•</span>
+        <a href="ki-produktivitaet.html" class="text-[#009ee3] hover:underline">Lektion 2: KI &amp; Produktivität</a>
+        <span>•</span>
+        <a href="nein-sagen.html" class="text-[#009ee3] hover:underline">Lektion 3: »Nein« sagen</a>
+        <span>•</span>
+        <a href="stretch-collaboration.html" class="text-slate-900 underline font-bold">Lektion 4: Schwierige Kollegen</a>
+      </div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+        btn.classList.add('border-transparent', 'text-slate-600');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-600');
+        activeBtn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+      }
+
+      const navEl = document.getElementById('lesson-tabs');
+      if (navEl) {
+        navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function highlightGlossary(spanEl, keyTerm) {
+      const card = spanEl.closest('.grid');
+      if (!card) return;
+      const items = card.querySelectorAll('.gloss-item');
+      const search = (keyTerm || spanEl.textContent).trim().toLowerCase();
+      items.forEach(div => {
+        div.classList.remove('gloss-highlight');
+        if (div.textContent.toLowerCase().includes(search)) {
+          div.classList.add('gloss-highlight');
+          setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
+        }
+      });
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'a', scene3: 'c', scene4: 'a' };
+    const redemittelHints = {
+      scene1: 'Perfekt! Genau wie Kahane geben Sie die Information über die Wirkung an Sie weiter, statt einen Befehl zu erteilen.',
+      scene2: 'Ausgezeichnet! Das ist gelebte Stretch Collaboration: Schritt für Stück experimentieren statt auf den perfekten Masterplan zu warten.',
+      scene3: 'Sehr gut! Der Perspektivwechsel vom passiven Beobachter zum verantwortlichen Mitgestalter.',
+      scene4: 'Exzellent! Das persönliche Vorgespräch unter vier Augen klärt Bedenken vor dem großen Meeting.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelHints['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Nicht zielführend – das verhärtet entweder die Fronten oder löst den Konflikt nicht.';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
+      }
+    }
+
+    // Satzbau puzzle with automatic shuffling
+    const puzzleSolutions = {
+      1: "Wenn die Fronten verhärtet sind, funktioniert klassische Zusammenarbeit nicht.",
+      2: "Wer eine rote Linie zieht, verbaut sich viele Möglichkeiten.",
+      3: "Wir müssen erkennen, wie wir selbst zum Problem beitragen."
+    };
+
+    function shufflePool(puzzleNum) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      if (!pool) return;
+      const chips = Array.from(pool.querySelectorAll('.word-chip'));
+      for (let i = chips.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        pool.appendChild(chips[j]);
+        const temp = chips[i];
+        chips[i] = chips[j];
+        chips[j] = temp;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      [1, 2, 3].forEach(n => shufflePool(n));
+    });
+
+    function pickWord(puzzleNum, btn) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (placeholder) placeholder.style.display = 'none';
+
+      btn.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.classList.add('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.onclick = function() { returnWord(puzzleNum, btn); };
+      target.appendChild(btn);
+
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function returnWord(puzzleNum, btn) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.onclick = function() { pickWord(puzzleNum, btn); };
+      pool.appendChild(btn);
+
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (chips.length === 0 && placeholder) {
+        placeholder.style.display = 'inline';
+      }
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function evaluatePuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const currentSentence = Array.from(chips).map(c => c.textContent.trim()).join(' ');
+      const check = document.getElementById('check-' + puzzleNum);
+      check.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (currentSentence === puzzleSolutions[puzzleNum]) {
+        check.textContent = '✓ Perfekt! Der Satz ist grammatikalisch absolut korrekt.';
+        check.classList.add('text-emerald-600');
+      } else if (chips.length >= puzzleSolutions[puzzleNum].split(' ').length) {
+        check.textContent = '✗ Die Reihenfolge stimmt noch nicht ganz. Klicken Sie auf Wörter, um sie zurückzulegen.';
+        check.classList.add('text-rose-600');
+      } else {
+        check.classList.add('hidden');
+      }
+    }
+
+    function resetPuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = Array.from(target.querySelectorAll('.word-chip'));
+      chips.forEach(btn => returnWord(puzzleNum, btn));
+      shufflePool(puzzleNum);
+      document.getElementById('check-' + puzzleNum).classList.add('hidden');
+    }
+
+    function solvePuzzle(puzzleNum) {
+      resetPuzzle(puzzleNum);
+      const pool = document.getElementById('pool-' + puzzleNum);
+      const words = puzzleSolutions[puzzleNum].split(' ');
+      words.forEach(w => {
+        const chip = Array.from(pool.querySelectorAll('.word-chip')).find(c => c.textContent.trim() === w);
+        if (chip) pickWord(puzzleNum, chip);
+      });
+    }
+
+    // Präpositionen evaluation
+    const praepAnswers = {
+      pr1: 'auf_akk',
+      pr2: 'zu_dat',
+      pr3: 'von_dat',
+      pr4: 'an_akk'
+    };
+
+    function checkPraep() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        if (sel.value === praepAnswers['pr' + i]) {
+          sel.className = 'w-full border-2 border-emerald-500 rounded p-2 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'w-full border-2 border-rose-500 rounded p-2 bg-rose-50 text-rose-900 font-bold text-xs';
+        }
+      }
+      const div = document.getElementById('praep-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Präpositionen korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showPraepSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('pr' + i).value = praepAnswers['pr' + i];
+      }
+      checkPraep();
+    }
+
+    function resetPraep() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        sel.value = '';
+        sel.className = 'w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs';
+      }
+      document.getElementById('praep-score').textContent = '';
+    }
+
+    // Upgrader evaluation
+    const upgraderAnswers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+
+    function checkUpgrader() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === upgraderAnswers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showUpgraderSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('up' + i).value = upgraderAnswers['up' + i];
+      }
+      checkUpgrader();
+    }
+
+    function resetUpgrader() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        sel.value = '';
+        sel.className = 'border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold';
+      }
+      document.getElementById('upgrader-score').textContent = '';
+    }
+
+    // Quiz evaluation
+    const quizAnswers = { q1: 'b', q2: 'a', q3: 'a' };
+    const quizHints = {
+      q1: 'Richtig! Bei hoher Komplexität und starkem Misstrauen funktioniert das klassische Einigen auf einen Masterplan nicht.',
+      q2: 'Richtig! Beim gemeinsamen Spaziergang schaut man in dieselbe Richtung und nimmt den anderen als Mitmenschen wahr.',
+      q3: 'Richtig! Durch den Perspektivwechsel erkennt man den eigenen Anteil und wird vom Beobachter zum aktiven Mitgestalter.'
+    };
+
+    function checkQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        const sel = document.querySelector('input[name="q' + i + '"]:checked');
+        const fb = document.getElementById('q' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Antwort.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === quizAnswers['q' + i]) {
+          fb.textContent = '✓ ' + quizHints['q' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Leider nicht korrekt.';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showQuizSolution() {
+      for (let i = 1; i <= 3; i++) {
+        const r = document.querySelector(`input[name="q${i}"][value="${quizAnswers['q' + i]}"]`);
+        if (r) r.checked = true;
+      }
+      checkQuiz();
+    }
+
+    function resetQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('q' + i + '-fb').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

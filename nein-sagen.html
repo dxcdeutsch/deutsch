@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 3: So lernen Sie, »Nein« zu sagen – Deutsch für den Beruf (B1+)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight-b1 {
+      font-weight: 600;
+      color: #0284c7;
+      border-bottom: 2px dotted #0284c7;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .highlight-b1:hover {
+      background-color: rgba(2, 132, 199, 0.15);
+      border-radius: 3px;
+    }
+    .word-chip {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .word-chip:hover {
+      transform: translateY(-2px);
+    }
+    .gloss-highlight {
+      background-color: #fef3c7;
+      border-left: 3px solid #f59e0b;
+      padding-left: 6px;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    
+    <!-- Top Course Switcher Bar (4 Lessons) -->
+    <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5">
+          <span>🎓</span> <span>Kurs-Module • Business Deutsch (Niveau B1 ➔ B1+)</span>
+        </div>
+        <div class="text-[11px] text-blue-300 hidden sm:block">Кликнете върху подчертана дума в текста за превод</div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">1</span>
+          <span class="truncate">Meetings &amp; Vielredner</span>
+        </a>
+        <a href="ki-produktivitaet.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">2</span>
+          <span class="truncate">KI &amp; Produktivität</span>
+        </a>
+        <a href="nein-sagen.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-[#009ee3] text-white border-[#009ee3] font-bold shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[11px] shrink-0">3</span>
+          <span class="truncate">»Nein« sagen im Job</span>
+        </a>
+        <a href="stretch-collaboration.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">4</span>
+          <span class="truncate">Schwierige Kollegen</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-[#009ee3]">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#009ee3] text-white text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">Lektion 3</span>
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B1+ (Klar &amp; Einfach) • Wortschatz: B1 ➔ B1+ Brücke</span>
+          <span class="text-xs text-blue-200">Psychologie &amp; Arbeitswelt</span>
+        </div>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        So lernen Sie, »Nein« zu sagen (ohne danach ein schlechtes Gewissen zu haben)
+      </h1>
+      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Sie übernehmen Extraaufgaben, machen Überstunden und wollen es allen recht machen: Menschen mit Tendenz zum »People Pleasing« sind für alle da – und vergessen sich selbst. Fünf Schritte, um der Harmoniesucht im Job zu entkommen.
+      </p>
+      <div class="mt-2 text-xs text-blue-200">
+        Textgrundlage: <strong>DER SPIEGEL WORK</strong> (Von Jeanne Wellnitz, mit Psychologin Ulrike Bossmann &amp; Prof. Stefanie Neubrand)
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav id="lesson-tabs" class="flex border-b border-slate-200 bg-slate-50 px-3 pt-3 overflow-x-auto gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+      <button onclick="switchTab('text-tab')" id="btn-text-tab" class="tab-btn px-3 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] flex items-center gap-1.5 shrink-0">
+        <span>📖</span> Text &amp; B1+ Glossar (10 Absätze)
+      </button>
+      <button onclick="switchTab('redemittel-tab')" id="btn-redemittel-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🗣️</span> Redemittel-Training (Business)
+      </button>
+      <button onclick="switchTab('satzbau-tab')" id="btn-satzbau-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🧩</span> Satzbau-Puzzle (Wortfolge)
+      </button>
+      <button onclick="switchTab('praep-tab')" id="btn-praep-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🎯</span> Präpositionen &amp; Kasus
+      </button>
+      <button onclick="switchTab('upgrader-tab')" id="btn-upgrader-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🔄</span> B1 ➔ B1+ Upgrader
+      </button>
+      <button onclick="switchTab('quiz-tab')" id="btn-quiz-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>📝</span> Verständnis-Quiz
+      </button>
+    </nav>
+
+    <!-- TAB 1: Full Text with Side-by-Side B1+ Glossary -->
+    <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
+
+      <!-- Paragraph 1 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Immer für alle da: Der Büroalltag von Valmira Sadiki</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Es gibt Sätze, die Valmira Sadiki im Büro schon viel zu oft gesagt hat: »Na klar, das <span class="highlight-b1" onclick="highlightGlossary(this, 'übernehmen')">übernehme ich</span> gern!« oder »Mach ich sofort!«. Die 28-jährige Betriebswirtin arbeitet im Finanzmanagement, aber sie <span class="highlight-b1" onclick="highlightGlossary(this, 'recht machen')">will es allen recht machen</span>. Damit sich alle Kolleginnen und Kollegen wohlfühlen, antwortet sie auf jede Frage sofort, hört sich private Sorgen an und <span class="highlight-b1" onclick="highlightGlossary(this, 'ausräumen')">räumt</span> ständig den Geschirrspüler im Büro <span class="highlight-b1" onclick="highlightGlossary(this, 'ausräumen')">aus</span>. Für die Wünsche der anderen macht sie permanent <span class="highlight-b1" onclick="highlightGlossary(this, 'Überstunde')">Überstunden</span>, während sie selbst dabei <span class="highlight-b1" onclick="highlightGlossary(this, 'zu kurz kommen')">zu kurz kommt</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>übernehmen</strong>, übernahm, hat übernommen – поемам <em>(задача, отговорност)</em></div>
+          <div class="gloss-item">• <strong>es allen recht machen</strong>, machte, hat gemacht – угаждам на всички</div>
+          <div class="gloss-item">• <strong>ausräumen (den Geschirrspüler)</strong>, räumte aus, hat ausgeräumt – изпразвам <em>(съдомиялната)</em></div>
+          <div class="gloss-item">• <strong>die Überstunde, -n</strong> – извънреден час труд</div>
+          <div class="gloss-item">• <strong>zu kurz kommen</strong>, kam zu kurz, ist zu kurz gekommen – оставам пренебрегнат / на заден план</div>
+          <div class="gloss-item">• <strong>das schlechte Gewissen (nur Sg.)</strong> – гузна съвест, чувство за вина</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 2 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Woher kommt der Wunsch zu gefallen?</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Woher kommt dieses starke Bedürfnis? Sadiki erinnert sich an die <span class="highlight-b1" onclick="highlightGlossary(this, 'Glaubenssatz')">Glaubenssätze</span> ihrer Eltern. Ihre Familie ist in den Neunzigerjahren aus dem Kosovo nach Deutschland geflohen. Die Eltern wollten, dass ihre Tochter in der neuen Heimat <span class="highlight-b1" onclick="highlightGlossary(this, 'Anerkennung')">Anerkennung</span> findet: »<span class="highlight-b1" onclick="highlightGlossary(this, 'anstrengen')">Streng dich an</span>, fall nicht unangenehm auf! Sei immer <span class="highlight-b1" onclick="highlightGlossary(this, 'vorbildlich')">vorbildlich</span>!« Diese Sätze hat Sadiki tief <span class="highlight-b1" onclick="highlightGlossary(this, 'verinnerlichen')">verinnerlicht</span>. In der Psychologie nennt man dieses Verhalten »People Pleasing« oder <span class="highlight-b1" onclick="highlightGlossary(this, 'Harmoniesucht')">Harmoniesucht</span>: Der Fokus liegt nur auf den Wünschen des Umfelds, nicht auf den eigenen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Glaubenssatz, ¨-e</strong> – вътрешно убеждение, житейско правило</div>
+          <div class="gloss-item">• <strong>die Anerkennung, -en</strong> – признание, одобрение</div>
+          <div class="gloss-item">• <strong>sich anstrengen</strong>, strengte sich an, hat sich angestrengt – полагам усилия, старая се</div>
+          <div class="gloss-item">• <strong>vorbildlich (Adj.)</strong> – примерен, образцов</div>
+          <div class="gloss-item">• <strong>verinnerlichen</strong>, verinnerlichte, hat verinnerlicht – възприемам дълбоко в себе си</div>
+          <div class="gloss-item">• <strong>die Harmoniesucht (nur Sg.)</strong> – болезнен стремеж към хармония</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 3 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Schattenseite: Wenn Hilfsbereitschaft krank macht</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            In Teams sind solche Menschen sehr beliebt. Sie erledigen Aufgaben sofort, ohne kritisch zu prüfen, ob sie überhaupt <span class="highlight-b1" onclick="highlightGlossary(this, 'zuständig')">zuständig sind</span> oder ob sie dafür alles andere <span class="highlight-b1" onclick="highlightGlossary(this, 'stehen und liegen')">stehen und liegen lassen</span> müssen. Doch die Psychologin Ulrike Bossmann warnt: Die ständige <span class="highlight-b1" onclick="highlightGlossary(this, 'Hilfsbereitschaft')">Hilfsbereitschaft</span> führt zu chronischem Stress, <span class="highlight-b1" onclick="highlightGlossary(this, 'Selbstzweifel')">Selbstzweifeln</span> und <span class="highlight-b1" onclick="highlightGlossary(this, 'Anspannung')">Anspannung</span>. Betroffene <span class="highlight-b1" onclick="highlightGlossary(this, 'runterschlucken')">schlucken</span> ihren Frust so lange <span class="highlight-b1" onclick="highlightGlossary(this, 'runterschlucken')">runter</span>, bis nichts mehr geht – und riskieren Schwindel, Tinnitus oder völlige Erschöpfung.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>zuständig sein für (+ Akk.)</strong> – отговорен / компетентен съм за</div>
+          <div class="gloss-item">• <strong>alles stehen und liegen lassen</strong>, ließ, hat gelassen – зарязвам всичко на момента</div>
+          <div class="gloss-item">• <strong>die Hilfsbereitschaft (nur Sg.)</strong> – готовност за помощ, отзивчивост</div>
+          <div class="gloss-item">• <strong>der Selbstzweifel, -</strong> – съмнение в себе си</div>
+          <div class="gloss-item">• <strong>die Anspannung, -en</strong> – напрежение, стрес</div>
+          <div class="gloss-item">• <strong>runterschlucken (Frust/Ärger)</strong>, schluckte runter, hat runtergeschluckt – преглъщам, потискам <em>(яд, разочарование)</em></div>
+        </div>
+      </div>
+
+      <!-- Paragraph 4 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Projekt-Falle: Plötzlich für alles verantwortlich</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Auch Sadiki erlebt diesen Punkt im Jahr 2023. Ihre Chefin bittet sie um Hilfe bei einem schwierigen Projekt und lobt sie: »Du kannst doch so gut mit Menschen!« Sadiki möchte die Chefin nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'verärgern')">verärgern</span> und <span class="highlight-b1" onclick="highlightGlossary(this, 'trauen')">traut sich nicht</span>, ihre <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedenken')">Bedenken zu äußern</span>. Sie bekommt das Projekt zusätzlich zu ihrer normalen Arbeit, ohne dass ihr etwas anderes <span class="highlight-b1" onclick="highlightGlossary(this, 'abnehmen')">abgenommen</span> wird. Bald muss sie die Fehler anderer Kollegen <span class="highlight-b1" onclick="highlightGlossary(this, 'ausbügeln')">ausbügeln</span>. Abends fällt sie <span class="highlight-b1" onclick="highlightGlossary(this, 'erschöpft')">völlig erschöpft</span> ins Bett und tippt schon morgens beim Aufwachen neue Aufgaben ins Handy.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>verärgern</strong>, verärgerte, hat verärgert – ядосвам, разстройвам някого</div>
+          <div class="gloss-item">• <strong>sich trauen</strong>, traute sich, hat sich getraut – осмелявам се, престрашавам се</div>
+          <div class="gloss-item">• <strong>Bedenken äußern</strong>, äußerte, hat geäußert – изказвам опасения / притеснения</div>
+          <div class="gloss-item">• <strong>ausbügeln (Fehler)</strong>, bügelte aus, hat ausgebügelt – оправям / замазвам <em>(чужди грешки)</em></div>
+          <div class="gloss-item">• <strong>erschöpft (Adj.)</strong> – изтощен, капнал от умора</div>
+          <div class="gloss-item">• <strong>abnehmen (jmdm. eine Aufgabe)</strong>, nahm ab, hat abgenommen – отнемам от товара / поемам част от работата на някого</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 1: Eigene Muster erkennen (Selbsterkenntnis)</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Wie kommt man raus aus diesem <span class="highlight-b1" onclick="highlightGlossary(this, 'Hamsterrad')">Hamsterrad</span>? Der erste Schritt ist <span class="highlight-b1" onclick="highlightGlossary(this, 'Erkenntnis')">Erkenntnis</span>. Man muss genau beobachten, bei welchen Personen und in welchen Situationen man automatisch <span class="highlight-b1" onclick="highlightGlossary(this, 'angepasst')">angepasst handelt</span>. Typische Warnsignale auf der Checkliste sind: Ich fühle ein klares »Nein«, sage aber »Ja«. Ich habe große Angst, egoistisch oder kompliziert <span class="highlight-b1" onclick="highlightGlossary(this, 'wirken')">zu wirken</span>. Und ich schaffe es kaum, Kollegen bei Anfragen <span class="highlight-b1" onclick="highlightGlossary(this, 'vertrösten')">auf später zu vertrösten</span>. Nur wer diesen automatischen Reflex erkennt, kann seine <span class="highlight-b1" onclick="highlightGlossary(this, 'Grenzen wahren')">Grenzen wahren</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>das Hamsterrad, ¨-er</strong> – омагьосан кръг от непрекъсната работа</div>
+          <div class="gloss-item">• <strong>die Erkenntnis, -se</strong> – осъзнаване, прозрение</div>
+          <div class="gloss-item">• <strong>angepasst (Adj.)</strong> – конформистки, нагаждащ се</div>
+          <div class="gloss-item">• <strong>wirken</strong>, wirkte, hat gewirkt – изглеждам по определен начин, правя впечатление</div>
+          <div class="gloss-item">• <strong>jmdn. auf später vertrösten</strong>, vertröstete, hat vertröstet – отлагам някого за по-късно</div>
+          <div class="gloss-item">• <strong>Grenzen wahren / setzen</strong>, wahrte, hat gewahrt – пазя / поставям лични граници</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 6 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 2: Gefühle wahrnehmen und »Impathie« lernen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Oft merken Betroffene gar nicht, wie schlecht es ihnen geht, weil sie nur noch funktionieren. Sie <span class="highlight-b1" onclick="highlightGlossary(this, 'unterdrücken')">unterdrücken</span> ihre eigenen <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedürfnis')">Bedürfnisse</span>, um die Harmonie im Team nicht zu gefährden. Die Psychologie-Professorin Stefanie Neubrand nennt die Lösung »Impathie« – also Empathie nach innen. Statt sich <span class="highlight-b1" onclick="highlightGlossary(this, 'Selbstvorwurf')">Selbstvorwürfe</span> zu machen (»Warum konnte ich mich schon wieder nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'durchsetzen')">durchsetzen</span>?«), sollte man freundlich mit sich sprechen und den eigenen Ärger bewusst <span class="highlight-b1" onclick="highlightGlossary(this, 'wahrnehmen')">wahrnehmen</span>. Ärger zeigt uns nämlich, dass eine Grenze <span class="highlight-b1" onclick="highlightGlossary(this, 'überschreiten')">überschritten</span> wurde.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>unterdrücken</strong>, unterdrückte, hat unterdrückt – потискам <em>(чувства, нужди)</em></div>
+          <div class="gloss-item">• <strong>das Bedürfnis, -se</strong> – потребност, нужда</div>
+          <div class="gloss-item">• <strong>der Selbstvorwurf, ¨-e</strong> – самообвинение, упрек към себе си</div>
+          <div class="gloss-item">• <strong>sich durchsetzen</strong>, setzte sich durch, hat sich durchgesetzt – налагам се, отстоявам позицията си</div>
+          <div class="gloss-item">• <strong>überschreiten (eine Grenze)</strong>, überschritt, hat überschritten – прекрачвам, преминавам <em>(граница)</em></div>
+          <div class="gloss-item">• <strong>wahrnehmen</strong>, nahm wahr, hat wahrgenommen – долавям, възприемам, усещам</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 7 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sich Bedenkzeit verschaffen: Der Wunder-Satz</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Um die eigenen Gefühle zu prüfen, braucht man vor allem Zeit. Harmoniesüchtige <span class="highlight-b1" onclick="highlightGlossary(this, 'neigen')">neigen dazu</span>, sofort »Ja« zu rufen und <span class="highlight-b1" onclick="highlightGlossary(this, 'aufhalsen')">sich</span> damit viel zu viel Arbeit <span class="highlight-b1" onclick="highlightGlossary(this, 'aufhalsen')">aufzuhalsen</span>. Um diesen Reflex zu stoppen, hilft es, <span class="highlight-b1" onclick="highlightGlossary(this, 'verschaffen')">sich Zeit zu verschaffen</span>. Ein einfacher Satz kann im Büroalltag <span class="highlight-b1" onclick="highlightGlossary(this, 'Wunder wirken')">Wunder wirken</span>: »Danke, dass du an mich gedacht hast. Ich <span class="highlight-b1" onclick="highlightGlossary(this, 'überlegen')">überlege es mir</span> und melde mich um 14 Uhr dazu.« So gewinnt man wertvolle <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedenkzeit')">Bedenkzeit</span>, um in Ruhe den eigenen Kalender und die Zuständigkeit zu prüfen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>sich (Dat.) etw. aufhalsen</strong>, halste auf, hat aufgehalst – натоварвам се с излишна работа на гърба си</div>
+          <div class="gloss-item">• <strong>sich (Dat.) Zeit verschaffen</strong>, verschaffte, hat verschafft – печеля си / осигурявам си време</div>
+          <div class="gloss-item">• <strong>Wunder wirken</strong>, wirkte, hat gewirkt – правя чудеса, имам огромен ефект</div>
+          <div class="gloss-item">• <strong>sich (Dat.) etw. überlegen</strong>, überlegte, hat überlegt – обмислям нещо</div>
+          <div class="gloss-item">• <strong>die Bedenkzeit, -en</strong> – време за размисъл</div>
+          <div class="gloss-item">• <strong>neigen zu (+ Dat.)</strong>, neigte, hat geneigt – имам склонност към</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 8 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 3: Klar sprechen und »Neins« zählen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Ein Nein zu einer weiteren Aufgabe ist immer ein Ja zu sich selbst – zur eigenen Gesundheit und zur Qualität der Arbeit. Dafür muss man <span class="highlight-b1" onclick="highlightGlossary(this, 'Position beziehen')">Position beziehen</span>. Viele Menschen <span class="highlight-b1" onclick="highlightGlossary(this, 'verwässern')">verwässern</span> ihre Sprache aus Angst <span class="highlight-b1" onclick="highlightGlossary(this, 'anecken')">anzuecken</span>: Sie benutzen ständig Wörter wie »vielleicht« oder »eventuell«. Besser ist eine klare, direkte Bitte. Als Training rät Bossmann, jede Woche bewusst kleine »Neins« zu sammeln: Im Meeting einmal kritisch widersprechen oder <span class="highlight-b1" onclick="highlightGlossary(this, 'zurückhalten')">sich zurückhalten</span>, wenn gefragt wird: »Wer macht das Protokoll?« – und die <span class="highlight-b1" onclick="highlightGlossary(this, 'ertragen')">Stille im Raum ertragen</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>Position beziehen</strong>, bezog, hat bezogen – заемам ясна позиция</div>
+          <div class="gloss-item">• <strong>verwässern (Sprache/Aussage)</strong>, verwässerte, hat verwässert – размивам, смекчавам прекалено <em>(изказа си)</em></div>
+          <div class="gloss-item">• <strong>anecken (bei + Dat.)</strong>, eckte an, ist angeeckt – влизам в сблъсък / предизвиквам недоволство</div>
+          <div class="gloss-item">• <strong>sich zurückhalten (mit + Dat.)</strong>, hielt zurück, hat zurückgehalten – въздържам се</div>
+          <div class="gloss-item">• <strong>ertragen (die Stille)</strong>, ertrug, hat ertragen – издържам, понасям <em>(мълчанието в залата)</em></div>
+        </div>
+      </div>
+
+      <!-- Paragraph 9 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 4: Das Unbehagen beim Abgrenzen aushalten</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            »Jede gesunde Beziehung <span class="highlight-b1" onclick="highlightGlossary(this, 'aushalten')">hält es aus</span>, dass man jemanden mal <span class="highlight-b1" onclick="highlightGlossary(this, 'enttäuschen')">enttäuscht</span>«, betont Psychologin Bossmann. Trotzdem spüren People Pleaser oft ein starkes <span class="highlight-b1" onclick="highlightGlossary(this, 'Unbehagen')">Unbehagen</span> oder sogar Scham, wenn sie <span class="highlight-b1" onclick="highlightGlossary(this, 'einsetzen')">sich für ihre Belange einsetzen</span>. Aber niemand hat gesagt, dass sich <span class="highlight-b1" onclick="highlightGlossary(this, 'abgrenzen')">Abgrenzen</span> sofort gut anfühlen muss! Das schlechte Gefühl bedeutet nur, dass man etwas Neues und Mutiges <span class="highlight-b1" onclick="highlightGlossary(this, 'wagen')">wagt</span>. Der persönliche Erfolg liegt darin, für sich einzustehen – völlig unabhängig davon, wie das Gegenüber reagiert.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>aushalten</strong>, hielt aus, hat ausgehalten – издържам, понасям</div>
+          <div class="gloss-item">• <strong>enttäuschen</strong>, enttäuschte, hat enttäuscht – разочаровам</div>
+          <div class="gloss-item">• <strong>das Unbehagen (nur Sg.)</strong> – дискомфорт, неудобство, неприятно чувство</div>
+          <div class="gloss-item">• <strong>sich einsetzen für (+ Akk.)</strong>, setzte ein, hat eingesetzt – застъпвам се за <em>(интересите си / seine Belange)</em></div>
+          <div class="gloss-item">• <strong>sich abgrenzen (von + Dat.)</strong>, grenzte ab, hat abgegrenzt – разграничавам се, пазя дистанция</div>
+          <div class="gloss-item">• <strong>wagen</strong>, wagte, hat gewagt – осмелявам се, рискувам</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 10 -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span>
+            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sadikis Wandel: Hilfsbereit, aber mit klaren Grenzen</h3>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+            Heute macht Valmira Sadiki vieles anders. Nach einer Auszeit im Ausland hat sie den nötigen <span class="highlight-b1" onclick="highlightGlossary(this, 'Abstand')">Abstand</span> gewonnen. Bei jeder Anfrage prüft sie zuerst: Ist das wirklich mein <span class="highlight-b1" onclick="highlightGlossary(this, 'Aufgabenbereich')">Aufgabenbereich</span>? Wenn ein Kollege möchte, dass sie schnell seine Aufgabe übernimmt, sagt sie ruhig: »Nein, entweder machst du das allein, oder ich zeige es dir noch einmal.« Die anfängliche <span class="highlight-b1" onclick="highlightGlossary(this, 'Irritation')">Irritation</span> beim <span class="highlight-b1" onclick="highlightGlossary(this, 'Gegenüber')">Gegenüber</span> hat sie ausgehalten – und gemerkt, dass nichts Schlimmes passiert. Sie hilft weiterhin gern, aber mit fast 30 Jahren muss sie niemandem mehr etwas <span class="highlight-b1" onclick="highlightGlossary(this, 'beweisen')">beweisen</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Abstand (nur Sg.)</strong> – дистанция <em>(психическа или времева)</em></div>
+          <div class="gloss-item">• <strong>der Aufgabenbereich, -e</strong> – сфера на задължения, ресор</div>
+          <div class="gloss-item">• <strong>die Irritation, -en</strong> – озадачение, леко раздразнение / изненада</div>
+          <div class="gloss-item">• <strong>beweisen</strong>, bewies, hat bewiesen – доказвам</div>
+          <div class="gloss-item">• <strong>an der Reihe / dran sein</strong> – мой ред е <em>(напр. да свърша обща задача)</em></div>
+          <div class="gloss-item">• <strong>das Gegenüber, -</strong> – събеседникът, човекът отсреща</div>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <button onclick="switchTab('redemittel-tab')" class="bg-[#009ee3] hover:bg-[#0082ba] text-white px-7 py-2.5 rounded-xl font-bold text-sm shadow transition">
+          Weiter zu den Übungen (Към упражненията) ➔
+        </button>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: Redemittel-Training (Business Scenarios) -->
+    <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🗣️</span> Redemittel für den Berufsalltag: Souverän »Nein« sagen
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Bürosituation die professionellste und klarste B1+ Formulierung.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Sich Bedenkzeit verschaffen</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Kollege kommt zwischen Tür und Angel auf Sie zu: »Kannst du heute Nachmittag noch schnell die Kundenpräsentation für mich fertigmachen?« Sie haben eigentlich schon genug eigene Arbeit. Wie gewinnen Sie Zeit?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Na klar, gar kein Problem, ich lasse dafür einfach alles stehen und liegen!“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Danke, dass du an mich gedacht hast. Ich prüfe meinen Kalender in Ruhe und gebe dir bis 14 Uhr Bescheid, ob ich Kapazitäten habe.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Bist du verrückt? Mach deinen Kram doch endlich mal selbst!“</span>
+            </label>
+          </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Hilfe zur Selbsthilfe statt Übernahme</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Teammitglied bittet Sie schon zum dritten Mal, eine Excel-Auswertung für ihn zu erstellen, weil Sie das »viel schneller können«. Wie grenzen Sie sich wie Valmira Sadiki konstruktiv ab?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Okay, schick es mir rüber, ich mache heute Abend einfach wieder Überstunden.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Ich lösche jetzt mein E-Mail-Programm, damit du mir nichts mehr schicken kannst.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Nein, ich übernehme die Auswertung heute nicht für dich. Entweder versuchst du es allein, oder ich zeige dir um 15 Uhr noch einmal kurz, wie die Formel funktioniert.“</span>
+            </label>
+          </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Prioritäten mit der Führungskraft klären</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ihre Chefin möchte Ihnen ein zusätzliches Sonderprojekt übertragen („on top“), obwohl Ihr Arbeitsplan für diesen Monat bereits komplett voll ist:
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Das Projekt klingt spannend. Damit die Qualität meiner aktuellen Aufgaben nicht leidet: Welches meiner laufenden Projekte soll ich dafür zurückstellen oder abgeben?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Ich sage lieber nichts und ärgere mich später heimlich zu Hause.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Ich verweigere ab sofort jede Arbeit in dieser Abteilung.“</span>
+            </label>
+          </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Klare Sprache ohne Verwässerung</span>
+          </div>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Kollege hat vergessen, Ihnen wichtige Projektdaten zu schicken. Welche Formulierung verzichtet auf unnötige »Verwässerung« (Konjunktiv, »eventuell«, »vielleicht«), bleibt aber höflich?
+          </p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Könntest du mir eventuell vielleicht irgendwann die Daten schicken, falls es dir nichts ausmacht?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Bitte schick mir die fehlenden Projektdaten heute bis 16 Uhr zu, damit ich den Bericht abschließen kann.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Entschuldigung, dass ich überhaupt lebe und nach den Daten frage.“</span>
+            </label>
+          </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: Satzbau-Puzzle (Wortfolge) -->
+    <div id="satzbau-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🧩</span> Satzbau-Puzzle: Die richtige B1+ Wortstellung
+        </h2>
+        <p class="text-sm text-slate-500">Klicken Sie auf die gemischten Wörter in der richtigen Reihenfolge, um grammatikalisch korrekte Sätze zu bilden.</p>
+      </div>
+
+      <!-- Puzzle 1 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 1: Nebensatz mit "obwohl" (Konzessivsatz)</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(1)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Тя поема нови задачи, въпреки че вече има твърде много работа.</p>
+        
+        <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-1" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">obwohl</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Aufgaben,</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Sie</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">hat.</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">übernimmt</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">schon</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">neue</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Arbeit</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sie</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">viel</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zu</button>
+        </div>
+        <div id="check-1" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 2 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 2: Infinitiv mit "zu" nach "trauen sich"</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(2)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Тя не се осмелява да изкаже опасенията си пред шефката.</p>
+        
+        <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-2" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Bedenken</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">nicht,</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Sie</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Chefin</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">traut</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">äußern.</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">ihre</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zu</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">vor</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">der</button>
+        </div>
+        <div id="check-2" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <!-- Puzzle 3 -->
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 3: Finalsatz mit "um... zu"</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(3)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: За да разберем собствените си чувства, трябва да си осигурим време.</p>
+        
+        <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+
+        <div id="pool-3" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">verstehen,</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Zeit</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Um</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">muss</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">eigenen</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">verschaffen.</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">die</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">man</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Gefühle</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">sich</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">zu</button>
+        </div>
+        <div id="check-3" class="text-xs font-bold hidden"></div>
+      </div>
+
+    </div>
+
+    <!-- TAB 4: Präpositionen & Kasus Trainer -->
+    <div id="praep-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🎯</span> Präpositionen &amp; Kasus: B1 ➔ B1+ Verben
+        </h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede feste Wendung aus dem Text die richtige Präposition und den passenden Kasus.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <!-- Item 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">1. Vor einer Zusage sollte man prüfen, ob man überhaupt ... diese Aufgabe zuständig ist.</p>
+          <p class="text-xs text-slate-400 italic">отговорен / компетентен съм за нещо...</p>
+          <select id="pr1" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="ueber_akk">über (+ Akkusativ)</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="mit_dat">mit (+ Dativ)</option>
+            <option value="an_dat">an (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">2. Menschen mit Harmoniesucht neigen ..., ihren Frust einfach runterzuschlucken.</p>
+          <p class="text-xs text-slate-400 italic">имам склонност към нещо (neigen zu)...</p>
+          <select id="pr2" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="dafuer_akk">dafür / für (+ Akkusativ)</option>
+            <option value="darauf_akk">darauf / auf (+ Akkusativ)</option>
+            <option value="dazu_dat">dazu / zu (+ Dativ)</option>
+            <option value="davon_dat">davon / von (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">3. Viele Mitarbeiter fühlen Unbehagen, wenn sie sich ... ihre eigenen Belange einsetzen.</p>
+          <p class="text-xs text-slate-400 italic">застъпвам се за своите интереси...</p>
+          <select id="pr3" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="um_akk">um (+ Akkusativ)</option>
+            <option value="gegen_akk">gegen (+ Akkusativ)</option>
+            <option value="bei_dat">bei (+ Dativ)</option>
+          </select>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">4. Im Meeting sollte man sich mindestens zweimal ... einem schnellen »Ich mach' das!« zurückhalten.</p>
+          <p class="text-xs text-slate-400 italic">въздържам се от / с нещо...</p>
+          <select id="pr4" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition + Kasus wählen --</option>
+            <option value="fuer_akk">für (+ Akkusativ)</option>
+            <option value="durch_akk">durch (+ Akkusativ)</option>
+            <option value="ohne_akk">ohne (+ Akkusativ)</option>
+            <option value="mit_dat">mit (+ Dativ)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button onclick="checkPraep()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+          Überprüfen (Провери)
+        </button>
+        <button onclick="showPraepSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+          Lösung anzeigen (Покажи отговорите)
+        </button>
+        <button onclick="resetPraep()" class="text-xs text-slate-500 hover:underline ml-auto">
+          Zurücksetzen (Изчисти)
+        </button>
+      </div>
+      <div id="praep-score" class="text-sm font-bold"></div>
+    </div>
+
+    <!-- TAB 5: B1 -> B1+ Vokabel-Upgrader -->
+    <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🔄</span> Der B1 ➔ B1+ Upgrader: Präziser ausdrücken
+        </h2>
+        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch den gehobenen B1+ Wortschatz aus dem SPIEGEL-Artikel.</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Sie will immer, dass <span class="text-amber-600 underline">alle mit ihr zufrieden sind</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">Position beziehen</option>
+              <option value="a">es allen recht machen</option>
+              <option value="c">im Raum anecken</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Ich muss ständig die <span class="text-amber-600 underline">Fehler meiner Kollegen reparieren</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">die Sprache verwässern</option>
+              <option value="c">den Frust runterschlucken</option>
+              <option value="a">Fehler der Kollegen ausbügeln</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Wer immer sofort Ja sagt, <span class="text-amber-600 underline">nimmt sich selbst viel zu viel Arbeit</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">halst sich zu viel Arbeit auf</option>
+              <option value="b">verschafft sich Bedenkzeit</option>
+              <option value="c">kommt gut voran</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Mit diesem Satz <span class="text-amber-600 underline">bekommt man Zeit zum Nachdenken</span>.“</p>
+          </div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">lässt man alles stehen und liegen</option>
+              <option value="a">verschafft man sich Bedenkzeit</option>
+              <option value="c">macht man sich Selbstvorwürfe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showUpgraderSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetUpgrader()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
+      </div>
+    </div>
+
+    <!-- TAB 6: Verständnis-Quiz -->
+    <div id="quiz-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>📝</span> Textverständnis: Multiple Choice &amp; Fakten-Check
+        </h2>
+        <p class="text-sm text-slate-500">Prüfen Sie Ihr Verständnis des Artikels über »People Pleasing«.</p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Q1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">1. Warum übernahm Valmira Sadiki jahrelang fast jede Extraaufgabe im Büro?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q1" value="a" class="text-[#009ee3]">
+              <span>Weil sie als offizielle Assistentin der Geschäftsführung für das Ausräumen der Küche bezahlt wurde.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q1" value="b" class="text-[#009ee3]">
+              <span>Weil sie die Glaubenssätze ihrer Eltern („Sei immer vorbildlich, fall nicht unangenehm auf“) verinnerlicht hatte und Anerkennung suchte.</span>
+            </label>
+          </div>
+          <div id="q1-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">2. Was versteht Professorin Stefanie Neubrand unter dem Begriff »Impathie«?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q2" value="a" class="text-[#009ee3]">
+              <span>Eine nach innen gewandte Empathie: Die Fähigkeit, die eigenen Gefühle, Körpersignale und Bedürfnisse freundlich wahrzunehmen.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q2" value="b" class="text-[#009ee3]">
+              <span>Eine medizinische Diagnose für Menschen, die überhaupt keine Gefühle für andere haben.</span>
+            </label>
+          </div>
+          <div id="q2-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white">
+          <p class="font-semibold text-slate-900 mb-3">3. Wie geht Sadiki heute damit um, wenn sie den Geschirrspüler im Büro ausräumt?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q3" value="b" class="text-[#009ee3]">
+              <span>Sie benutzt nur noch Pappteller und betritt die Büroküche gar nicht mehr.</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="q3" value="a" class="text-[#009ee3]">
+              <span>Sie macht es weiterhin gern, sagt den Kollegen aber offen Bescheid, damit diese wissen, dass sie beim nächsten Mal dran sind.</span>
+            </label>
+          </div>
+          <div id="q3-fb" class="mt-2 text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkQuiz()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showQuizSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetQuiz()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prev / Next Lesson Bar + Footer -->
+    <div class="bg-slate-50 px-5 py-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-semibold">
+      <a href="ki-produktivitaet.html" class="inline-flex items-center gap-1.5 text-[#009ee3] hover:underline">
+        <span>←</span> <span>Vorherige Lektion: 2. KI &amp; Produktivität</span>
+      </a>
+      <a href="stretch-collaboration.html" class="inline-flex items-center gap-1.5 bg-[#002f6c] hover:bg-[#001f47] text-white px-4 py-2 rounded-lg transition shadow-sm">
+        <span>Nächste Lektion: 4. Schwierige Kollegen</span> <span>→</span>
+      </a>
+    </div>
+
+    <footer class="bg-slate-100 p-5 text-center text-xs text-slate-500 border-t border-slate-200">
+      <div class="flex flex-wrap justify-center gap-4 mb-2 font-semibold">
+        <a href="index.html" class="text-[#009ee3] hover:underline">Lektion 1: Meetings &amp; Vielredner</a>
+        <span>•</span>
+        <a href="ki-produktivitaet.html" class="text-[#009ee3] hover:underline">Lektion 2: KI &amp; Produktivität</a>
+        <span>•</span>
+        <a href="nein-sagen.html" class="text-slate-900 underline font-bold">Lektion 3: »Nein« sagen</a>
+        <span>•</span>
+        <a href="stretch-collaboration.html" class="text-[#009ee3] hover:underline">Lektion 4: Schwierige Kollegen</a>
+      </div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+        btn.classList.add('border-transparent', 'text-slate-600');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-600');
+        activeBtn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+      }
+
+      const navEl = document.getElementById('lesson-tabs');
+      if (navEl) {
+        navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function highlightGlossary(spanEl, keyTerm) {
+      const card = spanEl.closest('.grid');
+      if (!card) return;
+      const items = card.querySelectorAll('.gloss-item');
+      const search = (keyTerm || spanEl.textContent).trim().toLowerCase();
+      items.forEach(div => {
+        div.classList.remove('gloss-highlight');
+        if (div.textContent.toLowerCase().includes(search)) {
+          div.classList.add('gloss-highlight');
+          setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
+        }
+      });
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'c', scene3: 'a', scene4: 'b' };
+    const redemittelHints = {
+      scene1: 'Perfekt! Der Wunder-Satz von Psychologin Bossmann verschafft Ihnen wertvolle Bedenkzeit.',
+      scene2: 'Ausgezeichnet! Genau wie Valmira Sadiki bieten Sie Hilfe zur Selbsthilfe statt blinder Übernahme.',
+      scene3: 'Sehr gut! Sie machen Kapazitätsgrenzen transparent und bitten die Chefin um Priorisierung.',
+      scene4: 'Exzellent! Keine Verwässerung durch Konjunktiv oder „eventuell“, sondern eine höfliche, klare Ansage.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelHints['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Nicht optimal – entweder zu angepasst (People Pleasing) oder unprofessionell konfrontativ.';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
+      }
+    }
+
+    // Satzbau puzzle with automatic shuffling
+    const puzzleSolutions = {
+      1: "Sie übernimmt neue Aufgaben, obwohl sie schon zu viel Arbeit hat.",
+      2: "Sie traut sich nicht, ihre Bedenken vor der Chefin zu äußern.",
+      3: "Um die eigenen Gefühle zu verstehen, muss man sich Zeit verschaffen."
+    };
+
+    function shufflePool(puzzleNum) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      if (!pool) return;
+      const chips = Array.from(pool.querySelectorAll('.word-chip'));
+      for (let i = chips.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        pool.appendChild(chips[j]);
+        const temp = chips[i];
+        chips[i] = chips[j];
+        chips[j] = temp;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      [1, 2, 3].forEach(n => shufflePool(n));
+    });
+
+    function pickWord(puzzleNum, btn) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (placeholder) placeholder.style.display = 'none';
+
+      btn.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.classList.add('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.onclick = function() { returnWord(puzzleNum, btn); };
+      target.appendChild(btn);
+
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function returnWord(puzzleNum, btn) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.onclick = function() { pickWord(puzzleNum, btn); };
+      pool.appendChild(btn);
+
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (chips.length === 0 && placeholder) {
+        placeholder.style.display = 'inline';
+      }
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function evaluatePuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const currentSentence = Array.from(chips).map(c => c.textContent.trim()).join(' ');
+      const check = document.getElementById('check-' + puzzleNum);
+      check.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (currentSentence === puzzleSolutions[puzzleNum]) {
+        check.textContent = '✓ Perfekt! Der Satz ist grammatikalisch absolut korrekt.';
+        check.classList.add('text-emerald-600');
+      } else if (chips.length >= puzzleSolutions[puzzleNum].split(' ').length) {
+        check.textContent = '✗ Die Reihenfolge stimmt noch nicht ganz. Klicken Sie auf Wörter, um sie zurückzulegen.';
+        check.classList.add('text-rose-600');
+      } else {
+        check.classList.add('hidden');
+      }
+    }
+
+    function resetPuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = Array.from(target.querySelectorAll('.word-chip'));
+      chips.forEach(btn => returnWord(puzzleNum, btn));
+      shufflePool(puzzleNum);
+      document.getElementById('check-' + puzzleNum).classList.add('hidden');
+    }
+
+    function solvePuzzle(puzzleNum) {
+      resetPuzzle(puzzleNum);
+      const pool = document.getElementById('pool-' + puzzleNum);
+      const words = puzzleSolutions[puzzleNum].split(' ');
+      words.forEach(w => {
+        const chip = Array.from(pool.querySelectorAll('.word-chip')).find(c => c.textContent.trim() === w);
+        if (chip) pickWord(puzzleNum, chip);
+      });
+    }
+
+    // Präpositionen evaluation
+    const praepAnswers = {
+      pr1: 'fuer_akk',
+      pr2: 'dazu_dat',
+      pr3: 'fuer_akk',
+      pr4: 'mit_dat'
+    };
+
+    function checkPraep() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        if (sel.value === praepAnswers['pr' + i]) {
+          sel.className = 'w-full border-2 border-emerald-500 rounded p-2 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'w-full border-2 border-rose-500 rounded p-2 bg-rose-50 text-rose-900 font-bold text-xs';
+        }
+      }
+      const div = document.getElementById('praep-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Präpositionen korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showPraepSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('pr' + i).value = praepAnswers['pr' + i];
+      }
+      checkPraep();
+    }
+
+    function resetPraep() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        sel.value = '';
+        sel.className = 'w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs';
+      }
+      document.getElementById('praep-score').textContent = '';
+    }
+
+    // Upgrader evaluation
+    const upgraderAnswers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+
+    function checkUpgrader() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === upgraderAnswers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showUpgraderSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('up' + i).value = upgraderAnswers['up' + i];
+      }
+      checkUpgrader();
+    }
+
+    function resetUpgrader() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        sel.value = '';
+        sel.className = 'border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold';
+      }
+      document.getElementById('upgrader-score').textContent = '';
+    }
+
+    // Quiz evaluation
+    const quizAnswers = { q1: 'b', q2: 'a', q3: 'a' };
+    const quizHints = {
+      q1: 'Richtig! Sie wollte es allen recht machen und den Glaubenssätzen ihrer Eltern („Sei vorbildlich“) entsprechen.',
+      q2: 'Richtig! Impathie bedeutet Empathie nach innen – also der unterstützende Kontakt zu den eigenen Gefühlen und Bedürfnissen.',
+      q3: 'Richtig! Sie hilft immer noch gern, macht ihre Arbeit aber sichtbar und zieht eine freundliche Grenze.'
+    };
+
+    function checkQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        const sel = document.querySelector('input[name="q' + i + '"]:checked');
+        const fb = document.getElementById('q' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Antwort.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === quizAnswers['q' + i]) {
+          fb.textContent = '✓ ' + quizHints['q' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Leider nicht korrekt.';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showQuizSolution() {
+      for (let i = 1; i <= 3; i++) {
+        const r = document.querySelector(`input[name="q${i}"][value="${quizAnswers['q' + i]}"]`);
+        if (r) r.checked = true;
+      }
+      checkQuiz();
+    }
+
+    function resetQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('q' + i + '-fb').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
