@@ -11,22 +11,45 @@
     .word-chip { cursor: pointer; user-select: none; transition: all 0.15s ease; }
     .word-chip:hover { transform: translateY(-2px); }
     .gloss-highlight { background-color: #fef3c7; border-left: 3px solid #f59e0b; padding-left: 6px; border-radius: 4px; transition: all 0.25s ease; }
+    .tts-active-card {
+      border-color: #009ee3 !important;
+      box-shadow: 0 0 0 2px rgba(0, 158, 227, 0.25);
+      background-color: #f8fcff !important;
+    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
 
   <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
-
+    <!-- Top Course Switcher Bar (5 Lessons) -->
     <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-        <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5"><span>🎓</span> <span>Kurs-Module • Business Deutsch (Niveau B1 ➔ B1+)</span></div>
+        <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5">
+          <span>🎓</span> <span>Kurs-Module • Deutsch für Beruf &amp; Wissen (Niveau B1 ➔ B1+)</span>
+        </div>
         <div class="text-[11px] text-blue-300 hidden sm:block">Кликнете върху подчертана дума в текста за превод</div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
-        <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">1</span><span class="truncate">Meetings &amp; Vielredner</span></a>
-        <a href="ki-produktivitaet.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-[#009ee3] text-white border-[#009ee3] font-bold shadow-sm"><span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[11px] shrink-0">2</span><span class="truncate">KI &amp; Produktivität</span></a>
-        <a href="nein-sagen.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">3</span><span class="truncate">»Nein« sagen im Job</span></a>
-        <a href="stretch-collaboration.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition"><span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">4</span><span class="truncate">Schwierige Kollegen</span></a>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 text-xs">
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">1</span>
+          <span class="truncate">Meetings &amp; Vielredner</span>
+        </a>
+        <a href="ki-produktivitaet.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-[#009ee3] text-white border-[#009ee3] font-bold shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[11px] shrink-0">2</span>
+          <span class="truncate">KI &amp; Produktivität</span>
+        </a>
+        <a href="nein-sagen.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">3</span>
+          <span class="truncate">»Nein« sagen im Job</span>
+        </a>
+        <a href="stretch-collaboration.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">4</span>
+          <span class="truncate">Schwierige Kollegen</span>
+        </a>
+        <a href="lernen-hirnforschung.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">5</span>
+          <span class="truncate">Lernen &amp; Hirnforschung</span>
+        </a>
       </div>
     </nav>
 
@@ -36,8 +59,8 @@
         <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B1+ (Klar &amp; Einfach) • Wortschatz: B1 ➔ B1+ Brücke</span>
         <span class="text-xs text-blue-200">Arbeitswelt &amp; New Work</span>
       </div>
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">KI und Job-Alltag: Welche Tätigkeiten wir streichen sollten</h1>
-      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">Weder mehr Überstunden noch blind eingesetzte KI machen uns produktiver, solange wir nicht wissen, womit unsere Arbeitstage wirklich gefüllt sind. Vereinfacht auf Niveau B1+.</p>
+      <h1 id="lesson-headline" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">KI und Job-Alltag: Welche Tätigkeiten wir streichen sollten</h1>
+      <p id="lesson-lead" class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">Weder mehr Überstunden noch blind eingesetzte KI machen uns produktiver, solange wir nicht wissen, womit unsere Arbeitstage wirklich gefüllt sind. Vereinfacht auf Niveau B1+.</p>
       <div class="mt-2 text-xs text-blue-200">Textgrundlage: <strong>DER SPIEGEL</strong> (Gastbeitrag von Inga Höltmann)</div>
     </header>
 
@@ -53,11 +76,56 @@
     <!-- TAB 1 -->
     <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
 
+      <!-- Hochdeutsch Audio Player -->
+      <div id="tts-player-bar" class="p-4 rounded-xl border border-sky-200 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-9 h-9 rounded-full bg-[#002f6c] text-white flex items-center justify-center text-base shadow-sm shrink-0">🎧</span>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-slate-900">Ganzen Text auf Hochdeutsch anhören</div>
+              <div id="tts-status" class="text-[11px] sm:text-xs text-slate-600">Слушане на целия текст на книжовен немски (de-DE) • Bereit</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+            </button>
+            <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
+              <span>⏹</span> <span>Stopp</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 pt-2 border-t border-sky-200/70 text-xs">
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold">
+            <span>Tempo:</span>
+            <select id="tts-rate" onchange="onTtsSettingChange()" class="border border-slate-300 rounded-md px-2 py-1 bg-white text-slate-900 font-semibold">
+              <option value="0.8">0.8× Langsam (B1)</option>
+              <option value="0.9">0.9× Ruhig</option>
+              <option value="1" selected>1.0× Normal</option>
+              <option value="1.15">1.15× Schnell</option>
+            </select>
+          </label>
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold flex-1 min-w-[200px]">
+            <span>Stimme (de-DE):</span>
+            <select id="tts-voice" onchange="onTtsSettingChange()" class="w-full max-w-xs border border-slate-300 rounded-md px-2 py-1 bg-white text-slate-900 font-semibold truncate">
+              <option value="">Hochdeutsch (Standard de-DE)</option>
+            </select>
+          </label>
+          <span class="text-[11px] text-slate-500 hidden md:inline">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+        </div>
+      </div>
+
       <!-- P1 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Das Gedankenexperiment: Nur zwei Stunden Arbeitszeit</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Das Gedankenexperiment: Nur zwei Stunden Arbeitszeit</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Haben Sie Lust auf ein <span class="highlight-b1" onclick="highlightGlossary(this,'Gedankenexperiment')">Gedankenexperiment</span>? Stellen Sie sich vor: Sie haben in dieser Woche nur zwei Stunden Arbeitszeit <span class="highlight-b1" onclick="highlightGlossary(this,'zur Verfügung')">zur Verfügung</span>. Was würden Sie tun? Ein Meeting <span class="highlight-b1" onclick="highlightGlossary(this,'einberufen')">einberufen</span>? Wohl kaum! Sie würden keine langen Abstimmungen führen und keine Präsentationen schön formatieren. Sie würden alle <span class="highlight-b1" onclick="highlightGlossary(this,'Scheinarbeit')">Scheinarbeiten</span> sofort weglassen und sich auf das Wichtigste <span class="highlight-b1" onclick="highlightGlossary(this,'besinnen')">besinnen</span>.
           </p>
         </div>
@@ -72,10 +140,16 @@
       </div>
 
       <!-- P2 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Die politische Debatte: Mehr arbeiten?</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die politische Debatte: Mehr arbeiten?</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In der aktuellen Debatte hört man aber etwas ganz anderes. Politiker und Arbeitgeber sagen: Deutschland muss wieder mehr <span class="highlight-b1" onclick="highlightGlossary(this,'schuften')">schuften</span>, um die <span class="highlight-b1" onclick="highlightGlossary(this,'Stagnation')">Stagnation</span> zu <span class="highlight-b1" onclick="highlightGlossary(this,'überwinden')">überwinden</span>. Sie fordern <span class="highlight-b1" onclick="highlightGlossary(this,'Mehrarbeit')">Mehrarbeit</span>, weniger Brückentage und weniger Teilzeit. Die Autorin hält das für einen <span class="highlight-b1" onclick="highlightGlossary(this,'Irrglaube')">Irrglauben</span>: Viele Stunden sichern nicht automatisch unseren <span class="highlight-b1" onclick="highlightGlossary(this,'Wohlstand')">Wohlstand</span>.
           </p>
         </div>
@@ -91,10 +165,16 @@
       </div>
 
       <!-- P3 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Grenzen der Wissensarbeit</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Grenzen der Wissensarbeit</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Dieser Gedanke kommt aus der Fabrikarbeit. In der <span class="highlight-b1" onclick="highlightGlossary(this,'Wissensarbeit')">Wissensarbeit</span> kann man Leistung nicht einfach <span class="highlight-b1" onclick="highlightGlossary(this,'hochrechnen')">hochrechnen</span>. Wer zehn Stunden vor dem Bildschirm sitzt, hat nicht automatisch bessere Ideen als jemand nach sechs Stunden konzentrierter Arbeit. Viele Beschäftigte <span class="highlight-b1" onclick="highlightGlossary(this,'Belastungsgrenze')">stoßen an ihre Belastungsgrenze</span>. Mehr Zeit im Büro bringt nicht mehr Innovation, sondern nur <span class="highlight-b1" onclick="highlightGlossary(this,'Erschöpfung')">Erschöpfung</span>.
           </p>
         </div>
@@ -109,10 +189,16 @@
       </div>
 
       <!-- P4 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Der Milliarden-Hype um KI</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der Milliarden-Hype um KI</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Jetzt soll künstliche Intelligenz die Lösung sein. Firmen investieren Milliarden in Lizenzen und Chatbots. Die Chefs <span class="highlight-b1" onclick="highlightGlossary(this,'versprechen')">versprechen sich</span> große <span class="highlight-b1" onclick="highlightGlossary(this,'Produktivitätssprung')">Produktivitätssprünge</span>. Aber die Praxis <span class="highlight-b1" onclick="highlightGlossary(this,'ernüchtern')">ernüchtert</span>: Die erhofften Effekte <span class="highlight-b1" onclick="highlightGlossary(this,'ausbleiben')">bleiben</span> an vielen Orten <span class="highlight-b1" onclick="highlightGlossary(this,'ausbleiben')">aus</span>. Die Technik ist gut, aber sie löst nicht das Grundproblem: Wie ist die Arbeit im Unternehmen organisiert?
           </p>
         </div>
@@ -127,10 +213,16 @@
       </div>
 
       <!-- P5 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Drei Arten von Arbeit</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Drei Arten von Arbeit</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Höltmann teilt unsere Arbeit in drei Bereiche ein. Erstens die <span class="highlight-b1" onclick="highlightGlossary(this,'Verantwortungsarbeit')">Verantwortungsarbeit</span>: die Kernaufgaben, die echten Wert schaffen, zum Beispiel Kundenprobleme lösen oder Systeme planen. Zweitens die <span class="highlight-b1" onclick="highlightGlossary(this,'Kollaborationsarbeit')">Kollaborationsarbeit</span>: Meetings und Abstimmungen. Drittens die <span class="highlight-b1" onclick="highlightGlossary(this,'Reaktionsarbeit')">Reaktionsarbeit</span>: Chat-Nachrichten, E-Mails und plötzliche Störungen.
           </p>
         </div>
@@ -145,10 +237,16 @@
       </div>
 
       <!-- P6 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Kollaboration und Reaktion als Zeitfresser</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Kollaboration und Reaktion als Zeitfresser</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Das Problem: Die drei Bereiche sind nicht im Gleichgewicht. Die meiste Energie <span class="highlight-b1" onclick="highlightGlossary(this,'versickern')">versickert</span> in Besprechungen und schnellen Antworten. Viele kurze Status-Calls <span class="highlight-b1" onclick="highlightGlossary(this,'zerstückeln')">zerstückeln</span> den Tag, und alle paar Minuten kommt eine neue Nachricht. Diese ständigen Unterbrechungen <span class="highlight-b1" onclick="highlightGlossary(this,'lähmen')">lähmen</span> das Denken und machen tiefe Konzentration unmöglich.
           </p>
         </div>
@@ -163,10 +261,16 @@
       </div>
 
       <!-- P7 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Die eigentliche Arbeit bleibt liegen</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die eigentliche Arbeit bleibt liegen</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Die Folge ist <span class="highlight-b1" onclick="highlightGlossary(this,'verheerend')">verheerend</span>: Für die Verantwortungsarbeit bleibt in der Arbeitszeit kaum Platz. Ingenieure und Entwickler müssen ihre wichtigen Aufgaben <span class="highlight-b1" onclick="highlightGlossary(this,'Rand')">an den Rand des Tages drängen</span> oder in den Feierabend verschieben. So sind Menschen den ganzen Tag <span class="highlight-b1" onclick="highlightGlossary(this,'pausenlos')">pausenlos</span> beschäftigt, und abends merken sie: Das Wichtigste ist <span class="highlight-b1" onclick="highlightGlossary(this,'liegen bleiben')">liegen geblieben</span>.
           </p>
         </div>
@@ -181,10 +285,16 @@
       </div>
 
       <!-- P8 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Warum KI das Problem verschärft</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Warum KI das Problem verschärft</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Wenn KI auf dieses System trifft, löst sie das Problem nicht, sondern macht es <span class="highlight-b1" onclick="highlightGlossary(this,'verschärfen')">schlimmer</span>. KI beschleunigt auch die falsche Arbeit, und es entsteht noch mehr »Busy Work«. Wenn Mitarbeiter mit KI in Sekunden lange Berichte, unnötige Präsentationen und Protokolle erstellen, haben sie keinen <span class="highlight-b1" onclick="highlightGlossary(this,'Nutzen stiften')">Nutzen gestiftet</span>. Denn Menschen müssen alles lesen, prüfen und besprechen. Statt <span class="highlight-b1" onclick="highlightGlossary(this,'Entlastung')">Entlastung</span> entsteht <span class="highlight-b1" onclick="highlightGlossary(this,'Leerlauf')">Leerlauf</span>.
           </p>
         </div>
@@ -199,11 +309,17 @@
       </div>
 
       <!-- P9 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Der blinde Fleck der Führungskräfte</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
-            Warum erkennen Firmen diese Falle nicht? Das liegt am <span class="highlight-b1" onclick="highlightGlossary(this,'blinder Fleck')">blinden Fleck</span> des Managements. Viele Chefs fordern Produktivität, wissen aber nicht, wie <span class="highlight-b1" onclick="highlightGlossary(this,'zersplittert')">zersplittert</span> der Alltag ihrer Teams ist. Aus Angst vor <span class="highlight-b1" onclick="highlightGlossary(this,'Kontrollverlust')">Kontrollverlust</span> führen sie immer neue Berichte ein. Sie verwechseln Anwesenheit im Meeting mit Leistung – und <span class="highlight-b1" onclick="highlightGlossary(this,'ersticken')">ersticken</span> so die Produktivität, die sie steigern wollen.
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der blinde Fleck der Führungskräfte</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Warum erkennen Firmen diese Falle nicht? Das liegt am <span class="highlight-b1" onclick="highlightGlossary(this,'blinde Fleck')">blinden Fleck</span> des Managements. Viele Chefs fordern Produktivität, wissen aber nicht, wie <span class="highlight-b1" onclick="highlightGlossary(this,'zersplittert')">zersplittert</span> der Alltag ihrer Teams ist. Aus Angst vor <span class="highlight-b1" onclick="highlightGlossary(this,'Kontrollverlust')">Kontrollverlust</span> führen sie immer neue Berichte ein. Sie verwechseln Anwesenheit im Meeting mit Leistung – und <span class="highlight-b1" onclick="highlightGlossary(this,'ersticken')">ersticken</span> so die Produktivität, die sie steigern wollen.
           </p>
         </div>
         <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
@@ -217,10 +333,16 @@
       </div>
 
       <!-- P10 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2"><span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span><h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Lösung: Mut zum Weglassen</h3></div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Lösung: Mut zum Weglassen</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Der wirkliche Hebel liegt nicht in neuer Technik, sondern in einem <span class="highlight-b1" onclick="highlightGlossary(this,'Kulturwandel')">Kulturwandel</span>. Wir müssen aufhören, den Arbeitstag mit <span class="highlight-b1" onclick="highlightGlossary(this,'Ballast')">Ballast</span> zu <span class="highlight-b1" onclick="highlightGlossary(this,'überfrachten')">überfrachten</span>. Teams brauchen den Mut, unnötige Jour Fixes, endlose E-Mail-Ketten und Formalitäten zu <span class="highlight-b1" onclick="highlightGlossary(this,'streichen')">streichen</span>. Erst wenn wir das Unwichtige <span class="highlight-b1" onclick="highlightGlossary(this,'weglassen')">weglassen</span>, entsteht Freiraum, in dem Mensch und Technik ihren echten <span class="highlight-b1" onclick="highlightGlossary(this,'Mehrwert')">Mehrwert</span> zeigen können.
           </p>
         </div>
@@ -513,10 +635,15 @@
 
     <footer class="bg-slate-100 p-5 text-center text-xs text-slate-500 border-t border-slate-200">
       <div class="flex flex-wrap justify-center gap-4 mb-2 font-semibold">
-        <a href="index.html" class="text-[#009ee3] hover:underline">Lektion 1: Meetings &amp; Vielredner</a><span>•</span>
-        <a href="ki-produktivitaet.html" class="text-slate-900 underline font-bold">Lektion 2: KI &amp; Produktivität</a><span>•</span>
-        <a href="nein-sagen.html" class="text-[#009ee3] hover:underline">Lektion 3: »Nein« sagen</a><span>•</span>
+        <a href="index.html" class="text-[#009ee3] hover:underline">Lektion 1: Meetings &amp; Vielredner</a>
+        <span>•</span>
+        <a href="ki-produktivitaet.html" class="text-slate-900 underline font-bold">Lektion 2: KI &amp; Produktivität</a>
+        <span>•</span>
+        <a href="nein-sagen.html" class="text-[#009ee3] hover:underline">Lektion 3: »Nein« sagen</a>
+        <span>•</span>
         <a href="stretch-collaboration.html" class="text-[#009ee3] hover:underline">Lektion 4: Schwierige Kollegen</a>
+        <span>•</span>
+        <a href="lernen-hirnforschung.html" class="text-[#009ee3] hover:underline">Lektion 5: Lernen &amp; Hirnforschung</a>
       </div>
       <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
     </footer>
@@ -532,13 +659,298 @@
       const navEl = document.getElementById('lesson-tabs'); if (navEl) navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     function highlightGlossary(spanEl, keyTerm) {
-      const card = spanEl.closest('.grid'); if (!card) return;
+      const card = spanEl.closest('.grid');
+      if (!card) return;
+      const items = card.querySelectorAll('.gloss-item');
       const search = (keyTerm || spanEl.textContent).trim().toLowerCase();
-      card.querySelectorAll('.gloss-item').forEach(div => {
+      items.forEach(div => {
+        clearTimeout(div._glossTimer);
         div.classList.remove('gloss-highlight');
-        if (div.textContent.toLowerCase().includes(search)) { div.classList.add('gloss-highlight'); setTimeout(() => div.classList.remove('gloss-highlight'), 2200); }
+        if (div.textContent.toLowerCase().includes(search)) {
+          div.classList.add('gloss-highlight');
+          div._glossTimer = setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
+        }
       });
     }
+
+    // --- Hochdeutsch Text-to-Speech (de-DE) ---
+    let ttsState = 'idle'; // 'idle' | 'playing' | 'paused'
+    let ttsQueue = [];
+    let ttsIndex = 0;
+    let ttsPlaybackId = 0;
+    let ttsVoices = [];
+
+    function scoreGermanVoice(v) {
+      const name = (v.name || '').toLowerCase();
+      const lang = (v.lang || '').toLowerCase().replace('_', '-');
+      let score = 0;
+      if (lang === 'de-de') score += 100;
+      else if (lang.startsWith('de-de')) score += 90;
+      else if (lang === 'de') score += 50;
+      if (name.includes('natural') || name.includes('neural')) score += 40;
+      if (name.includes('google deutsch')) score += 35;
+      if (name.includes('online')) score += 20;
+      if (name.includes('katja') || name.includes('conrad') || name.includes('amala') || name.includes('anna') || name.includes('helena') || name.includes('hedda') || name.includes('stefan')) score += 15;
+      return score;
+    }
+
+    function populateGermanVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const all = window.speechSynthesis.getVoices() || [];
+      const deDE = all.filter(v => (v.lang || '').toLowerCase().replace('_', '-').startsWith('de-de'));
+      const otherDe = all.filter(v => (v.lang || '').toLowerCase().startsWith('de') && !deDE.includes(v));
+      ttsVoices = (deDE.length ? deDE : otherDe).slice().sort((a, b) => scoreGermanVoice(b) - scoreGermanVoice(a));
+
+      const sel = document.getElementById('tts-voice');
+      if (!sel) return;
+      const prev = sel.value;
+      sel.innerHTML = '';
+      if (ttsVoices.length === 0) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'Hochdeutsch (de-DE Systemstandard)';
+        sel.appendChild(opt);
+      } else {
+        ttsVoices.forEach(v => {
+          const opt = document.createElement('option');
+          opt.value = v.voiceURI || v.name;
+          opt.textContent = v.name + ' (' + v.lang + ')';
+          sel.appendChild(opt);
+        });
+        if (prev && ttsVoices.some(v => (v.voiceURI || v.name) === prev)) {
+          sel.value = prev;
+        }
+      }
+    }
+
+    function cleanTextForSpeech(str) {
+      return (str || '')
+        .replace(/[»«„“"()]/g, ' ')
+        .replace(/–/g, ', ')
+        .replace(/\s+/g, ' ')
+        .replace(/([.!?])\s*\./g, '$1')
+        .trim();
+    }
+
+    function splitIntoSentences(text) {
+      const cleaned = cleanTextForSpeech(text);
+      if (!cleaned) return [];
+      const parts = cleaned.match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) || [cleaned];
+      const merged = [];
+      for (const part of parts) {
+        const t = part.trim();
+        if (!t) continue;
+        if (merged.length > 0 && (/(?:^|\s)(?:Dr|Prof|Nr|Abs|ca|Mio|Mrd|[a-zäöüA-ZÄÖÜ]|\d{1,2})\.$/.test(merged[merged.length - 1]) || t.length < 6)) {
+          merged[merged.length - 1] += ' ' + t;
+        } else {
+          merged.push(t);
+        }
+      }
+      const safe = [];
+      merged.forEach(s => {
+        if (s.length <= 220) {
+          safe.push(s);
+        } else {
+          const sub = s.split(/,\s+/);
+          let buf = '';
+          sub.forEach((piece, i) => {
+            const addition = (i > 0 ? ', ' : '') + piece;
+            if ((buf + addition).length > 200 && buf) {
+              safe.push(buf.trim());
+              buf = piece;
+            } else {
+              buf += addition;
+            }
+          });
+          if (buf.trim()) safe.push(buf.trim());
+        }
+      });
+      return safe;
+    }
+
+    function buildSpeechQueue(startCardIndex) {
+      const queue = [];
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      if (startCardIndex == null || startCardIndex < 0) {
+        const headline = document.getElementById('lesson-headline');
+        const lead = document.getElementById('lesson-lead');
+        if (headline) {
+          splitIntoSentences(headline.textContent).forEach(t => queue.push({ text: t, card: null, label: 'Überschrift' }));
+        }
+        if (lead) {
+          splitIntoSentences(lead.textContent).forEach(t => queue.push({ text: t, card: null, label: 'Einleitung' }));
+        }
+        startCardIndex = 0;
+      }
+      for (let i = startCardIndex; i < cards.length; i++) {
+        const p = cards[i].querySelector('.tts-paragraph');
+        if (!p) continue;
+        splitIntoSentences(p.textContent).forEach(t => {
+          queue.push({ text: t, card: cards[i], label: 'Absatz ' + (i + 1) + ' von ' + cards.length });
+        });
+      }
+      return queue;
+    }
+
+    function clearTtsHighlight() {
+      document.querySelectorAll('#text-tab .tts-card.tts-active-card').forEach(c => c.classList.remove('tts-active-card'));
+    }
+
+    function updateTtsUi(statusText) {
+      const playIcon = document.getElementById('tts-play-icon');
+      const playLabel = document.getElementById('tts-play-label');
+      const stopBtn = document.getElementById('tts-stop-btn');
+      const statusEl = document.getElementById('tts-status');
+      if (ttsState === 'playing') {
+        if (playIcon) playIcon.textContent = '⏸';
+        if (playLabel) playLabel.textContent = 'Pause';
+        if (stopBtn) stopBtn.disabled = false;
+      } else if (ttsState === 'paused') {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Weiter';
+        if (stopBtn) stopBtn.disabled = false;
+      } else {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (stopBtn) stopBtn.disabled = true;
+      }
+      if (statusEl && statusText) statusEl.textContent = statusText;
+    }
+
+    function speakCurrentChunk() {
+      if (ttsIndex >= ttsQueue.length) {
+        ttsState = 'idle';
+        clearTtsHighlight();
+        updateTtsUi('Fertig vorgelesen • Bereit');
+        return;
+      }
+      const item = ttsQueue[ttsIndex];
+      clearTtsHighlight();
+      if (item.card) {
+        item.card.classList.add('tts-active-card');
+        const rect = item.card.getBoundingClientRect();
+        if (rect.top < 70 || rect.bottom > window.innerHeight - 40) {
+          item.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      const rateSel = document.getElementById('tts-rate');
+      const voiceSel = document.getElementById('tts-voice');
+      const u = new SpeechSynthesisUtterance(item.text);
+      u.lang = 'de-DE';
+      u.rate = rateSel ? parseFloat(rateSel.value) || 1 : 1;
+      if (voiceSel && voiceSel.value && ttsVoices.length) {
+        const chosen = ttsVoices.find(v => (v.voiceURI || v.name) === voiceSel.value);
+        if (chosen) {
+          u.voice = chosen;
+          u.lang = chosen.lang || 'de-DE';
+        }
+      } else if (ttsVoices.length) {
+        u.voice = ttsVoices[0];
+        u.lang = ttsVoices[0].lang || 'de-DE';
+      }
+
+      const myId = ttsPlaybackId;
+      u.onend = function() {
+        if (myId !== ttsPlaybackId) return;
+        ttsIndex++;
+        speakCurrentChunk();
+      };
+      u.onerror = function(e) {
+        if (myId !== ttsPlaybackId) return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+        ttsIndex++;
+        speakCurrentChunk();
+      };
+      window.__ttsUtterance = u;
+      updateTtsUi('Spricht Hochdeutsch (de-DE) • ' + item.label);
+      window.speechSynthesis.speak(u);
+    }
+
+    function togglePlayAll() {
+      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        updateTtsUi('Ihr Browser unterstützt leider keine Sprachausgabe.');
+        return;
+      }
+      if (ttsState === 'playing') {
+        ttsPlaybackId++;
+        window.speechSynthesis.cancel();
+        ttsState = 'paused';
+        const cur = ttsQueue[ttsIndex];
+        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        return;
+      }
+      if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
+        ttsPlaybackId++;
+        const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+        window.speechSynthesis.cancel();
+        ttsState = 'playing';
+        if (wasSpeaking) {
+          const myId = ttsPlaybackId;
+          setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+        } else {
+          speakCurrentChunk();
+        }
+        return;
+      }
+      ttsPlaybackId++;
+      const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+      window.speechSynthesis.cancel();
+      populateGermanVoices();
+      ttsQueue = buildSpeechQueue(-1);
+      ttsIndex = 0;
+      ttsState = 'playing';
+      if (wasSpeaking) {
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      } else {
+        speakCurrentChunk();
+      }
+    }
+
+    function speakFromCard(btnEl) {
+      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        updateTtsUi('Ihr Browser unterstützt leider keine Sprachausgabe.');
+        return;
+      }
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      const idx = cards.indexOf(btnEl.closest('.tts-card'));
+      ttsPlaybackId++;
+      const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+      window.speechSynthesis.cancel();
+      populateGermanVoices();
+      ttsQueue = buildSpeechQueue(idx >= 0 ? idx : 0);
+      ttsIndex = 0;
+      ttsState = 'playing';
+      if (wasSpeaking) {
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      } else {
+        speakCurrentChunk();
+      }
+    }
+
+    function stopSpeech() {
+      ttsPlaybackId++;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      ttsState = 'idle';
+      ttsIndex = 0;
+      clearTtsHighlight();
+      updateTtsUi('Слушане на целия текст на книжовен немски (de-DE) • Bereit');
+    }
+
+    function onTtsSettingChange() {
+      if (ttsState === 'playing') {
+        ttsPlaybackId++;
+        window.speechSynthesis.cancel();
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      }
+    }
+
+    window.addEventListener('beforeunload', () => {
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    });
 
     const redemittelAnswers = { scene1: 'c', scene2: 'b', scene3: 'c', scene4: 'b' };
     const redemittelHints = {
@@ -570,16 +982,26 @@
       2: "Wenn das Team unnötige Termine streicht, gewinnt es Zeit.",
       3: "Wir nutzen moderne KI-Tools, um produktiver zu arbeiten."
     };
-    function shufflePool(n) {
-      const pool = document.getElementById('pool-' + n); if (!pool) return;
+    function shufflePool(puzzleNum) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      if (!pool) return;
       const chips = Array.from(pool.querySelectorAll('.word-chip'));
       for (let i = chips.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        const t = chips[i]; chips[i] = chips[j]; chips[j] = t;
+        const temp = chips[i];
+        chips[i] = chips[j];
+        chips[j] = temp;
       }
       chips.forEach(c => pool.appendChild(c));
     }
-    document.addEventListener('DOMContentLoaded', () => { [1, 2, 3].forEach(shufflePool); });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      [1, 2, 3].forEach(n => shufflePool(n));
+      populateGermanVoices();
+      if ('speechSynthesis' in window && 'onvoiceschanged' in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = populateGermanVoices;
+      }
+    });
     function pickWord(n, btn) {
       const target = document.getElementById('target-' + n);
       const ph = document.getElementById('placeholder-' + n); if (ph) ph.style.display = 'none';

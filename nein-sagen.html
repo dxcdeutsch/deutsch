@@ -32,21 +32,25 @@
       border-radius: 4px;
       transition: all 0.25s ease;
     }
+    .tts-active-card {
+      border-color: #009ee3 !important;
+      box-shadow: 0 0 0 2px rgba(0, 158, 227, 0.25);
+      background-color: #f8fcff !important;
+    }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
 
   <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
-    
-    <!-- Top Course Switcher Bar (4 Lessons) -->
+    <!-- Top Course Switcher Bar (5 Lessons) -->
     <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
       <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
         <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5">
-          <span>🎓</span> <span>Kurs-Module • Business Deutsch (Niveau B1 ➔ B1+)</span>
+          <span>🎓</span> <span>Kurs-Module • Deutsch für Beruf &amp; Wissen (Niveau B1 ➔ B1+)</span>
         </div>
         <div class="text-[11px] text-blue-300 hidden sm:block">Кликнете върху подчертана дума в текста за превод</div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 text-xs">
         <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
           <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">1</span>
           <span class="truncate">Meetings &amp; Vielredner</span>
@@ -63,6 +67,10 @@
           <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">4</span>
           <span class="truncate">Schwierige Kollegen</span>
         </a>
+        <a href="lernen-hirnforschung.html" class="flex items-center gap-2 px-3 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[11px] shrink-0">5</span>
+          <span class="truncate">Lernen &amp; Hirnforschung</span>
+        </a>
       </div>
     </nav>
 
@@ -75,10 +83,10 @@
           <span class="text-xs text-blue-200">Psychologie &amp; Arbeitswelt</span>
         </div>
       </div>
-      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+      <h1 id="lesson-headline" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
         So lernen Sie, »Nein« zu sagen (ohne danach ein schlechtes Gewissen zu haben)
       </h1>
-      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+      <p id="lesson-lead" class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
         Sie übernehmen Extraaufgaben, machen Überstunden und wollen es allen recht machen: Menschen mit Tendenz zum »People Pleasing« sind für alle da – und vergessen sich selbst. Fünf Schritte, um der Harmoniesucht im Job zu entkommen.
       </p>
       <div class="mt-2 text-xs text-blue-200">
@@ -111,14 +119,56 @@
     <!-- TAB 1: Full Text with Side-by-Side B1+ Glossary -->
     <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
 
-      <!-- Paragraph 1 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
-        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">1</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Immer für alle da: Der Büroalltag von Valmira Sadiki</h3>
+      <!-- Hochdeutsch Audio Player -->
+      <div id="tts-player-bar" class="p-4 rounded-xl border border-sky-200 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-9 h-9 rounded-full bg-[#002f6c] text-white flex items-center justify-center text-base shadow-sm shrink-0">🎧</span>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-slate-900">Ganzen Text auf Hochdeutsch anhören</div>
+              <div id="tts-status" class="text-[11px] sm:text-xs text-slate-600">Слушане на целия текст на книжовен немски (de-DE) • Bereit</div>
+            </div>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+            </button>
+            <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
+              <span>⏹</span> <span>Stopp</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 pt-2 border-t border-sky-200/70 text-xs">
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold">
+            <span>Tempo:</span>
+            <select id="tts-rate" onchange="onTtsSettingChange()" class="border border-slate-300 rounded-md px-2 py-1 bg-white text-slate-900 font-semibold">
+              <option value="0.8">0.8× Langsam (B1)</option>
+              <option value="0.9">0.9× Ruhig</option>
+              <option value="1" selected>1.0× Normal</option>
+              <option value="1.15">1.15× Schnell</option>
+            </select>
+          </label>
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold flex-1 min-w-[200px]">
+            <span>Stimme (de-DE):</span>
+            <select id="tts-voice" onchange="onTtsSettingChange()" class="w-full max-w-xs border border-slate-300 rounded-md px-2 py-1 bg-white text-slate-900 font-semibold truncate">
+              <option value="">Hochdeutsch (Standard de-DE)</option>
+            </select>
+          </label>
+          <span class="text-[11px] text-slate-500 hidden md:inline">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+        </div>
+      </div>
+
+      <!-- Paragraph 1 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Immer für alle da: Der Büroalltag von Valmira Sadiki</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Es gibt Sätze, die Valmira Sadiki im Büro schon viel zu oft gesagt hat: »Na klar, das <span class="highlight-b1" onclick="highlightGlossary(this, 'übernehmen')">übernehme ich</span> gern!« oder »Mach ich sofort!«. Die 28-jährige Betriebswirtin arbeitet im Finanzmanagement, aber sie <span class="highlight-b1" onclick="highlightGlossary(this, 'recht machen')">will es allen recht machen</span>. Damit sich alle Kolleginnen und Kollegen wohlfühlen, antwortet sie auf jede Frage sofort, hört sich private Sorgen an und <span class="highlight-b1" onclick="highlightGlossary(this, 'ausräumen')">räumt</span> ständig den Geschirrspüler im Büro <span class="highlight-b1" onclick="highlightGlossary(this, 'ausräumen')">aus</span>. Für die Wünsche der anderen macht sie permanent <span class="highlight-b1" onclick="highlightGlossary(this, 'Überstunde')">Überstunden</span>, während sie selbst dabei <span class="highlight-b1" onclick="highlightGlossary(this, 'zu kurz kommen')">zu kurz kommt</span>.
           </p>
         </div>
@@ -134,13 +184,16 @@
       </div>
 
       <!-- Paragraph 2 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">2</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Woher kommt der Wunsch zu gefallen?</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Woher kommt der Wunsch zu gefallen?</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Woher kommt dieses starke Bedürfnis? Sadiki erinnert sich an die <span class="highlight-b1" onclick="highlightGlossary(this, 'Glaubenssatz')">Glaubenssätze</span> ihrer Eltern. Ihre Familie ist in den Neunzigerjahren aus dem Kosovo nach Deutschland geflohen. Die Eltern wollten, dass ihre Tochter in der neuen Heimat <span class="highlight-b1" onclick="highlightGlossary(this, 'Anerkennung')">Anerkennung</span> findet: »<span class="highlight-b1" onclick="highlightGlossary(this, 'anstrengen')">Streng dich an</span>, fall nicht unangenehm auf! Sei immer <span class="highlight-b1" onclick="highlightGlossary(this, 'vorbildlich')">vorbildlich</span>!« Diese Sätze hat Sadiki tief <span class="highlight-b1" onclick="highlightGlossary(this, 'verinnerlichen')">verinnerlicht</span>. In der Psychologie nennt man dieses Verhalten »People Pleasing« oder <span class="highlight-b1" onclick="highlightGlossary(this, 'Harmoniesucht')">Harmoniesucht</span>: Der Fokus liegt nur auf den Wünschen des Umfelds, nicht auf den eigenen.
           </p>
         </div>
@@ -156,13 +209,16 @@
       </div>
 
       <!-- Paragraph 3 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">3</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Schattenseite: Wenn Hilfsbereitschaft krank macht</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Schattenseite: Wenn Hilfsbereitschaft krank macht</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In Teams sind solche Menschen sehr beliebt. Sie erledigen Aufgaben sofort, ohne kritisch zu prüfen, ob sie überhaupt <span class="highlight-b1" onclick="highlightGlossary(this, 'zuständig')">zuständig sind</span> oder ob sie dafür alles andere <span class="highlight-b1" onclick="highlightGlossary(this, 'stehen und liegen')">stehen und liegen lassen</span> müssen. Doch die Psychologin Ulrike Bossmann warnt: Die ständige <span class="highlight-b1" onclick="highlightGlossary(this, 'Hilfsbereitschaft')">Hilfsbereitschaft</span> führt zu chronischem Stress, <span class="highlight-b1" onclick="highlightGlossary(this, 'Selbstzweifel')">Selbstzweifeln</span> und <span class="highlight-b1" onclick="highlightGlossary(this, 'Anspannung')">Anspannung</span>. Betroffene <span class="highlight-b1" onclick="highlightGlossary(this, 'runterschlucken')">schlucken</span> ihren Frust so lange <span class="highlight-b1" onclick="highlightGlossary(this, 'runterschlucken')">runter</span>, bis nichts mehr geht – und riskieren Schwindel, Tinnitus oder völlige Erschöpfung.
           </p>
         </div>
@@ -178,13 +234,16 @@
       </div>
 
       <!-- Paragraph 4 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">4</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Projekt-Falle: Plötzlich für alles verantwortlich</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Projekt-Falle: Plötzlich für alles verantwortlich</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Auch Sadiki erlebt diesen Punkt im Jahr 2023. Ihre Chefin bittet sie um Hilfe bei einem schwierigen Projekt und lobt sie: »Du kannst doch so gut mit Menschen!« Sadiki möchte die Chefin nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'verärgern')">verärgern</span> und <span class="highlight-b1" onclick="highlightGlossary(this, 'trauen')">traut sich nicht</span>, ihre <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedenken')">Bedenken zu äußern</span>. Sie bekommt das Projekt zusätzlich zu ihrer normalen Arbeit, ohne dass ihr etwas anderes <span class="highlight-b1" onclick="highlightGlossary(this, 'abnehmen')">abgenommen</span> wird. Bald muss sie die Fehler anderer Kollegen <span class="highlight-b1" onclick="highlightGlossary(this, 'ausbügeln')">ausbügeln</span>. Abends fällt sie <span class="highlight-b1" onclick="highlightGlossary(this, 'erschöpft')">völlig erschöpft</span> ins Bett und tippt schon morgens beim Aufwachen neue Aufgaben ins Handy.
           </p>
         </div>
@@ -200,13 +259,16 @@
       </div>
 
       <!-- Paragraph 5 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">5</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 1: Eigene Muster erkennen (Selbsterkenntnis)</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 1: Eigene Muster erkennen (Selbsterkenntnis)</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Wie kommt man raus aus diesem <span class="highlight-b1" onclick="highlightGlossary(this, 'Hamsterrad')">Hamsterrad</span>? Der erste Schritt ist <span class="highlight-b1" onclick="highlightGlossary(this, 'Erkenntnis')">Erkenntnis</span>. Man muss genau beobachten, bei welchen Personen und in welchen Situationen man automatisch <span class="highlight-b1" onclick="highlightGlossary(this, 'angepasst')">angepasst handelt</span>. Typische Warnsignale auf der Checkliste sind: Ich fühle ein klares »Nein«, sage aber »Ja«. Ich habe große Angst, egoistisch oder kompliziert <span class="highlight-b1" onclick="highlightGlossary(this, 'wirken')">zu wirken</span>. Und ich schaffe es kaum, Kollegen bei Anfragen <span class="highlight-b1" onclick="highlightGlossary(this, 'vertrösten')">auf später zu vertrösten</span>. Nur wer diesen automatischen Reflex erkennt, kann seine <span class="highlight-b1" onclick="highlightGlossary(this, 'Grenzen wahren')">Grenzen wahren</span>.
           </p>
         </div>
@@ -222,13 +284,16 @@
       </div>
 
       <!-- Paragraph 6 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">6</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 2: Gefühle wahrnehmen und »Impathie« lernen</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 2: Gefühle wahrnehmen und »Impathie« lernen</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Oft merken Betroffene gar nicht, wie schlecht es ihnen geht, weil sie nur noch funktionieren. Sie <span class="highlight-b1" onclick="highlightGlossary(this, 'unterdrücken')">unterdrücken</span> ihre eigenen <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedürfnis')">Bedürfnisse</span>, um die Harmonie im Team nicht zu gefährden. Die Psychologie-Professorin Stefanie Neubrand nennt die Lösung »Impathie« – also Empathie nach innen. Statt sich <span class="highlight-b1" onclick="highlightGlossary(this, 'Selbstvorwurf')">Selbstvorwürfe</span> zu machen (»Warum konnte ich mich schon wieder nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'durchsetzen')">durchsetzen</span>?«), sollte man freundlich mit sich sprechen und den eigenen Ärger bewusst <span class="highlight-b1" onclick="highlightGlossary(this, 'wahrnehmen')">wahrnehmen</span>. Ärger zeigt uns nämlich, dass eine Grenze <span class="highlight-b1" onclick="highlightGlossary(this, 'überschreiten')">überschritten</span> wurde.
           </p>
         </div>
@@ -244,13 +309,16 @@
       </div>
 
       <!-- Paragraph 7 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">7</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sich Bedenkzeit verschaffen: Der Wunder-Satz</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sich Bedenkzeit verschaffen: Der Wunder-Satz</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Um die eigenen Gefühle zu prüfen, braucht man vor allem Zeit. Harmoniesüchtige <span class="highlight-b1" onclick="highlightGlossary(this, 'neigen')">neigen dazu</span>, sofort »Ja« zu rufen und <span class="highlight-b1" onclick="highlightGlossary(this, 'aufhalsen')">sich</span> damit viel zu viel Arbeit <span class="highlight-b1" onclick="highlightGlossary(this, 'aufhalsen')">aufzuhalsen</span>. Um diesen Reflex zu stoppen, hilft es, <span class="highlight-b1" onclick="highlightGlossary(this, 'verschaffen')">sich Zeit zu verschaffen</span>. Ein einfacher Satz kann im Büroalltag <span class="highlight-b1" onclick="highlightGlossary(this, 'Wunder wirken')">Wunder wirken</span>: »Danke, dass du an mich gedacht hast. Ich <span class="highlight-b1" onclick="highlightGlossary(this, 'überlegen')">überlege es mir</span> und melde mich um 14 Uhr dazu.« So gewinnt man wertvolle <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedenkzeit')">Bedenkzeit</span>, um in Ruhe den eigenen Kalender und die Zuständigkeit zu prüfen.
           </p>
         </div>
@@ -266,13 +334,16 @@
       </div>
 
       <!-- Paragraph 8 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">8</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 3: Klar sprechen und »Neins« zählen</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 3: Klar sprechen und »Neins« zählen</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Ein Nein zu einer weiteren Aufgabe ist immer ein Ja zu sich selbst – zur eigenen Gesundheit und zur Qualität der Arbeit. Dafür muss man <span class="highlight-b1" onclick="highlightGlossary(this, 'Position beziehen')">Position beziehen</span>. Viele Menschen <span class="highlight-b1" onclick="highlightGlossary(this, 'verwässern')">verwässern</span> ihre Sprache aus Angst <span class="highlight-b1" onclick="highlightGlossary(this, 'anecken')">anzuecken</span>: Sie benutzen ständig Wörter wie »vielleicht« oder »eventuell«. Besser ist eine klare, direkte Bitte. Als Training rät Bossmann, jede Woche bewusst kleine »Neins« zu sammeln: Im Meeting einmal kritisch widersprechen oder <span class="highlight-b1" onclick="highlightGlossary(this, 'zurückhalten')">sich zurückhalten</span>, wenn gefragt wird: »Wer macht das Protokoll?« – und die <span class="highlight-b1" onclick="highlightGlossary(this, 'ertragen')">Stille im Raum ertragen</span>.
           </p>
         </div>
@@ -287,13 +358,16 @@
       </div>
 
       <!-- Paragraph 9 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">9</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 4: Das Unbehagen beim Abgrenzen aushalten</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Schritt 4: Das Unbehagen beim Abgrenzen aushalten</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             »Jede gesunde Beziehung <span class="highlight-b1" onclick="highlightGlossary(this, 'aushalten')">hält es aus</span>, dass man jemanden mal <span class="highlight-b1" onclick="highlightGlossary(this, 'enttäuschen')">enttäuscht</span>«, betont Psychologin Bossmann. Trotzdem spüren People Pleaser oft ein starkes <span class="highlight-b1" onclick="highlightGlossary(this, 'Unbehagen')">Unbehagen</span> oder sogar Scham, wenn sie <span class="highlight-b1" onclick="highlightGlossary(this, 'einsetzen')">sich für ihre Belange einsetzen</span>. Aber niemand hat gesagt, dass sich <span class="highlight-b1" onclick="highlightGlossary(this, 'abgrenzen')">Abgrenzen</span> sofort gut anfühlen muss! Das schlechte Gefühl bedeutet nur, dass man etwas Neues und Mutiges <span class="highlight-b1" onclick="highlightGlossary(this, 'wagen')">wagt</span>. Der persönliche Erfolg liegt darin, für sich einzustehen – völlig unabhängig davon, wie das Gegenüber reagiert.
           </p>
         </div>
@@ -309,13 +383,16 @@
       </div>
 
       <!-- Paragraph 10 -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch">
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
         <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
-          <div class="flex items-center gap-2">
-            <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center">10</span>
-            <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sadikis Wandel: Hilfsbereit, aber mit klaren Grenzen</h3>
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
+              <h3 class="font-bold text-slate-900 text-sm sm:text-base">Sadikis Wandel: Hilfsbereit, aber mit klaren Grenzen</h3>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-800">
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Heute macht Valmira Sadiki vieles anders. Nach einer Auszeit im Ausland hat sie den nötigen <span class="highlight-b1" onclick="highlightGlossary(this, 'Abstand')">Abstand</span> gewonnen. Bei jeder Anfrage prüft sie zuerst: Ist das wirklich mein <span class="highlight-b1" onclick="highlightGlossary(this, 'Aufgabenbereich')">Aufgabenbereich</span>? Wenn ein Kollege möchte, dass sie schnell seine Aufgabe übernimmt, sagt sie ruhig: »Nein, entweder machst du das allein, oder ich zeige es dir noch einmal.« Die anfängliche <span class="highlight-b1" onclick="highlightGlossary(this, 'Irritation')">Irritation</span> beim <span class="highlight-b1" onclick="highlightGlossary(this, 'Gegenüber')">Gegenüber</span> hat sie ausgehalten – und gemerkt, dass nichts Schlimmes passiert. Sie hilft weiterhin gern, aber mit fast 30 Jahren muss sie niemandem mehr etwas <span class="highlight-b1" onclick="highlightGlossary(this, 'beweisen')">beweisen</span>.
           </p>
         </div>
@@ -833,6 +910,8 @@
         <a href="nein-sagen.html" class="text-slate-900 underline font-bold">Lektion 3: »Nein« sagen</a>
         <span>•</span>
         <a href="stretch-collaboration.html" class="text-[#009ee3] hover:underline">Lektion 4: Schwierige Kollegen</a>
+        <span>•</span>
+        <a href="lernen-hirnforschung.html" class="text-[#009ee3] hover:underline">Lektion 5: Lernen &amp; Hirnforschung</a>
       </div>
       <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
     </footer>
@@ -868,13 +947,293 @@
       const items = card.querySelectorAll('.gloss-item');
       const search = (keyTerm || spanEl.textContent).trim().toLowerCase();
       items.forEach(div => {
+        clearTimeout(div._glossTimer);
         div.classList.remove('gloss-highlight');
         if (div.textContent.toLowerCase().includes(search)) {
           div.classList.add('gloss-highlight');
-          setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
+          div._glossTimer = setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
         }
       });
     }
+
+    // --- Hochdeutsch Text-to-Speech (de-DE) ---
+    let ttsState = 'idle'; // 'idle' | 'playing' | 'paused'
+    let ttsQueue = [];
+    let ttsIndex = 0;
+    let ttsPlaybackId = 0;
+    let ttsVoices = [];
+
+    function scoreGermanVoice(v) {
+      const name = (v.name || '').toLowerCase();
+      const lang = (v.lang || '').toLowerCase().replace('_', '-');
+      let score = 0;
+      if (lang === 'de-de') score += 100;
+      else if (lang.startsWith('de-de')) score += 90;
+      else if (lang === 'de') score += 50;
+      if (name.includes('natural') || name.includes('neural')) score += 40;
+      if (name.includes('google deutsch')) score += 35;
+      if (name.includes('online')) score += 20;
+      if (name.includes('katja') || name.includes('conrad') || name.includes('amala') || name.includes('anna') || name.includes('helena') || name.includes('hedda') || name.includes('stefan')) score += 15;
+      return score;
+    }
+
+    function populateGermanVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const all = window.speechSynthesis.getVoices() || [];
+      const deDE = all.filter(v => (v.lang || '').toLowerCase().replace('_', '-').startsWith('de-de'));
+      const otherDe = all.filter(v => (v.lang || '').toLowerCase().startsWith('de') && !deDE.includes(v));
+      ttsVoices = (deDE.length ? deDE : otherDe).slice().sort((a, b) => scoreGermanVoice(b) - scoreGermanVoice(a));
+
+      const sel = document.getElementById('tts-voice');
+      if (!sel) return;
+      const prev = sel.value;
+      sel.innerHTML = '';
+      if (ttsVoices.length === 0) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'Hochdeutsch (de-DE Systemstandard)';
+        sel.appendChild(opt);
+      } else {
+        ttsVoices.forEach(v => {
+          const opt = document.createElement('option');
+          opt.value = v.voiceURI || v.name;
+          opt.textContent = v.name + ' (' + v.lang + ')';
+          sel.appendChild(opt);
+        });
+        if (prev && ttsVoices.some(v => (v.voiceURI || v.name) === prev)) {
+          sel.value = prev;
+        }
+      }
+    }
+
+    function cleanTextForSpeech(str) {
+      return (str || '')
+        .replace(/[»«„“"()]/g, ' ')
+        .replace(/–/g, ', ')
+        .replace(/\s+/g, ' ')
+        .replace(/([.!?])\s*\./g, '$1')
+        .trim();
+    }
+
+    function splitIntoSentences(text) {
+      const cleaned = cleanTextForSpeech(text);
+      if (!cleaned) return [];
+      const parts = cleaned.match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) || [cleaned];
+      const merged = [];
+      for (const part of parts) {
+        const t = part.trim();
+        if (!t) continue;
+        if (merged.length > 0 && (/(?:^|\s)(?:Dr|Prof|Nr|Abs|ca|Mio|Mrd|[a-zäöüA-ZÄÖÜ]|\d{1,2})\.$/.test(merged[merged.length - 1]) || t.length < 6)) {
+          merged[merged.length - 1] += ' ' + t;
+        } else {
+          merged.push(t);
+        }
+      }
+      const safe = [];
+      merged.forEach(s => {
+        if (s.length <= 220) {
+          safe.push(s);
+        } else {
+          const sub = s.split(/,\s+/);
+          let buf = '';
+          sub.forEach((piece, i) => {
+            const addition = (i > 0 ? ', ' : '') + piece;
+            if ((buf + addition).length > 200 && buf) {
+              safe.push(buf.trim());
+              buf = piece;
+            } else {
+              buf += addition;
+            }
+          });
+          if (buf.trim()) safe.push(buf.trim());
+        }
+      });
+      return safe;
+    }
+
+    function buildSpeechQueue(startCardIndex) {
+      const queue = [];
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      if (startCardIndex == null || startCardIndex < 0) {
+        const headline = document.getElementById('lesson-headline');
+        const lead = document.getElementById('lesson-lead');
+        if (headline) {
+          splitIntoSentences(headline.textContent).forEach(t => queue.push({ text: t, card: null, label: 'Überschrift' }));
+        }
+        if (lead) {
+          splitIntoSentences(lead.textContent).forEach(t => queue.push({ text: t, card: null, label: 'Einleitung' }));
+        }
+        startCardIndex = 0;
+      }
+      for (let i = startCardIndex; i < cards.length; i++) {
+        const p = cards[i].querySelector('.tts-paragraph');
+        if (!p) continue;
+        splitIntoSentences(p.textContent).forEach(t => {
+          queue.push({ text: t, card: cards[i], label: 'Absatz ' + (i + 1) + ' von ' + cards.length });
+        });
+      }
+      return queue;
+    }
+
+    function clearTtsHighlight() {
+      document.querySelectorAll('#text-tab .tts-card.tts-active-card').forEach(c => c.classList.remove('tts-active-card'));
+    }
+
+    function updateTtsUi(statusText) {
+      const playIcon = document.getElementById('tts-play-icon');
+      const playLabel = document.getElementById('tts-play-label');
+      const stopBtn = document.getElementById('tts-stop-btn');
+      const statusEl = document.getElementById('tts-status');
+      if (ttsState === 'playing') {
+        if (playIcon) playIcon.textContent = '⏸';
+        if (playLabel) playLabel.textContent = 'Pause';
+        if (stopBtn) stopBtn.disabled = false;
+      } else if (ttsState === 'paused') {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Weiter';
+        if (stopBtn) stopBtn.disabled = false;
+      } else {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (stopBtn) stopBtn.disabled = true;
+      }
+      if (statusEl && statusText) statusEl.textContent = statusText;
+    }
+
+    function speakCurrentChunk() {
+      if (ttsIndex >= ttsQueue.length) {
+        ttsState = 'idle';
+        clearTtsHighlight();
+        updateTtsUi('Fertig vorgelesen • Bereit');
+        return;
+      }
+      const item = ttsQueue[ttsIndex];
+      clearTtsHighlight();
+      if (item.card) {
+        item.card.classList.add('tts-active-card');
+        const rect = item.card.getBoundingClientRect();
+        if (rect.top < 70 || rect.bottom > window.innerHeight - 40) {
+          item.card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      const rateSel = document.getElementById('tts-rate');
+      const voiceSel = document.getElementById('tts-voice');
+      const u = new SpeechSynthesisUtterance(item.text);
+      u.lang = 'de-DE';
+      u.rate = rateSel ? parseFloat(rateSel.value) || 1 : 1;
+      if (voiceSel && voiceSel.value && ttsVoices.length) {
+        const chosen = ttsVoices.find(v => (v.voiceURI || v.name) === voiceSel.value);
+        if (chosen) {
+          u.voice = chosen;
+          u.lang = chosen.lang || 'de-DE';
+        }
+      } else if (ttsVoices.length) {
+        u.voice = ttsVoices[0];
+        u.lang = ttsVoices[0].lang || 'de-DE';
+      }
+
+      const myId = ttsPlaybackId;
+      u.onend = function() {
+        if (myId !== ttsPlaybackId) return;
+        ttsIndex++;
+        speakCurrentChunk();
+      };
+      u.onerror = function(e) {
+        if (myId !== ttsPlaybackId) return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+        ttsIndex++;
+        speakCurrentChunk();
+      };
+      window.__ttsUtterance = u;
+      updateTtsUi('Spricht Hochdeutsch (de-DE) • ' + item.label);
+      window.speechSynthesis.speak(u);
+    }
+
+    function togglePlayAll() {
+      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        updateTtsUi('Ihr Browser unterstützt leider keine Sprachausgabe.');
+        return;
+      }
+      if (ttsState === 'playing') {
+        ttsPlaybackId++;
+        window.speechSynthesis.cancel();
+        ttsState = 'paused';
+        const cur = ttsQueue[ttsIndex];
+        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        return;
+      }
+      if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
+        ttsPlaybackId++;
+        const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+        window.speechSynthesis.cancel();
+        ttsState = 'playing';
+        if (wasSpeaking) {
+          const myId = ttsPlaybackId;
+          setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+        } else {
+          speakCurrentChunk();
+        }
+        return;
+      }
+      ttsPlaybackId++;
+      const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+      window.speechSynthesis.cancel();
+      populateGermanVoices();
+      ttsQueue = buildSpeechQueue(-1);
+      ttsIndex = 0;
+      ttsState = 'playing';
+      if (wasSpeaking) {
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      } else {
+        speakCurrentChunk();
+      }
+    }
+
+    function speakFromCard(btnEl) {
+      if (!('speechSynthesis' in window) || typeof SpeechSynthesisUtterance === 'undefined') {
+        updateTtsUi('Ihr Browser unterstützt leider keine Sprachausgabe.');
+        return;
+      }
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      const idx = cards.indexOf(btnEl.closest('.tts-card'));
+      ttsPlaybackId++;
+      const wasSpeaking = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+      window.speechSynthesis.cancel();
+      populateGermanVoices();
+      ttsQueue = buildSpeechQueue(idx >= 0 ? idx : 0);
+      ttsIndex = 0;
+      ttsState = 'playing';
+      if (wasSpeaking) {
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      } else {
+        speakCurrentChunk();
+      }
+    }
+
+    function stopSpeech() {
+      ttsPlaybackId++;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      ttsState = 'idle';
+      ttsIndex = 0;
+      clearTtsHighlight();
+      updateTtsUi('Слушане на целия текст на книжовен немски (de-DE) • Bereit');
+    }
+
+    function onTtsSettingChange() {
+      if (ttsState === 'playing') {
+        ttsPlaybackId++;
+        window.speechSynthesis.cancel();
+        const myId = ttsPlaybackId;
+        setTimeout(() => { if (myId === ttsPlaybackId && ttsState === 'playing') speakCurrentChunk(); }, 60);
+      }
+    }
+
+    window.addEventListener('beforeunload', () => {
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    });
 
     // Redemittel evaluation
     const redemittelAnswers = { scene1: 'b', scene2: 'c', scene3: 'a', scene4: 'b' };
@@ -931,15 +1290,19 @@
       const chips = Array.from(pool.querySelectorAll('.word-chip'));
       for (let i = chips.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        pool.appendChild(chips[j]);
         const temp = chips[i];
         chips[i] = chips[j];
         chips[j] = temp;
       }
+      chips.forEach(c => pool.appendChild(c));
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       [1, 2, 3].forEach(n => shufflePool(n));
+      populateGermanVoices();
+      if ('speechSynthesis' in window && 'onvoiceschanged' in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = populateGermanVoices;
+      }
     });
 
     function pickWord(puzzleNum, btn) {
