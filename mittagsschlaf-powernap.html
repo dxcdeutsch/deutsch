@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lektion 6: Wer mittags schläft, kann besser denken – unter diesen Bedingungen (B1+)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .highlight-b1 {
+      font-weight: 600;
+      color: #0284c7;
+      border-bottom: 2px dotted #0284c7;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .highlight-b1:hover {
+      background-color: rgba(2, 132, 199, 0.15);
+      border-radius: 3px;
+    }
+    .word-chip {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .word-chip:hover {
+      transform: translateY(-2px);
+    }
+    .gloss-highlight {
+      background-color: #fef3c7;
+      border-left: 3px solid #f59e0b;
+      padding-left: 6px;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+    }
+    .tts-active-card {
+      border-color: #009ee3 !important;
+      box-shadow: 0 0 0 2px rgba(0, 158, 227, 0.25);
+      background-color: #f8fcff !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    <!-- Top Course Switcher Bar (7 Lessons) -->
+    <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <div class="text-[11px] uppercase tracking-wider text-blue-200 font-bold flex items-center gap-1.5">
+          <span>🎓</span> <span>Kurs-Module • Deutsch für Beruf &amp; Wissen (Niveau B1 ➔ B1+)</span>
+        </div>
+        <div class="text-[11px] text-blue-300 hidden sm:block">Кликнете върху подчертана дума в текста за превод</div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-1.5 text-xs">
+        <a href="index.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">1</span>
+          <span class="truncate">Meetings & Vielredner</span>
+        </a>
+        <a href="ki-produktivitaet.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">2</span>
+          <span class="truncate">KI & Produktivität</span>
+        </a>
+        <a href="nein-sagen.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">3</span>
+          <span class="truncate">»Nein« sagen im Job</span>
+        </a>
+        <a href="stretch-collaboration.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">4</span>
+          <span class="truncate">Schwierige Kollegen</span>
+        </a>
+        <a href="gefuehle-entscheidungen.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">5</span>
+          <span class="truncate">Gefühle & Entscheidungen</span>
+        </a>
+        <a href="mittagsschlaf-powernap.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-[#009ee3] text-white border-[#009ee3] font-bold shadow-sm">
+          <span class="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[10px] shrink-0">6</span>
+          <span class="truncate">Power Nap & Gehirn</span>
+        </a>
+        <a href="freundlichkeit-job.html" class="flex items-center gap-1.5 px-2.5 py-2 rounded-lg border bg-white/10 hover:bg-white/20 text-blue-100 border-white/15 transition">
+          <span class="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[10px] shrink-0">7</span>
+          <span class="truncate">Freundlichkeit im Job</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-[#009ee3]">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-[#009ee3] text-white text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">Lektion 6</span>
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded">Text: B1+ (Klar &amp; Authentisch) • Wortschatz: B1 ➔ B1+ Brücke</span>
+          <span class="text-xs text-blue-200">Karriere &amp; Wissen</span>
+        </div>
+      </div>
+      <h1 id="lesson-headline" class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        Wer mittags schläft, kann besser denken – unter diesen Bedingungen
+      </h1>
+      <p id="lesson-lead" class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Fühlen Sie sich nach dem Mittagessen ausgelaugt und geistig erschöpft? Ein kurzes Nickerchen kann Wunder wirken. Neue Schlafforschung zeigt, wie ein Power Nap das Gehirn erholt und Platz für neue Gedanken schafft.
+      </p>
+      <div class="mt-2 text-xs text-blue-200">
+        Textgrundlage: <strong>DER SPIEGEL</strong> (Didaktisch vereinfacht für Berufstätige B1/B1+)
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav id="lesson-tabs" class="flex border-b border-slate-200 bg-slate-50 px-3 pt-3 overflow-x-auto gap-1 sm:gap-2 text-xs sm:text-sm font-semibold">
+      <button onclick="switchTab('text-tab')" id="btn-text-tab" class="tab-btn px-3 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] flex items-center gap-1.5 shrink-0">
+        <span>📖</span> Text &amp; B1+ Glossar (10 Absätze)
+      </button>
+      <button onclick="switchTab('redemittel-tab')" id="btn-redemittel-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>💬</span> Redemittel
+      </button>
+      <button onclick="switchTab('satzbau-tab')" id="btn-satzbau-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🧩</span> Satzbau-Puzzle
+      </button>
+      <button onclick="switchTab('praep-tab')" id="btn-praep-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🎯</span> Präpositionen &amp; Kasus
+      </button>
+      <button onclick="switchTab('upgrader-tab')" id="btn-upgrader-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>🚀</span> B1 ➔ B1+ Upgrader
+      </button>
+      <button onclick="switchTab('quiz-tab')" id="btn-quiz-tab" class="tab-btn px-3 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 flex items-center gap-1.5 shrink-0">
+        <span>📝</span> Verständnis-Quiz
+      </button>
+    </nav>
+
+    <!-- TAB 1: Text & Glossar -->
+    <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
+      <!-- Hochdeutsch Audio Player (Multi-Voice HTML5) -->
+      <div id="tts-player-bar" class="p-4 rounded-xl border border-sky-200 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <span class="w-9 h-9 rounded-full bg-[#002f6c] text-white flex items-center justify-center text-base shadow-sm shrink-0">🎧</span>
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-slate-900">Ganzen Text auf Hochdeutsch anhören</div>
+              <div id="tts-status" class="text-[11px] sm:text-xs text-slate-600">Слушане на целия текст на книжовен немски (de-DE) • Bereit</div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+            </button>
+            <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
+              <span>⏹</span> <span>Stopp</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 pt-2 border-t border-sky-200/70 text-xs">
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold">
+            <span>Tempo:</span>
+            <select id="tts-rate" onchange="onTtsSettingChange()" class="border border-slate-300 rounded-md px-2 py-1 bg-white text-slate-900 font-semibold">
+              <option value="0.85">0.85× Langsam (B1)</option>
+              <option value="1" selected>1.0× Normal</option>
+              <option value="1.15">1.15× Schnell</option>
+            </select>
+          </label>
+          <label class="flex items-center gap-1.5 text-slate-700 font-semibold">
+            <span>Stimme:</span>
+            <select id="tts-voice-select" onchange="onVoiceChange()" class="border border-sky-300 rounded-md px-2.5 py-1 bg-white text-[#002f6c] font-semibold shadow-sm">
+              <option value="seraphina" selected>Seraphina (Weiblich – Natürlich &amp; Warm)</option>
+              <option value="florian">Florian (Männlich – Natürlich &amp; Lebendig)</option>
+            </select>
+          </label>
+          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+        </div>
+      </div>
+
+      <!-- Paragraph 1 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 1</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Viele Berufstätige kennen das typische <span class="highlight-b1" onclick="highlightGlossary(this, 'Leistungstief')">Leistungstief</span> am frühen <span class="highlight-b1" onclick="highlightGlossary(this, 'nachlassen')">Nachmittag</span>. Nach der Mittagspause lässt die Konzentration merklich nach, die <span class="highlight-b1" onclick="highlightGlossary(this, 'Augenlid')">Augenlider</span> werden <span class="highlight-b1" onclick="highlightGlossary(this, 'schwören')">schwer</span> und komplexe Aufgaben fallen plötzlich doppelt so <span class="highlight-b1" onclick="highlightGlossary(this, 'schwören')">schwer</span>. Doch anstatt zur dritten Tasse Kaffee zu <span class="highlight-b1" onclick="highlightGlossary(this, 'greifen')">greifen</span>, schwören immer mehr Experten auf eine ganz andere Methode: ein kurzes, gezieltes <span class="highlight-b1" onclick="highlightGlossary(this, 'Nickerchen')">Nickerchen</span> – den sogenannten Power Nap.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>das Leistungstief, -s</strong> – спад в продуктивността / силите</div>
+          <div class="gloss-item">• <strong>nachlassen</strong> – ließ nach, hat nachgelassen – отслабвам, спадам</div>
+          <div class="gloss-item">• <strong>das Augenlid, -er</strong> – клепач</div>
+          <div class="gloss-item">• <strong>greifen zu + D</strong> – griff, hat gegriffen – посягам към</div>
+          <div class="gloss-item">• <strong>schwören auf + A</strong> – schwor, hat geschworen – кълна се в, силно препоръчвам</div>
+          <div class="gloss-item">• <strong>das Nickerchen, -</strong> – дрямка, кратичък сън</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 2 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 2</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Einer der führenden Experten auf diesem Gebiet ist Christoph Nissen, <span class="highlight-b1" onclick="highlightGlossary(this, 'Chefarzt')">Chefarzt</span> für Psychiatrie und Direktor des Zentrums für Schlafmedizin der Universitätskliniken Genf. Er erforscht seit vielen Jahren, wie Schlaf unsere geistige <span class="highlight-b1" onclick="highlightGlossary(this, 'Leistungsfähigkeit')">Leistungsfähigkeit</span> <span class="highlight-b1" onclick="highlightGlossary(this, 'regenerieren')">regeneriert</span>. Nissen betont, dass Schlaf ein <span class="highlight-b1" onclick="highlightGlossary(this, 'grundlegend')">grundlegender</span> biologischer Prozess ist – ähnlich wie die <span class="highlight-b1" onclick="highlightGlossary(this, 'Atmung')">Atmung</span> oder der Herzschlag, über die man nicht ständig <span class="highlight-b1" onclick="highlightGlossary(this, 'grübeln')">grübeln</span> sollte.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Chefarzt, -¨e</strong> – главен лекар</div>
+          <div class="gloss-item">• <strong>die Leistungsfähigkeit</strong> – работоспособност, производителност</div>
+          <div class="gloss-item">• <strong>regenerieren</strong> – regenerierte, hat regeneriert – възстановявам</div>
+          <div class="gloss-item">• <strong>grundlegend</strong> – основен, фундаментален</div>
+          <div class="gloss-item">• <strong>die Atmung</strong> – дишане</div>
+          <div class="gloss-item">• <strong>grübeln über + A</strong> – grübelte, hat gegrübelt – размишлявам тревожно, умувам над</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 3 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 3</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Während wir wach sind, verarbeitet unser Gehirn <span class="highlight-b1" onclick="highlightGlossary(this, 'ununterbrochen')">ununterbrochen</span> neue <span class="highlight-b1" onclick="highlightGlossary(this, 'Reiz')">Reize</span>, Gespräche und visuelle Eindrücke. Dabei werden die Verbindungen zwischen den <span class="highlight-b1" onclick="highlightGlossary(this, 'Nervenzelle')">Nervenzellen</span>, die sogenannten <span class="highlight-b1" onclick="highlightGlossary(this, 'Synapse')">Synapsen</span>, ständig verstärkt. Dieser Prozess ist zwar die biologische Basis des Lernens, doch nach einigen Stunden intensiver Arbeit ist das System überlastet. Das Gehirn stößt an seine Kapazitätsgrenzen und kann kaum noch frische Informationen aufnehmen.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>ununterbrochen</strong> – непрекъснато</div>
+          <div class="gloss-item">• <strong>der Reiz, -e</strong> – дразнение, стимул, впечатление</div>
+          <div class="gloss-item">• <strong>die Nervenzelle, -n</strong> – нервна клетка, неврон</div>
+          <div class="gloss-item">• <strong>die Synapse, -n</strong> – синапс (връзка между неврони)</div>
+          <div class="gloss-item">• <strong>überlastet</strong> – претоварен</div>
+          <div class="gloss-item">• <strong>an Grenzen stoßen</strong> – stieß, ist gestoßen – достигам пределите си</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 4 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 4</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Hier kommt der <span class="highlight-b1" onclick="highlightGlossary(this, 'heilsam')">heilsame</span> Effekt des Schlafs ins Spiel: das Prinzip des synaptischen <span class="highlight-b1" onclick="highlightGlossary(this, 'Reset')">Resets</span>. Man kann sich das Gehirn wie einen Küchenschwamm vorstellen. Ein <span class="highlight-b1" onclick="highlightGlossary(this, 'Schwamm')">Schwamm</span> <span class="highlight-b1" onclick="highlightGlossary(this, 'aufsaugen')">saugt</span> Flüssigkeit begierig <span class="highlight-b1" onclick="highlightGlossary(this, 'aufsaugen')">auf</span>, bis er völlig voll ist. Erst wenn man ihn gründlich <span class="highlight-b1" onclick="highlightGlossary(this, 'auswringen')">auswringt</span>, kann er wieder frisches Wasser aufnehmen. Genau das macht Schlaf mit den Synapsen: Er schwächt überflüssige Verbindungen ab und schafft wertvollen <span class="highlight-b1" onclick="highlightGlossary(this, 'Freiraum')">Freiraum</span>.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>heilsam</strong> – целебен, благотворен</div>
+          <div class="gloss-item">• <strong>der Reset, -s</strong> – нулиране, рестартиране</div>
+          <div class="gloss-item">• <strong>der Schwamm, -¨e</strong> – гъба</div>
+          <div class="gloss-item">• <strong>aufsaugen</strong> – saugte auf, hat aufgesaugt – попивам, засмуквам</div>
+          <div class="gloss-item">• <strong>auswringen</strong> – wrang aus, hat ausgewrungen – изстисквам</div>
+          <div class="gloss-item">• <strong>der Freiraum, -¨e</strong> – свободно пространство, място за маневриране</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 5 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 5</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Bisher nahmen Wissenschaftler an, dass dieser synaptische Aufräumprozess ausschließlich während einer vollen <span class="highlight-b1" onclick="highlightGlossary(this, 'Nachtruhe')">Nachtruhe</span> stattfindet. Doch eine aktuelle Studie von Christoph Nissen und seinem Team <span class="highlight-b1" onclick="highlightGlossary(this, 'belegen')">belegt</span> das <span class="highlight-b1" onclick="highlightGlossary(this, 'Gegenteil')">Gegenteil</span>: Schon eine kurze <span class="highlight-b1" onclick="highlightGlossary(this, 'Ruhephase')">Ruhephase</span> am Mittag versetzt das Gehirn nachweislich in die Lage, anschließend wieder aufmerksam zu lernen und Informationen deutlich <span class="highlight-b1" onclick="highlightGlossary(this, 'präzise')">präziser</span> abzuspeichern.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>die Nachtruhe</strong> – нощен сън, нощен покой</div>
+          <div class="gloss-item">• <strong>belegen</strong> – belegte, hat belegt – доказвам, удостоверявам</div>
+          <div class="gloss-item">• <strong>das Gegenteil</strong> – противоположност</div>
+          <div class="gloss-item">• <strong>die Ruhephase, -n</strong> – фаза на покой / почивка</div>
+          <div class="gloss-item">• <strong>nachweislich</strong> – доказано, видно от доказателствата</div>
+          <div class="gloss-item">• <strong>präzise</strong> – точен, прецизен</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 6 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 6</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Schlaf fördert zudem kreative Problemlösungen und sogenannte <span class="highlight-b1" onclick="highlightGlossary(this, 'Aha')">Aha</span>-Momente. In einer Untersuchung mussten <span class="highlight-b1" onclick="highlightGlossary(this, 'Testperson')">Testpersonen</span> <span class="highlight-b1" onclick="highlightGlossary(this, 'knifflig')">knifflige</span> Computerrätsel lösen. Von den Teilnehmern, die zwischendurch ein zwanzigminütiges Nickerchen <span class="highlight-b1" onclick="highlightGlossary(this, 'einlegen')">einlegten</span>, fanden über 70 Prozent die versteckte <span class="highlight-b1" onclick="highlightGlossary(this, 'Abkürzung')">Abkürzung</span> zur Lösung. In der Gruppe, die ohne Pause weiterarbeitete, kam nicht einmal die Hälfte auf die <span class="highlight-b1" onclick="highlightGlossary(this, 'rettende')">rettende</span> Idee.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>der Aha-Moment, -e</strong> – момент на прозрение</div>
+          <div class="gloss-item">• <strong>knifflig</strong> – сложен, заплетен, труден</div>
+          <div class="gloss-item">• <strong>die Testperson, -en</strong> – участник в тест, опитно лице</div>
+          <div class="gloss-item">• <strong>einlegen</strong> – legte ein, hat eingelegt – правя (пауза)</div>
+          <div class="gloss-item">• <strong>die Abkürzung, -en</strong> – пряк път, съкращение</div>
+          <div class="gloss-item">• <strong>die rettende Idee</strong> – спасителна / гениална идея</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 7 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 7</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Doch wie lange sollte ein optimaler Power Nap dauern? <span class="highlight-b1" onclick="highlightGlossary(this, 'schlummern')">Schlafmediziner</span> warnen davor, zu lange zu <span class="highlight-b1" onclick="highlightGlossary(this, 'Schlafträgheit')">schlummern</span>. Wer länger als 30 Minuten schläft, gleitet <span class="highlight-b1" onclick="highlightGlossary(this, 'unweigerlich')">unweigerlich</span> in den <span class="highlight-b1" onclick="highlightGlossary(this, 'Tiefschlaf')">Tiefschlaf</span> ab. Klingelt dann der Wecker, fühlt man sich völlig <span class="highlight-b1" onclick="highlightGlossary(this, 'benommen')">benommen</span>, schläfrig und leistungsschwach. Dieser Zustand wird als Schlafträgheit bezeichnet. Die ideale <span class="highlight-b1" onclick="highlightGlossary(this, 'Zeitspanne')">Zeitspanne</span> für den Alltag liegt daher zwischen 15 und maximal 20 Minuten.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>schlummern</strong> – schlummerte, hat geschlummert – дремя</div>
+          <div class="gloss-item">• <strong>unweigerlich</strong> – неизбежно</div>
+          <div class="gloss-item">• <strong>der Tiefschlaf</strong> – дълбок сън</div>
+          <div class="gloss-item">• <strong>benommen</strong> – замаян, отнесен</div>
+          <div class="gloss-item">• <strong>die Schlafträgheit</strong> – сънливост след събуждане (sleep inertia)</div>
+          <div class="gloss-item">• <strong>die Zeitspanne, -n</strong> – времеви интервал, период</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 8 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 8</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Berühmte Persönlichkeiten hatten clevere Tricks entwickelt, um nicht zu <span class="highlight-b1" onclick="highlightGlossary(this, 'verschlafen')">verschlafen</span>. Der Maler Salvador Dalí und der Physiker Albert Einstein setzten sich für ihr Nickerchen in einen bequemen <span class="highlight-b1" onclick="highlightGlossary(this, 'Sessel')">Sessel</span> und hielten einen schweren <span class="highlight-b1" onclick="highlightGlossary(this, 'Schlüsselbund')">Schlüsselbund</span> oder einen <span class="highlight-b1" onclick="highlightGlossary(this, 'Löffel')">Löffel</span> in der Hand. Sobald sie in den tieferen Schlaf glitten, <span class="highlight-b1" onclick="highlightGlossary(this, 'entspannen')">entspannten</span> sich die Muskeln. Der Gegenstand <span class="highlight-b1" onclick="highlightGlossary(this, 'scheppern')">schepperte</span> lautstark auf den Boden und weckte sie sofort auf.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>verschlafen</strong> – verschlief, hat verschlafen – успивам се</div>
+          <div class="gloss-item">• <strong>der Sessel, -</strong> – фотьойл, кресло</div>
+          <div class="gloss-item">• <strong>der Schlüsselbund, -¨e</strong> – връзка ключове</div>
+          <div class="gloss-item">• <strong>der Löffel, -</strong> – лъжица</div>
+          <div class="gloss-item">• <strong>entspannen</strong> – entspannte, hat entspannt – отпускам</div>
+          <div class="gloss-item">• <strong>scheppern</strong> – schepperte, hat gescheppert – дрънча силно при падане</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 9 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 9</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Auch das richtige <span class="highlight-b1" onclick="highlightGlossary(this, 'Timing')">Timing</span> spielt eine entscheidende Rolle für den Erfolg. Nach unserem biologischen <span class="highlight-b1" onclick="highlightGlossary(this, 'Biorhythmus')">Biorhythmus</span> liegt das natürliche Leistungstief meist zwischen 13 und 15 Uhr. Ein Nap nach 16 Uhr ist dagegen <span class="highlight-b1" onclick="highlightGlossary(this, 'heikel')">heikel</span>: Er baut den sogenannten <span class="highlight-b1" onclick="highlightGlossary(this, 'Schlafdruck')">Schlafdruck</span> ab, der für das abendliche <span class="highlight-b1" onclick="highlightGlossary(this, 'Einschlafen')">Einschlafen</span> notwendig ist. Wer zu spät am Tag schläft, liegt abends stundenlang <span class="highlight-b1" onclick="highlightGlossary(this, 'unruhig')">unruhig</span> im Bett wach.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>das Timing</strong> – избор на правилен момент</div>
+          <div class="gloss-item">• <strong>der Biorhythmus</strong> – биологичен ритъм</div>
+          <div class="gloss-item">• <strong>heikel</strong> – деликатен, рискован</div>
+          <div class="gloss-item">• <strong>der Schlafdruck</strong> – натиск за сън, естествена нужда от сън</div>
+          <div class="gloss-item">• <strong>das Einschlafen</strong> – заспиване</div>
+          <div class="gloss-item">• <strong>unruhig</strong> – неспокоен</div>
+        </div>
+      </div>
+
+      <!-- Paragraph 10 -->
+      <div class="tts-card grid grid-cols-1 md:grid-cols-12 gap-5 p-4 rounded-xl border border-slate-200 bg-white shadow-sm items-stretch transition">
+        <div class="md:col-span-7 flex flex-col justify-center space-y-2 border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+          <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 10</span>
+            </div>
+            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+          </div>
+          <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
+            Eine wichtige <span class="highlight-b1" onclick="highlightGlossary(this, 'Einschränkung')">Einschränkung</span> gilt für Menschen mit <span class="highlight-b1" onclick="highlightGlossary(this, 'chronisch')">chronischen</span> Ein- oder <span class="highlight-b1" onclick="highlightGlossary(this, 'Durchschlafstörung')">Durchschlafstörungen</span>. Wer nachts unter <span class="highlight-b1" onclick="highlightGlossary(this, 'Insomnie')">Insomnie</span> leidet, sollte tagsüber wach bleiben, um den Schlafdruck bis zum Abend maximal aufzubauen. Für gesunde Berufstätige ist der Power Nap jedoch ein fantastischer <span class="highlight-b1" onclick="highlightGlossary(this, 'Energiespender')">Energiespender</span>: Ein zwanzigminütiger Reset gibt dem Gehirn neue <span class="highlight-b1" onclick="highlightGlossary(this, 'Frische')">Frische</span> für die zweite Tageshälfte.
+          </p>
+        </div>
+        <div class="md:col-span-5 flex flex-col justify-center bg-slate-50 p-3.5 rounded-lg text-xs sm:text-sm space-y-1.5 border border-slate-200/70">
+          <div class="font-bold text-[#009ee3] text-xs uppercase tracking-wider border-b pb-1 mb-1">Речник: B1 ➔ B1+ Мост</div>
+          <div class="gloss-item">• <strong>die Einschränkung, -en</strong> – ограничение, уговорка</div>
+          <div class="gloss-item">• <strong>chronisch</strong> – хроничен</div>
+          <div class="gloss-item">• <strong>die Durchschlafstörung, -en</strong> – смущение при непрекъснатия сън</div>
+          <div class="gloss-item">• <strong>die Insomnie</strong> – безсъние</div>
+          <div class="gloss-item">• <strong>der Energiespender, -</strong> – източник на енергия</div>
+          <div class="gloss-item">• <strong>die Frische</strong> – свежест</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>💬</span> Redemittel für Alltag & Beruf: Energie & Pausen im Job</h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die sachlich beste und professionellste B1-Formulierung.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Kurze Bildschirmpause ankündigen</span>
+          <p class="text-sm font-semibold text-slate-800">Sie merken, dass Ihre Konzentration am Nachmittag stark sinkt. Sie möchten den Kollegen mitteilen, dass Sie sich kurz zurückziehen.</p>
+          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
+            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich mache für eine Viertelstunde eine kurze Bildschirmpause, um den Kopf freizubekommen. Danach bin ich wieder voll ansprechbar.“</div>
+            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Правя кратка пауза от екрана за петнадесет минути, за да си прочистя главата. След това съм отново напълно на разположение.</div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button onclick="copyPhrase(this, '„Ich mache für eine Viertelstunde eine kurze Bildschirmpause, um den Kopf freizubekommen. Danach bin ich wieder voll ansprechbar.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
+              <span>📋</span> Formulierung kopieren
+            </button>
+            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Bessere Meeting-Zeiten vorschlagen</span>
+          <p class="text-sm font-semibold text-slate-800">Ein Kollege schlägt ein langes Strategieseminar direkt nach der Mittagspause um 13:30 Uhr vor. Sie schlagen eine produktivere Zeit vor.</p>
+          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
+            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Direkt nach dem Mittagessen fällt die Konzentration oft schwerer. Wäre es möglich, diesen komplexen Termin auf morgen Vormittag zu legen?“</div>
+            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Непосредствено след обяд концентрацията често е по-трудна. Би ли било възможно да преместим тази комплексна среща за утре преди обяд?</div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button onclick="copyPhrase(this, '„Direkt nach dem Mittagessen fällt die Konzentration oft schwerer. Wäre es möglich, diesen komplexen Termin auf morgen Vormittag zu legen?“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
+              <span>📋</span> Formulierung kopieren
+            </button>
+            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Über Müdigkeit und Pausenkultur sprechen</span>
+          <p class="text-sm font-semibold text-slate-800">Ihr Team arbeitet an einem dringenden Projekt und alle sind erschöpft. Sie plädieren für eine kurze Erholungspause.</p>
+          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
+            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Wir arbeiten seit Stunden konzentriert durch. Ein kurzer Spaziergang oder eine Pause von zwanzig Minuten würde uns helfen, neue Energie zu tanken.“</div>
+            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Работим концентрирано без прекъсване от часове. Кратка разходка или пауза от двадесет минути биха ни помогнали да заредим нови сили.</div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button onclick="copyPhrase(this, '„Wir arbeiten seit Stunden konzentriert durch. Ein kurzer Spaziergang oder eine Pause von zwanzig Minuten würde uns helfen, neue Energie zu tanken.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
+              <span>📋</span> Formulierung kopieren
+            </button>
+            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Den Arbeitstag strukturiert einteilen</span>
+          <p class="text-sm font-semibold text-slate-800">In einem Feedbackgespräch erklären Sie, wie Sie Ihre Aufgaben nach Ihrer Leistungsfähigkeit einteilen.</p>
+          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
+            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich erledige anspruchsvolle Analysen am liebsten am Vormittag und nutze das Nachmittagstief für Routineaufgaben und E-Mails.“</div>
+            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Предпочитам да върша изискващите анализи преди обяд, а следобедния спад в силите използвам за рутинни задачи и имейли.</div>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <button onclick="copyPhrase(this, '„Ich erledige anspruchsvolle Analysen am liebsten am Vormittag und nutze das Nachmittagstief für Routineaufgaben und E-Mails.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
+              <span>📋</span> Formulierung kopieren
+            </button>
+            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div id="satzbau-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🧩</span> Satzbau-Puzzle: Die richtige B1 Wortstellung</h2>
+        <p class="text-sm text-slate-500">Klicken Sie auf die Wörter in der richtigen Reihenfolge, um korrekte deutsche Sätze zu bauen.</p>
+      </div>
+      <div class="space-y-4">
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 1: Konditionalsatz mit »wenn«</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(1)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+        <div id="pool-1" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Wenn</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">man</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">mittags</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">kurz</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">schläft,</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">kann</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">das</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Gehirn</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">wieder</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">frische</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Informationen</button>
+          <button onclick="pickWord(1, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">aufnehmen.</button>
+        </div>
+        <div id="check-1" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 2: Nebensatz mit »dass«</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(2)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+        <div id="pool-2" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Die</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Studie</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">beweist,</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">dass</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">ein</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Power</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Nap</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">die</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">kreative</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Denkleistung</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">deutlich</button>
+          <button onclick="pickWord(2, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">verbessert.</button>
+        </div>
+        <div id="check-2" class="text-xs font-bold hidden"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-[#009ee3] uppercase">Satz 3: Vergleichssatz mit »als«</span>
+          <div class="flex gap-3">
+            <button onclick="solvePuzzle(3)" class="text-xs text-[#009ee3] hover:underline font-semibold">Lösung zeigen</button>
+            <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
+          </div>
+        </div>
+        <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
+          <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
+        </div>
+        <div id="pool-3" class="flex flex-wrap gap-2 pt-2">
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Wer</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">länger</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">als</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">dreißig</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">Minuten</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">schläft,</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">wacht</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">oft</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">völlig</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">benommen</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">und</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">müde</button>
+          <button onclick="pickWord(3, this)" class="word-chip px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-900 border border-blue-200 rounded-md text-xs font-semibold">auf.</button>
+        </div>
+        <div id="check-3" class="text-xs font-bold hidden"></div>
+      </div>
+      </div>
+    </div>
+
+    <!-- TAB 4 -->
+    <div id="praep-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🎯</span> Präpositionen & Kasus: Wichtige B1-Verben</h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jeden Satz die richtige Präposition und den passenden Fall (Akkusativ oder Dativ).</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">1. Viele Manager schwören inzwischen ... einen kurzen Power Nap nach dem Mittagessen.</p>
+          <p class="text-xs text-slate-500 italic">🇧🇬 Много мениджъри междувременно се кълнат в кратката дрямка след обяд.</p>
+          <select id="pr1" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition &amp; Kasus wählen --</option>
+            <option value="auf + Akkusativ">auf + Akkusativ</option><option value="auf + Dativ">auf + Dativ</option><option value="für + Akkusativ">für + Akkusativ</option><option value="an + Dativ">an + Dativ</option>
+          </select>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">2. Schlafmediziner warnen die Berufstätigen ... zu langen Schlafphasen am Tag.</p>
+          <p class="text-xs text-slate-500 italic">🇧🇬 Лекарите по медицина на съня предупреждават работещите за твърде дълги фази на сън през деня.</p>
+          <select id="pr2" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition &amp; Kasus wählen --</option>
+            <option value="vor + Dativ">vor + Dativ</option><option value="vor + Akkusativ">vor + Akkusativ</option><option value="über + Akkusativ">über + Akkusativ</option><option value="von + Dativ">von + Dativ</option>
+          </select>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">3. Am Nachmittag leidet die Konzentration oft ... ständiger Überlastung.</p>
+          <p class="text-xs text-slate-500 italic">🇧🇬 Следобед концентрацията често страда от постоянно претоварване.</p>
+          <select id="pr3" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition &amp; Kasus wählen --</option>
+            <option value="unter + Dativ">unter + Dativ</option><option value="unter + Akkusativ">unter + Akkusativ</option><option value="an + Akkusativ">an + Akkusativ</option><option value="von + Dativ">von + Dativ</option>
+          </select>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <p class="font-semibold text-slate-800">4. Das Gehirn erholt sich im Schlaf ... den anstrengenden Reizen des Tages.</p>
+          <p class="text-xs text-slate-500 italic">🇧🇬 Мозъкът се възстановява по време на сън от натоварващите впечатления на деня.</p>
+          <select id="pr4" class="w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs">
+            <option value="">-- Präposition &amp; Kasus wählen --</option>
+            <option value="von + Dativ">von + Dativ</option><option value="von + Akkusativ">von + Akkusativ</option><option value="aus + Dativ">aus + Dativ</option><option value="über + Dativ">über + Dativ</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button onclick="checkPraep()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2 px-5 rounded-lg text-sm transition shadow">Überprüfen (Провери)</button>
+        <button onclick="showPraepSolution()" class="border border-slate-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-100">Lösung anzeigen (Покажи)</button>
+        <button onclick="resetPraep()" class="text-xs text-slate-500 hover:underline ml-auto">Zurücksetzen (Изчисти)</button>
+      </div>
+      <div id="praep-score" class="text-sm font-bold"></div>
+    </div>
+
+    <!-- TAB 5 -->
+    <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken</h2>
+        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch passende Wörter aus dem Text.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 1</span>
+            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+          </div>
+          <div class="text-sm">
+            <div class="text-slate-600 line-through">„Ich bin nach dem Essen sehr müde.“ <span class="text-xs text-slate-400">(einfach)</span></div>
+            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Nach dem Mittagessen spüre ich ein deutliches Leistungstief.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          </div>
+          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Много съм уморен след ядене ➔ След обяд усещам отчетлив спад в работоспособността.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 2</span>
+            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+          </div>
+          <div class="text-sm">
+            <div class="text-slate-600 line-through">„Ein kurzer Schlaf macht das Gehirn sauber.“ <span class="text-xs text-slate-400">(einfach)</span></div>
+            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Ein Power Nap bewirkt einen heilsamen synaptischen Reset im Gehirn.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          </div>
+          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Кратък сън изчиства мозъка ➔ Кратката дрямка предизвиква благотворен синаптичен ресет в мозъка.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 3</span>
+            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+          </div>
+          <div class="text-sm">
+            <div class="text-slate-600 line-through">„Er ist nach dem Weckerklingeln schläfrig und langsam.“ <span class="text-xs text-slate-400">(einfach)</span></div>
+            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Er leidet nach dem plötzlichen Aufwachen unter Schlafträgheit.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          </div>
+          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Той е сънлив и бавен след звъненето на будилника ➔ Той страда от сънливост и замаяност след внезапното събуждане.</p>
+        </div>
+        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 4</span>
+            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+          </div>
+          <div class="text-sm">
+            <div class="text-slate-600 line-through">„Wir haben eine gute Lösung gefunden.“ <span class="text-xs text-slate-400">(einfach)</span></div>
+            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Nach einer Denkpause erlebten wir einen echten Aha-Moment.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          </div>
+          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Намерихме добро решение ➔ След пауза за размисъл преживяхме истински момент на прозрение.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6 -->
+    <div id="quiz-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
+      <div class="border-b pb-3">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>📝</span> Textverständnis: Multiple Choice & Fakten-Check</h2>
+        <p class="text-sm text-slate-500">Testen Sie Ihr Verständnis des Artikels über den Power Nap von Christoph Nissen.</p>
+      </div>
+      <div class="space-y-4">
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <p class="font-bold text-slate-900 text-sm sm:text-base">1. Womit vergleicht Schlafforscher Christoph Nissen die Wirkung des Schlafs auf die Synapsen?</p>
+        <p class="text-xs text-slate-500 italic">🇧🇬 С какво сравнява изследователят на съня Кристоф Нисен ефекта от съня върху синапсите?</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q1" value="a" class="mt-0.5">
+            <span>Mit einem Schwamm, der ausgewrungen wird, damit er wieder neues Wasser aufnehmen kann.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q1" value="b" class="mt-0.5">
+            <span>Mit einem schnellen Sportwagen, der nach dem Tanken sofort wieder Höchstgeschwindigkeit fährt.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q1" value="c" class="mt-0.5">
+            <span>Mit einem Computer, der alle alten Programme für immer löscht.</span>
+          </label>
+        </div>
+        <div id="q1-fb" class="text-xs font-semibold hidden"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <p class="font-bold text-slate-900 text-sm sm:text-base">2. Warum sollte ein Power Nap im Berufsalltag maximal 20 bis 30 Minuten dauern?</p>
+        <p class="text-xs text-slate-500 italic">🇧🇬 Защо дрямката в работния ден трябва да трае максимум 20 до 30 минути?</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q2" value="a" class="mt-0.5">
+            <span>Weil das Gehirn nach 30 Minuten überhaupt keine Träume mehr erzeugen kann.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q2" value="b" class="mt-0.5">
+            <span>Weil man sonst in den Tiefschlaf fällt und sich nach dem Aufwachen benommen und träge fühlt.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q2" value="c" class="mt-0.5">
+            <span>Weil die Kollegen sonst glauben, dass man krank nach Hause gegangen ist.</span>
+          </label>
+        </div>
+        <div id="q2-fb" class="text-xs font-semibold hidden"></div>
+      </div>
+
+      <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
+        <p class="font-bold text-slate-900 text-sm sm:text-base">3. Wer sollte laut Empfehlung der Schlafforscher lieber auf einen Mittagsschlaf verzichten?</p>
+        <p class="text-xs text-slate-500 italic">🇧🇬 Кой според препоръките на изследователите на съня е по-добре да се откаже от следобедна дрямка?</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q3" value="a" class="mt-0.5">
+            <span>Kreative Menschen wie Künstler und Physiker.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q3" value="b" class="mt-0.5">
+            <span>Menschen, die nachts unter chronischen Schlafstörungen (Insomnie) leiden.</span>
+          </label>
+          <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+            <input type="radio" name="q3" value="c" class="mt-0.5">
+            <span>Berufstätige, die viele Videokonferenzen am Bildschirm führen.</span>
+          </label>
+        </div>
+        <div id="q3-fb" class="text-xs font-semibold hidden"></div>
+      </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 pt-2">
+        <button onclick="checkQuiz()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2 px-5 rounded-lg text-sm transition shadow">Antworten prüfen</button>
+        <button onclick="showQuizSolution()" class="border border-slate-300 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-100">Lösung anzeigen</button>
+        <button onclick="resetQuiz()" class="text-xs text-slate-500 hover:underline ml-auto">Zurücksetzen</button>
+      </div>
+    </div>
+
+    <!-- Prev / Next Lesson Bar + Footer -->
+    <div class="bg-slate-50 px-5 py-4 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm font-semibold">
+      <a href="gefuehle-entscheidungen.html" class="inline-flex items-center gap-1.5 bg-[#002f6c] hover:bg-[#001f47] text-white px-4 py-2 rounded-lg transition shadow-sm">
+        <span>←</span> <span>Vorherige: 5. Gefühle & Entscheidungen</span>
+      </a>
+      <a href="freundlichkeit-job.html" class="inline-flex items-center gap-1.5 bg-[#002f6c] hover:bg-[#001f47] text-white px-4 py-2 rounded-lg transition shadow-sm ml-auto">
+        <span>Nächste Lektion: 7. Freundlichkeit im Job</span> <span>→</span>
+      </a>
+    </div>
+
+    <footer class="bg-slate-100 p-5 text-center text-xs text-slate-500 border-t border-slate-200">
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-2 font-semibold">
+        <a href="index.html" class="text-[#009ee3] hover:underline">1. Meetings & Vielredner</a>
+        <span>•</span>
+        <a href="ki-produktivitaet.html" class="text-[#009ee3] hover:underline">2. KI & Produktivität</a>
+        <span>•</span>
+        <a href="nein-sagen.html" class="text-[#009ee3] hover:underline">3. »Nein« sagen im Job</a>
+        <span>•</span>
+        <a href="stretch-collaboration.html" class="text-[#009ee3] hover:underline">4. Schwierige Kollegen</a>
+        <span>•</span>
+        <a href="gefuehle-entscheidungen.html" class="text-[#009ee3] hover:underline">5. Gefühle & Entscheidungen</a>
+        <span>•</span>
+        <a href="mittagsschlaf-powernap.html" class="text-slate-900 underline font-bold">6. Power Nap & Gehirn</a>
+        <span>•</span>
+        <a href="freundlichkeit-job.html" class="text-[#009ee3] hover:underline">7. Freundlichkeit im Job</a>
+      </div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
+    </footer>
+
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+        btn.classList.add('border-transparent', 'text-slate-600');
+      });
+
+      const activeTab = document.getElementById(tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.classList.remove('border-transparent', 'text-slate-600');
+        activeBtn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+      }
+
+      const navEl = document.getElementById('lesson-tabs');
+      if (navEl) {
+        navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function highlightGlossary(spanEl, keyTerm) {
+      const card = spanEl.closest('.grid');
+      if (!card) return;
+      const items = card.querySelectorAll('.gloss-item');
+      const search = (keyTerm || spanEl.textContent).trim().toLowerCase();
+      items.forEach(div => {
+        clearTimeout(div._glossTimer);
+        div.classList.remove('gloss-highlight');
+        if (div.textContent.toLowerCase().includes(search)) {
+          div.classList.add('gloss-highlight');
+          div._glossTimer = setTimeout(() => div.classList.remove('gloss-highlight'), 2200);
+        }
+      });
+    }
+
+    // --- Hochdeutsch Neural Audio Player (de-DE) ---
+    const LESSON_AUDIO_PREFIX = 'l6';
+    let currentVoiceKey = 'seraphina'; // 'seraphina' | 'florian'
+    let ttsState = 'idle'; // 'idle' | 'playing' | 'paused'
+    let ttsQueue = [];
+    let ttsIndex = 0;
+    let ttsPlaybackId = 0;
+    let ttsVoices = [];
+    let ttsAudio = null;
+    let ttsFallbackMode = false;
+    let ttsFallbackChunks = [];
+    let ttsFallbackChunkIdx = 0;
+
+    function getTtsRate() {
+      const rateSel = document.getElementById('tts-rate');
+      const val = rateSel ? parseFloat(rateSel.value) : 1;
+      return Number.isFinite(val) && val > 0 ? val : 1;
+    }
+
+    function onVoiceChange() {
+      const sel = document.getElementById('tts-voice-select');
+      if (sel) {
+        currentVoiceKey = sel.value;
+      }
+      const wasPlaying = (ttsState === 'playing');
+      const curIndex = ttsIndex;
+      if (ttsAudio) {
+        ttsAudio.pause();
+      }
+      ttsQueue = buildAudioQueue();
+      if (wasPlaying) {
+        ttsPlaybackId++;
+        ttsIndex = curIndex;
+        ttsState = 'playing';
+        playCurrentSegment();
+      } else if (ttsState === 'paused') {
+        const cur = ttsQueue[ttsIndex];
+        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ') • Stimme gewechselt');
+      }
+    }
+
+    function scoreGermanVoice(v) {
+      const name = (v.name || '').toLowerCase();
+      const lang = (v.lang || '').toLowerCase().replace('_', '-');
+      let score = 0;
+      if (lang === 'de-de') score += 100;
+      else if (lang.startsWith('de-de')) score += 90;
+      else if (lang === 'de') score += 50;
+      if (name.includes('natural') || name.includes('neural')) score += 40;
+      if (name.includes('google deutsch')) score += 35;
+      if (name.includes('online')) score += 20;
+      if (name.includes('seraphina') || name.includes('katja') || name.includes('conrad') || name.includes('florian') || name.includes('amala') || name.includes('anna') || name.includes('helena') || name.includes('hedda') || name.includes('stefan')) score += 15;
+      return score;
+    }
+
+    function populateGermanVoices() {
+      if (typeof window === 'undefined' || !('speechSynthesis' in window) || !window.speechSynthesis) {
+        ttsVoices = [];
+        return;
+      }
+      const all = window.speechSynthesis.getVoices() || [];
+      const deDE = all.filter(v => /^de[-_]de(?:$|[-_])/i.test(v.lang || ''));
+      const otherDe = all.filter(v => /^de(?:$|[-_])/i.test(v.lang || '') && !deDE.includes(v));
+      ttsVoices = (deDE.length ? deDE : otherDe).slice().sort((a, b) => scoreGermanVoice(b) - scoreGermanVoice(a));
+    }
+
+    function cleanTextForSpeech(str) {
+      return (str || '')
+        .replace(/[»«„“"()]/g, ' ')
+        .replace(/–/g, ', ')
+        .replace(/\s+/g, ' ')
+        .replace(/([.!?])\s*\./g, '$1')
+        .trim();
+    }
+
+    function splitIntoSentences(text) {
+      const cleaned = cleanTextForSpeech(text);
+      if (!cleaned) return [];
+      const parts = cleaned.match(/[^.!?]+[.!?]+|\S[^.!?]*$/g) || [cleaned];
+      const merged = [];
+      for (const part of parts) {
+        const t = part.trim();
+        if (!t) continue;
+        if (merged.length > 0 && (/(?:^|\s)(?:Dr|Prof|Nr|Abs|ca|Mio|Mrd|[a-zäöüA-ZÄÖÜ]|\d{1,2})\.$/.test(merged[merged.length - 1]) || t.length < 6)) {
+          merged[merged.length - 1] += ' ' + t;
+        } else {
+          merged.push(t);
+        }
+      }
+      const safe = [];
+      merged.forEach(s => {
+        if (s.length <= 220) {
+          safe.push(s);
+        } else {
+          const sub = s.split(/,\s+/);
+          let buf = '';
+          sub.forEach((piece, i) => {
+            const addition = (i > 0 ? ', ' : '') + piece;
+            if ((buf + addition).length > 200 && buf) {
+              safe.push(buf.trim());
+              buf = piece;
+            } else {
+              buf += addition;
+            }
+          });
+          if (buf.trim()) safe.push(buf.trim());
+        }
+      });
+      return safe;
+    }
+
+    function buildAudioQueue() {
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      const voiceSuffix = (currentVoiceKey === 'florian') ? '_florian.mp3' : '.mp3';
+      const queue = [{
+        index: 0,
+        file: 'audio/' + LESSON_AUDIO_PREFIX + '_00' + voiceSuffix,
+        card: null,
+        label: 'Überschrift & Einleitung',
+        getText: function() {
+          const hl = document.getElementById('lesson-headline');
+          const lead = document.getElementById('lesson-lead');
+          return ((hl ? hl.textContent : '') + '. ' + (lead ? lead.textContent : '')).trim();
+        }
+      }];
+      for (let i = 0; i < cards.length; i++) {
+        const num = String(i + 1).padStart(2, '0');
+        const card = cards[i];
+        queue.push({
+          index: i + 1,
+          file: 'audio/' + LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix,
+          card: card,
+          label: 'Absatz ' + (i + 1) + ' von ' + cards.length,
+          getText: function() {
+            const p = card.querySelector('.tts-paragraph');
+            return p ? p.textContent : '';
+          }
+        });
+      }
+      return queue;
+    }
+
+    function clearTtsHighlight() {
+      document.querySelectorAll('#text-tab .tts-card.tts-active-card').forEach(c => c.classList.remove('tts-active-card'));
+    }
+
+    function highlightActiveCard(card) {
+      clearTtsHighlight();
+      if (!card) return;
+      card.classList.add('tts-active-card');
+      if (typeof card.getBoundingClientRect === 'function' && typeof window !== 'undefined') {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < 70 || rect.bottom > window.innerHeight - 40) {
+          if (typeof card.scrollIntoView === 'function') {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      }
+    }
+
+    function updateTtsUi(statusText) {
+      const playIcon = document.getElementById('tts-play-icon');
+      const playLabel = document.getElementById('tts-play-label');
+      const stopBtn = document.getElementById('tts-stop-btn');
+      const statusEl = document.getElementById('tts-status');
+      if (ttsState === 'playing') {
+        if (playIcon) playIcon.textContent = '⏸';
+        if (playLabel) playLabel.textContent = 'Pause';
+        if (stopBtn) stopBtn.disabled = false;
+      } else if (ttsState === 'paused') {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Weiter';
+        if (stopBtn) stopBtn.disabled = false;
+      } else {
+        if (playIcon) playIcon.textContent = '▶';
+        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (stopBtn) stopBtn.disabled = true;
+      }
+      if (statusEl && statusText) statusEl.textContent = statusText;
+    }
+
+    function ensureAudioElement() {
+      if (ttsAudio) return ttsAudio;
+      if (typeof Audio === 'undefined') return null;
+      ttsAudio = new Audio();
+      ttsAudio.preload = 'auto';
+      if ('preservesPitch' in ttsAudio) ttsAudio.preservesPitch = true;
+      return ttsAudio;
+    }
+
+    function speakFallbackChunk(myId, item) {
+      if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+      if (!item || ttsFallbackChunkIdx >= ttsFallbackChunks.length) {
+        ttsIndex++;
+        playCurrentSegment();
+        return;
+      }
+      if (ttsVoices.length === 0) {
+        ttsPlaybackId++;
+        ttsState = 'idle';
+        ttsFallbackMode = false;
+        clearTtsHighlight();
+        updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
+        return;
+      }
+      const u = new SpeechSynthesisUtterance(ttsFallbackChunks[ttsFallbackChunkIdx]);
+      u.voice = ttsVoices[0];
+      u.lang = ttsVoices[0].lang || 'de-DE';
+      u.rate = getTtsRate();
+      u.onend = function() {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        ttsFallbackChunkIdx++;
+        speakFallbackChunk(myId, item);
+      };
+      u.onerror = function(e) {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        if (e && (e.error === 'canceled' || e.error === 'interrupted')) return;
+        ttsFallbackChunkIdx++;
+        speakFallbackChunk(myId, item);
+      };
+      window.__ttsUtterance = u;
+      updateTtsUi('Notfall-Stimme (de-DE System) • ' + item.label);
+      window.speechSynthesis.speak(u);
+    }
+
+    function handleAudioFailure(myId, item) {
+      if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+      populateGermanVoices();
+      if (ttsVoices.length > 0 && typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis && typeof SpeechSynthesisUtterance !== 'undefined') {
+        ttsFallbackMode = true;
+        ttsFallbackChunks = splitIntoSentences(item ? item.getText() : '');
+        ttsFallbackChunkIdx = 0;
+        speakFallbackChunk(myId, item);
+        return;
+      }
+      ttsPlaybackId++;
+      ttsState = 'idle';
+      ttsIndex = 0;
+      ttsFallbackMode = false;
+      clearTtsHighlight();
+      updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
+    }
+
+    function playCurrentSegment() {
+      if (ttsIndex >= ttsQueue.length) {
+        ttsState = 'idle';
+        ttsFallbackMode = false;
+        clearTtsHighlight();
+        updateTtsUi('Fertig vorgelesen • Bereit');
+        return;
+      }
+      const item = ttsQueue[ttsIndex];
+      highlightActiveCard(item.card);
+
+      if (ttsFallbackMode) {
+        ttsFallbackChunks = splitIntoSentences(item.getText());
+        ttsFallbackChunkIdx = 0;
+        speakFallbackChunk(ttsPlaybackId, item);
+        return;
+      }
+
+      const audio = ensureAudioElement();
+      if (!audio) {
+        handleAudioFailure(ttsPlaybackId, item);
+        return;
+      }
+
+      const myId = ttsPlaybackId;
+      const rate = getTtsRate();
+      audio.onended = function() {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        ttsIndex++;
+        playCurrentSegment();
+      };
+      audio.onerror = function() {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        handleAudioFailure(myId, item);
+      };
+
+      audio.pause();
+      audio.src = item.file;
+      audio.defaultPlaybackRate = rate;
+      audio.playbackRate = rate;
+      const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+      updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
+
+      try {
+        const playPromise = audio.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(function(err) {
+            if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+            if (err && err.name === 'AbortError') return;
+            handleAudioFailure(myId, item);
+          });
+        }
+      } catch (err) {
+        handleAudioFailure(myId, item);
+      }
+    }
+
+    function togglePlayAll() {
+      if (ttsState === 'playing') {
+        if (ttsFallbackMode) {
+          ttsPlaybackId++;
+          if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+          }
+        } else if (ttsAudio) {
+          ttsAudio.pause();
+        }
+        ttsState = 'paused';
+        const cur = ttsQueue[ttsIndex];
+        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        return;
+      }
+      if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
+        const cur = ttsQueue[ttsIndex];
+        if (ttsFallbackMode) {
+          ttsPlaybackId++;
+          ttsState = 'playing';
+          speakFallbackChunk(ttsPlaybackId, cur);
+          return;
+        }
+        if (ttsAudio) {
+          ttsState = 'playing';
+          const rate = getTtsRate();
+          ttsAudio.defaultPlaybackRate = rate;
+          ttsAudio.playbackRate = rate;
+          const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+          updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + (cur ? cur.label : ''));
+          const myId = ttsPlaybackId;
+          try {
+            const p = ttsAudio.play();
+            if (p && typeof p.catch === 'function') {
+              p.catch(function(err) {
+                if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+                if (err && err.name === 'AbortError') return;
+                handleAudioFailure(myId, cur);
+              });
+            }
+          } catch (err) {
+            handleAudioFailure(myId, cur);
+          }
+          return;
+        }
+      }
+      ttsPlaybackId++;
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      ttsFallbackMode = false;
+      ttsQueue = buildAudioQueue();
+      ttsIndex = 0;
+      ttsState = 'playing';
+      playCurrentSegment();
+    }
+
+    function speakFromCard(btnEl) {
+      const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
+      const cardEl = btnEl && typeof btnEl.closest === 'function' ? btnEl.closest('.tts-card') : null;
+      const idx = cardEl ? cards.indexOf(cardEl) : 0;
+      ttsPlaybackId++;
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      ttsFallbackMode = false;
+      ttsQueue = buildAudioQueue();
+      ttsIndex = idx >= 0 ? idx + 1 : 1;
+      ttsState = 'playing';
+      playCurrentSegment();
+    }
+
+    function stopSpeech() {
+      ttsPlaybackId++;
+      if (ttsAudio) {
+        ttsAudio.pause();
+        try { ttsAudio.currentTime = 0; } catch (e) {}
+      }
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+      ttsFallbackMode = false;
+      ttsState = 'idle';
+      ttsIndex = 0;
+      clearTtsHighlight();
+      updateTtsUi('Слушане на целия текст на книжовен немски (de-DE) • Bereit');
+    }
+
+    function onTtsSettingChange() {
+      const rate = getTtsRate();
+      if (ttsAudio) {
+        ttsAudio.defaultPlaybackRate = rate;
+        ttsAudio.playbackRate = rate;
+      }
+      if (ttsFallbackMode && ttsState === 'playing') {
+        ttsPlaybackId++;
+        if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+        speakFallbackChunk(ttsPlaybackId, ttsQueue[ttsIndex]);
+      }
+    }
+
+    window.addEventListener('beforeunload', () => {
+      if (ttsAudio) ttsAudio.pause();
+      if ('speechSynthesis' in window && window.speechSynthesis) window.speechSynthesis.cancel();
+    });
+
+    function copyPhrase(btn, text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      }
+      const fb = btn.parentElement.querySelector('.copy-fb');
+      if (fb) {
+        fb.classList.remove('hidden');
+        setTimeout(() => fb.classList.add('hidden'), 1800);
+      }
+    }
+
+    // Satzbau puzzle
+    const puzzleSolutions = {
+      "1": "Wenn man mittags kurz schläft, kann das Gehirn wieder frische Informationen aufnehmen.",
+      "2": "Die Studie beweist, dass ein Power Nap die kreative Denkleistung deutlich verbessert.",
+      "3": "Wer länger als dreißig Minuten schläft, wacht oft völlig benommen und müde auf."
+};
+
+    function shufflePool(puzzleNum) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      if (!pool) return;
+      const chips = Array.from(pool.querySelectorAll('.word-chip'));
+      for (let i = chips.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = chips[i];
+        chips[i] = chips[j];
+        chips[j] = temp;
+      }
+      chips.forEach(c => pool.appendChild(c));
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      [1, 2, 3].forEach(n => shufflePool(n));
+      populateGermanVoices();
+      if ('speechSynthesis' in window && 'onvoiceschanged' in window.speechSynthesis) {
+        window.speechSynthesis.onvoiceschanged = populateGermanVoices;
+      }
+    });
+
+    function pickWord(puzzleNum, btn) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (placeholder) placeholder.style.display = 'none';
+
+      btn.classList.remove('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.classList.add('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.onclick = function() { returnWord(puzzleNum, btn); };
+      target.appendChild(btn);
+
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function returnWord(puzzleNum, btn) {
+      const pool = document.getElementById('pool-' + puzzleNum);
+      btn.classList.remove('bg-slate-800', 'text-white', 'border-slate-900');
+      btn.classList.add('bg-blue-50', 'text-blue-900', 'border-blue-200');
+      btn.onclick = function() { pickWord(puzzleNum, btn); };
+      pool.appendChild(btn);
+
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const placeholder = document.getElementById('placeholder-' + puzzleNum);
+      if (chips.length === 0 && placeholder) {
+        placeholder.style.display = 'inline';
+      }
+      evaluatePuzzle(puzzleNum);
+    }
+
+    function evaluatePuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = target.querySelectorAll('.word-chip');
+      const currentSentence = Array.from(chips).map(c => c.textContent.trim()).join(' ');
+      const check = document.getElementById('check-' + puzzleNum);
+      check.classList.remove('hidden', 'text-emerald-600', 'text-rose-600');
+
+      if (currentSentence === puzzleSolutions[puzzleNum]) {
+        check.textContent = '✓ Perfekt! Der Satz ist grammatikalisch absolut korrekt.';
+        check.classList.add('text-emerald-600');
+      } else if (chips.length >= puzzleSolutions[puzzleNum].split(' ').length) {
+        check.textContent = '✗ Die Reihenfolge stimmt noch nicht ganz. Tippe auf Wörter, um sie zu korrigieren.';
+        check.classList.add('text-rose-600');
+      } else {
+        check.classList.add('hidden');
+      }
+    }
+
+    function resetPuzzle(puzzleNum) {
+      const target = document.getElementById('target-' + puzzleNum);
+      const chips = Array.from(target.querySelectorAll('.word-chip'));
+      chips.forEach(btn => returnWord(puzzleNum, btn));
+      shufflePool(puzzleNum);
+      document.getElementById('check-' + puzzleNum).classList.add('hidden');
+    }
+
+    function solvePuzzle(puzzleNum) {
+      resetPuzzle(puzzleNum);
+      const pool = document.getElementById('pool-' + puzzleNum);
+      const words = puzzleSolutions[puzzleNum].split(' ');
+      words.forEach(w => {
+        const chip = Array.from(pool.querySelectorAll('.word-chip')).find(c => c.textContent.trim() === w);
+        if (chip) pickWord(puzzleNum, chip);
+      });
+    }
+
+    // Präpositionen evaluation
+    const praepAnswers = {
+      "pr1": "auf + Akkusativ",
+      "pr2": "vor + Dativ",
+      "pr3": "unter + Dativ",
+      "pr4": "von + Dativ"
+};
+
+    function checkPraep() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        if (sel.value === praepAnswers['pr' + i]) {
+          sel.className = 'w-full border-2 border-emerald-500 rounded p-2 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'w-full border-2 border-rose-500 rounded p-2 bg-rose-50 text-rose-900 font-bold text-xs';
+        }
+      }
+      const div = document.getElementById('praep-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Präpositionen korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showPraepSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('pr' + i).value = praepAnswers['pr' + i];
+      }
+      checkPraep();
+    }
+
+    function resetPraep() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('pr' + i);
+        sel.value = '';
+        sel.className = 'w-full border border-slate-300 rounded p-2 bg-slate-50 text-slate-900 font-semibold text-xs';
+      }
+      document.getElementById('praep-score').textContent = '';
+    }
+
+    // Quiz evaluation
+    const quizAnswers = {
+      "q1": "a",
+      "q2": "b",
+      "q3": "b"
+};
+    const quizHints = {
+      "q1": "Richtig! Mit einem Schwamm, der ausgewrungen wird, damit er wieder neues Wasser aufnehmen kann.",
+      "q2": "Richtig! Weil man sonst in den Tiefschlaf fällt und sich nach dem Aufwachen benommen und träge fühlt.",
+      "q3": "Richtig! Menschen, die nachts unter chronischen Schlafstörungen (Insomnie) leiden."
+};
+
+    function checkQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        const sel = document.querySelector('input[name="q' + i + '"]:checked');
+        const fb = document.getElementById('q' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Antwort.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === quizAnswers['q' + i]) {
+          fb.textContent = '✓ ' + quizHints['q' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Leider nicht korrekt. Probieren Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showQuizSolution() {
+      for (let i = 1; i <= 3; i++) {
+        const r = document.querySelector(`input[name="q${i}"][value="${quizAnswers['q' + i]}"]`);
+        if (r) r.checked = true;
+      }
+      checkQuiz();
+    }
+
+    function resetQuiz() {
+      for (let i = 1; i <= 3; i++) {
+        document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('q' + i + '-fb').classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
