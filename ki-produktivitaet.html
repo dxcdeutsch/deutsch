@@ -84,7 +84,7 @@
     <!-- TAB 1 -->
     <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
 
-            <!-- Hochdeutsch Audio Player (Multi-Voice HTML5) -->
+      <!-- Hochdeutsch Audio Player (Multi-Voice HTML5) -->
       <div id="tts-player-bar" class="p-4 rounded-xl border border-sky-200 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 shadow-sm space-y-3">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2.5">
@@ -95,8 +95,11 @@
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-intro-btn" onclick="playIntroOnly()" title="Само заглавие и увод" class="inline-flex items-center gap-1.5 bg-white hover:bg-sky-50 text-[#002f6c] border border-sky-300 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg shadow-sm transition">
+              <span>▶</span> <span>Einleitung</span>
+            </button>
             <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
-              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Ganzen Text</span>
             </button>
             <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
               <span>⏹</span> <span>Stopp</span>
@@ -119,7 +122,7 @@
               <option value="florian">Florian (Männlich – Natürlich &amp; Lebendig)</option>
             </select>
           </label>
-          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете ▶ Anhören на който и да е абзац, за да чуете само него отделно, или ▶ Ganzen Text за целия текст</span>
         </div>
       </div>
 
@@ -131,7 +134,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Das Gedankenexperiment: Nur zwei Stunden Arbeitszeit</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Haben Sie Lust auf ein <span class="highlight-b1" onclick="highlightGlossary(this,'Gedankenexperiment')">Gedankenexperiment</span>? Stellen Sie sich vor: Sie haben in dieser Woche nur zwei Stunden Arbeitszeit <span class="highlight-b1" onclick="highlightGlossary(this,'zur Verfügung')">zur Verfügung</span>. Was würden Sie tun? Ein Meeting <span class="highlight-b1" onclick="highlightGlossary(this,'einberufen')">einberufen</span>? Wohl kaum! Sie würden keine langen Abstimmungen führen und keine Präsentationen schön formatieren. Sie würden alle <span class="highlight-b1" onclick="highlightGlossary(this,'Scheinarbeit')">Scheinarbeiten</span> sofort weglassen und sich auf das Wichtigste <span class="highlight-b1" onclick="highlightGlossary(this,'besinnen')">besinnen</span>.
@@ -155,7 +163,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die politische Debatte: Mehr arbeiten?</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In der aktuellen Debatte hört man aber etwas ganz anderes. Politiker und Arbeitgeber sagen: Deutschland muss wieder mehr <span class="highlight-b1" onclick="highlightGlossary(this,'schuften')">schuften</span>, um die <span class="highlight-b1" onclick="highlightGlossary(this,'Stagnation')">Stagnation</span> zu <span class="highlight-b1" onclick="highlightGlossary(this,'überwinden')">überwinden</span>. Sie fordern <span class="highlight-b1" onclick="highlightGlossary(this,'Mehrarbeit')">Mehrarbeit</span>, weniger Brückentage und weniger Teilzeit. Die Autorin hält das für einen <span class="highlight-b1" onclick="highlightGlossary(this,'Irrglaube')">Irrglauben</span>: Viele Stunden sichern nicht automatisch unseren <span class="highlight-b1" onclick="highlightGlossary(this,'Wohlstand')">Wohlstand</span>.
@@ -180,7 +193,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Grenzen der Wissensarbeit</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Dieser Gedanke kommt aus der Fabrikarbeit. In der <span class="highlight-b1" onclick="highlightGlossary(this,'Wissensarbeit')">Wissensarbeit</span> kann man Leistung nicht einfach <span class="highlight-b1" onclick="highlightGlossary(this,'hochrechnen')">hochrechnen</span>. Wer zehn Stunden vor dem Bildschirm sitzt, hat nicht automatisch bessere Ideen als jemand nach sechs Stunden konzentrierter Arbeit. Viele Beschäftigte <span class="highlight-b1" onclick="highlightGlossary(this,'Belastungsgrenze')">stoßen an ihre Belastungsgrenze</span>. Mehr Zeit im Büro bringt nicht mehr Innovation, sondern nur <span class="highlight-b1" onclick="highlightGlossary(this,'Erschöpfung')">Erschöpfung</span>.
@@ -204,7 +222,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der Milliarden-Hype um KI</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Jetzt soll künstliche Intelligenz die Lösung sein. Firmen investieren Milliarden in Lizenzen und Chatbots. Die Chefs <span class="highlight-b1" onclick="highlightGlossary(this,'versprechen')">versprechen sich</span> große <span class="highlight-b1" onclick="highlightGlossary(this,'Produktivitätssprung')">Produktivitätssprünge</span>. Aber die Praxis <span class="highlight-b1" onclick="highlightGlossary(this,'ernüchtern')">ernüchtert</span>: Die erhofften Effekte <span class="highlight-b1" onclick="highlightGlossary(this,'ausbleiben')">bleiben</span> an vielen Orten <span class="highlight-b1" onclick="highlightGlossary(this,'ausbleiben')">aus</span>. Die Technik ist gut, aber sie löst nicht das Grundproblem: Wie ist die Arbeit im Unternehmen organisiert?
@@ -228,7 +251,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Drei Arten von Arbeit</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Höltmann teilt unsere Arbeit in drei Bereiche ein. Erstens die <span class="highlight-b1" onclick="highlightGlossary(this,'Verantwortungsarbeit')">Verantwortungsarbeit</span>: die Kernaufgaben, die echten Wert schaffen, zum Beispiel Kundenprobleme lösen oder Systeme planen. Zweitens die <span class="highlight-b1" onclick="highlightGlossary(this,'Kollaborationsarbeit')">Kollaborationsarbeit</span>: Meetings und Abstimmungen. Drittens die <span class="highlight-b1" onclick="highlightGlossary(this,'Reaktionsarbeit')">Reaktionsarbeit</span>: Chat-Nachrichten, E-Mails und plötzliche Störungen.
@@ -252,7 +280,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Kollaboration und Reaktion als Zeitfresser</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Das Problem: Die drei Bereiche sind nicht im Gleichgewicht. Die meiste Energie <span class="highlight-b1" onclick="highlightGlossary(this,'versickern')">versickert</span> in Besprechungen und schnellen Antworten. Viele kurze Status-Calls <span class="highlight-b1" onclick="highlightGlossary(this,'zerstückeln')">zerstückeln</span> den Tag, und alle paar Minuten kommt eine neue Nachricht. Diese ständigen Unterbrechungen <span class="highlight-b1" onclick="highlightGlossary(this,'lähmen')">lähmen</span> das Denken und machen tiefe Konzentration unmöglich.
@@ -276,7 +309,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die eigentliche Arbeit bleibt liegen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Die Folge ist <span class="highlight-b1" onclick="highlightGlossary(this,'verheerend')">verheerend</span>: Für die Verantwortungsarbeit bleibt in der Arbeitszeit kaum Platz. Ingenieure und Entwickler müssen ihre wichtigen Aufgaben <span class="highlight-b1" onclick="highlightGlossary(this,'Rand')">an den Rand des Tages drängen</span> oder in den Feierabend verschieben. So sind Menschen den ganzen Tag <span class="highlight-b1" onclick="highlightGlossary(this,'pausenlos')">pausenlos</span> beschäftigt, und abends merken sie: Das Wichtigste ist <span class="highlight-b1" onclick="highlightGlossary(this,'liegen bleiben')">liegen geblieben</span>.
@@ -300,7 +338,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Warum KI das Problem verschärft</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Wenn KI auf dieses System trifft, löst sie das Problem nicht, sondern macht es <span class="highlight-b1" onclick="highlightGlossary(this,'verschärfen')">schlimmer</span>. KI beschleunigt auch die falsche Arbeit, und es entsteht noch mehr »Busy Work«. Wenn Mitarbeiter mit KI in Sekunden lange Berichte, unnötige Präsentationen und Protokolle erstellen, haben sie keinen <span class="highlight-b1" onclick="highlightGlossary(this,'Nutzen stiften')">Nutzen gestiftet</span>. Denn Menschen müssen alles lesen, prüfen und besprechen. Statt <span class="highlight-b1" onclick="highlightGlossary(this,'Entlastung')">Entlastung</span> entsteht <span class="highlight-b1" onclick="highlightGlossary(this,'Leerlauf')">Leerlauf</span>.
@@ -324,7 +367,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der blinde Fleck der Führungskräfte</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Warum erkennen Firmen diese Falle nicht? Das liegt am <span class="highlight-b1" onclick="highlightGlossary(this,'blinde Fleck')">blinden Fleck</span> des Managements. Viele Chefs fordern Produktivität, wissen aber nicht, wie <span class="highlight-b1" onclick="highlightGlossary(this,'zersplittert')">zersplittert</span> der Alltag ihrer Teams ist. Aus Angst vor <span class="highlight-b1" onclick="highlightGlossary(this,'Kontrollverlust')">Kontrollverlust</span> führen sie immer neue Berichte ein. Sie verwechseln Anwesenheit im Meeting mit Leistung – und <span class="highlight-b1" onclick="highlightGlossary(this,'ersticken')">ersticken</span> so die Produktivität, die sie steigern wollen.
@@ -348,7 +396,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Lösung: Mut zum Weglassen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Der wirkliche Hebel liegt nicht in neuer Technik, sondern in einem <span class="highlight-b1" onclick="highlightGlossary(this,'Kulturwandel')">Kulturwandel</span>. Wir müssen aufhören, den Arbeitstag mit <span class="highlight-b1" onclick="highlightGlossary(this,'Ballast')">Ballast</span> zu <span class="highlight-b1" onclick="highlightGlossary(this,'überfrachten')">überfrachten</span>. Teams brauchen den Mut, unnötige Jour Fixes, endlose E-Mail-Ketten und Formalitäten zu <span class="highlight-b1" onclick="highlightGlossary(this,'streichen')">streichen</span>. Erst wenn wir das Unwichtige <span class="highlight-b1" onclick="highlightGlossary(this,'weglassen')">weglassen</span>, entsteht Freiraum, in dem Mensch und Technik ihren echten <span class="highlight-b1" onclick="highlightGlossary(this,'Mehrwert')">Mehrwert</span> zeigen können.
@@ -702,6 +755,8 @@
     let ttsFallbackMode = false;
     let ttsFallbackChunks = [];
     let ttsFallbackChunkIdx = 0;
+    let ttsSingleMode = false;
+    let ttsSourceAttempt = 0;
 
     function getTtsRate() {
       const rateSel = document.getElementById('tts-rate');
@@ -709,25 +764,35 @@
       return Number.isFinite(val) && val > 0 ? val : 1;
     }
 
+    function cancelSpeechSynthesis() {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
     function onVoiceChange() {
       const sel = document.getElementById('tts-voice-select');
       if (sel) {
         currentVoiceKey = sel.value;
       }
-      const wasPlaying = (ttsState === 'playing');
-      const curIndex = ttsIndex;
+      ttsFallbackMode = false;
+      cancelSpeechSynthesis();
       if (ttsAudio) {
         ttsAudio.pause();
       }
       ttsQueue = buildAudioQueue();
-      if (wasPlaying) {
+      if (ttsState === 'playing' || ttsState === 'paused') {
         ttsPlaybackId++;
-        ttsIndex = curIndex;
+        if (ttsQueue.length === 0 || ttsIndex >= ttsQueue.length) {
+          ttsIndex = 0;
+        }
         ttsState = 'playing';
         playCurrentSegment();
-      } else if (ttsState === 'paused') {
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ') • Stimme gewechselt');
+      } else {
+        const vLabel = (currentVoiceKey === 'florian')
+          ? 'Florian (Мъжки – Hochdeutsch Neural)'
+          : 'Seraphina (Женски – Hochdeutsch Neural)';
+        updateTtsUi('Stimme gewählt: ' + vLabel + ' • Bereit');
       }
     }
 
@@ -804,9 +869,15 @@
     function buildAudioQueue() {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const voiceSuffix = (currentVoiceKey === 'florian') ? '_florian.mp3' : '.mp3';
+      const baseName0 = LESSON_AUDIO_PREFIX + '_00' + voiceSuffix;
       const queue = [{
         index: 0,
-        file: 'audio/' + LESSON_AUDIO_PREFIX + '_00' + voiceSuffix,
+        file: 'audio/' + baseName0,
+        files: [
+          'audio/' + baseName0,
+          'https://dxcdeutsch.github.io/deutsch/audio/' + baseName0,
+          'https://deutsch.bbozhanov.com/audio/' + baseName0
+        ],
         card: null,
         label: 'Überschrift & Einleitung',
         getText: function() {
@@ -818,9 +889,15 @@
       for (let i = 0; i < cards.length; i++) {
         const num = String(i + 1).padStart(2, '0');
         const card = cards[i];
+        const baseName = LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix;
         queue.push({
           index: i + 1,
-          file: 'audio/' + LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix,
+          file: 'audio/' + baseName,
+          files: [
+            'audio/' + baseName,
+            'https://dxcdeutsch.github.io/deutsch/audio/' + baseName,
+            'https://deutsch.bbozhanov.com/audio/' + baseName
+          ],
           card: card,
           label: 'Absatz ' + (i + 1) + ' von ' + cards.length,
           getText: function() {
@@ -865,10 +942,55 @@
         if (stopBtn) stopBtn.disabled = false;
       } else {
         if (playIcon) playIcon.textContent = '▶';
-        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (playLabel) playLabel.textContent = 'Ganzen Text';
         if (stopBtn) stopBtn.disabled = true;
       }
       if (statusEl && statusText) statusEl.textContent = statusText;
+
+      const cards = document.querySelectorAll('#text-tab .tts-card');
+      cards.forEach((card, i) => {
+        const segIdx = i + 1;
+        const btn = card.querySelector('.card-play-btn');
+        const icon = card.querySelector('.card-play-icon');
+        const label = card.querySelector('.card-play-label');
+        const cStop = card.querySelector('.card-stop-btn');
+        const isPlayingThis = (ttsState === 'playing' && ttsIndex === segIdx);
+        const isPausedThis = (ttsState === 'paused' && ttsIndex === segIdx);
+
+        if (btn) {
+          btn.classList.remove(
+            'bg-sky-50', 'text-[#002f6c]', 'border-sky-200', 'hover:bg-[#009ee3]', 'hover:text-white', 'hover:border-[#009ee3]',
+            'bg-[#009ee3]', 'text-white', 'border-[#009ee3]',
+            'bg-amber-100', 'text-amber-900', 'border-amber-300'
+          );
+        }
+
+        if (isPlayingThis) {
+          if (icon) icon.textContent = '⏸';
+          if (label) label.textContent = 'Pause';
+          if (btn) btn.classList.add('bg-[#009ee3]', 'text-white', 'border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else if (isPausedThis) {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Weiter';
+          if (btn) btn.classList.add('bg-amber-100', 'text-amber-900', 'border-amber-300');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Anhören';
+          if (btn) btn.classList.add('bg-sky-50', 'hover:bg-[#009ee3]', 'text-[#002f6c]', 'hover:text-white', 'border-sky-200', 'hover:border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.add('hidden');
+            cStop.classList.remove('inline-flex');
+          }
+        }
+      });
     }
 
     function ensureAudioElement() {
@@ -880,25 +1002,53 @@
       return ttsAudio;
     }
 
+    function finishSegmentOrAdvance(item) {
+      if (ttsSingleMode) {
+        ttsState = 'idle';
+        ttsSingleMode = false;
+        ttsFallbackMode = false;
+        clearTtsHighlight();
+        updateTtsUi('Fertig (' + (item ? item.label : '') + ') • Bereit');
+        return;
+      }
+      ttsIndex++;
+      playCurrentSegment();
+    }
+
+    function pickFallbackVoice() {
+      if (ttsVoices.length === 0) {
+        populateGermanVoices();
+      }
+      if (ttsVoices.length === 0) return { voice: null, pitch: 1.0 };
+      if (currentVoiceKey === 'florian') {
+        const male = ttsVoices.find(v => /florian|conrad|stefan|killian|klaus|markus|male/i.test(v.name || ''));
+        return male ? { voice: male, pitch: 1.0 } : { voice: ttsVoices[0], pitch: 0.85 };
+      }
+      const female = ttsVoices.find(v => /seraphina|katja|amala|anna|helena|hedda|female/i.test(v.name || ''));
+      return { voice: female || ttsVoices[0], pitch: 1.0 };
+    }
+
     function speakFallbackChunk(myId, item) {
       if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
       if (!item || ttsFallbackChunkIdx >= ttsFallbackChunks.length) {
-        ttsIndex++;
-        playCurrentSegment();
+        finishSegmentOrAdvance(item);
         return;
       }
-      if (ttsVoices.length === 0) {
+      const picked = pickFallbackVoice();
+      if (!picked.voice) {
         ttsPlaybackId++;
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
         return;
       }
       const u = new SpeechSynthesisUtterance(ttsFallbackChunks[ttsFallbackChunkIdx]);
-      u.voice = ttsVoices[0];
-      u.lang = ttsVoices[0].lang || 'de-DE';
+      u.voice = picked.voice;
+      u.lang = picked.voice.lang || 'de-DE';
       u.rate = getTtsRate();
+      u.pitch = picked.pitch;
       u.onend = function() {
         if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
         ttsFallbackChunkIdx++;
@@ -928,6 +1078,7 @@
       ttsPlaybackId++;
       ttsState = 'idle';
       ttsIndex = 0;
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       clearTtsHighlight();
       updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
@@ -936,6 +1087,7 @@
     function playCurrentSegment() {
       if (ttsIndex >= ttsQueue.length) {
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Fertig vorgelesen • Bereit');
@@ -958,88 +1110,118 @@
       }
 
       const myId = ttsPlaybackId;
-      const rate = getTtsRate();
-      audio.onended = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        ttsIndex++;
-        playCurrentSegment();
-      };
-      audio.onerror = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        handleAudioFailure(myId, item);
-      };
+      const sources = (item.files && item.files.length) ? item.files : [item.file];
 
-      audio.pause();
-      audio.src = item.file;
-      audio.defaultPlaybackRate = rate;
-      audio.playbackRate = rate;
-      const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-      updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
-
-      try {
-        const playPromise = audio.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function(err) {
-            if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-            if (err && err.name === 'AbortError') return;
-            handleAudioFailure(myId, item);
-          });
+      function trySource(srcIdx) {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        if (srcIdx >= sources.length) {
+          handleAudioFailure(myId, item);
+          return;
         }
-      } catch (err) {
-        handleAudioFailure(myId, item);
+        ttsSourceAttempt = srcIdx;
+        let failed = false;
+        function onSourceFail() {
+          if (failed) return;
+          failed = true;
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          trySource(srcIdx + 1);
+        }
+
+        const rate = getTtsRate();
+        audio.onended = function() {
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          finishSegmentOrAdvance(item);
+        };
+        audio.onerror = onSourceFail;
+        audio.onloadedmetadata = function() {
+          if (myId !== ttsPlaybackId) return;
+          const r = getTtsRate();
+          audio.defaultPlaybackRate = r;
+          audio.playbackRate = r;
+        };
+
+        audio.pause();
+        audio.src = sources[srcIdx];
+        audio.defaultPlaybackRate = rate;
+        audio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
+
+        try {
+          const playPromise = audio.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              onSourceFail();
+            });
+          }
+        } catch (err) {
+          onSourceFail();
+        }
       }
+
+      trySource(0);
+    }
+
+    function pauseCurrentPlayback() {
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        cancelSpeechSynthesis();
+      } else if (ttsAudio) {
+        ttsAudio.pause();
+      }
+      ttsState = 'paused';
+      const cur = ttsQueue[ttsIndex];
+      updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+    }
+
+    function resumeCurrentPlayback() {
+      const cur = ttsQueue[ttsIndex];
+      if (!cur) return false;
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        ttsState = 'playing';
+        speakFallbackChunk(ttsPlaybackId, cur);
+        return true;
+      }
+      if (ttsAudio && ttsAudio.src) {
+        ttsState = 'playing';
+        const rate = getTtsRate();
+        ttsAudio.defaultPlaybackRate = rate;
+        ttsAudio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + cur.label);
+        const myId = ttsPlaybackId;
+        try {
+          const p = ttsAudio.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              handleAudioFailure(myId, cur);
+            });
+          }
+        } catch (err) {
+          handleAudioFailure(myId, cur);
+        }
+        return true;
+      }
+      return false;
     }
 
     function togglePlayAll() {
       if (ttsState === 'playing') {
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-          }
-        } else if (ttsAudio) {
-          ttsAudio.pause();
-        }
-        ttsState = 'paused';
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        pauseCurrentPlayback();
         return;
       }
       if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
-        const cur = ttsQueue[ttsIndex];
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          ttsState = 'playing';
-          speakFallbackChunk(ttsPlaybackId, cur);
-          return;
-        }
-        if (ttsAudio) {
-          ttsState = 'playing';
-          const rate = getTtsRate();
-          ttsAudio.defaultPlaybackRate = rate;
-          ttsAudio.playbackRate = rate;
-          const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-          updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + (cur ? cur.label : ''));
-          const myId = ttsPlaybackId;
-          try {
-            const p = ttsAudio.play();
-            if (p && typeof p.catch === 'function') {
-              p.catch(function(err) {
-                if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-                if (err && err.name === 'AbortError') return;
-                handleAudioFailure(myId, cur);
-              });
-            }
-          } catch (err) {
-            handleAudioFailure(myId, cur);
-          }
-          return;
-        }
+        if (resumeCurrentPlayback()) return;
       }
       ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
       ttsIndex = 0;
@@ -1047,19 +1229,45 @@
       playCurrentSegment();
     }
 
-    function speakFromCard(btnEl) {
+    function playIntroOnly() {
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
+      ttsFallbackMode = false;
+      ttsQueue = buildAudioQueue();
+      ttsIndex = 0;
+      ttsState = 'playing';
+      playCurrentSegment();
+    }
+
+    function toggleCardAudio(btnEl) {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const cardEl = btnEl && typeof btnEl.closest === 'function' ? btnEl.closest('.tts-card') : null;
       const idx = cardEl ? cards.indexOf(cardEl) : 0;
-      ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
+      const segIndex = idx >= 0 ? idx + 1 : 1;
+
+      if (ttsState === 'playing' && ttsIndex === segIndex) {
+        pauseCurrentPlayback();
+        return;
       }
+      if (ttsState === 'paused' && ttsIndex === segIndex) {
+        if (resumeCurrentPlayback()) return;
+      }
+
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
-      ttsIndex = idx >= 0 ? idx + 1 : 1;
+      ttsIndex = segIndex;
       ttsState = 'playing';
       playCurrentSegment();
+    }
+
+    function speakFromCard(btnEl) {
+      toggleCardAudio(btnEl);
     }
 
     function stopSpeech() {
@@ -1068,9 +1276,8 @@
         ttsAudio.pause();
         try { ttsAudio.currentTime = 0; } catch (e) {}
       }
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsState = 'idle';
       ttsIndex = 0;
@@ -1086,9 +1293,7 @@
       }
       if (ttsFallbackMode && ttsState === 'playing') {
         ttsPlaybackId++;
-        if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-          window.speechSynthesis.cancel();
-        }
+        cancelSpeechSynthesis();
         speakFallbackChunk(ttsPlaybackId, ttsQueue[ttsIndex]);
       }
     }

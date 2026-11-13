@@ -137,8 +137,11 @@
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-intro-btn" onclick="playIntroOnly()" title="Само заглавие и увод" class="inline-flex items-center gap-1.5 bg-white hover:bg-sky-50 text-[#002f6c] border border-sky-300 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg shadow-sm transition">
+              <span>▶</span> <span>Einleitung</span>
+            </button>
             <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
-              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Ganzen Text</span>
             </button>
             <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
               <span>⏹</span> <span>Stopp</span>
@@ -161,7 +164,7 @@
               <option value="florian">Florian (Männlich – Natürlich &amp; Lebendig)</option>
             </select>
           </label>
-          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете ▶ Anhören на който и да е абзац, за да чуете само него отделно, или ▶ Ganzen Text за целия текст</span>
         </div>
       </div>
 
@@ -173,7 +176,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 1</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Viele Menschen glauben, dass Gefühle <span class="highlight-b1" onclick="highlightGlossary(this, 'rational')">rationale</span> Entscheidungen im Beruf nur <span class="highlight-b1" onclick="highlightGlossary(this, 'stören')">stören</span>. Wenn wir gestresst oder verärgert sind, treffen wir manchmal Entscheidungen, die wir später <span class="highlight-b1" onclick="highlightGlossary(this, 'bereuen')">bereuen</span>. Doch die Harvard-Psychologin Jennifer Lerner erforscht seit vielen Jahren, wie Emotionen und Verstand <span class="highlight-b1" onclick="highlightGlossary(this, 'zusammenwirken')">zusammenwirken</span>. Sie betont: Gefühle sind keine Fehler unseres Gehirns, sondern lebenswichtige <span class="highlight-b1" onclick="highlightGlossary(this, 'Werkzeug')">Werkzeuge</span>, die uns bei komplexen Aufgaben <span class="highlight-b1" onclick="highlightGlossary(this, 'leiten')">leiten</span>.
@@ -198,7 +206,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 2</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In der menschlichen <span class="highlight-b1" onclick="highlightGlossary(this, 'Evolution')">Evolution</span> haben sich Gefühle als schnelle <span class="highlight-b1" onclick="highlightGlossary(this, 'Reaktionssystem')">Reaktionssysteme</span> entwickelt. Wenn eine Gefahr <span class="highlight-b1" onclick="highlightGlossary(this, 'drohen')">droht</span>, analysiert unser <span class="highlight-b1" onclick="highlightGlossary(this, 'Bewusstsein')">Bewusstsein</span> nicht erst minutenlang alle Fakten, sondern Angst lässt uns sofort vorsichtig handeln. Das Gleiche gilt für <span class="highlight-b1" onclick="highlightGlossary(this, 'Ekel')">Ekel</span>: Landet eine Fliege in unserer Suppe, schieben wir den Teller <span class="highlight-b1" onclick="highlightGlossary(this, 'instinktiv')">instinktiv</span> weg. Diese schnellen Reaktionen schützen unser Leben und helfen uns, Prioritäten zu setzen.
@@ -223,7 +236,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 3</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Im Berufsalltag und in der Wirtschaft gibt es selten nur eine einzige <span class="highlight-b1" onclick="highlightGlossary(this, 'objektiv')">objektiv</span> richtige Antwort. Beim Kauf einer <span class="highlight-b1" onclick="highlightGlossary(this, 'Immobilie')">Immobilie</span> oder bei der Wahl eines neuen <span class="highlight-b1" onclick="highlightGlossary(this, 'Arbeitsplatz')">Arbeitsplatzes</span> können Algorithmen zwar Zahlen vergleichen. Aber die Frage, welche Arbeitskultur zu uns passt und welches Risiko wir persönlich <span class="highlight-b1" onclick="highlightGlossary(this, 'ertragen')">ertragen</span>, können nur unsere <span class="highlight-b1" onclick="highlightGlossary(this, 'Wert')">Werte</span> und Gefühle beantworten. Eine rein kühle <span class="highlight-b1" onclick="highlightGlossary(this, 'Kalkulation')">Kalkulation</span> übersieht oft die menschliche Seite.
@@ -248,7 +266,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 4</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Ein großes Problem entsteht jedoch durch sogenannte <span class="highlight-b1" onclick="highlightGlossary(this, 'zufällig')">zufällige</span> Gefühle. Wir nehmen Emotionen <span class="highlight-b1" onclick="highlightGlossary(this, 'unbewusst')">unbewusst</span> von einer Situation in die nächste mit. Wer sich am Morgen im dichten <span class="highlight-b1" onclick="highlightGlossary(this, 'Straßenverkehr')">Straßenverkehr</span> geärgert hat, geht oft <span class="highlight-b1" onclick="highlightGlossary(this, 'gereizt')">gereizt</span> in das nächste Teammeeting. Die <span class="highlight-b1" onclick="highlightGlossary(this, 'Wut')">Wut</span> stammt eigentlich aus dem Stau, <span class="highlight-b1" onclick="highlightGlossary(this, 'einfärben')">färbt</span> aber die Beurteilung der Kollegen oder eines neuen Projektvorschlags negativ <span class="highlight-b1" onclick="highlightGlossary(this, 'einfärben')">ein</span>.
@@ -273,7 +296,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 5</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Forscher <span class="highlight-b1" onclick="highlightGlossary(this, 'unterschätzen')">unterscheiden</span> klar zwischen Wut und Angst. Obwohl beide Gefühle unangenehm sind, haben sie völlig unterschiedliche <span class="highlight-b1" onclick="highlightGlossary(this, 'Auswirkung')">Auswirkungen</span> auf <span class="highlight-b1" onclick="highlightGlossary(this, 'Risiko')">Risiken</span>. Wütende Menschen fühlen sich <span class="highlight-b1" onclick="highlightGlossary(this, 'mächtig')">mächtig</span> und unterschätzen <span class="highlight-b1" onclick="highlightGlossary(this, 'Risiko')">Risiken</span> – sie handeln oft zu <span class="highlight-b1" onclick="highlightGlossary(this, 'voreilig')">voreilig</span> und <span class="highlight-b1" onclick="highlightGlossary(this, 'impulsiv')">impulsiv</span>. Ängstliche Menschen hingegen sehen überall Gefahren, schätzen <span class="highlight-b1" onclick="highlightGlossary(this, 'Risiko')">Risiken</span> viel zu hoch ein und verpassen dadurch wertvolle Chancen.
@@ -298,7 +326,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 6</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Besonders überraschend sind die Ergebnisse zur <span class="highlight-b1" onclick="highlightGlossary(this, 'Trauer')">Trauer</span>. Jennifer Lerner konnte in Experimenten <span class="highlight-b1" onclick="highlightGlossary(this, 'nachweisen')">nachweisen</span>, dass traurige Menschen bereit sind, deutlich mehr Geld für dieselben Produkte auszugeben. <span class="highlight-b1" onclick="highlightGlossary(this, 'Trauer')">Trauer</span> signalisiert unserem Unterbewusstsein einen <span class="highlight-b1" onclick="highlightGlossary(this, 'Verlust')">Verlust</span>. Um diesen inneren <span class="highlight-b1" onclick="highlightGlossary(this, 'Mangel')">Mangel</span> <span class="highlight-b1" onclick="highlightGlossary(this, 'ausgleichen')">auszugleichen</span>, entsteht der unbewusste <span class="highlight-b1" onclick="highlightGlossary(this, 'Drang')">Drang</span> nach Veränderung, den viele Menschen fälschlicherweise durch Konsum oder Frust-Shopping stillen.
@@ -323,7 +356,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 7</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Um Fehlentscheidungen zu vermeiden, rät Professorin Lerner zu emotionaler <span class="highlight-b1" onclick="highlightGlossary(this, 'Achtsamkeit')">Achtsamkeit</span>. Wenn wir spüren, dass ein starkes Gefühl <span class="highlight-b1" onclick="highlightGlossary(this, 'aufsteigen')">aufsteigt</span>, sollten wir <span class="highlight-b1" onclick="highlightGlossary(this, 'innehalten')">innehalten</span> und uns fragen: Woher kommt dieses Gefühl wirklich? Hat mein Ärger mit diesem Kollegen zu tun, oder bin ich nur hungrig und überarbeitet? Allein das präzise <span class="highlight-b1" onclick="highlightGlossary(this, 'benennen')">Benennen</span> der Emotion schwächt ihren unbewussten Einfluss auf unsere <span class="highlight-b1" onclick="highlightGlossary(this, 'Urteilskraft')">Urteilskraft</span> ab.
@@ -348,7 +386,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 8</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Ein weiterer häufiger <span class="highlight-b1" onclick="highlightGlossary(this, 'Denkfehler')">Denkfehler</span> betrifft die <span class="highlight-b1" onclick="highlightGlossary(this, 'Dauer')">Dauer</span> intensiver Emotionen. Menschen überschätzen fast immer <span class="highlight-b1" onclick="highlightGlossary(this, 'maßlos')">maßlos</span>, wie lange Wut oder Enttäuschung anhalten werden. Wenn wir uns über eine <span class="highlight-b1" onclick="highlightGlossary(this, 'Absage')">Absage</span> ärgern, glauben wir im ersten Moment, der Tag sei ruiniert. In Wirklichkeit <span class="highlight-b1" onclick="highlightGlossary(this, 'abklingen')">klingen</span> starke Gefühle meistens schon nach 15 bis 20 Minuten <span class="highlight-b1" onclick="highlightGlossary(this, 'abklingen')">ab</span>, wenn wir keine neue Nahrung für den Ärger nachlegen.
@@ -373,7 +416,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 9</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Für wichtige <span class="highlight-b1" onclick="highlightGlossary(this, 'Verhandlung')">Verhandlungen</span> und berufliche <span class="highlight-b1" onclick="highlightGlossary(this, 'Weichenstellung')">Weichenstellungen</span> empfiehlt die Wissenschaftlerin deshalb eine feste <span class="highlight-b1" onclick="highlightGlossary(this, 'Bedenkzeit')">Bedenkzeit</span>. Niemals sollte man eine <span class="highlight-b1" onclick="highlightGlossary(this, 'Vereinbarung')">Vereinbarung</span> unterschreiben oder eine scharfe E-Mail <span class="highlight-b1" onclick="highlightGlossary(this, 'abschicken')">abschicken</span>, während das Adrenalin durch den Körper schießt. Eine kurze Pause, ein Spaziergang an der frischen Luft oder eine Nacht Schlaf trennen die akute <span class="highlight-b1" onclick="highlightGlossary(this, 'Erregung')">Erregung</span> von den sachlichen Argumenten.
@@ -398,7 +446,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
               <span class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Absatz 10</span>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Gefühle sind also weder <span class="highlight-b1" onclick="highlightGlossary(this, 'Feind')">Feinde</span> noch blinde <span class="highlight-b1" onclick="highlightGlossary(this, 'Ratgeber')">Ratgeber</span>, sondern wertvolle Daten. Sie informieren uns darüber, was uns wirklich am <span class="highlight-b1" onclick="highlightGlossary(this, 'Herzen')">Herzen</span> liegt und wo unsere persönlichen <span class="highlight-b1" onclick="highlightGlossary(this, 'Grenze')">Grenzen</span> verlaufen. Wer lernt, seine Emotionen aufmerksam zu beobachten und zu <span class="highlight-b1" onclick="highlightGlossary(this, 'hinterfragen')">hinterfragen</span>, nutzt die Kraft beider Welten: die Schnelligkeit der <span class="highlight-b1" onclick="highlightGlossary(this, 'Intuition')">Intuition</span> und die Klarheit des logischen Verstandes.
@@ -835,6 +888,8 @@
     let ttsFallbackMode = false;
     let ttsFallbackChunks = [];
     let ttsFallbackChunkIdx = 0;
+    let ttsSingleMode = false;
+    let ttsSourceAttempt = 0;
 
     function getTtsRate() {
       const rateSel = document.getElementById('tts-rate');
@@ -842,25 +897,35 @@
       return Number.isFinite(val) && val > 0 ? val : 1;
     }
 
+    function cancelSpeechSynthesis() {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
     function onVoiceChange() {
       const sel = document.getElementById('tts-voice-select');
       if (sel) {
         currentVoiceKey = sel.value;
       }
-      const wasPlaying = (ttsState === 'playing');
-      const curIndex = ttsIndex;
+      ttsFallbackMode = false;
+      cancelSpeechSynthesis();
       if (ttsAudio) {
         ttsAudio.pause();
       }
       ttsQueue = buildAudioQueue();
-      if (wasPlaying) {
+      if (ttsState === 'playing' || ttsState === 'paused') {
         ttsPlaybackId++;
-        ttsIndex = curIndex;
+        if (ttsQueue.length === 0 || ttsIndex >= ttsQueue.length) {
+          ttsIndex = 0;
+        }
         ttsState = 'playing';
         playCurrentSegment();
-      } else if (ttsState === 'paused') {
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ') • Stimme gewechselt');
+      } else {
+        const vLabel = (currentVoiceKey === 'florian')
+          ? 'Florian (Мъжки – Hochdeutsch Neural)'
+          : 'Seraphina (Женски – Hochdeutsch Neural)';
+        updateTtsUi('Stimme gewählt: ' + vLabel + ' • Bereit');
       }
     }
 
@@ -937,9 +1002,15 @@
     function buildAudioQueue() {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const voiceSuffix = (currentVoiceKey === 'florian') ? '_florian.mp3' : '.mp3';
+      const baseName0 = LESSON_AUDIO_PREFIX + '_00' + voiceSuffix;
       const queue = [{
         index: 0,
-        file: 'audio/' + LESSON_AUDIO_PREFIX + '_00' + voiceSuffix,
+        file: 'audio/' + baseName0,
+        files: [
+          'audio/' + baseName0,
+          'https://dxcdeutsch.github.io/deutsch/audio/' + baseName0,
+          'https://deutsch.bbozhanov.com/audio/' + baseName0
+        ],
         card: null,
         label: 'Überschrift & Einleitung',
         getText: function() {
@@ -951,9 +1022,15 @@
       for (let i = 0; i < cards.length; i++) {
         const num = String(i + 1).padStart(2, '0');
         const card = cards[i];
+        const baseName = LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix;
         queue.push({
           index: i + 1,
-          file: 'audio/' + LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix,
+          file: 'audio/' + baseName,
+          files: [
+            'audio/' + baseName,
+            'https://dxcdeutsch.github.io/deutsch/audio/' + baseName,
+            'https://deutsch.bbozhanov.com/audio/' + baseName
+          ],
           card: card,
           label: 'Absatz ' + (i + 1) + ' von ' + cards.length,
           getText: function() {
@@ -998,10 +1075,55 @@
         if (stopBtn) stopBtn.disabled = false;
       } else {
         if (playIcon) playIcon.textContent = '▶';
-        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (playLabel) playLabel.textContent = 'Ganzen Text';
         if (stopBtn) stopBtn.disabled = true;
       }
       if (statusEl && statusText) statusEl.textContent = statusText;
+
+      const cards = document.querySelectorAll('#text-tab .tts-card');
+      cards.forEach((card, i) => {
+        const segIdx = i + 1;
+        const btn = card.querySelector('.card-play-btn');
+        const icon = card.querySelector('.card-play-icon');
+        const label = card.querySelector('.card-play-label');
+        const cStop = card.querySelector('.card-stop-btn');
+        const isPlayingThis = (ttsState === 'playing' && ttsIndex === segIdx);
+        const isPausedThis = (ttsState === 'paused' && ttsIndex === segIdx);
+
+        if (btn) {
+          btn.classList.remove(
+            'bg-sky-50', 'text-[#002f6c]', 'border-sky-200', 'hover:bg-[#009ee3]', 'hover:text-white', 'hover:border-[#009ee3]',
+            'bg-[#009ee3]', 'text-white', 'border-[#009ee3]',
+            'bg-amber-100', 'text-amber-900', 'border-amber-300'
+          );
+        }
+
+        if (isPlayingThis) {
+          if (icon) icon.textContent = '⏸';
+          if (label) label.textContent = 'Pause';
+          if (btn) btn.classList.add('bg-[#009ee3]', 'text-white', 'border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else if (isPausedThis) {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Weiter';
+          if (btn) btn.classList.add('bg-amber-100', 'text-amber-900', 'border-amber-300');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Anhören';
+          if (btn) btn.classList.add('bg-sky-50', 'hover:bg-[#009ee3]', 'text-[#002f6c]', 'hover:text-white', 'border-sky-200', 'hover:border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.add('hidden');
+            cStop.classList.remove('inline-flex');
+          }
+        }
+      });
     }
 
     function ensureAudioElement() {
@@ -1013,25 +1135,53 @@
       return ttsAudio;
     }
 
+    function finishSegmentOrAdvance(item) {
+      if (ttsSingleMode) {
+        ttsState = 'idle';
+        ttsSingleMode = false;
+        ttsFallbackMode = false;
+        clearTtsHighlight();
+        updateTtsUi('Fertig (' + (item ? item.label : '') + ') • Bereit');
+        return;
+      }
+      ttsIndex++;
+      playCurrentSegment();
+    }
+
+    function pickFallbackVoice() {
+      if (ttsVoices.length === 0) {
+        populateGermanVoices();
+      }
+      if (ttsVoices.length === 0) return { voice: null, pitch: 1.0 };
+      if (currentVoiceKey === 'florian') {
+        const male = ttsVoices.find(v => /florian|conrad|stefan|killian|klaus|markus|male/i.test(v.name || ''));
+        return male ? { voice: male, pitch: 1.0 } : { voice: ttsVoices[0], pitch: 0.85 };
+      }
+      const female = ttsVoices.find(v => /seraphina|katja|amala|anna|helena|hedda|female/i.test(v.name || ''));
+      return { voice: female || ttsVoices[0], pitch: 1.0 };
+    }
+
     function speakFallbackChunk(myId, item) {
       if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
       if (!item || ttsFallbackChunkIdx >= ttsFallbackChunks.length) {
-        ttsIndex++;
-        playCurrentSegment();
+        finishSegmentOrAdvance(item);
         return;
       }
-      if (ttsVoices.length === 0) {
+      const picked = pickFallbackVoice();
+      if (!picked.voice) {
         ttsPlaybackId++;
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
         return;
       }
       const u = new SpeechSynthesisUtterance(ttsFallbackChunks[ttsFallbackChunkIdx]);
-      u.voice = ttsVoices[0];
-      u.lang = ttsVoices[0].lang || 'de-DE';
+      u.voice = picked.voice;
+      u.lang = picked.voice.lang || 'de-DE';
       u.rate = getTtsRate();
+      u.pitch = picked.pitch;
       u.onend = function() {
         if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
         ttsFallbackChunkIdx++;
@@ -1061,6 +1211,7 @@
       ttsPlaybackId++;
       ttsState = 'idle';
       ttsIndex = 0;
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       clearTtsHighlight();
       updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
@@ -1069,6 +1220,7 @@
     function playCurrentSegment() {
       if (ttsIndex >= ttsQueue.length) {
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Fertig vorgelesen • Bereit');
@@ -1091,88 +1243,118 @@
       }
 
       const myId = ttsPlaybackId;
-      const rate = getTtsRate();
-      audio.onended = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        ttsIndex++;
-        playCurrentSegment();
-      };
-      audio.onerror = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        handleAudioFailure(myId, item);
-      };
+      const sources = (item.files && item.files.length) ? item.files : [item.file];
 
-      audio.pause();
-      audio.src = item.file;
-      audio.defaultPlaybackRate = rate;
-      audio.playbackRate = rate;
-      const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-      updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
-
-      try {
-        const playPromise = audio.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function(err) {
-            if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-            if (err && err.name === 'AbortError') return;
-            handleAudioFailure(myId, item);
-          });
+      function trySource(srcIdx) {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        if (srcIdx >= sources.length) {
+          handleAudioFailure(myId, item);
+          return;
         }
-      } catch (err) {
-        handleAudioFailure(myId, item);
+        ttsSourceAttempt = srcIdx;
+        let failed = false;
+        function onSourceFail() {
+          if (failed) return;
+          failed = true;
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          trySource(srcIdx + 1);
+        }
+
+        const rate = getTtsRate();
+        audio.onended = function() {
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          finishSegmentOrAdvance(item);
+        };
+        audio.onerror = onSourceFail;
+        audio.onloadedmetadata = function() {
+          if (myId !== ttsPlaybackId) return;
+          const r = getTtsRate();
+          audio.defaultPlaybackRate = r;
+          audio.playbackRate = r;
+        };
+
+        audio.pause();
+        audio.src = sources[srcIdx];
+        audio.defaultPlaybackRate = rate;
+        audio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
+
+        try {
+          const playPromise = audio.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              onSourceFail();
+            });
+          }
+        } catch (err) {
+          onSourceFail();
+        }
       }
+
+      trySource(0);
+    }
+
+    function pauseCurrentPlayback() {
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        cancelSpeechSynthesis();
+      } else if (ttsAudio) {
+        ttsAudio.pause();
+      }
+      ttsState = 'paused';
+      const cur = ttsQueue[ttsIndex];
+      updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+    }
+
+    function resumeCurrentPlayback() {
+      const cur = ttsQueue[ttsIndex];
+      if (!cur) return false;
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        ttsState = 'playing';
+        speakFallbackChunk(ttsPlaybackId, cur);
+        return true;
+      }
+      if (ttsAudio && ttsAudio.src) {
+        ttsState = 'playing';
+        const rate = getTtsRate();
+        ttsAudio.defaultPlaybackRate = rate;
+        ttsAudio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + cur.label);
+        const myId = ttsPlaybackId;
+        try {
+          const p = ttsAudio.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              handleAudioFailure(myId, cur);
+            });
+          }
+        } catch (err) {
+          handleAudioFailure(myId, cur);
+        }
+        return true;
+      }
+      return false;
     }
 
     function togglePlayAll() {
       if (ttsState === 'playing') {
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-          }
-        } else if (ttsAudio) {
-          ttsAudio.pause();
-        }
-        ttsState = 'paused';
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        pauseCurrentPlayback();
         return;
       }
       if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
-        const cur = ttsQueue[ttsIndex];
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          ttsState = 'playing';
-          speakFallbackChunk(ttsPlaybackId, cur);
-          return;
-        }
-        if (ttsAudio) {
-          ttsState = 'playing';
-          const rate = getTtsRate();
-          ttsAudio.defaultPlaybackRate = rate;
-          ttsAudio.playbackRate = rate;
-          const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-          updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + (cur ? cur.label : ''));
-          const myId = ttsPlaybackId;
-          try {
-            const p = ttsAudio.play();
-            if (p && typeof p.catch === 'function') {
-              p.catch(function(err) {
-                if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-                if (err && err.name === 'AbortError') return;
-                handleAudioFailure(myId, cur);
-              });
-            }
-          } catch (err) {
-            handleAudioFailure(myId, cur);
-          }
-          return;
-        }
+        if (resumeCurrentPlayback()) return;
       }
       ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
       ttsIndex = 0;
@@ -1180,19 +1362,45 @@
       playCurrentSegment();
     }
 
-    function speakFromCard(btnEl) {
+    function playIntroOnly() {
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
+      ttsFallbackMode = false;
+      ttsQueue = buildAudioQueue();
+      ttsIndex = 0;
+      ttsState = 'playing';
+      playCurrentSegment();
+    }
+
+    function toggleCardAudio(btnEl) {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const cardEl = btnEl && typeof btnEl.closest === 'function' ? btnEl.closest('.tts-card') : null;
       const idx = cardEl ? cards.indexOf(cardEl) : 0;
-      ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
+      const segIndex = idx >= 0 ? idx + 1 : 1;
+
+      if (ttsState === 'playing' && ttsIndex === segIndex) {
+        pauseCurrentPlayback();
+        return;
       }
+      if (ttsState === 'paused' && ttsIndex === segIndex) {
+        if (resumeCurrentPlayback()) return;
+      }
+
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
-      ttsIndex = idx >= 0 ? idx + 1 : 1;
+      ttsIndex = segIndex;
       ttsState = 'playing';
       playCurrentSegment();
+    }
+
+    function speakFromCard(btnEl) {
+      toggleCardAudio(btnEl);
     }
 
     function stopSpeech() {
@@ -1201,9 +1409,8 @@
         ttsAudio.pause();
         try { ttsAudio.currentTime = 0; } catch (e) {}
       }
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsState = 'idle';
       ttsIndex = 0;
@@ -1219,9 +1426,7 @@
       }
       if (ttsFallbackMode && ttsState === 'playing') {
         ttsPlaybackId++;
-        if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-          window.speechSynthesis.cancel();
-        }
+        cancelSpeechSynthesis();
         speakFallbackChunk(ttsPlaybackId, ttsQueue[ttsIndex]);
       }
     }

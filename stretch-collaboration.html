@@ -127,7 +127,7 @@
     <!-- TAB 1: Full Text with Side-by-Side B1+ Glossary -->
     <div id="text-tab" class="tab-content p-4 sm:p-7 space-y-6">
 
-            <!-- Hochdeutsch Audio Player (Multi-Voice HTML5) -->
+      <!-- Hochdeutsch Audio Player (Multi-Voice HTML5) -->
       <div id="tts-player-bar" class="p-4 rounded-xl border border-sky-200 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 shadow-sm space-y-3">
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div class="flex items-center gap-2.5">
@@ -138,8 +138,11 @@
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
+            <button type="button" id="tts-intro-btn" onclick="playIntroOnly()" title="Само заглавие и увод" class="inline-flex items-center gap-1.5 bg-white hover:bg-sky-50 text-[#002f6c] border border-sky-300 text-xs sm:text-sm font-bold px-3 py-2 rounded-lg shadow-sm transition">
+              <span>▶</span> <span>Einleitung</span>
+            </button>
             <button type="button" id="tts-play-btn" onclick="togglePlayAll()" class="inline-flex items-center gap-1.5 bg-[#009ee3] hover:bg-[#0082ba] text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg shadow transition">
-              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Vorlesen</span>
+              <span id="tts-play-icon">▶</span> <span id="tts-play-label">Ganzen Text</span>
             </button>
             <button type="button" id="tts-stop-btn" onclick="stopSpeech()" disabled class="inline-flex items-center gap-1 bg-white hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 border border-slate-300 text-xs sm:text-sm font-semibold px-3 py-2 rounded-lg transition">
               <span>⏹</span> <span>Stopp</span>
@@ -162,7 +165,7 @@
               <option value="florian">Florian (Männlich – Natürlich &amp; Lebendig)</option>
             </select>
           </label>
-          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете 🔊 до който и да е абзац, за да започнете от него</span>
+          <span class="text-[11px] text-slate-500 hidden md:inline ml-auto">Натиснете ▶ Anhören на който и да е абзац, за да чуете само него отделно, или ▶ Ganzen Text за целия текст</span>
         </div>
       </div>
 
@@ -174,7 +177,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Wenn die Fronten im Büro verhärtet sind</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Adam Kahane hat als <span class="highlight-b1" onclick="highlightGlossary(this, 'Vermittler')">Vermittler</span> in extremen politischen Krisen gearbeitet – unter anderem in Südafrika und Kolumbien. Doch seine Erkenntnisse helfen auch im ganz normalen Büroalltag mit schwierigen Kollegen oder Kunden, die man <span class="highlight-b1" onclick="highlightGlossary(this, 'ausstehen')">nicht ausstehen kann</span>. Meistens versucht man im Job, <span class="highlight-b1" onclick="highlightGlossary(this, 'einigen')">sich auf ein Ziel zu einigen</span> und dafür <span class="highlight-b1" onclick="highlightGlossary(this, 'Kompromiss')">Kompromisse einzugehen</span>. Wenn die <span class="highlight-b1" onclick="highlightGlossary(this, 'verhärtet')">Fronten aber verhärtet</span> sind und ein <span class="highlight-b1" onclick="highlightGlossary(this, 'festgefahren')">festgefahrener Konflikt</span> herrscht, funktioniert diese klassische Harmonie-Methode nicht mehr.
@@ -199,7 +207,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Stretch Collaboration: Zusammenarbeit ohne Harmonie</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Viele glauben, dass gute Teamarbeit immer <span class="highlight-b1" onclick="highlightGlossary(this, 'Einigkeit')">Einigkeit</span> über Ziele und einen klaren Masterplan erfordert. Kahane erklärt: Das klappt in einer Sportmannschaft oder in einem Orchester, wo jeder bereit ist, <span class="highlight-b1" onclick="highlightGlossary(this, 'unterordnen')">sich</span> dem gemeinsamen Ziel <span class="highlight-b1" onclick="highlightGlossary(this, 'unterordnen')">unterzuordnen</span>. Wenn aber die Komplexität hoch ist und man den Kollegen oder Kunden nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'vertrauen')">vertraut</span>, ist das nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'zielführend')">zielführend</span>. Dann braucht man »Stretch Collaboration«: Einen Ansatz, der <span class="highlight-b1" onclick="highlightGlossary(this, 'Unstimmigkeit')">Unstimmigkeiten</span>, Konflikte und Unsicherheit bewusst zulässt.
@@ -224,7 +237,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der eigene Anteil und kleine Schritte statt Masterplan</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Es ist sehr menschlich <span class="highlight-b1" onclick="highlightGlossary(this, 'annehmen')">anzunehmen</span>, dass das Problem immer nur die anderen sind – und dass alles perfekt wäre, wenn die Kollegen einfach täten, was wir wollen. Doch andere Menschen zu ändern, klappt fast nie. Wir müssen erkennen, wie wir selbst <span class="highlight-b1" onclick="highlightGlossary(this, 'beitragen')">zum Problem beitragen</span>. Außerdem sucht Kahane nicht sofort die eine <span class="highlight-b1" onclick="highlightGlossary(this, 'endgültig')">endgültige Lösung</span>, sondern fragt: Wie können wir <span class="highlight-b1" onclick="highlightGlossary(this, 'Weg bahnen')">uns</span> Stück für Stück <span class="highlight-b1" onclick="highlightGlossary(this, 'Weg bahnen')">einen Weg bahnen</span>? Oft muss das Team dabei experimentieren und <span class="highlight-b1" onclick="highlightGlossary(this, 'Richtung einschlagen')">eine Richtung einschlagen</span>, an die am Anfang niemand gedacht hat.
@@ -249,7 +267,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">4</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Warum »rote Linien« viele Möglichkeiten verbauen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In seinem Buch spricht Kahane provokant davon, »mit Feinden zu verhandeln«. Das Wort »Feind« meint im Alltag oft einfach Menschen, mit denen wir <span class="highlight-b1" onclick="highlightGlossary(this, 'einig sein')">nicht einig sind</span> oder die uns im Projekt nerven. Viele ziehen dann sofort <span class="highlight-b1" onclick="highlightGlossary(this, 'rote Linie')">eine rote Linie</span>: »Mit dieser Person rede ich nicht!« Doch Kahane warnt: Wer <span class="highlight-b1" onclick="highlightGlossary(this, 'von vornherein')">von vornherein</span> solche roten Linien zieht, <span class="highlight-b1" onclick="highlightGlossary(this, 'verbauen')">verbaut</span> sich viele Möglichkeiten. Denn wie in einer großen Stadt müssen wir auch in Firmen mit Menschen zusammenarbeiten, die ganz anders ticken als wir. Leider ist diese Fähigkeit durch soziale Medien und <span class="highlight-b1" onclick="highlightGlossary(this, 'Polarisierung')">Polarisierung</span> oft <span class="highlight-b1" onclick="highlightGlossary(this, 'verkümmern')">verkümmert</span>.
@@ -274,7 +297,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">5</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Die Seminar-Übung: Seite an Seite spazieren gehen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             In seinen Workshops nutzt Kahane eine überraschende Übung: Jeder Teilnehmer soll eine halbe Stunde lang mit genau der Person im Raum spazieren gehen, mit der er sich ein Gespräch am wenigsten vorstellen kann. Beim gemeinsamen Gehen <span class="highlight-b1" onclick="highlightGlossary(this, 'abbiegen')">biegt man</span> zusammen rechts oder links <span class="highlight-b1" onclick="highlightGlossary(this, 'abbiegen')">ab</span> und schaut <span class="highlight-b1" onclick="highlightGlossary(this, 'buchstäblich')">buchstäblich</span> in dieselbe Richtung. Auch wenn man <span class="highlight-b1" onclick="highlightGlossary(this, 'inhaltlich')">inhaltlich</span> nicht einer Meinung ist, entsteht eine <span class="highlight-b1" onclick="highlightGlossary(this, 'informell')">informelle Verbindung</span>. Man erkennt den anderen wieder als <span class="highlight-b1" onclick="highlightGlossary(this, 'Mitmensch')">Mitmenschen</span> – und das verändert oft die ganze Arbeitsatmosphäre.
@@ -299,7 +327,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">6</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Abfällige Bemerkungen kontern: Wirkung statt Befehl</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Was tut man aber, wenn ein Kollege immer wieder <span class="highlight-b1" onclick="highlightGlossary(this, 'abfällig')">abfällige Bemerkungen</span> oder schlechte Witze macht? Kahane rät davon ab, Befehle zu erteilen (»Mach diesen Witz nicht!«). Viel wirksamer ist es, dem anderen die <span class="highlight-b1" onclick="highlightGlossary(this, 'Wirkung')">Wirkung</span> seines Verhaltens als Information zu geben: »Wenn Sie das sagen, fühle ich mich <span class="highlight-b1" onclick="highlightGlossary(this, 'verletzt')">verletzt</span>.« Als Kanadier erlebte Kahane selbst, wie jemand ständig Witze über Kanada als 51. US-Bundesstaat machte. Kahane sagte ruhig: »Ich finde das nicht lustig. Wenn du mit mir zusammenarbeiten möchtest, hilft das nicht.« Der Kollege war <span class="highlight-b1" onclick="highlightGlossary(this, 'überrascht')">überrascht</span> und hat den Spruch nie <span class="highlight-b1" onclick="highlightGlossary(this, 'wiederholen')">wiederholt</span>.
@@ -324,7 +357,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">7</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Wenn Kollegen absichtlich verletzen: Drei klare Optionen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Manchmal wollen Menschen im Umfeld jedoch <span class="highlight-b1" onclick="highlightGlossary(this, 'absichtlich')">absichtlich</span> schaden oder mobben. Dann nennt Kahane drei klare <span class="highlight-b1" onclick="highlightGlossary(this, 'Option')">Optionen</span>: Erstens kann man die direkte Zusammenarbeit mit dieser Person im Projekt oder in der Schicht <span class="highlight-b1" onclick="highlightGlossary(this, 'beenden')">beenden</span>. Zweitens kann man das System verlassen, wenn die gesamte Unternehmenskultur toxisch ist: »Ich mag den Job, aber nicht <span class="highlight-b1" onclick="highlightGlossary(this, 'auf Kosten')">auf Kosten meiner Würde</span>.« Oder drittens: Man bleibt, sucht sich Verbündete, die dieselbe Sorge teilen, und <span class="highlight-b1" onclick="highlightGlossary(this, 'Koalition')">bildet eine Koalition</span>, um die Regeln im Team gemeinsam zu ändern.
@@ -349,7 +387,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">8</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Vom Beobachter zum Mitgestalter: Der Blick von außen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Um eine <span class="highlight-b1" onclick="highlightGlossary(this, 'heikel')">heikle Zusammenarbeit</span> zu lösen, hilft Kahanes Übung »Vom <span class="highlight-b1" onclick="highlightGlossary(this, 'Beobachter')">Beobachter</span> zum <span class="highlight-b1" onclick="highlightGlossary(this, 'Mitgestalter')">Mitgestalter</span>«. Zuerst betrachtet man die Situation wie ein <span class="highlight-b1" onclick="highlightGlossary(this, 'außenstehend')">außenstehender Regisseur</span> von außen: Welche Faktoren <span class="highlight-b1" onclick="highlightGlossary(this, 'herbeiführen')">führen</span> das Problem <span class="highlight-b1" onclick="highlightGlossary(this, 'herbeiführen')">herbei</span>? Wie verhalten sich die anderen? Aus dieser sicheren Distanz ist es leicht zu sehen, was die Kollegen falsch machen. Doch solange man nur Beobachter bleibt, übernimmt man noch keine Verantwortung für eine Lösung.
@@ -374,7 +417,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">9</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Der Perspektivwechsel: Sich als Teil des Bildes sehen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Im zweiten Schritt vollzieht man einen <span class="highlight-b1" onclick="highlightGlossary(this, 'Perspektivwechsel')">Perspektivwechsel</span> nach innen: Man stellt sich vor, dass man selbst als <span class="highlight-b1" onclick="highlightGlossary(this, 'Akteur')">Akteur</span> mitten auf dem Bild steht. Jetzt fragt man sich ehrlich: Inwiefern <span class="highlight-b1" onclick="highlightGlossary(this, 'prägen')">prägen</span> meine eigenen Annahmen, Worte und Entscheidungen die aktuelle Realität? Oft <span class="highlight-b1" onclick="highlightGlossary(this, 'übersehen')">übersehen</span> wir unsere eigene Rolle komplett. Erst wenn wir beide Perspektiven <span class="highlight-b1" onclick="highlightGlossary(this, 'gegenüberstellen')">einander gegenüberstellen</span>, erkennen wir, welchen konkreten Schritt wir selbst ändern können, damit es <span class="highlight-b1" onclick="highlightGlossary(this, 'vorwärtsgehen')">vorwärtsgeht</span>.
@@ -399,7 +447,12 @@
               <span class="w-6 h-6 rounded-full bg-[#009ee3] text-white text-xs font-bold flex items-center justify-center shrink-0">10</span>
               <h3 class="font-bold text-slate-900 text-sm sm:text-base">Vor dem schwierigen Meeting: Vorgespräch und Blick nach innen</h3>
             </div>
-            <button type="button" onclick="speakFromCard(this)" title="Ab diesem Absatz vorlesen" class="text-xs text-[#009ee3] hover:bg-sky-50 px-2 py-1 rounded-md font-semibold transition whitespace-nowrap shrink-0">🔊 Ab hier</button>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button type="button" onclick="toggleCardAudio(this)" title="Само този абзац (Play / Pause)" class="card-play-btn inline-flex items-center gap-1.5 text-xs bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 hover:border-[#009ee3] px-2.5 py-1 rounded-lg font-bold transition whitespace-nowrap shadow-sm">
+                <span class="card-play-icon">▶</span> <span class="card-play-label">Anhören</span>
+              </button>
+              <button type="button" onclick="stopSpeech()" title="Стоп" class="card-stop-btn hidden items-center justify-center w-6 h-6 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-300 text-xs transition">⏹</button>
+            </div>
           </div>
           <p class="tts-paragraph text-sm sm:text-base leading-relaxed text-slate-800">
             Was empfiehlt Kahane konkret vor einem wichtigen Meeting mit einem »unmöglichen« Kollegen? Erstens: Man sollte die Person vorab privat treffen und das Problem ruhig erklären. Manche sind überrascht und bereit, zur Lösung beizutragen. Sagt der andere jedoch »<span class="highlight-b1" onclick="highlightGlossary(this, 'Pech gehabt')">Pech gehabt</span>, so bin ich eben«, muss man andere Optionen <span class="highlight-b1" onclick="highlightGlossary(this, 'in Betracht ziehen')">in Betracht ziehen</span> und Koalitionen nutzen. Und zweitens <span class="highlight-b1" onclick="highlightGlossary(this, 'lohnen')">lohnt sich</span> immer auch der <span class="highlight-b1" onclick="highlightGlossary(this, 'Blick nach innen')">Blick nach innen</span>: Manchmal nervt uns ein Kollege nur deshalb so stark, weil er uns unbewusst an eine <span class="highlight-b1" onclick="highlightGlossary(this, 'schmerzhaft')">schmerzhafte Erfahrung</span> aus der Vergangenheit erinnert.
@@ -979,6 +1032,8 @@
     let ttsFallbackMode = false;
     let ttsFallbackChunks = [];
     let ttsFallbackChunkIdx = 0;
+    let ttsSingleMode = false;
+    let ttsSourceAttempt = 0;
 
     function getTtsRate() {
       const rateSel = document.getElementById('tts-rate');
@@ -986,25 +1041,35 @@
       return Number.isFinite(val) && val > 0 ? val : 1;
     }
 
+    function cancelSpeechSynthesis() {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
     function onVoiceChange() {
       const sel = document.getElementById('tts-voice-select');
       if (sel) {
         currentVoiceKey = sel.value;
       }
-      const wasPlaying = (ttsState === 'playing');
-      const curIndex = ttsIndex;
+      ttsFallbackMode = false;
+      cancelSpeechSynthesis();
       if (ttsAudio) {
         ttsAudio.pause();
       }
       ttsQueue = buildAudioQueue();
-      if (wasPlaying) {
+      if (ttsState === 'playing' || ttsState === 'paused') {
         ttsPlaybackId++;
-        ttsIndex = curIndex;
+        if (ttsQueue.length === 0 || ttsIndex >= ttsQueue.length) {
+          ttsIndex = 0;
+        }
         ttsState = 'playing';
         playCurrentSegment();
-      } else if (ttsState === 'paused') {
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ') • Stimme gewechselt');
+      } else {
+        const vLabel = (currentVoiceKey === 'florian')
+          ? 'Florian (Мъжки – Hochdeutsch Neural)'
+          : 'Seraphina (Женски – Hochdeutsch Neural)';
+        updateTtsUi('Stimme gewählt: ' + vLabel + ' • Bereit');
       }
     }
 
@@ -1081,9 +1146,15 @@
     function buildAudioQueue() {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const voiceSuffix = (currentVoiceKey === 'florian') ? '_florian.mp3' : '.mp3';
+      const baseName0 = LESSON_AUDIO_PREFIX + '_00' + voiceSuffix;
       const queue = [{
         index: 0,
-        file: 'audio/' + LESSON_AUDIO_PREFIX + '_00' + voiceSuffix,
+        file: 'audio/' + baseName0,
+        files: [
+          'audio/' + baseName0,
+          'https://dxcdeutsch.github.io/deutsch/audio/' + baseName0,
+          'https://deutsch.bbozhanov.com/audio/' + baseName0
+        ],
         card: null,
         label: 'Überschrift & Einleitung',
         getText: function() {
@@ -1095,9 +1166,15 @@
       for (let i = 0; i < cards.length; i++) {
         const num = String(i + 1).padStart(2, '0');
         const card = cards[i];
+        const baseName = LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix;
         queue.push({
           index: i + 1,
-          file: 'audio/' + LESSON_AUDIO_PREFIX + '_' + num + voiceSuffix,
+          file: 'audio/' + baseName,
+          files: [
+            'audio/' + baseName,
+            'https://dxcdeutsch.github.io/deutsch/audio/' + baseName,
+            'https://deutsch.bbozhanov.com/audio/' + baseName
+          ],
           card: card,
           label: 'Absatz ' + (i + 1) + ' von ' + cards.length,
           getText: function() {
@@ -1142,10 +1219,55 @@
         if (stopBtn) stopBtn.disabled = false;
       } else {
         if (playIcon) playIcon.textContent = '▶';
-        if (playLabel) playLabel.textContent = 'Vorlesen';
+        if (playLabel) playLabel.textContent = 'Ganzen Text';
         if (stopBtn) stopBtn.disabled = true;
       }
       if (statusEl && statusText) statusEl.textContent = statusText;
+
+      const cards = document.querySelectorAll('#text-tab .tts-card');
+      cards.forEach((card, i) => {
+        const segIdx = i + 1;
+        const btn = card.querySelector('.card-play-btn');
+        const icon = card.querySelector('.card-play-icon');
+        const label = card.querySelector('.card-play-label');
+        const cStop = card.querySelector('.card-stop-btn');
+        const isPlayingThis = (ttsState === 'playing' && ttsIndex === segIdx);
+        const isPausedThis = (ttsState === 'paused' && ttsIndex === segIdx);
+
+        if (btn) {
+          btn.classList.remove(
+            'bg-sky-50', 'text-[#002f6c]', 'border-sky-200', 'hover:bg-[#009ee3]', 'hover:text-white', 'hover:border-[#009ee3]',
+            'bg-[#009ee3]', 'text-white', 'border-[#009ee3]',
+            'bg-amber-100', 'text-amber-900', 'border-amber-300'
+          );
+        }
+
+        if (isPlayingThis) {
+          if (icon) icon.textContent = '⏸';
+          if (label) label.textContent = 'Pause';
+          if (btn) btn.classList.add('bg-[#009ee3]', 'text-white', 'border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else if (isPausedThis) {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Weiter';
+          if (btn) btn.classList.add('bg-amber-100', 'text-amber-900', 'border-amber-300');
+          if (cStop) {
+            cStop.classList.remove('hidden');
+            cStop.classList.add('inline-flex');
+          }
+        } else {
+          if (icon) icon.textContent = '▶';
+          if (label) label.textContent = 'Anhören';
+          if (btn) btn.classList.add('bg-sky-50', 'hover:bg-[#009ee3]', 'text-[#002f6c]', 'hover:text-white', 'border-sky-200', 'hover:border-[#009ee3]');
+          if (cStop) {
+            cStop.classList.add('hidden');
+            cStop.classList.remove('inline-flex');
+          }
+        }
+      });
     }
 
     function ensureAudioElement() {
@@ -1157,25 +1279,53 @@
       return ttsAudio;
     }
 
+    function finishSegmentOrAdvance(item) {
+      if (ttsSingleMode) {
+        ttsState = 'idle';
+        ttsSingleMode = false;
+        ttsFallbackMode = false;
+        clearTtsHighlight();
+        updateTtsUi('Fertig (' + (item ? item.label : '') + ') • Bereit');
+        return;
+      }
+      ttsIndex++;
+      playCurrentSegment();
+    }
+
+    function pickFallbackVoice() {
+      if (ttsVoices.length === 0) {
+        populateGermanVoices();
+      }
+      if (ttsVoices.length === 0) return { voice: null, pitch: 1.0 };
+      if (currentVoiceKey === 'florian') {
+        const male = ttsVoices.find(v => /florian|conrad|stefan|killian|klaus|markus|male/i.test(v.name || ''));
+        return male ? { voice: male, pitch: 1.0 } : { voice: ttsVoices[0], pitch: 0.85 };
+      }
+      const female = ttsVoices.find(v => /seraphina|katja|amala|anna|helena|hedda|female/i.test(v.name || ''));
+      return { voice: female || ttsVoices[0], pitch: 1.0 };
+    }
+
     function speakFallbackChunk(myId, item) {
       if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
       if (!item || ttsFallbackChunkIdx >= ttsFallbackChunks.length) {
-        ttsIndex++;
-        playCurrentSegment();
+        finishSegmentOrAdvance(item);
         return;
       }
-      if (ttsVoices.length === 0) {
+      const picked = pickFallbackVoice();
+      if (!picked.voice) {
         ttsPlaybackId++;
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
         return;
       }
       const u = new SpeechSynthesisUtterance(ttsFallbackChunks[ttsFallbackChunkIdx]);
-      u.voice = ttsVoices[0];
-      u.lang = ttsVoices[0].lang || 'de-DE';
+      u.voice = picked.voice;
+      u.lang = picked.voice.lang || 'de-DE';
       u.rate = getTtsRate();
+      u.pitch = picked.pitch;
       u.onend = function() {
         if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
         ttsFallbackChunkIdx++;
@@ -1205,6 +1355,7 @@
       ttsPlaybackId++;
       ttsState = 'idle';
       ttsIndex = 0;
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       clearTtsHighlight();
       updateTtsUi('Audio-Datei konnte nicht geladen werden (keine de-DE Systemstimme verfügbar).');
@@ -1213,6 +1364,7 @@
     function playCurrentSegment() {
       if (ttsIndex >= ttsQueue.length) {
         ttsState = 'idle';
+        ttsSingleMode = false;
         ttsFallbackMode = false;
         clearTtsHighlight();
         updateTtsUi('Fertig vorgelesen • Bereit');
@@ -1235,88 +1387,118 @@
       }
 
       const myId = ttsPlaybackId;
-      const rate = getTtsRate();
-      audio.onended = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        ttsIndex++;
-        playCurrentSegment();
-      };
-      audio.onerror = function() {
-        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-        handleAudioFailure(myId, item);
-      };
+      const sources = (item.files && item.files.length) ? item.files : [item.file];
 
-      audio.pause();
-      audio.src = item.file;
-      audio.defaultPlaybackRate = rate;
-      audio.playbackRate = rate;
-      const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-      updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
-
-      try {
-        const playPromise = audio.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-          playPromise.catch(function(err) {
-            if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-            if (err && err.name === 'AbortError') return;
-            handleAudioFailure(myId, item);
-          });
+      function trySource(srcIdx) {
+        if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+        if (srcIdx >= sources.length) {
+          handleAudioFailure(myId, item);
+          return;
         }
-      } catch (err) {
-        handleAudioFailure(myId, item);
+        ttsSourceAttempt = srcIdx;
+        let failed = false;
+        function onSourceFail() {
+          if (failed) return;
+          failed = true;
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          trySource(srcIdx + 1);
+        }
+
+        const rate = getTtsRate();
+        audio.onended = function() {
+          if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+          finishSegmentOrAdvance(item);
+        };
+        audio.onerror = onSourceFail;
+        audio.onloadedmetadata = function() {
+          if (myId !== ttsPlaybackId) return;
+          const r = getTtsRate();
+          audio.defaultPlaybackRate = r;
+          audio.playbackRate = r;
+        };
+
+        audio.pause();
+        audio.src = sources[srcIdx];
+        audio.defaultPlaybackRate = rate;
+        audio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + item.label);
+
+        try {
+          const playPromise = audio.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              onSourceFail();
+            });
+          }
+        } catch (err) {
+          onSourceFail();
+        }
       }
+
+      trySource(0);
+    }
+
+    function pauseCurrentPlayback() {
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        cancelSpeechSynthesis();
+      } else if (ttsAudio) {
+        ttsAudio.pause();
+      }
+      ttsState = 'paused';
+      const cur = ttsQueue[ttsIndex];
+      updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+    }
+
+    function resumeCurrentPlayback() {
+      const cur = ttsQueue[ttsIndex];
+      if (!cur) return false;
+      if (ttsFallbackMode) {
+        ttsPlaybackId++;
+        ttsState = 'playing';
+        speakFallbackChunk(ttsPlaybackId, cur);
+        return true;
+      }
+      if (ttsAudio && ttsAudio.src) {
+        ttsState = 'playing';
+        const rate = getTtsRate();
+        ttsAudio.defaultPlaybackRate = rate;
+        ttsAudio.playbackRate = rate;
+        const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
+        updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + cur.label);
+        const myId = ttsPlaybackId;
+        try {
+          const p = ttsAudio.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function(err) {
+              if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
+              if (err && err.name === 'AbortError') return;
+              handleAudioFailure(myId, cur);
+            });
+          }
+        } catch (err) {
+          handleAudioFailure(myId, cur);
+        }
+        return true;
+      }
+      return false;
     }
 
     function togglePlayAll() {
       if (ttsState === 'playing') {
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-            window.speechSynthesis.cancel();
-          }
-        } else if (ttsAudio) {
-          ttsAudio.pause();
-        }
-        ttsState = 'paused';
-        const cur = ttsQueue[ttsIndex];
-        updateTtsUi('Pausiert (' + (cur ? cur.label : '') + ')');
+        pauseCurrentPlayback();
         return;
       }
       if (ttsState === 'paused' && ttsQueue.length > 0 && ttsIndex < ttsQueue.length) {
-        const cur = ttsQueue[ttsIndex];
-        if (ttsFallbackMode) {
-          ttsPlaybackId++;
-          ttsState = 'playing';
-          speakFallbackChunk(ttsPlaybackId, cur);
-          return;
-        }
-        if (ttsAudio) {
-          ttsState = 'playing';
-          const rate = getTtsRate();
-          ttsAudio.defaultPlaybackRate = rate;
-          ttsAudio.playbackRate = rate;
-          const voiceName = (currentVoiceKey === 'florian') ? 'Florian (de-DE Neural)' : 'Seraphina (de-DE Neural)';
-          updateTtsUi('Spielt Hochdeutsch (' + voiceName + ') • ' + (cur ? cur.label : ''));
-          const myId = ttsPlaybackId;
-          try {
-            const p = ttsAudio.play();
-            if (p && typeof p.catch === 'function') {
-              p.catch(function(err) {
-                if (myId !== ttsPlaybackId || ttsState !== 'playing') return;
-                if (err && err.name === 'AbortError') return;
-                handleAudioFailure(myId, cur);
-              });
-            }
-          } catch (err) {
-            handleAudioFailure(myId, cur);
-          }
-          return;
-        }
+        if (resumeCurrentPlayback()) return;
       }
       ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
       ttsIndex = 0;
@@ -1324,19 +1506,45 @@
       playCurrentSegment();
     }
 
-    function speakFromCard(btnEl) {
+    function playIntroOnly() {
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
+      ttsFallbackMode = false;
+      ttsQueue = buildAudioQueue();
+      ttsIndex = 0;
+      ttsState = 'playing';
+      playCurrentSegment();
+    }
+
+    function toggleCardAudio(btnEl) {
       const cards = Array.from(document.querySelectorAll('#text-tab .tts-card'));
       const cardEl = btnEl && typeof btnEl.closest === 'function' ? btnEl.closest('.tts-card') : null;
       const idx = cardEl ? cards.indexOf(cardEl) : 0;
-      ttsPlaybackId++;
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
+      const segIndex = idx >= 0 ? idx + 1 : 1;
+
+      if (ttsState === 'playing' && ttsIndex === segIndex) {
+        pauseCurrentPlayback();
+        return;
       }
+      if (ttsState === 'paused' && ttsIndex === segIndex) {
+        if (resumeCurrentPlayback()) return;
+      }
+
+      ttsPlaybackId++;
+      if (ttsAudio) ttsAudio.pause();
+      cancelSpeechSynthesis();
+      ttsSingleMode = true;
       ttsFallbackMode = false;
       ttsQueue = buildAudioQueue();
-      ttsIndex = idx >= 0 ? idx + 1 : 1;
+      ttsIndex = segIndex;
       ttsState = 'playing';
       playCurrentSegment();
+    }
+
+    function speakFromCard(btnEl) {
+      toggleCardAudio(btnEl);
     }
 
     function stopSpeech() {
@@ -1345,9 +1553,8 @@
         ttsAudio.pause();
         try { ttsAudio.currentTime = 0; } catch (e) {}
       }
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
-      }
+      cancelSpeechSynthesis();
+      ttsSingleMode = false;
       ttsFallbackMode = false;
       ttsState = 'idle';
       ttsIndex = 0;
@@ -1363,9 +1570,7 @@
       }
       if (ttsFallbackMode && ttsState === 'playing') {
         ttsPlaybackId++;
-        if (typeof window !== 'undefined' && 'speechSynthesis' in window && window.speechSynthesis) {
-          window.speechSynthesis.cancel();
-        }
+        cancelSpeechSynthesis();
         speakFallbackChunk(ttsPlaybackId, ttsQueue[ttsIndex]);
       }
     }
