@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-13T00:59:25.467828+00:00",
+  "generatedAt": "2026-11-16T20:35:57.524007+00:00",
   "engine": "edge-tts",
   "locale": "de-DE",
   "audioFormat": "audio/mpeg (24kHz, 48kbps)",
@@ -27,10 +27,10 @@
       "pitch": "+0Hz"
     }
   ],
-  "totalLessons": 7,
-  "totalClips": 154,
-  "totalDurationSec": 2133.39,
-  "totalBytes": 24250608,
+  "totalLessons": 8,
+  "totalClips": 176,
+  "totalDurationSec": 4637.73,
+  "totalBytes": 27826272,
   "lessons": {
     "index.html": {
       "id": "l1",
@@ -2008,6 +2008,289 @@
               "durationSec": 20.88,
               "bytes": 125280,
               "wpm": 143.7
+            }
+          }
+        }
+      ]
+    },
+    "bienen-honig.html": {
+      "id": "l8",
+      "title": "Wie Bienen Honig machen: Die faszinierende Welt des Bienenstocks",
+      "totalDurationSec": 310.94,
+      "totalBytes": 1865664,
+      "segments": [
+        {
+          "index": 0,
+          "key": "intro",
+          "cardIndex": null,
+          "label": "Überschrift & Einleitung",
+          "file": "audio/l8_00.mp3",
+          "durationSec": 22.56,
+          "bytes": 135360,
+          "wordCount": 40,
+          "wpm": 106.4,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_00.mp3",
+              "durationSec": 22.56,
+              "bytes": 135360,
+              "wpm": 106.4
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_00_florian.mp3",
+              "durationSec": 20.66,
+              "bytes": 123984,
+              "wpm": 116.2
+            }
+          }
+        },
+        {
+          "index": 1,
+          "key": "p01",
+          "cardIndex": 0,
+          "label": "Absatz 1 von 10",
+          "file": "audio/l8_01.mp3",
+          "durationSec": 30.1,
+          "bytes": 180576,
+          "wordCount": 55,
+          "wpm": 109.6,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_01.mp3",
+              "durationSec": 30.1,
+              "bytes": 180576,
+              "wpm": 109.6
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_01_florian.mp3",
+              "durationSec": 27.02,
+              "bytes": 162144,
+              "wpm": 122.1
+            }
+          }
+        },
+        {
+          "index": 2,
+          "key": "p02",
+          "cardIndex": 1,
+          "label": "Absatz 2 von 10",
+          "file": "audio/l8_02.mp3",
+          "durationSec": 28.87,
+          "bytes": 173232,
+          "wordCount": 57,
+          "wpm": 118.5,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_02.mp3",
+              "durationSec": 28.87,
+              "bytes": 173232,
+              "wpm": 118.5
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_02_florian.mp3",
+              "durationSec": 25.9,
+              "bytes": 155376,
+              "wpm": 132.0
+            }
+          }
+        },
+        {
+          "index": 3,
+          "key": "p03",
+          "cardIndex": 2,
+          "label": "Absatz 3 von 10",
+          "file": "audio/l8_03.mp3",
+          "durationSec": 28.94,
+          "bytes": 173664,
+          "wordCount": 60,
+          "wpm": 124.4,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_03.mp3",
+              "durationSec": 28.94,
+              "bytes": 173664,
+              "wpm": 124.4
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_03_florian.mp3",
+              "durationSec": 27.17,
+              "bytes": 163008,
+              "wpm": 132.5
+            }
+          }
+        },
+        {
+          "index": 4,
+          "key": "p04",
+          "cardIndex": 3,
+          "label": "Absatz 4 von 10",
+          "file": "audio/l8_04.mp3",
+          "durationSec": 27.02,
+          "bytes": 162144,
+          "wordCount": 58,
+          "wpm": 128.8,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_04.mp3",
+              "durationSec": 27.02,
+              "bytes": 162144,
+              "wpm": 128.8
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_04_florian.mp3",
+              "durationSec": 25.44,
+              "bytes": 152640,
+              "wpm": 136.8
+            }
+          }
+        },
+        {
+          "index": 5,
+          "key": "p05",
+          "cardIndex": 4,
+          "label": "Absatz 5 von 10",
+          "file": "audio/l8_05.mp3",
+          "durationSec": 30.55,
+          "bytes": 183312,
+          "wordCount": 56,
+          "wpm": 110.0,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_05.mp3",
+              "durationSec": 30.55,
+              "bytes": 183312,
+              "wpm": 110.0
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_05_florian.mp3",
+              "durationSec": 27.31,
+              "bytes": 163872,
+              "wpm": 123.0
+            }
+          }
+        },
+        {
+          "index": 6,
+          "key": "p06",
+          "cardIndex": 5,
+          "label": "Absatz 6 von 10",
+          "file": "audio/l8_06.mp3",
+          "durationSec": 28.61,
+          "bytes": 171648,
+          "wordCount": 58,
+          "wpm": 121.6,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_06.mp3",
+              "durationSec": 28.61,
+              "bytes": 171648,
+              "wpm": 121.6
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_06_florian.mp3",
+              "durationSec": 26.4,
+              "bytes": 158400,
+              "wpm": 131.8
+            }
+          }
+        },
+        {
+          "index": 7,
+          "key": "p07",
+          "cardIndex": 6,
+          "label": "Absatz 7 von 10",
+          "file": "audio/l8_07.mp3",
+          "durationSec": 27.29,
+          "bytes": 163728,
+          "wordCount": 59,
+          "wpm": 129.7,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_07.mp3",
+              "durationSec": 27.29,
+              "bytes": 163728,
+              "wpm": 129.7
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_07_florian.mp3",
+              "durationSec": 25.1,
+              "bytes": 150624,
+              "wpm": 141.0
+            }
+          }
+        },
+        {
+          "index": 8,
+          "key": "p08",
+          "cardIndex": 7,
+          "label": "Absatz 8 von 10",
+          "file": "audio/l8_08.mp3",
+          "durationSec": 27.12,
+          "bytes": 162720,
+          "wordCount": 61,
+          "wpm": 135.0,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_08.mp3",
+              "durationSec": 27.12,
+              "bytes": 162720,
+              "wpm": 135.0
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_08_florian.mp3",
+              "durationSec": 25.15,
+              "bytes": 150912,
+              "wpm": 145.5
+            }
+          }
+        },
+        {
+          "index": 9,
+          "key": "p09",
+          "cardIndex": 8,
+          "label": "Absatz 9 von 10",
+          "file": "audio/l8_09.mp3",
+          "durationSec": 28.63,
+          "bytes": 171792,
+          "wordCount": 59,
+          "wpm": 123.6,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_09.mp3",
+              "durationSec": 28.63,
+              "bytes": 171792,
+              "wpm": 123.6
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_09_florian.mp3",
+              "durationSec": 26.14,
+              "bytes": 156816,
+              "wpm": 135.4
+            }
+          }
+        },
+        {
+          "index": 10,
+          "key": "p10",
+          "cardIndex": 9,
+          "label": "Absatz 10 von 10",
+          "file": "audio/l8_10.mp3",
+          "durationSec": 31.25,
+          "bytes": 187488,
+          "wordCount": 60,
+          "wpm": 115.2,
+          "voices": {
+            "de-DE-SeraphinaMultilingualNeural": {
+              "file": "audio/l8_10.mp3",
+              "durationSec": 31.25,
+              "bytes": 187488,
+              "wpm": 115.2
+            },
+            "de-DE-FlorianMultilingualNeural": {
+              "file": "audio/l8_10_florian.mp3",
+              "durationSec": 28.7,
+              "bytes": 172224,
+              "wpm": 125.4
             }
           }
         }
