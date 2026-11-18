@@ -476,68 +476,124 @@
     <!-- TAB 2 -->
     <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>💬</span> Redemittel für Alltag & Beruf: Kollegiale Kommunikation & Wertschätzung</h2>
-        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die freundlichste und lösungsorientierteste B1-Formulierung.</p>
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🗣️</span> Redemittel für Alltag &amp; Beruf: Kollegiale Kommunikation &amp; Wertschätzung</h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die passende und höfliche B1+-Formulierung. (Изберете най-подходящата фраза за всяка ситуация).</p>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Abwesende Kollegen in Schutz nehmen</span>
-          <p class="text-sm font-semibold text-slate-800">In der Teeküche beschweren sich zwei Kollegen über eine angebliche Verspätung eines Teammitglieds. Sie möchten die Situation fair entschärfen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Herr Müller hat aktuell sehr viele dringende Kundenanfragen auf dem Tisch. Er hat uns bei der letzten Präsentation doch auch super unterstützt.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Г-н Мюлер в момента има много спешни клиентски запитвания на бюрото си. Той нали ни оказа страхотна подкрепа и при последната презентация.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Abwesende Kollegen in Schutz nehmen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Herr Müller hat aktuell sehr viele dringende Kundenanfragen auf dem Tisch. Er hat uns bei der letzten Präsentation doch auch super unterstützt.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            In der Teeküche beschweren sich zwei Kollegen über eine angebliche Verspätung eines Teammitglieds. Sie möchten die Situation fair entschärfen:
+          </p>
+          <p class="text-xs text-slate-500 italic">В кухнята двама колеги се оплакват от закъснението на свой колега. Как реагирате справедливо и колегиално?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Das interessiert mich nicht, beschweren Sie sich doch direkt beim Chef!“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Herr Müller hat aktuell sehr viele dringende Kundenanfragen auf dem Tisch. Er hat uns bei der letzten Präsentation doch auch super unterstützt.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Ja, er kommt ständig zu spät und arbeitet sowieso viel zu langsam.“</span>
+            </label>
           </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 2 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Zum Vier-Augen-Gespräch einladen</span>
-          <p class="text-sm font-semibold text-slate-800">Sie haben ein inhaltliches Problem mit dem Entwurf eines Kollegen und möchten das direkt und kollegial ansprechen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Hättest du nachher kurz Zeit für einen Kaffee? Ich würde gern ein paar Punkte aus deinem Entwurf in Ruhe mit dir durchgehen.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Ще имаш ли след малко свободно време за кратко кафе? Бих искал на спокойствие да минем през няколко точки от твоята чернова.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Zum Vier-Augen-Gespräch einladen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Hättest du nachher kurz Zeit für einen Kaffee? Ich würde gern ein paar Punkte aus deinem Entwurf in Ruhe mit dir durchgehen.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie haben ein inhaltliches Problem mit dem Entwurf eines Kollegen und möchten das direkt und kollegial ansprechen:
+          </p>
+          <p class="text-xs text-slate-500 italic">Имате забележка по съдържанието на черновата на колега. Как го каните на разговор насаме?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Hättest du nachher kurz Zeit für einen Kaffee? Ich würde gern ein paar Punkte aus deinem Entwurf in Ruhe mit dir durchgehen.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Dein Entwurf ist voller Fehler. Ich schicke gleich eine E-Mail an die ganze Abteilung.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Mach das alles noch einmal komplett neu, so kann man das niemandem zeigen.“</span>
+            </label>
           </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 3 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Einem Teammitglied ehrliche Anerkennung zeigen</span>
-          <p class="text-sm font-semibold text-slate-800">Eine Kollegin hat eine schwierige Aufgabe erfolgreich gemeistert. Sie möchten ihr persönliches Feedback geben.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Vielen Dank für deinen tollen Einsatz bei dem Projekt. Deine ruhige Art hat dem ganzen Team in der stressigen Phase sehr geholfen.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Много благодаря за чудесната ти всеотдайност по проекта. Твоето спокойно отношение много помогна на целия екип в стресовата фаза.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Einem Teammitglied ehrliche Anerkennung zeigen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Vielen Dank für deinen tollen Einsatz bei dem Projekt. Deine ruhige Art hat dem ganzen Team in der stressigen Phase sehr geholfen.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Eine Kollegin hat eine schwierige Aufgabe erfolgreich gemeistert. Sie möchten ihr persönliches Feedback geben:
+          </p>
+          <p class="text-xs text-slate-500 italic">Колежка се е справила отлично със сложна задача. Как ѝ давате искрена положителна обратна връзка?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Na ja, das war ja auch deine Pflicht. Dafür wirst du schließlich bezahlt.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Das hätte ich allein viel schneller und besser erledigt.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Vielen Dank für deinen tollen Einsatz bei dem Projekt. Deine ruhige Art hat dem ganzen Team in der stressigen Phase sehr geholfen.“</span>
+            </label>
           </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 4 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Neue Kollegen aktiv einbinden</span>
-          <p class="text-sm font-semibold text-slate-800">Ein neuer Mitarbeiter steht in der Mittagspause allein im Flur. Sie möchten ihn herzlich in die Gruppe einladen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Hallo Jonas! Wir gehen gerade gemeinsam in die Kantine zum Mittagessen. Hast du Lust, dich uns spontan anzuschließen?“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Здравей, Йонас! Тъкмо отиваме заедно в столовата за обяд. Имаш ли желание да се присъединиш спонтанно към нас?</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Neue Kollegen aktiv einbinden</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Hallo Jonas! Wir gehen gerade gemeinsam in die Kantine zum Mittagessen. Hast du Lust, dich uns spontan anzuschließen?“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein neuer Mitarbeiter steht in der Mittagspause allein im Flur. Sie möchten ihn herzlich in die Gruppe einladen:
+          </p>
+          <p class="text-xs text-slate-500 italic">Нов колега стои сам в коридора по време на обедната почивка. Как го приобщавате сърдечно към екипа?</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Hallo! Hier essen normalerweise nur die erfahrenen Mitarbeiter zusammen.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Hallo Jonas! Wir gehen gerade gemeinsam in die Kantine zum Mittagessen. Hast du Lust, dich uns spontan anzuschließen?“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Stehen Sie nicht im Weg herum, wir wollen jetzt in die Pause gehen.“</span>
+            </label>
           </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
         </div>
       </div>
     </div>
@@ -557,6 +613,7 @@
             <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Трябва да говорим с колегите, вместо да клюкарстваме зад гърба им.</p>
         <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -585,6 +642,7 @@
             <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Тя покани колегата, с когото беше работила, на кафе.</p>
         <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -614,6 +672,7 @@
             <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Целият екип работи по-мотивирано, защото в офиса цари приятелска атмосфера.</p>
         <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -1451,6 +1510,48 @@
       if (fb) {
         fb.classList.remove('hidden');
         setTimeout(() => fb.classList.add('hidden'), 1800);
+      }
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'a', scene3: 'c', scene4: 'b' };
+    const redemittelFeedback = {
+      scene1: 'Ausgezeichnet! So nimmt man abwesende Kollegen fair und sachlich in Schutz.',
+      scene2: 'Perfekt! Ein ruhiges Vier-Augen-Gespräch vermeidet Konflikte vor dem ganzen Team.',
+      scene3: 'Sehr gut! Ehrliche und konkrete Anerkennung stärkt das Vertrauen im Team.',
+      scene4: 'Exzellent! Eine herzliche Einladung hilft neuen Kollegen, schnell anzukommen.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelFeedback['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Zu unhöflich oder unkollegial für den Berufsalltag. Versuchen Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
       }
     }
 

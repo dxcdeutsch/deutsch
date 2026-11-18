@@ -476,68 +476,124 @@
     <!-- TAB 2 -->
     <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>💬</span> Redemittel für Natur, Prozesse & Umweltschutz</h2>
-        <p class="text-sm text-slate-500">Sichere B1+-Formulierungen, um biologische Abläufe zu beschreiben, Zusammenhänge zu erklären und für Naturschutz zu argumentieren.</p>
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🗣️</span> Redemittel für Natur, Prozesse &amp; Umweltschutz</h2>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die passende und höfliche B1+-Formulierung. (Изберете най-подходящата фраза за всяка ситуация).</p>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Einen biologischen Prozess beschreiben</span>
-          <p class="text-sm font-semibold text-slate-800">Sie möchten erklären, wie aus einfachem Blütennektar im Bienenstock haltbarer Honig entsteht.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Zunächst sammeln die Bienen den Nektar und reichern ihn mit Enzymen an. Anschließend wird die überschüssige Feuchtigkeit durch Fächeln verdampft, bis der Honig reif ist.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Първо пчелите събират нектара и го обогатяват с ензими. След това излишната влага се изпарява чрез размахване на крила, докато медът узрее.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Einen biologischen Prozess beschreiben</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Zunächst sammeln die Bienen den Nektar und reichern ihn mit Enzymen an. Anschließend wird die überschüssige Feuchtigkeit durch Fächeln verdampft, bis der Honig reif ist.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie möchten erklären, wie aus einfachem Blütennektar im Bienenstock haltbarer Honig entsteht:
+          </p>
+          <p class="text-xs text-slate-500 italic">Искате да обясните как от обикновен цветен нектар в кошера се получава траен мед.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Die Bienen schütten den Nektar einfach in ein Glas und warten, bis er süß wird.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Zunächst sammeln die Bienen den Nektar und reichern ihn mit Enzymen an. Anschließend wird die überschüssige Feuchtigkeit durch Fächeln verdampft, bis der Honig reif ist.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Honig entsteht eigentlich im Supermarkt und hat mit Blüten überhaupt nichts zu tun.“</span>
+            </label>
           </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 2 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Ursache und Wirkung erklären</span>
-          <p class="text-sm font-semibold text-slate-800">Sie diskutieren über die Bedeutung der Bienen für unsere tägliche Ernährung und Landwirtschaft.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Da ein Großteil unserer Obst- und Gemüsesorten auf Bestäubung angewiesen ist, hätte ein Bienensterben gravierende Folgen für unsere Lebensmittelversorgung.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Тъй като голяма част от нашите плодове и зеленчуци зависи от опрашването, измирането на пчелите би имало сериозни последици за прехраната ни.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Ursache und Wirkung erklären</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Da ein Großteil unserer Obst- und Gemüsesorten auf Bestäubung angewiesen ist, hätte ein Bienensterben gravierende Folgen für unsere Lebensmittelversorgung.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie diskutieren über die Bedeutung der Bienen für unsere tägliche Ernährung und Landwirtschaft:
+          </p>
+          <p class="text-xs text-slate-500 italic">Обсъждате значението на пчелите за нашето ежедневно хранене и селското стопанство.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Da ein Großteil unserer Obst- und Gemüsesorten auf Bestäubung angewiesen ist, hätte ein Bienensterben gravierende Folgen für unsere Lebensmittelversorgung.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Bienen stechen nur Menschen und bringen der Landwirtschaft überhaupt keinen Nutzen.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Wenn es keine Bienen mehr gibt, wachsen Äpfel und Tomaten eben einfach von allein schneller.“</span>
+            </label>
           </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 3 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Effizienz in der Natur bewundern</span>
-          <p class="text-sm font-semibold text-slate-800">Sie vergleichen die sechseckige Form der Bienenwabe mit moderner Architektur oder Technik.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Es ist faszinierend, dass die Sechsecke bei minimalem Materialverbrauch ein Maximum an Stabilität und Speicherplatz bieten.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Удивително е, че шестоъгълниците при минимален разход на материал предлагат максимална стабилност и място за съхранение.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Effizienz in der Natur bewundern</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Es ist faszinierend, dass die Sechsecke bei minimalem Materialverbrauch ein Maximum an Stabilität und Speicherplatz bieten.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie vergleichen die sechseckige Form der Bienenwabe mit moderner Architektur oder Technik:
+          </p>
+          <p class="text-xs text-slate-500 italic">Сравнявате шестоъгълната форма на пчелната пита със съвременната архитектура или техника.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Die sechseckige Form ist reiner Zufall und völlig unpraktisch für den Bienenstock.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Bienen bauen nur deshalb Sechsecke, weil sie keine runden Zellen formen können.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Es ist faszinierend, dass die Sechsecke bei minimalem Materialverbrauch ein Maximum an Stabilität und Speicherplatz bieten.“</span>
+            </label>
           </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 4 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Konkrete Schutzmaßnahmen vorschlagen</span>
-          <p class="text-sm font-semibold text-slate-800">Ein Nachbar fragt, was man im Alltag konkret für den Schutz von Bienen und Insekten tun kann.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Schon mit kleinen Schritten können wir einen Beitrag leisten: Indem wir heimische Wildblumen pflanzen und auf chemische Pestizide verzichten.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Още с малки стъпки можем да дадем своя принос: като засаждаме местни диви цветя и се откажем от химическите пестициди.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Konkrete Schutzmaßnahmen vorschlagen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Schon mit kleinen Schritten können wir einen Beitrag leisten: Indem wir heimische Wildblumen pflanzen und auf chemische Pestizide verzichten.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Nachbar fragt, was man im Alltag konkret für den Schutz von Bienen und Insekten tun kann:
+          </p>
+          <p class="text-xs text-slate-500 italic">Съсед пита какво конкретно може да се направи в ежедневието за защита на пчелите и насекомите.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Am besten sprühen wir jede Woche starke Pestizide auf den Rasen, damit er ordentlich aussieht.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Schon mit kleinen Schritten können wir einen Beitrag leisten: Indem wir heimische Wildblumen pflanzen und auf chemische Pestizide verzichten.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Privatpersonen können gar nichts tun, das ist allein das Problem der Imker.“</span>
+            </label>
           </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
         </div>
       </div>
     </div>
@@ -557,6 +613,7 @@
             <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Пчелите размахват крила, за да се изпари излишната вода.</p>
         <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -584,6 +641,7 @@
             <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Една разузнавачка танцува, за да покаже на сестрите си точния път.</p>
         <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -611,6 +669,7 @@
             <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Шестоъгълникът е форма, която изразходва много малко восък.</p>
         <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -1444,6 +1503,48 @@
       if (fb) {
         fb.classList.remove('hidden');
         setTimeout(() => fb.classList.add('hidden'), 1800);
+      }
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'a', scene3: 'c', scene4: 'b' };
+    const redemittelFeedback = {
+      scene1: 'Ausgezeichnet! So beschreibt man einen biologischen Ablauf präzise und schrittweise.',
+      scene2: 'Perfekt! Ursache und Wirkung werden mit »da« und Konjunktiv II klar erklärt.',
+      scene3: 'Sehr gut! Die bewundernde Formulierung hebt Stabilität und Effizienz treffend hervor.',
+      scene4: 'Exzellent! Ein konkreter und konstruktiver Vorschlag mit »indem« für den Alltag.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelFeedback['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Sachlich falsch oder unpassend für eine B1+-Erklärung. Versuchen Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
       }
     }
 

@@ -477,67 +477,124 @@
     <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>💬</span> Redemittel für Alltag & Beruf: Gefühle & Entscheidungen</h2>
-        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die sachlich beste und konstruktivste B1-Formulierung.</p>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die passende und höfliche B1+-Formulierung. (Изберете най-подходящата фраза за всяка ситуация).</p>
       </div>
-      <div class="space-y-4">
+
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Bedenkzeit bei Verhandlungen</span>
-          <p class="text-sm font-semibold text-slate-800">Ein Geschäftspartner drängt Sie zu einer schnellen Zusage bei einem riskanten Projekt. Sie möchten die Entscheidung nicht überstürzen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Das klingt interessant. Bevor ich mich verbindlich festlege, möchte ich die Zahlen noch einmal in Ruhe prüfen und mich morgen dazu äußern.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Звучи интересно. Преди да поема обвързващ ангажимент, бих искал още веднъж на спокойствие да проверя цифрите и да изразя становище утре.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Bedenkzeit bei Verhandlungen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Das klingt interessant. Bevor ich mich verbindlich festlege, möchte ich die Zahlen noch einmal in Ruhe prüfen und mich morgen dazu äußern.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Geschäftspartner drängt Sie zu einer schnellen Zusage bei einem riskanten Projekt. Sie möchten die Entscheidung nicht überstürzen.
+          </p>
+          <p class="text-xs text-slate-500 italic">Бизнес партньор ви притиска за бързо съгласие по рисков проект. Не искате да прибързвате с решението.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Hören Sie auf, mich zu drängen! Ich entscheide überhaupt nichts.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Das klingt interessant. Bevor ich mich verbindlich festlege, möchte ich die Zahlen noch einmal in Ruhe prüfen und mich morgen dazu äußern.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Ich entscheide einfach aus dem Bauch heraus, Zahlen sind mir völlig egal.“</span>
+            </label>
           </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 2 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Ärger im Meeting versachlichen</span>
-          <p class="text-sm font-semibold text-slate-800">Die Diskussion wird hitzig und Sie merken, dass persönliche Vorwürfe laut werden. Sie möchten das Gespräch wieder beruhigen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich verstehe, dass dieses Thema Emotionen weckt. Lassen Sie uns bitte sachlich bleiben und gemeinsam nach einer Lösung suchen.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Разбирам, че тази тема буди емоции. Нека да останем обективни и заедно да потърсим решение.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Ärger im Meeting versachlichen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Ich verstehe, dass dieses Thema Emotionen weckt. Lassen Sie uns bitte sachlich bleiben und gemeinsam nach einer Lösung suchen.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Die Diskussion wird hitzig und Sie merken, dass persönliche Vorwürfe laut werden. Sie möchten das Gespräch wieder beruhigen.
+          </p>
+          <p class="text-xs text-slate-500 italic">Дискусията става разгорещена и забелязвате, че се чуват лични обвинения. Искате отново да успокоите разговора.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Ich verstehe, dass dieses Thema Emotionen weckt. Lassen Sie uns bitte sachlich bleiben und gemeinsam nach einer Lösung suchen.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Seid doch alle still! Eure Emotionen interessieren hier niemanden.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Wenn Sie sich weiter streiten, verlasse ich sofort den Raum und komme nie wieder.“</span>
+            </label>
           </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 3 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Emotionen als Information ansprechen</span>
-          <p class="text-sm font-semibold text-slate-800">Sie haben bei einem Vorschlag Bauchschmerzen und möchten Ihre Bedenken konstruktiv begründen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich habe bei diesem Zeitplan noch ein ungutes Gefühl, weil wir mögliche Risiken noch nicht ausreichend berücksichtigt haben.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Все още имам неприятно предчувствие за този график, защото още не сме взели предвид потенциалните рискове в достатъчна степен.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Emotionen als Information ansprechen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Ich habe bei diesem Zeitplan noch ein ungutes Gefühl, weil wir mögliche Risiken noch nicht ausreichend berücksichtigt haben.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie haben bei einem Vorschlag Bauchschmerzen und möchten Ihre Bedenken konstruktiv begründen.
+          </p>
+          <p class="text-xs text-slate-500 italic">Имате притеснения относно едно предложение и искате да обосновете съмненията си конструктивно.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Diese Idee ist totaler Unsinn, das sieht doch jeder sofort.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Ich sage nichts dazu, obwohl ich sicher bin, dass alles schiefgeht.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Ich habe bei diesem Zeitplan noch ein ungutes Gefühl, weil wir mögliche Risiken noch nicht ausreichend berücksichtigt haben.“</span>
+            </label>
           </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 4 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Missverständnisse nach Stress klären</span>
-          <p class="text-sm font-semibold text-slate-800">Sie haben im Stress etwas schroff reagiert und möchten die Situation am nächsten Tag professionell bereinigen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Gestern war die Situation sehr hektisch. Falls mein Tonfall zu schroff gewirkt hat, bitte ich um Entschuldigung. Mir ist eine gute Zusammenarbeit wichtig.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Вчера ситуацията беше много напрегната. Ако тонът ми е прозвучал прекалено рязко, се извинявам. За мен е важна добрата ни съвместна работа.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Missverständnisse nach Stress klären</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Gestern war die Situation sehr hektisch. Falls mein Tonfall zu schroff gewirkt hat, bitte ich um Entschuldigung. Mir ist eine gute Zusammenarbeit wichtig.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie haben im Stress etwas schroff reagiert und möchten die Situation am nächsten Tag professionell bereinigen.
+          </p>
+          <p class="text-xs text-slate-500 italic">Реагирали сте малко рязко под стрес и искате на следващия ден да изгладите ситуацията професионално.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Gestern war ich eben schlecht gelaunt, damit müssen Sie leben.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Gestern war die Situation sehr hektisch. Falls mein Tonfall zu schroff gewirkt hat, bitte ich um Entschuldigung. Mir ist eine gute Zusammenarbeit wichtig.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Es war komplett Ihre Schuld, dass ich gestern so laut geworden bin.“</span>
+            </label>
           </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
         </div>
       </div>
     </div>
@@ -557,6 +614,7 @@
             <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Много хора вземат погрешни решения, защото не разбират правилно чувствата си.</p>
         <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -584,6 +642,7 @@
             <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Имаме нужда от кратка пауза, за да можем да водим важни преговори обективно.</p>
         <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -612,6 +671,7 @@
             <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Тя остана много спокойна в разговора, въпреки че се ядоса на предложението.</p>
         <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -1450,6 +1510,48 @@
       if (fb) {
         fb.classList.remove('hidden');
         setTimeout(() => fb.classList.add('hidden'), 1800);
+      }
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'a', scene3: 'c', scene4: 'b' };
+    const redemittelFeedback = {
+      scene1: 'Ausgezeichnet! So gewinnen Sie Bedenkzeit, ohne den Geschäftspartner vor den Kopf zu stoßen.',
+      scene2: 'Perfekt! Sie erkennen die Emotionen an und führen das Gespräch souverän auf eine sachliche Ebene zurück.',
+      scene3: 'Sehr gut! Sie sprechen Ihr ungutes Gefühl als konstruktives Warnsignal an und begründen es sachlich.',
+      scene4: 'Exzellent! Eine professionelle Entschuldigung mit Fokus auf die weitere Zusammenarbeit bereinigt die Situation.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelFeedback['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Zu unhöflich oder unproduktiv für den modernen Berufsalltag. Versuchen Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
       }
     }
 

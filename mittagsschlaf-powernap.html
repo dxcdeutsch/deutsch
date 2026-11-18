@@ -477,67 +477,124 @@
     <div id="redemittel-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
         <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>💬</span> Redemittel für Alltag & Beruf: Energie & Pausen im Job</h2>
-        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die sachlich beste und professionellste B1-Formulierung.</p>
+        <p class="text-sm text-slate-500">Wählen Sie für jede Situation die passende und höfliche B1+-Formulierung. (Изберете най-подходящата фраза за всяка ситуация).</p>
       </div>
-      <div class="space-y-4">
+
+      <div class="space-y-6">
+        <!-- Scenario 1 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Kurze Bildschirmpause ankündigen</span>
-          <p class="text-sm font-semibold text-slate-800">Sie merken, dass Ihre Konzentration am Nachmittag stark sinkt. Sie möchten den Kollegen mitteilen, dass Sie sich kurz zurückziehen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich mache für eine Viertelstunde eine kurze Bildschirmpause, um den Kopf freizubekommen. Danach bin ich wieder voll ansprechbar.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Правя кратка пауза от екрана за петнадесет минути, за да си прочистя главата. След това съм отново напълно на разположение.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 1: Kurze Bildschirmpause ankündigen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Ich mache für eine Viertelstunde eine kurze Bildschirmpause, um den Kopf freizubekommen. Danach bin ich wieder voll ansprechbar.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Sie merken, dass Ihre Konzentration am Nachmittag stark sinkt. Sie möchten den Kollegen mitteilen, dass Sie sich kurz zurückziehen.
+          </p>
+          <p class="text-xs text-slate-500 italic">Забелязвате, че концентрацията ви следобед спада силно. Искате да уведомите колегите, че се оттегляте за кратко.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="a" class="mt-0.5">
+              <span>A) „Ich bin jetzt total müde und mache heute einfach gar nichts mehr.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="b" class="mt-0.5">
+              <span>B) „Ich mache für eine Viertelstunde eine kurze Bildschirmpause, um den Kopf freizubekommen. Danach bin ich wieder voll ansprechbar.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene1" value="c" class="mt-0.5">
+              <span>C) „Stört mich bloß nicht, ich schlafe jetzt zwei Stunden am Schreibtisch.“</span>
+            </label>
           </div>
+          <div id="scene1-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 2 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Bessere Meeting-Zeiten vorschlagen</span>
-          <p class="text-sm font-semibold text-slate-800">Ein Kollege schlägt ein langes Strategieseminar direkt nach der Mittagspause um 13:30 Uhr vor. Sie schlagen eine produktivere Zeit vor.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Direkt nach dem Mittagessen fällt die Konzentration oft schwerer. Wäre es möglich, diesen komplexen Termin auf morgen Vormittag zu legen?“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Непосредствено след обяд концентрацията често е по-трудна. Би ли било възможно да преместим тази комплексна среща за утре преди обяд?</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 2: Bessere Meeting-Zeiten vorschlagen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Direkt nach dem Mittagessen fällt die Konzentration oft schwerer. Wäre es möglich, diesen komplexen Termin auf morgen Vormittag zu legen?“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Ein Kollege schlägt ein langes Strategieseminar direkt nach der Mittagspause um 13:30 Uhr vor. Sie schlagen eine produktivere Zeit vor.
+          </p>
+          <p class="text-xs text-slate-500 italic">Колега предлага дълъг стратегически семинар веднага след обедната почивка в 13:30 ч. Предлагате по-продуктивно време.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="a" class="mt-0.5">
+              <span>A) „Um 13:30 Uhr schlafe ich sowieso ein, kommen Sie auf keinen Fall zu mir.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="b" class="mt-0.5">
+              <span>B) „Ihre Terminplanung ist furchtbar. Planen Sie das gefälligst besser!“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene2" value="c" class="mt-0.5">
+              <span>C) „Direkt nach dem Mittagessen fällt die Konzentration oft schwerer. Wäre es möglich, diesen komplexen Termin auf morgen Vormittag zu legen?“</span>
+            </label>
           </div>
+          <div id="scene2-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 3 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Über Müdigkeit und Pausenkultur sprechen</span>
-          <p class="text-sm font-semibold text-slate-800">Ihr Team arbeitet an einem dringenden Projekt und alle sind erschöpft. Sie plädieren für eine kurze Erholungspause.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Wir arbeiten seit Stunden konzentriert durch. Ein kurzer Spaziergang oder eine Pause von zwanzig Minuten würde uns helfen, neue Energie zu tanken.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Работим концентрирано без прекъсване от часове. Кратка разходка или пауза от двадесет минути биха ни помогнали да заредим нови сили.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 3: Über Müdigkeit und Pausenkultur sprechen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Wir arbeiten seit Stunden konzentriert durch. Ein kurzer Spaziergang oder eine Pause von zwanzig Minuten würde uns helfen, neue Energie zu tanken.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            Ihr Team arbeitet an einem dringenden Projekt und alle sind erschöpft. Sie plädieren für eine kurze Erholungspause.
+          </p>
+          <p class="text-xs text-slate-500 italic">Екипът ви работи по спешен проект и всички са изтощени. Застъпвате се за кратка почивка за възстановяване.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="a" class="mt-0.5">
+              <span>A) „Wir arbeiten seit Stunden konzentriert durch. Ein kurzer Spaziergang oder eine Pause von zwanzig Minuten würde uns helfen, neue Energie zu tanken.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="b" class="mt-0.5">
+              <span>B) „Wer jetzt eine Pause braucht, ist für dieses Team einfach zu schwach.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene3" value="c" class="mt-0.5">
+              <span>C) „Lasst uns einfach weiterarbeiten, bis jemand vor Müdigkeit umfällt.“</span>
+            </label>
           </div>
+          <div id="scene3-fb" class="text-xs font-semibold hidden"></div>
         </div>
 
+        <!-- Scenario 4 -->
         <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-3">
-          <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Den Arbeitstag strukturiert einteilen</span>
-          <p class="text-sm font-semibold text-slate-800">In einem Feedbackgespräch erklären Sie, wie Sie Ihre Aufgaben nach Ihrer Leistungsfähigkeit einteilen.</p>
-          <div class="space-y-2 text-sm bg-slate-50 p-3.5 rounded-lg border border-slate-200/70">
-            <div class="text-[#002f6c] font-bold text-sm sm:text-base">„Ich erledige anspruchsvolle Analysen am liebsten am Vormittag und nutze das Nachmittagstief für Routineaufgaben und E-Mails.“</div>
-            <div class="text-xs sm:text-sm text-slate-600 italic">🇧🇬 Предпочитам да върша изискващите анализи преди обяд, а следобедния спад в силите използвам за рутинни задачи и имейли.</div>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">Szenario 4: Den Arbeitstag strukturiert einteilen</span>
           </div>
-          <div class="flex items-center gap-2 pt-1">
-            <button onclick="copyPhrase(this, '„Ich erledige anspruchsvolle Analysen am liebsten am Vormittag und nutze das Nachmittagstief für Routineaufgaben und E-Mails.“')" class="text-xs text-[#009ee3] hover:underline font-semibold flex items-center gap-1">
-              <span>📋</span> Formulierung kopieren
-            </button>
-            <span class="copy-fb text-xs text-emerald-600 font-semibold hidden">Kopiert!</span>
+          <p class="text-sm font-semibold text-slate-800">
+            In einem Feedbackgespräch erklären Sie, wie Sie Ihre Aufgaben nach Ihrer Leistungsfähigkeit einteilen.
+          </p>
+          <p class="text-xs text-slate-500 italic">В разговор за обратна връзка обяснявате как разпределяте задачите си според работоспособността си.</p>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="a" class="mt-0.5">
+              <span>A) „Am Nachmittag habe ich keine Lust auf Arbeit, da surfe ich nur im Internet.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="b" class="mt-0.5">
+              <span>B) „Ich erledige anspruchsvolle Analysen am liebsten am Vormittag und nutze das Nachmittagstief für Routineaufgaben und E-Mails.“</span>
+            </label>
+            <label class="flex items-start gap-2 p-2.5 rounded-lg border border-slate-100 hover:bg-slate-50 cursor-pointer">
+              <input type="radio" name="scene4" value="c" class="mt-0.5">
+              <span>C) „Ich mache immer alles auf den letzten Drücker, egal wie müde ich bin.“</span>
+            </label>
           </div>
+          <div id="scene4-fb" class="text-xs font-semibold hidden"></div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkRedemittel()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showRedemittelSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetRedemittel()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
         </div>
       </div>
     </div>
@@ -557,6 +614,7 @@
             <button onclick="resetPuzzle(1)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Когато човек спи за кратко на обяд, мозъкът може отново да възприема свежа информация.</p>
         <div id="target-1" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-1" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -585,6 +643,7 @@
             <button onclick="resetPuzzle(2)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Проучването доказва, че кратката дрямка (Power Nap) значително подобрява творческото мислене.</p>
         <div id="target-2" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-2" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -613,6 +672,7 @@
             <button onclick="resetPuzzle(3)" class="text-xs text-slate-400 hover:text-slate-600 underline">Zurücksetzen</button>
           </div>
         </div>
+        <p class="text-xs text-slate-500 italic">Bedeutung: Който спи повече от тридесет минути, често се събужда напълно замаян и уморен.</p>
         <div id="target-3" class="min-h-[46px] p-2 rounded-lg border-2 border-dashed border-slate-300 bg-slate-50 flex flex-wrap gap-1.5 items-center">
           <span id="placeholder-3" class="text-xs text-slate-400">Hier die Wörter anklicken...</span>
         </div>
@@ -1451,6 +1511,48 @@
       if (fb) {
         fb.classList.remove('hidden');
         setTimeout(() => fb.classList.add('hidden'), 1800);
+      }
+    }
+
+    // Redemittel evaluation
+    const redemittelAnswers = { scene1: 'b', scene2: 'c', scene3: 'a', scene4: 'b' };
+    const redemittelFeedback = {
+      scene1: 'Ausgezeichnet! Sie kommunizieren Ihre kurze Pause transparent und zeigen, wann Sie wieder erreichbar sind.',
+      scene2: 'Perfekt! Ein konstruktiver Gegenvorschlag mit Blick auf die Leistungsfähigkeit des Teams.',
+      scene3: 'Sehr gut! Sie sprechen Erschöpfung offen an und schlagen eine konkrete, produktive Erholungspause vor.',
+      scene4: 'Exzellent! Eine kluge und realistische Einteilung des Arbeitstags nach dem eigenen Biorhythmus.'
+    };
+
+    function checkRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.querySelector('input[name="scene' + i + '"]:checked');
+        const fb = document.getElementById('scene' + i + '-fb');
+        fb.classList.remove('hidden', 'text-emerald-600', 'text-rose-600', 'text-amber-500');
+        if (!sel) {
+          fb.textContent = 'Bitte wählen Sie eine Formulierung aus.';
+          fb.classList.add('text-amber-500');
+        } else if (sel.value === redemittelAnswers['scene' + i]) {
+          fb.textContent = '✓ ' + redemittelFeedback['scene' + i];
+          fb.classList.add('text-emerald-600');
+        } else {
+          fb.textContent = '✗ Zu unhöflich oder unproduktiv für den modernen Berufsalltag. Versuchen Sie es noch einmal!';
+          fb.classList.add('text-rose-600');
+        }
+      }
+    }
+
+    function showRedemittelSolution() {
+      for (let i = 1; i <= 4; i++) {
+        const radio = document.querySelector(`input[name="scene${i}"][value="${redemittelAnswers['scene' + i]}"]`);
+        if (radio) radio.checked = true;
+      }
+      checkRedemittel();
+    }
+
+    function resetRedemittel() {
+      for (let i = 1; i <= 4; i++) {
+        document.querySelectorAll(`input[name="scene${i}"]`).forEach(r => r.checked = false);
+        document.getElementById('scene' + i + '-fb').classList.add('hidden');
       }
     }
 
