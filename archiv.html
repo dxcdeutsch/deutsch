@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обединен архив: Направени теми (Deutsch B1 ➔ B1+)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-900 antialiased p-2 sm:p-5 font-sans">
+
+  <div class="max-w-5xl mx-auto bg-white border border-slate-200 rounded-2xl shadow-xl overflow-hidden">
+    <!-- Top Course Switcher Bar (enhanced dynamically by course-progress.js) -->
+    <nav aria-label="Lektionsübersicht" class="bg-[#001f47] text-white px-4 py-3 border-b border-white/15">
+      <div class="text-xs text-blue-200">Lade Kurs-Module...</div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-[#002f6c] text-white p-5 sm:p-7 border-b-4 border-amber-400">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+        <div class="flex items-center space-x-2">
+          <span class="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-1 rounded tracking-wide uppercase">📦 Обединен архив</span>
+          <span class="bg-emerald-500 text-white text-xs font-bold px-2.5 py-1 rounded">Направени теми • Sammel-Review</span>
+        </div>
+        <button type="button" onclick="handleResetDefaults()" class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white border border-white/20 transition">
+          <span>↺</span> <span>Начално състояние (1, 3, 4, 6)</span>
+        </button>
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 leading-tight">
+        Архив и обединен преговор на направените теми
+      </h1>
+      <p class="text-sm sm:text-base text-blue-100 max-w-3xl leading-relaxed">
+        Тук са събрани всички завършени уроци на едно място. Можете да премествате теми между активните и архива, както и да преговаряте обединения речник, текстове и аудио записи от всички направени теми.
+      </p>
+    </header>
+
+    <div class="p-4 sm:p-7 space-y-8">
+      <!-- Section 1: Topic Management (Archived vs Active) -->
+      <section class="space-y-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <!-- Archived / Completed -->
+          <div class="p-4 rounded-xl border border-emerald-200 bg-emerald-50/50 space-y-3">
+            <div class="flex items-center justify-between border-b border-emerald-200 pb-2">
+              <h2 class="text-sm sm:text-base font-bold text-emerald-900 flex items-center gap-2">
+                <span>📦</span> <span>Направени теми (В архив)</span>
+              </h2>
+              <span id="archived-count-badge" class="text-xs font-bold bg-emerald-600 text-white px-2.5 py-0.5 rounded-full">0</span>
+            </div>
+            <div id="archived-list" class="space-y-2 text-xs sm:text-sm"></div>
+          </div>
+
+          <!-- Active / Remaining -->
+          <div class="p-4 rounded-xl border border-sky-200 bg-sky-50/50 space-y-3">
+            <div class="flex items-center justify-between border-b border-sky-200 pb-2">
+              <h2 class="text-sm sm:text-base font-bold text-[#002f6c] flex items-center gap-2">
+                <span>📖</span> <span>Активни теми (Предстоящи)</span>
+              </h2>
+              <span id="active-count-badge" class="text-xs font-bold bg-[#009ee3] text-white px-2.5 py-0.5 rounded-full">0</span>
+            </div>
+            <div id="active-list" class="space-y-2 text-xs sm:text-sm"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Combined Review from Archived Lessons -->
+      <section class="space-y-4 pt-2 border-t border-slate-200">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <span>📚</span> <span>Обединен преговор от архивираните теми</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500">Автоматично обединява речника, текстовете и полезните фрази от всички теми в архива.</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <select id="archive-voice-select" onchange="onArchiveVoiceChange()" class="border border-sky-300 rounded-lg px-2.5 py-1.5 bg-white text-[#002f6c] text-xs font-semibold shadow-sm">
+              <option value="seraphina" selected>🎧 Seraphina (Женски)</option>
+              <option value="florian">🎧 Florian (Мъжки)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search + Lesson Filter -->
+        <div class="flex flex-wrap items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <input id="archive-search" type="text" oninput="renderCombinedContent()" placeholder="🔍 Търсене в обединения речник и текстове (на немски или български)..." class="flex-1 min-w-[220px] px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm focus:outline-none focus:border-[#009ee3]">
+          <select id="archive-lesson-filter" onchange="renderCombinedContent()" class="px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm font-semibold text-slate-700">
+            <option value="all">Всички архивирани теми</option>
+          </select>
+        </div>
+
+        <!-- Sub-tabs -->
+        <div class="flex border-b border-slate-200 gap-2 text-xs sm:text-sm font-semibold overflow-x-auto">
+          <button type="button" onclick="switchArchiveTab('vocab')" id="arch-btn-vocab" class="px-3.5 py-2.5 border-b-2 border-[#009ee3] text-[#009ee3] shrink-0">📖 Обединен речник</button>
+          <button type="button" onclick="switchArchiveTab('texts')" id="arch-btn-texts" class="px-3.5 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 shrink-0">📝 Обединени текстове + Аудио</button>
+          <button type="button" onclick="switchArchiveTab('phrases')" id="arch-btn-phrases" class="px-3.5 py-2.5 border-b-2 border-transparent text-slate-600 hover:text-slate-900 shrink-0">💬 Обединени Redemittel</button>
+        </div>
+
+        <div id="archive-loading-notice" class="text-xs text-slate-500 italic hidden">Зареждане на съдържанието от архивираните уроци...</div>
+        <div id="archive-combined-output" class="space-y-4"></div>
+      </section>
+    </div>
+
+    <footer class="bg-slate-100 p-5 text-center text-xs text-slate-500 border-t border-slate-200">
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-2 font-semibold"></div>
+      <p>Didaktische Aufbereitung für Berufstätige (B1 ➔ B1+) • Gehostet auf <strong>deutsch.bbozhanov.com</strong> &amp; <strong>dxcdeutsch.github.io/deutsch</strong></p>
+    </footer>
+  </div>
+
+  <script src="course-progress.js" defer></script>
+  <script>
+    let currentArchiveTab = 'vocab';
+    let currentArchiveVoice = 'seraphina';
+    let archiveAudio = null;
+    let activeAudioBtn = null;
+    const lessonDataCache = {};
+
+    function esc(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function handleToggleLesson(id) {
+      if (window.CourseProgress) {
+        window.CourseProgress.toggleLessonCompleted(id);
+      }
+    }
+
+    function handleResetDefaults() {
+      if (window.CourseProgress) {
+        window.CourseProgress.resetToDefaults();
+      }
+    }
+
+    function onArchiveVoiceChange() {
+      const sel = document.getElementById('archive-voice-select');
+      if (sel) currentArchiveVoice = sel.value;
+      stopArchiveAudio();
+    }
+
+    function stopArchiveAudio() {
+      if (archiveAudio) {
+        archiveAudio.pause();
+        try { archiveAudio.currentTime = 0; } catch (e) {}
+      }
+      if (activeAudioBtn) {
+        activeAudioBtn.textContent = '▶';
+        activeAudioBtn.classList.remove('bg-amber-500', 'text-white');
+        activeAudioBtn.classList.add('bg-sky-50', 'text-[#002f6c]');
+        activeAudioBtn = null;
+      }
+    }
+
+    function playArchiveClip(btn, prefix, numStr) {
+      if (activeAudioBtn === btn && archiveAudio && !archiveAudio.paused) {
+        stopArchiveAudio();
+        return;
+      }
+      stopArchiveAudio();
+      if (!archiveAudio) {
+        archiveAudio = new Audio();
+      }
+      const suffix = currentArchiveVoice === 'florian' ? '_florian.mp3' : '.mp3';
+      const file = 'audio/' + prefix + '_' + numStr + suffix;
+      archiveAudio.src = file;
+      activeAudioBtn = btn;
+      btn.textContent = '⏹';
+      btn.classList.remove('bg-sky-50', 'text-[#002f6c]');
+      btn.classList.add('bg-amber-500', 'text-white');
+      archiveAudio.onended = stopArchiveAudio;
+      archiveAudio.onerror = stopArchiveAudio;
+      archiveAudio.play().catch(stopArchiveAudio);
+    }
+
+    function switchArchiveTab(tab) {
+      currentArchiveTab = tab;
+      ['vocab', 'texts', 'phrases'].forEach(t => {
+        const btn = document.getElementById('arch-btn-' + t);
+        if (!btn) return;
+        if (t === tab) {
+          btn.classList.add('border-[#009ee3]', 'text-[#009ee3]');
+          btn.classList.remove('border-transparent', 'text-slate-600');
+        } else {
+          btn.classList.remove('border-[#009ee3]', 'text-[#009ee3]');
+          btn.classList.add('border-transparent', 'text-slate-600');
+        }
+      });
+      renderCombinedContent();
+    }
+
+    async function fetchLessonData(lesson) {
+      if (lessonDataCache[lesson.id]) return lessonDataCache[lesson.id];
+      if (window.location.protocol === 'file:') {
+        return { error: 'file-protocol' };
+      }
+      try {
+        const resp = await fetch(lesson.file);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const html = await resp.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const headlineEl = doc.getElementById('lesson-headline');
+        const leadEl = doc.getElementById('lesson-lead');
+        const cards = Array.from(doc.querySelectorAll('#text-tab .tts-card')).map((card, i) => {
+          const p = card.querySelector('.tts-paragraph');
+          const gloss = Array.from(card.querySelectorAll('.gloss-item')).map(g => g.textContent.replace(/^•\s*/, '').trim());
+          return {
+            num: i + 1,
+            numStr: String(i + 1).padStart(2, '0'),
+            text: p ? p.textContent.replace(/\s+/g, ' ').trim() : '',
+            glossary: gloss
+          };
+        });
+        const scenarios = Array.from(doc.querySelectorAll('#redemittel-tab > div:last-child > div, #redemittel-tab .space-y-6 > div.p-4, #redemittel-tab .space-y-4 > div.p-4')).map(box => {
+          const badge = box.querySelector('span');
+          const prompt = box.querySelector('p');
+          const options = Array.from(box.querySelectorAll('label span')).map(s => s.textContent.trim());
+          if (!options.length) return null;
+          return {
+            title: badge ? badge.textContent.trim() : '',
+            prompt: prompt ? prompt.textContent.trim() : '',
+            options: options
+          };
+        }).filter(Boolean);
+
+        const data = {
+          headline: headlineEl ? headlineEl.textContent.trim() : lesson.title,
+          lead: leadEl ? leadEl.textContent.trim() : '',
+          cards: cards,
+          scenarios: scenarios
+        };
+        lessonDataCache[lesson.id] = data;
+        return data;
+      } catch (e) {
+        return { error: e.message };
+      }
+    }
+
+    async function loadAndRenderArchive(completedIds) {
+      const LESSONS = window.CourseProgress.LESSONS;
+      const archived = LESSONS.filter(l => completedIds.includes(l.id));
+      const active = LESSONS.filter(l => !completedIds.includes(l.id));
+
+      document.getElementById('archived-count-badge').textContent = archived.length;
+      document.getElementById('active-count-badge').textContent = active.length;
+
+      document.getElementById('archived-list').innerHTML = archived.length
+        ? archived.map(l => `
+          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-white border border-emerald-200 shadow-sm">
+            <a href="${l.file}" class="font-bold text-emerald-900 hover:underline flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] flex items-center justify-center shrink-0">✓</span>
+              <span class="truncate">${esc(l.title)}</span>
+            </a>
+            <button type="button" onclick="handleToggleLesson(${l.id})" class="text-[11px] font-semibold px-2.5 py-1 rounded bg-slate-100 hover:bg-amber-100 text-slate-700 hover:text-amber-900 border border-slate-200 shrink-0 transition">
+              ↩ Върни в активни
+            </button>
+          </div>`).join('')
+        : '<div class="text-xs text-slate-500 italic p-2">Все още няма теми в архива.</div>';
+
+      document.getElementById('active-list').innerHTML = active.length
+        ? active.map(l => `
+          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-white border border-sky-200 shadow-sm">
+            <a href="${l.file}" class="font-bold text-[#002f6c] hover:underline flex items-center gap-2 min-w-0">
+              <span class="w-5 h-5 rounded-full bg-[#009ee3] text-white text-[10px] flex items-center justify-center shrink-0">${l.id}</span>
+              <span class="truncate">${esc(l.title)}</span>
+            </a>
+            <button type="button" onclick="handleToggleLesson(${l.id})" class="text-[11px] font-semibold px-2.5 py-1 rounded bg-emerald-50 hover:bg-emerald-600 text-emerald-800 hover:text-white border border-emerald-200 shrink-0 transition">
+              ✓ В архив
+            </button>
+          </div>`).join('')
+        : '<div class="text-xs text-emerald-700 font-semibold p-2">🎉 Всички 8 теми са в архива!</div>';
+
+      const filterEl = document.getElementById('archive-lesson-filter');
+      const prevVal = filterEl.value;
+      filterEl.innerHTML = '<option value="all">Всички архивирани теми (' + archived.length + ')</option>' +
+        archived.map(l => `<option value="${l.id}">${esc(l.title)}</option>`).join('');
+      if (archived.some(l => String(l.id) === prevVal)) {
+        filterEl.value = prevVal;
+      }
+
+      const notice = document.getElementById('archive-loading-notice');
+      notice.classList.remove('hidden');
+      await Promise.all(archived.map(l => fetchLessonData(l)));
+      notice.classList.add('hidden');
+
+      renderCombinedContent();
+    }
+
+    function renderCombinedContent() {
+      if (!window.CourseProgress) return;
+      const completedIds = window.CourseProgress.getCompletedIds();
+      const LESSONS = window.CourseProgress.LESSONS;
+      const filterVal = document.getElementById('archive-lesson-filter').value;
+      const q = (document.getElementById('archive-search').value || '').trim().toLowerCase();
+      const out = document.getElementById('archive-combined-output');
+
+      const archived = LESSONS.filter(l => completedIds.includes(l.id) && (filterVal === 'all' || String(l.id) === filterVal));
+      if (!archived.length) {
+        out.innerHTML = '<div class="p-6 rounded-xl border border-slate-200 bg-slate-50 text-center text-sm text-slate-500">Няма избрани архивирани теми.</div>';
+        return;
+      }
+
+      if (window.location.protocol === 'file:') {
+        out.innerHTML = '<div class="p-4 rounded-xl border border-amber-200 bg-amber-50 text-xs sm:text-sm text-amber-900">Обединеното автоматично зареждане на речника и текстовете работи през уеб сървър (<code>deutsch.bbozhanov.com</code> или <code>dxcdeutsch.github.io/deutsch</code>). Отворихте файла локално през <code>file:///</code>, където браузърът ограничава <code>fetch()</code> между файлове.</div>';
+        return;
+      }
+
+      if (currentArchiveTab === 'vocab') {
+        let totalWords = 0;
+        const blocks = archived.map(l => {
+          const data = lessonDataCache[l.id];
+          if (!data || data.error) return '';
+          const items = [];
+          data.cards.forEach(c => {
+            c.glossary.forEach(g => {
+              if (!q || g.toLowerCase().includes(q) || l.title.toLowerCase().includes(q)) {
+                items.push({ num: c.num, text: g });
+              }
+            });
+          });
+          totalWords += items.length;
+          if (!items.length) return '';
+          return `
+            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-2">
+                <a href="${l.file}" class="font-bold text-[#002f6c] hover:underline text-sm sm:text-base">✓ ${esc(l.title)}</a>
+                <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">${items.length} думи/израза</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs sm:text-sm">
+                ${items.map(it => `<div class="p-2 rounded-lg bg-slate-50 border border-slate-200/70"><span class="text-[10px] font-bold text-[#009ee3] mr-1">[Абз.${it.num}]</span> ${esc(it.text)}</div>`).join('')}
+              </div>
+            </div>`;
+        }).filter(Boolean);
+
+        out.innerHTML = blocks.length
+          ? `<div class="text-xs font-bold text-slate-600">Общо показани: ${totalWords} речникови единици от ${blocks.length} теми</div>` + blocks.join('')
+          : '<div class="p-6 rounded-xl border border-slate-200 bg-slate-50 text-center text-sm text-slate-500">Няма намерени съвпадения за „' + esc(q) + '“.</div>';
+      } else if (currentArchiveTab === 'texts') {
+        const blocks = archived.map(l => {
+          const data = lessonDataCache[l.id];
+          if (!data || data.error) return '';
+          const cards = data.cards.filter(c => !q || c.text.toLowerCase().includes(q) || l.title.toLowerCase().includes(q));
+          if (!cards.length) return '';
+          return `
+            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-2">
+                <div>
+                  <a href="${l.file}" class="font-bold text-[#002f6c] hover:underline text-sm sm:text-base">✓ ${esc(l.title)}</a>
+                  <p class="text-xs text-slate-500">${esc(data.headline)}</p>
+                </div>
+                <a href="${l.file}" class="text-xs font-bold text-[#009ee3] hover:underline">Към пълния урок →</a>
+              </div>
+              <div class="space-y-2.5">
+                ${cards.map(c => `
+                  <div class="p-3 rounded-lg bg-slate-50 border border-slate-200/70 flex items-start gap-2.5">
+                    <button type="button" onclick="playArchiveClip(this, '${l.prefix}', '${c.numStr}')" title="Слушай абзаца" class="w-7 h-7 rounded-full bg-sky-50 hover:bg-[#009ee3] text-[#002f6c] hover:text-white border border-sky-200 text-xs font-bold flex items-center justify-center shrink-0 transition">▶</button>
+                    <div class="text-xs sm:text-sm leading-relaxed text-slate-800"><strong class="text-[#009ee3]">${c.num}.</strong> ${esc(c.text)}</div>
+                  </div>`).join('')}
+              </div>
+            </div>`;
+        }).filter(Boolean);
+        out.innerHTML = blocks.length ? blocks.join('') : '<div class="p-6 rounded-xl border border-slate-200 bg-slate-50 text-center text-sm text-slate-500">Няма намерени текстове.</div>';
+      } else if (currentArchiveTab === 'phrases') {
+        const blocks = archived.map(l => {
+          const data = lessonDataCache[l.id];
+          if (!data || data.error) return '';
+          const scenarios = data.scenarios.filter(s => !q || s.prompt.toLowerCase().includes(q) || s.options.some(o => o.toLowerCase().includes(q)));
+          if (!scenarios.length) return '';
+          return `
+            <div class="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-2">
+                <a href="${l.file}" class="font-bold text-[#002f6c] hover:underline text-sm sm:text-base">✓ ${esc(l.title)}</a>
+                <span class="text-xs text-slate-500">${scenarios.length} ситуации</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                ${scenarios.map(s => `
+                  <div class="p-3 rounded-lg bg-slate-50 border border-slate-200/70 space-y-1.5 text-xs">
+                    <div class="font-bold text-[#009ee3]">${esc(s.title)}</div>
+                    <div class="font-semibold text-slate-800">${esc(s.prompt)}</div>
+                    <ul class="space-y-1 text-slate-600 pl-2">
+                      ${s.options.map(o => `<li>• ${esc(o)}</li>`).join('')}
+                    </ul>
+                  </div>`).join('')}
+              </div>
+            </div>`;
+        }).filter(Boolean);
+        out.innerHTML = blocks.length ? blocks.join('') : '<div class="p-6 rounded-xl border border-slate-200 bg-slate-50 text-center text-sm text-slate-500">Няма намерени фрази.</div>';
+      }
+    }
+
+    window.onCourseProgressUpdated = function (completedIds) {
+      loadAndRenderArchive(completedIds);
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.CourseProgress) {
+        loadAndRenderArchive(window.CourseProgress.getCompletedIds());
+      }
+    });
+  </script>
+</body>
+</html>

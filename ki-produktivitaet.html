@@ -1455,5 +1455,6 @@
     function showQuizSolution() { for (let i = 1; i <= 3; i++) { const r = document.querySelector(`input[name="q${i}"][value="${quizAnswers['q' + i]}"]`); if (r) r.checked = true; } checkQuiz(); }
     function resetQuiz() { for (let i = 1; i <= 3; i++) { document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false); document.getElementById('q' + i + '-fb').classList.add('hidden'); } }
   </script>
+  <script src="course-progress.js" defer></script>
 </body>
 </html>
