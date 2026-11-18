@@ -738,57 +738,100 @@
       <div id="praep-score" class="text-sm font-bold"></div>
     </div>
 
-    <!-- TAB 5 -->
+    <!-- TAB 5: B1 -> B1+ Vokabel-Upgrader -->
     <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken</h2>
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken
+        </h2>
         <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch präzisere Wörter aus dem Bienen-Artikel.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 1</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Die Bienen <span class="text-amber-600 underline">machen</span> im Stock eine eigene Wärme.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Пчелите правят собствена топлина ➔ Пчелите генерират достатъчно топлина чрез мускулно треперене.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Die Bienen machen im Stock eine eigene Wärme.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Die Bienen erzeugen durch Muskelzittern genügend Wärme.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">bedrohen weltweit</option>
+              <option value="a">erzeugen durch Muskelzittern</option>
+              <option value="c">verschließen mit Wachs</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Пчелите правят собствена топлина ➔ Пчелите генерират достатъчно топлина чрез мускулно треперене.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 2</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Honig <span class="text-amber-600 underline">bleibt sehr lange gut und wird nicht schlecht</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Медът остава добър много дълго ➔ Правилно съхраняваният мед остава годен почти вечно.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Honig bleibt sehr lange gut und wird nicht schlecht.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Sauber gelagerter Honig bleibt fast ewig haltbar.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">erzeugt genügend Wärme</option>
+              <option value="c">schmilzt bei Sonnenschein</option>
+              <option value="a">bleibt fast ewig haltbar</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Медът остава добър много дълго ➔ Правилно съхраняваният мед остава годен почти вечно.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 3</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Die Wabe ist <span class="text-amber-600 underline">sehr dünn, aber sie hält viel aus</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Питата е много тънка, но издържа много ➔ Стените са ефирно тънки, но изключително издръжливи.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Die Wabe ist sehr dünn, aber sie hält viel aus.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Die Wände sind hauchdünn, aber extrem belastbar.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">hauchdünn, aber extrem belastbar</option>
+              <option value="b">fast ewig haltbar</option>
+              <option value="c">durch Pestizide bedroht</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Питата е много тънка, но издържа много ➔ Стените са ефирно тънки, но изключително издръжливи.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 4</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„<span class="text-amber-600 underline">Gift und große Felder</span> sind schlecht für die Bienen.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Отровата и големите ниви са лоши за пчелите ➔ Пестицидите и монокултурите застрашават много пчелни семейства по света.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Gift und große Felder sind schlecht für die Bienen.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Pestizide und Monokulturen bedrohen weltweit viele Bienenvölker.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">Waben und Wachsdeckel</option>
+              <option value="a">Pestizide und Monokulturen</option>
+              <option value="c">Muskelzittern und Wärme</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Отровата и големите ниви са лоши за пчелите ➔ Пестицидите и монокултурите застрашават много пчелни семейства по света.</p>
         </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showUpgraderSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetUpgrader()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
       </div>
     </div>
 
@@ -1724,6 +1767,41 @@
         document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
         document.getElementById('q' + i + '-fb').classList.add('hidden');
       }
+    }
+
+    // Upgrader evaluation
+    const upgraderAnswers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+
+    function checkUpgrader() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === upgraderAnswers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showUpgraderSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('up' + i).value = upgraderAnswers['up' + i];
+      }
+      checkUpgrader();
+    }
+
+    function resetUpgrader() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        sel.value = '';
+        sel.className = 'border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold';
+      }
+      document.getElementById('upgrader-score').textContent = '';
     }
   </script>
 </body>

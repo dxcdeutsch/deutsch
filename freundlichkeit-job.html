@@ -743,57 +743,100 @@
       <div id="praep-score" class="text-sm font-bold"></div>
     </div>
 
-    <!-- TAB 5 -->
+    <!-- TAB 5: B1 -> B1+ Vokabel-Upgrader -->
     <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken</h2>
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken
+        </h2>
         <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch passende Wörter aus dem Text.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 1</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Sie <span class="text-amber-600 underline">reden schlecht über andere Leute</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Те говорят лошо за други хора ➔ Те одумват зад гърба отсъстващи колеги.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Sie reden schlecht über andere Leute.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Sie ziehen hinter dem Rücken über abwesende Kollegen her.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">ergreifen bewusst Partei für sie</option>
+              <option value="a">ziehen hinter dem Rücken über abwesende Kollegen her</option>
+              <option value="c">brechen verhärtete Routinen auf</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Те говорят лошо за други хора ➔ Те одумват зад гърба отсъстващи колеги.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 2</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Ich habe ihm bei dem Streit <span class="text-amber-600 underline">geholfen</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Помогнах му при спора ➔ Взех съзнателно негова страна в дискусията.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Ich habe ihm bei dem Streit geholfen.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Ich habe in der Diskussion bewusst Partei für ihn ergriffen.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">hinter dem Rücken hergezogen</option>
+              <option value="c">die Loyalität gesteigert</option>
+              <option value="a">Partei für ihn ergriffen</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Помогнах му при спора ➔ Взех съзнателно негова страна в дискусията.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 3</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Wir müssen <span class="text-amber-600 underline">die alten Gewohnheiten stoppen</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Трябва да спрем старите навици ➔ Трябва да разчупим вкоренените рутини чрез нови импулси.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Wir müssen die alten Gewohnheiten stoppen.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Wir sollten verhärtete Routinen durch neue Impulse aufbrechen.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="a">verhärtete Routinen aufbrechen</option>
+              <option value="b">über Abwesende herziehen</option>
+              <option value="c">bewusst Partei ergreifen</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Трябва да спрем старите навици ➔ Трябва да разчупим вкоренените рутини чрез нови импулси.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 4</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„<span class="text-amber-600 underline">Gute Stimmung</span> macht die Arbeit leichter.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Доброто настроение прави работата по-лека ➔ Възходящата спирала на доброжелателност повишава лоялността и мотивацията.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Gute Stimmung macht die Arbeit leichter.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Eine Aufwärtsspirale der Freundlichkeit steigert die Loyalität und Motivation.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">Eine verhärtete Routine</option>
+              <option value="a">Eine Aufwärtsspirale der Freundlichkeit</option>
+              <option value="c">Ein Vier-Augen-Gespräch</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Доброто настроение прави работата по-лека ➔ Възходящата спирала на доброжелателност повишава лоялността и мотивацията.</p>
         </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showUpgraderSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetUpgrader()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
       </div>
     </div>
 
@@ -1731,6 +1774,41 @@
         document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
         document.getElementById('q' + i + '-fb').classList.add('hidden');
       }
+    }
+
+    // Upgrader evaluation
+    const upgraderAnswers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+
+    function checkUpgrader() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === upgraderAnswers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showUpgraderSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('up' + i).value = upgraderAnswers['up' + i];
+      }
+      checkUpgrader();
+    }
+
+    function resetUpgrader() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        sel.value = '';
+        sel.className = 'border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold';
+      }
+      document.getElementById('upgrader-score').textContent = '';
     }
   </script>
 </body>

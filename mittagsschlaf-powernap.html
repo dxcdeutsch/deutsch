@@ -747,54 +747,94 @@
     <!-- TAB 5 -->
     <div id="upgrader-tab" class="tab-content hidden p-5 sm:p-8 space-y-6">
       <div class="border-b pb-3">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🚀</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken</h2>
-        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch passende Wörter aus dem Text.</p>
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2"><span>🔄</span> Der B1 ➔ B1+ Upgrader: Treffender ausdrücken</h2>
+        <p class="text-sm text-slate-500">Ersetzen Sie einfache B1-Alltagsausdrücke durch präzise B1+ Ausdrücke aus dem Text.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 1</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+      <div class="space-y-4">
+        <!-- Upgrader 1 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Nach dem Mittagessen bin ich oft <span class="text-amber-600 underline">sehr müde</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 След обяд често съм много уморен ➔ След обяд усещам отчетлив спад в работоспособността.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Ich bin nach dem Essen sehr müde.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Nach dem Mittagessen spüre ich ein deutliches Leistungstief.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up1" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">voller Energie</option>
+              <option value="a">in einem deutlichen Leistungstief</option>
+              <option value="c">völlig ausgeschlafen</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Много съм уморен след ядене ➔ След обяд усещам отчетлив спад в работоспособността.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 2</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 2 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Ein kurzer Schlaf <span class="text-amber-600 underline">macht das Gehirn wieder sauber</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 Кратък сън изчиства мозъка ➔ Кратката дрямка предизвиква благотворен синаптичен ресет в мозъка.</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Ein kurzer Schlaf macht das Gehirn sauber.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Ein Power Nap bewirkt einen heilsamen synaptischen Reset im Gehirn.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up2" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">verursacht große Müdigkeit</option>
+              <option value="c">löscht alle Erinnerungen</option>
+              <option value="a">bewirkt einen synaptischen Reset</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Кратък сън изчиства мозъка ➔ Кратката дрямка предизвиква благотворен синаптичен ресет в мозъка.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 3</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 3 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Nach dem plötzlichen Aufwachen ist er <span class="text-amber-600 underline">schläfrig und langsam</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 След внезапното събуждане той е сънлив и бавен ➔ Той е засегнат от сънливост и замаяност (Schlafträgheit).</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Er ist nach dem Weckerklingeln schläfrig und langsam.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Er leidet nach dem plötzlichen Aufwachen unter Schlafträgheit.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up3" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="c">sofort hellwach</option>
+              <option value="a">von Schlafträgheit betroffen</option>
+              <option value="b">besonders kreativ</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Той е сънлив и бавен след звъненето на будилника ➔ Той страда от сънливост и замаяност след внезапното събуждане.</p>
         </div>
-        <div class="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-slate-400 uppercase">Ausdruck 4</span>
-            <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">B1 ➔ B1+</span>
+
+        <!-- Upgrader 4 -->
+        <div class="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <span class="text-xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-bold">B1 einfach:</span>
+            <p class="text-sm font-semibold mt-1 text-slate-800">„Nach einer Pause haben wir <span class="text-amber-600 underline">plötzlich eine gute Idee gehabt</span>.“</p>
+            <p class="text-xs text-slate-500 italic">🇧🇬 След пауза внезапно ни хрумна добра идея ➔ Преживяхме истински момент на прозрение (Aha-Moment).</p>
           </div>
-          <div class="text-sm">
-            <div class="text-slate-600 line-through">„Wir haben eine gute Lösung gefunden.“ <span class="text-xs text-slate-400">(einfach)</span></div>
-            <div class="text-slate-900 font-bold text-sm sm:text-base mt-1">„Nach einer Denkpause erlebten wir einen echten Aha-Moment.“ <span class="text-xs text-emerald-600 font-semibold">(präziser)</span></div>
+          <div class="shrink-0 flex items-center gap-2">
+            <span class="text-xs font-bold text-[#009ee3]">➔ B1+ Upgrade:</span>
+            <select id="up4" class="border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold">
+              <option value="">-- auswählen --</option>
+              <option value="b">einen langen Bericht geschrieben</option>
+              <option value="a">einen echten Aha-Moment erlebt</option>
+              <option value="c">das Meeting abgesagt</option>
+            </select>
           </div>
-          <p class="text-xs text-slate-500 italic pt-1">🇧🇬 Намерихме добро решение ➔ След пауза за размисъл преживяхме истински момент на прозрение.</p>
         </div>
+
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="checkUpgrader()" class="bg-[#009ee3] hover:bg-[#0082ba] text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow">
+            Überprüfen (Провери)
+          </button>
+          <button onclick="showUpgraderSolution()" class="border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-100">
+            Lösung anzeigen (Покажи отговорите)
+          </button>
+          <button onclick="resetUpgrader()" class="text-xs text-slate-500 hover:underline ml-auto">
+            Zurücksetzen (Изчисти)
+          </button>
+        </div>
+        <div id="upgrader-score" class="text-sm font-bold"></div>
       </div>
     </div>
 
@@ -1732,6 +1772,41 @@
         document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
         document.getElementById('q' + i + '-fb').classList.add('hidden');
       }
+    }
+
+    // Upgrader evaluation
+    const upgraderAnswers = { up1: 'a', up2: 'a', up3: 'a', up4: 'a' };
+
+    function checkUpgrader() {
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        if (sel.value === upgraderAnswers['up' + i]) {
+          sel.className = 'border-2 border-emerald-500 rounded p-1.5 bg-emerald-50 text-emerald-900 font-bold text-xs';
+          score++;
+        } else {
+          sel.className = 'border-2 border-rose-500 rounded p-1.5 bg-rose-50 text-rose-900 text-xs font-semibold';
+        }
+      }
+      const div = document.getElementById('upgrader-score');
+      div.textContent = 'Ergebnis: ' + score + ' von 4 Upgrades korrekt.';
+      div.className = score === 4 ? 'text-sm font-bold text-emerald-600 mt-2' : 'text-sm font-bold text-amber-600 mt-2';
+    }
+
+    function showUpgraderSolution() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('up' + i).value = upgraderAnswers['up' + i];
+      }
+      checkUpgrader();
+    }
+
+    function resetUpgrader() {
+      for (let i = 1; i <= 4; i++) {
+        const sel = document.getElementById('up' + i);
+        sel.value = '';
+        sel.className = 'border border-slate-300 rounded p-1.5 bg-slate-50 text-slate-900 text-xs font-bold';
+      }
+      document.getElementById('upgrader-score').textContent = '';
     }
   </script>
 </body>
